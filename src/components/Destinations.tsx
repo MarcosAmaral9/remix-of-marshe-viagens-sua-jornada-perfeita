@@ -20,6 +20,7 @@ const destinations = [
     location: "Ceará, Brasil",
     price: "R$ 2.600",
     duration: "8 dias",
+    dates: "21/01/26 a 28/01/26",
     image: fortalezaImg,
   },
   {
@@ -100,9 +101,14 @@ const Destinations = () => {
               {/* Info */}
               <div className="p-4">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <Calendar className="w-4 h-4" />
-                    {dest.duration}
+                  <div className="flex flex-col gap-1 text-muted-foreground text-sm">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {dest.duration}
+                    </div>
+                    {"dates" in dest && dest.dates && (
+                      <span className="text-xs">{dest.dates}</span>
+                    )}
                   </div>
                   <div className="text-right">
                     <span className="text-xs text-muted-foreground">a partir de</span>
