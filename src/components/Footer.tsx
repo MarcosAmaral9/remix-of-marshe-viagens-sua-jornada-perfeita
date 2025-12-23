@@ -1,32 +1,43 @@
 import { Instagram, ExternalLink } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
-
 const Footer = () => {
   const socialLinks = {
     tiktok: "https://www.tiktok.com/@marshe.viagens",
-    instagram: "https://www.instagram.com/marsheviagens",
+    instagram: "https://www.instagram.com/marsheviagens"
   };
-
   const footerLinks = {
-    empresa: [
-      { name: "Sobre", href: "#" },
-      { name: "Carreiras", href: "#" },
-      { name: "Parceiros", href: "#" },
-    ],
-    contato: [
-      { name: "Ajuda/FAQ", href: "#" },
-      { name: "Imprensa", href: "#" },
-      { name: "Afiliados", href: "#" },
-    ],
-    mais: [
-      { name: "Tarifas Especiais", href: "#" },
-      { name: "Companhias Aéreas", href: "#" },
-      { name: "Seguros", href: "#" },
-    ],
+    empresa: [{
+      name: "Sobre",
+      href: "#"
+    }, {
+      name: "Carreiras",
+      href: "#"
+    }, {
+      name: "Parceiros",
+      href: "#"
+    }],
+    contato: [{
+      name: "Ajuda/FAQ",
+      href: "#"
+    }, {
+      name: "Imprensa",
+      href: "#"
+    }, {
+      name: "Afiliados",
+      href: "#"
+    }],
+    mais: [{
+      name: "Tarifas Especiais",
+      href: "#"
+    }, {
+      name: "Companhias Aéreas",
+      href: "#"
+    }, {
+      name: "Seguros",
+      href: "#"
+    }]
   };
-
-  return (
-    <footer id="contato" className="bg-muted/50 pt-20 pb-8">
+  return <footer className="bg-muted/50 pt-20 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-border">
           {/* Brand */}
@@ -45,47 +56,27 @@ const Footer = () => {
             <div className="flex gap-6">
               {/* TikTok */}
               <div className="text-center">
-                <a
-                  href={socialLinks.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-2"
-                >
+                <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-2">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                   </svg>
                   <span className="text-sm font-medium">TikTok</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
                 <div className="bg-card p-2 rounded-lg inline-block">
-                  <QRCodeSVG 
-                    value={socialLinks.tiktok} 
-                    size={80}
-                    bgColor="transparent"
-                    fgColor="hsl(var(--foreground))"
-                  />
+                  <QRCodeSVG value={socialLinks.tiktok} size={80} bgColor="transparent" fgColor="hsl(var(--foreground))" />
                 </div>
               </div>
 
               {/* Instagram */}
               <div className="text-center">
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-2"
-                >
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-2">
                   <Instagram className="w-5 h-5" />
                   <span className="text-sm font-medium">Instagram</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
                 <div className="bg-card p-2 rounded-lg inline-block">
-                  <QRCodeSVG 
-                    value={socialLinks.instagram} 
-                    size={80}
-                    bgColor="transparent"
-                    fgColor="hsl(var(--foreground))"
-                  />
+                  <QRCodeSVG value={socialLinks.instagram} size={80} bgColor="transparent" fgColor="hsl(var(--foreground))" />
                 </div>
               </div>
             </div>
@@ -95,39 +86,33 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-foreground mb-4">Empresa</h4>
             <ul className="space-y-3">
-              {footerLinks.empresa.map((link) => (
-                <li key={link.name}>
+              {footerLinks.empresa.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-foreground mb-4">Contato</h4>
             <ul className="space-y-3">
-              {footerLinks.contato.map((link) => (
-                <li key={link.name}>
+              {footerLinks.contato.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-foreground mb-4">Mais</h4>
+            <h4 className="font-bold text-foreground mb-4">Contato</h4>
             <ul className="space-y-3">
-              {footerLinks.mais.map((link) => (
-                <li key={link.name}>
+              {footerLinks.mais.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -137,8 +122,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Marshe Viagens. Todos os direitos reservados.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
