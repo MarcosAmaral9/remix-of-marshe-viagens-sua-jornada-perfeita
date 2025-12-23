@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
 import heroImage from "@/assets/hero-traveler.png";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-20">
+  return <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-20">
       {/* Decorative elements */}
       <div className="absolute top-32 right-20 w-16 h-16 bg-coral-light rounded-full opacity-60 animate-float" />
-      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
+      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float" style={{
+      animationDelay: '1s'
+    }} />
+      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float" style={{
+      animationDelay: '0.5s'
+    }} />
       
       <div className="container mx-auto px-4 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -24,7 +25,7 @@ const Hero = () => {
               <span className="relative">
                 e viva uma
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 10C50 2 150 2 298 10" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round"/>
+                  <path d="M2 10C50 2 150 2 298 10" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </span>
               <br />
@@ -43,9 +44,7 @@ const Hero = () => {
               </Button>
               
               <Button variant="hero-outline" className="gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                  <Play className="w-4 h-4 text-primary-foreground fill-current ml-0.5" />
-                </div>
+                
                 Ver Vídeo
               </Button>
             </div>
@@ -59,20 +58,14 @@ const Hero = () => {
             {/* Decorative plane */}
             <div className="absolute top-10 right-0 text-primary animate-float">
               <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
               </svg>
             </div>
             
-            <img
-              src={heroImage}
-              alt="Viajante feliz em destino tropical"
-              className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl"
-            />
+            <img src={heroImage} alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
