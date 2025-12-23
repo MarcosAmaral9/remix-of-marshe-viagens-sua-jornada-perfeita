@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-muted/50 pt-20 pb-8">
+    <footer id="contato" className="bg-muted/50 pt-20 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-border">
           {/* Brand */}
