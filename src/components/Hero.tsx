@@ -38,16 +38,7 @@ const Hero = () => {
               personalizado e preços imbatíveis.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button variant="hero">
-                Saiba Mais
-              </Button>
-              
-              <Button variant="hero-outline" className="gap-3">
-                
-                Ver Vídeo
-              </Button>
-            </div>
+            
           </div>
           
           {/* Image */}
