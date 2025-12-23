@@ -18,8 +18,8 @@ const destinations = [
   {
     name: "Fortaleza",
     location: "Ceará, Brasil",
-    price: "R$ 1.450",
-    duration: "7 dias",
+    price: "R$ 2.600",
+    duration: "8 dias",
     image: fortalezaImg,
   },
   {
