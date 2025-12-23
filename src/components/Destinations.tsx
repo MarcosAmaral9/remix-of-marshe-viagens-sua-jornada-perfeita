@@ -71,7 +71,7 @@ const Destinations = () => {
             Destinos Populares
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
-            Destinos Mais Visitados
+            Pacotes Completos
           </h2>
         </div>
 
