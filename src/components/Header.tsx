@@ -38,7 +38,12 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="hero" size="sm" className="px-6 py-2 h-auto">
+            <Button 
+              variant="hero" 
+              size="sm" 
+              className="px-6 py-2 h-auto"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Fale Conosco
             </Button>
           </div>
@@ -66,7 +71,15 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" size="sm" className="w-full">
+              <Button 
+                variant="hero" 
+                size="sm" 
+                className="w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Fale Conosco
               </Button>
             </div>
