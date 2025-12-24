@@ -47,7 +47,8 @@ const destinationVideos = [
   {
     name: "Porto Seguro",
     dates: "13/02/26 a 18/02/26",
-    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/porto-seguro.mp4",
+    isLocal: true,
   },
   {
     name: "Salvador",
@@ -122,13 +123,24 @@ const HowItWorks = () => {
             <div className="absolute inset-0 bg-coral-light rounded-3xl -rotate-6 scale-95" />
             <div className="relative bg-card rounded-3xl p-8 shadow-card">
               <div className="aspect-video bg-muted rounded-2xl mb-6 overflow-hidden">
-                <iframe
-                  src={currentDestination.videoUrl}
-                  className="w-full h-full"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  title={`Vídeo de ${currentDestination.name}`}
-                />
+                {currentDestination.isLocal ? (
+                  <video
+                    src={currentDestination.videoUrl}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <iframe
+                    src={currentDestination.videoUrl}
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    title={`Vídeo de ${currentDestination.name}`}
+                  />
+                )}
               </div>
               
               {/* Navigation Buttons */}
