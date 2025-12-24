@@ -2,63 +2,87 @@ import { MapPin, Calendar } from "lucide-react";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import fortalezaImg from "@/assets/dest-fortaleza.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
-import goianiaImg from "@/assets/dest-goiania.jpg";
-import saoLuisImg from "@/assets/dest-sao-luis.jpg";
-import rioImg from "@/assets/dest-rio.jpg";
-import houstonImg from "@/assets/dest-houston.jpg";
+import natalImg from "@/assets/dest-natal.jpg";
+import portoGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
+import caboSantoAgostinhoImg from "@/assets/dest-cabo-santo-agostinho.jpg";
+import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
+import gramadoImg from "@/assets/dest-gramado.jpg";
 
-const destinations = [
+// Destinos organizados por região e ordem alfabética
+const destinationsByRegion = [
   {
-    name: "Porto Seguro",
-    location: "Bahia, Brasil",
-    price: "R$ 3.100",
-    duration: "6 dias",
-    dates: "Carnaval 13/02/26 a 18/02/26",
-    image: portoSeguroImg,
+    region: "Nordeste",
+    destinations: [
+      {
+        name: "Cabo de Santo Agostinho",
+        location: "Pernambuco, Brasil",
+        price: "R$ 2.650",
+        duration: "8 dias",
+        dates: "16/05/26 a 23/05/26",
+        image: caboSantoAgostinhoImg,
+      },
+      {
+        name: "Fortaleza",
+        location: "Ceará, Brasil",
+        price: "R$ 2.600",
+        duration: "8 dias",
+        dates: "21/01/26 a 28/01/26",
+        image: fortalezaImg,
+      },
+      {
+        name: "Natal",
+        location: "Rio Grande do Norte, Brasil",
+        price: "R$ 3.640",
+        duration: "8 dias",
+        dates: "21/03/26 a 28/03/26",
+        image: natalImg,
+      },
+      {
+        name: "Porto de Galinhas",
+        location: "Pernambuco, Brasil",
+        price: "R$ 2.319",
+        duration: "8 dias",
+        dates: "16/05/26 a 23/05/26",
+        image: portoGalinhasImg,
+      },
+      {
+        name: "Porto Seguro",
+        location: "Bahia, Brasil",
+        price: "R$ 3.100",
+        duration: "6 dias",
+        dates: "Carnaval 13/02/26 a 18/02/26",
+        image: portoSeguroImg,
+      },
+      {
+        name: "Salvador",
+        location: "Bahia, Brasil",
+        price: "R$ 2.750",
+        duration: "8 dias",
+        dates: "04/03/26 a 11/03/26",
+        image: salvadorImg,
+      },
+    ],
   },
   {
-    name: "Fortaleza",
-    location: "Ceará, Brasil",
-    price: "R$ 2.600",
-    duration: "8 dias",
-    dates: "21/01/26 a 28/01/26",
-    image: fortalezaImg,
-  },
-  {
-    name: "Salvador",
-    location: "Bahia, Brasil",
-    price: "R$ 2.750",
-    duration: "8 dias",
-    dates: "04/03/26 a 11/03/26",
-    image: salvadorImg,
-  },
-  {
-    name: "Goiânia",
-    location: "Goiás, Brasil",
-    price: "R$ 890",
-    duration: "4 dias",
-    image: goianiaImg,
-  },
-  {
-    name: "São Luís",
-    location: "Maranhão, Brasil",
-    price: "R$ 1.650",
-    duration: "7 dias",
-    image: saoLuisImg,
-  },
-  {
-    name: "Rio de Janeiro",
-    location: "RJ, Brasil",
-    price: "R$ 1.190",
-    duration: "5 dias",
-    image: rioImg,
-  },
-  {
-    name: "Houston",
-    location: "Texas, EUA",
-    price: "R$ 4.890",
-    duration: "10 dias",
-    image: houstonImg,
+    region: "Sul",
+    destinations: [
+      {
+        name: "Foz do Iguaçu",
+        location: "Paraná, Brasil",
+        price: "R$ 1.830",
+        duration: "5 dias",
+        dates: "14/01/26 a 18/01/26",
+        image: fozDoIguacuImg,
+      },
+      {
+        name: "Gramado",
+        location: "Rio Grande do Sul, Brasil",
+        price: "R$ 4.390",
+        duration: "8 dias",
+        dates: "10/01/26 a 17/01/26",
+        image: gramadoImg,
+      },
+    ],
   },
 ];
 
@@ -76,51 +100,58 @@ const Destinations = () => {
           </h2>
         </div>
 
-        {/* Destinations Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {destinations.map((dest, index) => (
-            <div
-              key={dest.name}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={dest.image}
-                  alt={dest.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-primary-foreground">
-                  <h3 className="text-xl font-bold">{dest.name}</h3>
-                  <div className="flex items-center gap-1 text-sm opacity-90">
-                    <MapPin className="w-4 h-4" />
-                    {dest.location}
-                  </div>
-                </div>
-              </div>
-
-              {/* Info */}
-              <div className="p-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col gap-1 text-muted-foreground text-sm">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      {dest.duration}
+        {/* Destinations by Region */}
+        {destinationsByRegion.map((regionData) => (
+          <div key={regionData.region} className="mb-12 last:mb-0">
+            <h3 className="text-2xl font-serif font-semibold text-foreground mb-6 border-l-4 border-primary pl-4">
+              {regionData.region}
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {regionData.destinations.map((dest) => (
+                <div
+                  key={dest.name}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={dest.image}
+                      alt={dest.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-primary-foreground">
+                      <h3 className="text-xl font-bold">{dest.name}</h3>
+                      <div className="flex items-center gap-1 text-sm opacity-90">
+                        <MapPin className="w-4 h-4" />
+                        {dest.location}
+                      </div>
                     </div>
-                    {"dates" in dest && dest.dates && (
-                      <span className="text-xs">{dest.dates}</span>
-                    )}
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs text-muted-foreground">a partir de</span>
-                    <p className="text-lg font-bold text-primary">{dest.price}</p>
+
+                  {/* Info */}
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-1 text-muted-foreground text-sm">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          {dest.duration}
+                        </div>
+                        {dest.dates && (
+                          <span className="text-xs">{dest.dates}</span>
+                        )}
+                      </div>
+                      <div className="text-right">
+                        <span className="text-xs text-muted-foreground">a partir de</span>
+                        <p className="text-lg font-bold text-primary">{dest.price}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
