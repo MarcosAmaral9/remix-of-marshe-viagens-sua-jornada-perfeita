@@ -1,4 +1,6 @@
-import { MapPin, CreditCard, Plane } from "lucide-react";
+import { MapPin, CreditCard, Plane, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const steps = [
   {
@@ -21,7 +23,66 @@ const steps = [
   },
 ];
 
+const destinationVideos = [
+  {
+    name: "Cabo de Santo Agostinho",
+    dates: "16/05/26 a 23/05/26",
+    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Fortaleza",
+    dates: "21/01/26 a 28/01/26",
+    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Natal",
+    dates: "21/03/26 a 28/03/26",
+    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Porto de Galinhas",
+    dates: "16/05/26 a 23/05/26",
+    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Porto Seguro",
+    dates: "13/02/26 a 18/02/26",
+    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Salvador",
+    dates: "04/03/26 a 11/03/26",
+    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Foz do Iguaçu",
+    dates: "14/01/26 a 18/01/26",
+    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+  },
+  {
+    name: "Gramado",
+    dates: "10/01/26 a 17/01/26",
+    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+  },
+];
+
 const HowItWorks = () => {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const handlePrevious = () => {
+    setCurrentVideoIndex((prev) => 
+      prev === 0 ? destinationVideos.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentVideoIndex((prev) => 
+      prev === destinationVideos.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const currentDestination = destinationVideos[currentVideoIndex];
+
   return (
     <section className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4">
@@ -56,35 +117,57 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Decorative Card */}
+          {/* Video Card */}
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-coral-light rounded-3xl -rotate-6 scale-95" />
             <div className="relative bg-card rounded-3xl p-8 shadow-card">
               <div className="aspect-video bg-muted rounded-2xl mb-6 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" 
-                  alt="Praia paradisíaca"
-                  className="w-full h-full object-cover"
+                <iframe
+                  src={currentDestination.videoUrl}
+                  className="w-full h-full"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title={`Vídeo de ${currentDestination.name}`}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-bold text-foreground">Viagem para o Nordeste</h4>
-                  <p className="text-muted-foreground text-sm">14-20 Jul | Família</p>
-                </div>
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full bg-muted border-2 border-card flex items-center justify-center text-xs font-medium text-muted-foreground">
-                      {i}
-                    </div>
+              
+              {/* Navigation Buttons */}
+              <div className="flex items-center justify-between mb-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handlePrevious}
+                  className="rounded-full"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </Button>
+                
+                <div className="flex gap-1">
+                  {destinationVideos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentVideoIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentVideoIndex ? 'bg-primary' : 'bg-muted-foreground/30'
+                      }`}
+                    />
                   ))}
                 </div>
+                
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleNext}
+                  className="rounded-full"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </Button>
               </div>
-              <div className="mt-4 flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div className="w-2/3 h-full bg-primary rounded-full" />
-                </div>
-                <span className="text-sm text-muted-foreground">67% concluído</span>
+
+              {/* Destination Info */}
+              <div className="text-center">
+                <h4 className="font-bold text-foreground text-lg">{currentDestination.name}</h4>
+                <p className="text-muted-foreground text-sm">{currentDestination.dates}</p>
               </div>
             </div>
           </div>
