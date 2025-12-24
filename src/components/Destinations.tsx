@@ -27,8 +27,9 @@ const destinations = [
   {
     name: "Salvador",
     location: "Bahia, Brasil",
-    price: "R$ 1.380",
-    duration: "5 dias",
+    price: "R$ 2.750",
+    duration: "8 dias",
+    dates: "04/03/26 a 11/03/26",
     image: salvadorImg,
   },
   {
