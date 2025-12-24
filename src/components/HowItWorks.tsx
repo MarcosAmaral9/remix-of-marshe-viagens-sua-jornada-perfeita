@@ -122,7 +122,7 @@ const HowItWorks = () => {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-coral-light rounded-3xl -rotate-6 scale-95" />
             <div className="relative bg-card rounded-3xl p-8 shadow-card">
-              <div className="aspect-video bg-muted rounded-2xl mb-6 overflow-hidden">
+              <div className="aspect-[4/3] bg-muted rounded-2xl mb-6 overflow-hidden">
                 {currentDestination.isLocal ? (
                   <video
                     src={currentDestination.videoUrl}
