@@ -24,7 +24,7 @@ const destinationsByRegion = [
       {
         name: "Fortaleza",
         location: "Ceará, Brasil",
-        price: "R$ 2.600",
+        price: "R$ 2.849",
         duration: "8 dias",
         dates: "21/01/26 a 28/01/26",
         image: fortalezaImg,
@@ -144,6 +144,7 @@ const Destinations = () => {
                       <div className="text-right">
                         <span className="text-xs text-muted-foreground">a partir de</span>
                         <p className="text-lg font-bold text-primary">{dest.price}</p>
+                        <span className="text-xs text-muted-foreground">por pessoa</span>
                       </div>
                     </div>
                   </div>
