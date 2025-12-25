@@ -2,8 +2,9 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import BookingSteps from "@/components/BookingSteps";
 import Destinations from "@/components/Destinations";
-import HowItWorks from "@/components/HowItWorks";
+import DestinationVideos from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -21,8 +22,9 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <BookingSteps />
         <Destinations onDestinationClick={handleDestinationClick} />
-        <HowItWorks selectedVideoIndex={selectedVideoIndex} />
+        <DestinationVideos selectedVideoIndex={selectedVideoIndex} />
         <Testimonials />
         <Newsletter />
       </main>
