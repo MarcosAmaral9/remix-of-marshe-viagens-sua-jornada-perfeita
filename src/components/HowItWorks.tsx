@@ -1,27 +1,6 @@
-import { MapPin, CreditCard, Plane, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-
-const steps = [
-  {
-    icon: MapPin,
-    title: "Escolha seu Destino",
-    description: "Navegue pelos nossos destinos e escolha o lugar dos seus sonhos para sua próxima viagem.",
-    color: "bg-coral-light text-primary",
-  },
-  {
-    icon: CreditCard,
-    title: "Realize o Pagamento",
-    description: "Pagamento facilitado em até 12x no cartão ou à vista com desconto especial.",
-    color: "bg-teal/10 text-teal",
-  },
-  {
-    icon: Plane,
-    title: "Embarque na Aventura",
-    description: "Chegue ao aeroporto e aproveite sua viagem sem preocupações. Cuidamos de tudo!",
-    color: "bg-yellow/10 text-yellow",
-  },
-];
 
 export const destinationVideos = [
   {
@@ -73,14 +52,13 @@ export const getVideoIndexByDestination = (destinationName: string): number => {
   );
 };
 
-interface HowItWorksProps {
+interface DestinationVideosProps {
   selectedVideoIndex?: number;
 }
 
-const HowItWorks = ({ selectedVideoIndex }: HowItWorksProps) => {
+const DestinationVideos = ({ selectedVideoIndex }: DestinationVideosProps) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(selectedVideoIndex ?? 0);
 
-  // Update video index when prop changes
   useEffect(() => {
     if (selectedVideoIndex !== undefined) {
       setCurrentVideoIndex(selectedVideoIndex);
@@ -102,39 +80,18 @@ const HowItWorks = ({ selectedVideoIndex }: HowItWorksProps) => {
   const currentDestination = destinationVideos[currentVideoIndex];
 
   return (
-    <section id="videos" className="py-20 lg:py-32 bg-background">
+    <section id="videos" className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div>
-            <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
-              Fácil e Rápido
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4 mb-12">
-              Reserve sua Viagem
-              <br />
-              em 3 Passos Simples
-            </h2>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
+            Conheça os Destinos
+          </span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
+            Vídeos de Apresentação
+          </h2>
+        </div>
 
-            <div className="space-y-8">
-              {steps.map((step, index) => (
-                <div key={step.title} className="flex gap-6 group">
-                  <div className={`w-14 h-14 rounded-xl ${step.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Video Card */}
           <div className="relative">
             <div className="absolute inset-0 bg-coral-light rounded-3xl -rotate-6 scale-95" />
@@ -206,4 +163,4 @@ const HowItWorks = ({ selectedVideoIndex }: HowItWorksProps) => {
   );
 };
 
-export default HowItWorks;
+export default DestinationVideos;
