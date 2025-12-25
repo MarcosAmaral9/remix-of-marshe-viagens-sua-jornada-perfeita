@@ -10,7 +10,7 @@ const steps = [
   {
     icon: CreditCard,
     title: "Realize o Pagamento",
-    description: "Pagamento facilitado em até 12x no cartão ou à vista com desconto especial.",
+    description: "Pagamento facilitado em até 10x no cartão ou à vista com desconto especial.",
     color: "bg-teal/10 text-teal",
   },
   {
