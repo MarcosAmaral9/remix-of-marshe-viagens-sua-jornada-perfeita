@@ -1,4 +1,5 @@
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, Play } from "lucide-react";
+import { getVideoIndexByDestination } from "./HowItWorks";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import fortalezaImg from "@/assets/dest-fortaleza.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
@@ -86,7 +87,22 @@ const destinationsByRegion = [
   },
 ];
 
-const Destinations = () => {
+interface DestinationsProps {
+  onDestinationClick?: (videoIndex: number) => void;
+}
+
+const Destinations = ({ onDestinationClick }: DestinationsProps) => {
+  const handleDestinationClick = (destinationName: string) => {
+    const videoIndex = getVideoIndexByDestination(destinationName);
+    if (videoIndex !== -1 && onDestinationClick) {
+      onDestinationClick(videoIndex);
+      // Scroll to the video section
+      const videoSection = document.getElementById('videos');
+      if (videoSection) {
+        videoSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
   return (
     <section id="destinos" className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -110,7 +126,8 @@ const Destinations = () => {
               {regionData.destinations.map((dest) => (
                 <div
                   key={dest.name}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                  onClick={() => handleDestinationClick(dest.name)}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
@@ -120,6 +137,14 @@ const Destinations = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center">
+                        <Play className="w-6 h-6 text-primary-foreground fill-primary-foreground ml-1" />
+                      </div>
+                    </div>
+                    
                     <div className="absolute bottom-4 left-4 text-primary-foreground">
                       <h3 className="text-xl font-bold">{dest.name}</h3>
                       <div className="flex items-center gap-1 text-sm opacity-90">
