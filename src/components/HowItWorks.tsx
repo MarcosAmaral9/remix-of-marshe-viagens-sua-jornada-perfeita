@@ -1,5 +1,5 @@
 import { MapPin, CreditCard, Plane, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 const steps = [
@@ -23,7 +23,7 @@ const steps = [
   },
 ];
 
-const destinationVideos = [
+export const destinationVideos = [
   {
     name: "Cabo de Santo Agostinho",
     dates: "16/05/26 a 23/05/26",
@@ -67,8 +67,25 @@ const destinationVideos = [
   },
 ];
 
-const HowItWorks = () => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+export const getVideoIndexByDestination = (destinationName: string): number => {
+  return destinationVideos.findIndex(
+    (video) => video.name.toLowerCase() === destinationName.toLowerCase()
+  );
+};
+
+interface HowItWorksProps {
+  selectedVideoIndex?: number;
+}
+
+const HowItWorks = ({ selectedVideoIndex }: HowItWorksProps) => {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(selectedVideoIndex ?? 0);
+
+  // Update video index when prop changes
+  useEffect(() => {
+    if (selectedVideoIndex !== undefined) {
+      setCurrentVideoIndex(selectedVideoIndex);
+    }
+  }, [selectedVideoIndex]);
 
   const handlePrevious = () => {
     setCurrentVideoIndex((prev) => 
@@ -85,7 +102,7 @@ const HowItWorks = () => {
   const currentDestination = destinationVideos[currentVideoIndex];
 
   return (
-    <section className="py-20 lg:py-32 bg-background">
+    <section id="videos" className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
