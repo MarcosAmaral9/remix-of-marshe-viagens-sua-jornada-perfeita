@@ -1,4 +1,4 @@
-import { MapPin, CreditCard, Plane } from "lucide-react";
+import { MapPin, MessageCircle, CreditCard, Plane } from "lucide-react";
 
 const steps = [
   {
@@ -6,6 +6,12 @@ const steps = [
     title: "Escolha seu Destino",
     description: "Navegue pelos nossos destinos e escolha o lugar dos seus sonhos para sua próxima viagem.",
     color: "bg-coral-light text-primary",
+  },
+  {
+    icon: MessageCircle,
+    title: "Entre em Contato Conosco",
+    description: "Converse conosco pelo WhatsApp, Instagram ou e-mail para tirar dúvidas e personalizar sua viagem.",
+    color: "bg-navy/10 text-navy",
   },
   {
     icon: CreditCard,
@@ -32,11 +38,11 @@ const BookingSteps = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
             Reserve sua Viagem
             <br />
-            em 3 Passos Simples
+            em 4 Passos Simples
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {steps.map((step) => (
             <div key={step.title} className="flex flex-col items-center text-center group">
               <div className={`w-16 h-16 rounded-xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
