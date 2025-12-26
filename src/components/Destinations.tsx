@@ -1,5 +1,7 @@
 import { MapPin, Calendar, Play } from "lucide-react";
+import { useState } from "react";
 import { getVideoIndexByDestination } from "./HowItWorks";
+import VideoModal from "./VideoModal";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import fortalezaImg from "@/assets/dest-fortaleza.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
@@ -87,23 +89,20 @@ const destinationsByRegion = [
   },
 ];
 
-interface DestinationsProps {
-  onDestinationClick?: (videoIndex: number) => void;
-}
+const Destinations = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
 
-const Destinations = ({ onDestinationClick }: DestinationsProps) => {
   const handleDestinationClick = (destinationName: string) => {
     const videoIndex = getVideoIndexByDestination(destinationName);
-    if (videoIndex !== -1 && onDestinationClick) {
-      onDestinationClick(videoIndex);
-      // Scroll to the video section
-      const videoSection = document.getElementById('videos');
-      if (videoSection) {
-        videoSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (videoIndex !== -1) {
+      setSelectedVideoIndex(videoIndex);
+      setIsModalOpen(true);
     }
   };
+
   return (
+    <>
     <section id="destinos" className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
@@ -180,6 +179,13 @@ const Destinations = ({ onDestinationClick }: DestinationsProps) => {
         ))}
       </div>
     </section>
+
+    <VideoModal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      initialVideoIndex={selectedVideoIndex}
+    />
+    </>
   );
 };
 
