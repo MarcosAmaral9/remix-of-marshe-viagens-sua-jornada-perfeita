@@ -6,7 +6,8 @@ import BookingSteps from "@/components/BookingSteps";
 import Destinations from "@/components/Destinations";
 import DestinationVideos from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
+import ContactSection from "@/components/ContactSection";
+import WhatsAppClub from "@/components/WhatsAppClub";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -26,7 +27,8 @@ const Index = () => {
         <Destinations onDestinationClick={handleDestinationClick} />
         <DestinationVideos selectedVideoIndex={selectedVideoIndex} />
         <Testimonials />
-        <Newsletter />
+        <ContactSection />
+        <WhatsAppClub />
       </main>
       <Footer />
     </div>
