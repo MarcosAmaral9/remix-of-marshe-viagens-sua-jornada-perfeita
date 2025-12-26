@@ -117,11 +117,11 @@ const VideoModal = ({ isOpen, onClose, initialVideoIndex }: VideoModalProps) => 
               <video
                 ref={videoRef}
                 src={currentDestination.videoUrl}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-black"
                 autoPlay
                 loop
-                muted
                 playsInline
+                controls
               />
             ) : (
               <iframe
