@@ -1,5 +1,11 @@
 import { Phone, Mail, Instagram } from "lucide-react";
 
+const TikTokIcon = () => (
+  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+  </svg>
+);
+
 const contacts = [
   {
     icon: Phone,
@@ -7,6 +13,7 @@ const contacts = [
     value: "(31) 97239-1400",
     href: "https://wa.me/5531972391400",
     color: "bg-green-500/10 text-green-600",
+    isCustomIcon: false,
   },
   {
     icon: Mail,
@@ -14,6 +21,7 @@ const contacts = [
     value: "marshe.viagens@gmail.com",
     href: "mailto:marshe.viagens@gmail.com",
     color: "bg-primary/10 text-primary",
+    isCustomIcon: false,
   },
   {
     icon: Instagram,
@@ -21,6 +29,15 @@ const contacts = [
     value: "@marsheviagens",
     href: "https://www.instagram.com/marsheviagens",
     color: "bg-pink-500/10 text-pink-600",
+    isCustomIcon: false,
+  },
+  {
+    icon: TikTokIcon,
+    title: "TikTok",
+    value: "@marshe.viagens",
+    href: "https://www.tiktok.com/@marshe.viagens",
+    color: "bg-foreground/10 text-foreground",
+    isCustomIcon: true,
   },
 ];
 
@@ -41,22 +58,26 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
           {contacts.map((contact) => (
             <a
               key={contact.title}
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center text-center p-8 bg-card rounded-2xl border border-border hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+              className="flex flex-col items-center text-center p-6 md:p-8 bg-card rounded-2xl border border-border hover:shadow-xl hover:scale-105 transition-all duration-300 group touch-manipulation"
             >
-              <div className={`w-16 h-16 rounded-xl ${contact.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <contact.icon className="w-8 h-8" />
+              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl ${contact.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                {contact.isCustomIcon ? (
+                  <contact.icon />
+                ) : (
+                  <contact.icon className="w-7 h-7 md:w-8 md:h-8" />
+                )}
               </div>
-              <h3 className="font-bold text-lg text-foreground mb-2">
+              <h3 className="font-bold text-base md:text-lg text-foreground mb-1 md:mb-2">
                 {contact.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-xs md:text-sm break-all">
                 {contact.value}
               </p>
             </a>
