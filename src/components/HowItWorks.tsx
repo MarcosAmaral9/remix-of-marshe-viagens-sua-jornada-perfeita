@@ -44,7 +44,8 @@ export const destinationVideos = [
   {
     name: "Gramado",
     dates: "10/01/26 a 17/01/26",
-    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/gramado.mp4",
+    isLocal: true,
   },
 ];
 
