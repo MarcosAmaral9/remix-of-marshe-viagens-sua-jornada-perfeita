@@ -32,7 +32,8 @@ export const destinationVideos = [
   {
     name: "Salvador",
     dates: "04/03/26 a 11/03/26",
-    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/salvador.mp4",
+    isLocal: true,
   },
   {
     name: "Foz do Iguaçu",
