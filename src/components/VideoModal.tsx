@@ -112,7 +112,7 @@ const VideoModal = ({ isOpen, onClose, initialVideoIndex }: VideoModalProps) => 
           </div>
 
           {/* Video */}
-          <div className="aspect-[9/16] sm:aspect-video bg-muted max-h-[60vh] sm:max-h-none">
+          <div className="aspect-video bg-muted">
             {currentDestination.isLocal ? (
               <video
                 ref={videoRef}
