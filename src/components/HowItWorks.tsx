@@ -16,7 +16,8 @@ export const destinationVideos = [
   {
     name: "Natal",
     dates: "21/03/26 a 28/03/26",
-    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/natal.mp4",
+    isLocal: true,
   },
   {
     name: "Porto de Galinhas",
