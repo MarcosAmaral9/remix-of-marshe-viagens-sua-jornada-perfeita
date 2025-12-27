@@ -38,7 +38,8 @@ export const destinationVideos = [
   {
     name: "Foz do Iguaçu",
     dates: "14/01/26 a 18/01/26",
-    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/foz-do-iguacu.mp4",
+    isLocal: true,
   },
   {
     name: "Gramado",
