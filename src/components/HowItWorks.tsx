@@ -23,7 +23,8 @@ export const destinationVideos = [
   {
     name: "Porto de Galinhas",
     dates: "16/05/26 a 23/05/26",
-    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/porto-de-galinhas.mp4",
+    isLocal: true,
   },
   {
     name: "Porto Seguro",
