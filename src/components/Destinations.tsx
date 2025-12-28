@@ -12,87 +12,72 @@ import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 
 // Destinos organizados por região e ordem alfabética
-const destinationsByRegion = [
-  {
-    region: "Nordeste",
-    destinations: [
-      {
-        name: "Cabo de Santo Agostinho",
-        location: "Pernambuco, Brasil",
-        price: "R$ 2.650",
-        duration: "8 dias",
-        dates: "16/05/26 a 23/05/26",
-        image: caboSantoAgostinhoImg,
-      },
-      {
-        name: "Fortaleza",
-        location: "Ceará, Brasil",
-        price: "R$ 2.849",
-        duration: "8 dias",
-        dates: "21/01/26 a 28/01/26",
-        image: fortalezaImg,
-      },
-      {
-        name: "Natal",
-        location: "Rio Grande do Norte, Brasil",
-        price: "R$ 3.640",
-        duration: "8 dias",
-        dates: "21/03/26 a 28/03/26",
-        image: natalImg,
-      },
-      {
-        name: "Porto de Galinhas",
-        location: "Pernambuco, Brasil",
-        price: "R$ 2.319",
-        duration: "8 dias",
-        dates: "16/05/26 a 23/05/26",
-        image: portoGalinhasImg,
-      },
-      {
-        name: "Porto Seguro",
-        location: "Bahia, Brasil",
-        price: "R$ 3.100",
-        duration: "6 dias",
-        dates: "Carnaval 13/02/26 a 18/02/26",
-        image: portoSeguroImg,
-      },
-      {
-        name: "Salvador",
-        location: "Bahia, Brasil",
-        price: "R$ 2.750",
-        duration: "8 dias",
-        dates: "04/03/26 a 11/03/26",
-        image: salvadorImg,
-      },
-    ],
-  },
-  {
-    region: "Sul",
-    destinations: [
-      {
-        name: "Foz do Iguaçu",
-        location: "Paraná, Brasil",
-        price: "R$ 1.830",
-        duration: "5 dias",
-        dates: "14/01/26 a 18/01/26",
-        image: fozDoIguacuImg,
-      },
-      {
-        name: "Gramado",
-        location: "Rio Grande do Sul, Brasil",
-        price: "R$ 4.390",
-        duration: "8 dias",
-        dates: "10/01/26 a 17/01/26",
-        image: gramadoImg,
-      },
-    ],
-  },
-];
-
+const destinationsByRegion = [{
+  region: "Nordeste",
+  destinations: [{
+    name: "Cabo de Santo Agostinho",
+    location: "Pernambuco, Brasil",
+    price: "R$ 2.650",
+    duration: "8 dias",
+    dates: "16/05/26 a 23/05/26",
+    image: caboSantoAgostinhoImg
+  }, {
+    name: "Fortaleza",
+    location: "Ceará, Brasil",
+    price: "R$ 2.849",
+    duration: "8 dias",
+    dates: "21/01/26 a 28/01/26",
+    image: fortalezaImg
+  }, {
+    name: "Natal",
+    location: "Rio Grande do Norte, Brasil",
+    price: "R$ 3.640",
+    duration: "8 dias",
+    dates: "21/03/26 a 28/03/26",
+    image: natalImg
+  }, {
+    name: "Porto de Galinhas",
+    location: "Pernambuco, Brasil",
+    price: "R$ 2.319",
+    duration: "8 dias",
+    dates: "16/05/26 a 23/05/26",
+    image: portoGalinhasImg
+  }, {
+    name: "Porto Seguro",
+    location: "Bahia, Brasil",
+    price: "R$ 3.100",
+    duration: "6 dias",
+    dates: "Carnaval 13/02/26 a 18/02/26",
+    image: portoSeguroImg
+  }, {
+    name: "Salvador",
+    location: "Bahia, Brasil",
+    price: "R$ 2.750",
+    duration: "8 dias",
+    dates: "04/03/26 a 11/03/26",
+    image: salvadorImg
+  }]
+}, {
+  region: "Sul",
+  destinations: [{
+    name: "Foz do Iguaçu",
+    location: "Paraná, Brasil",
+    price: "R$ 1.830",
+    duration: "5 dias",
+    dates: "14/01/26 a 18/01/26",
+    image: fozDoIguacuImg
+  }, {
+    name: "Gramado",
+    location: "Rio Grande do Sul, Brasil",
+    price: "R$ 4.390",
+    duration: "8 dias",
+    dates: "10/01/26 a 17/01/26",
+    image: gramadoImg
+  }]
+}];
 const Destinations = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
-
   const handleDestinationClick = (destinationName: string) => {
     const videoIndex = getVideoIndexByDestination(destinationName);
     if (videoIndex !== -1) {
@@ -100,9 +85,7 @@ const Destinations = () => {
       setIsModalOpen(true);
     }
   };
-
-  return (
-    <>
+  return <>
     <section id="destinos" className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
@@ -111,30 +94,20 @@ const Destinations = () => {
             Destinos Populares
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
-            Pacotes Completos
+            Pacotes Aéreos Completos
           </h2>
         </div>
 
         {/* Destinations by Region */}
-        {destinationsByRegion.map((regionData) => (
-          <div key={regionData.region} className="mb-12 last:mb-0">
+        {destinationsByRegion.map(regionData => <div key={regionData.region} className="mb-12 last:mb-0">
             <h3 className="text-2xl font-serif font-semibold text-foreground mb-6 border-l-4 border-primary pl-4">
               {regionData.region}
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {regionData.destinations.map((dest) => (
-                <div
-                  key={dest.name}
-                  onClick={() => handleDestinationClick(dest.name)}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-                >
+              {regionData.destinations.map(dest => <div key={dest.name} onClick={() => handleDestinationClick(dest.name)} className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={dest.image}
-                      alt={dest.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    <img src={dest.image} alt={dest.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                     
                     {/* Play Button Overlay */}
@@ -161,9 +134,7 @@ const Destinations = () => {
                           <Calendar className="w-4 h-4" />
                           {dest.duration}
                         </div>
-                        {dest.dates && (
-                          <span className="text-xs">{dest.dates}</span>
-                        )}
+                        {dest.dates && <span className="text-xs">{dest.dates}</span>}
                       </div>
                       <div className="text-right">
                         <span className="text-xs text-muted-foreground">a partir de</span>
@@ -172,21 +143,13 @@ const Destinations = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
-          </div>
-        ))}
+          </div>)}
       </div>
     </section>
 
-    <VideoModal
-      isOpen={isModalOpen}
-      onClose={() => setIsModalOpen(false)}
-      initialVideoIndex={selectedVideoIndex}
-    />
-    </>
-  );
+    <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} initialVideoIndex={selectedVideoIndex} />
+    </>;
 };
-
 export default Destinations;
