@@ -6,7 +6,8 @@ export const destinationVideos = [
   {
     name: "Cabo de Santo Agostinho",
     dates: "16/05/26 a 23/05/26",
-    videoUrl: "https://player.vimeo.com/video/824804225?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/cabo-santo-agostinho.mp4",
+    isLocal: true,
   },
   {
     name: "Fortaleza",
