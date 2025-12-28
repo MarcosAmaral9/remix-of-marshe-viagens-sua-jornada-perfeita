@@ -33,9 +33,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-              A Marshe Viagens transforma seus sonhos em realidade. 
-              Oferecemos as melhores experiências de viagem com atendimento 
-              personalizado e preços imbatíveis.
+              Nós da Marshe Viagens transformamos seus sonhos em realidade. Oferecemos as melhores experiências de viagem com atendimento personalizado e preços imbatíveis.
             </p>
             
             
