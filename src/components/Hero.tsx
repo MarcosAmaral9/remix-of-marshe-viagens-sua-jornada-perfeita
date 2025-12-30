@@ -51,7 +51,7 @@ const Hero = () => {
               </svg>
             </div>
             
-            <img src={heroImage} alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl" />
+            <img alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl" src="/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png" />
           </div>
         </div>
       </div>
