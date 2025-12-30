@@ -33,11 +33,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-               A Marshe Viagens é uma empresa familiar criada com o propósito de cuidar da sua viagem com a mesma atenção e dedicação que cuidamos da nossa própria família. Nossa história teve início em 2023, em um momento desafiador, marcado pela busca por novas oportunidades após os impactos causados pela pandemia da Covid-19.
-
-Desde então, construímos nossa trajetória com base em comprometimento, transparência e excelência no atendimento. Esse trabalho consistente resultou no reconhecimento de clientes e parceiros, permitindo a expansão contínua do nosso portfólio de serviços. Até o momento, já realizamos a venda de mais de 700 passagens, atendendo viajantes em mais de 60 destinos diferentes, no Brasil e no exterior.
-
-Seguimos ampliando constantemente nossos destinos e fortalecendo parcerias estratégicas para oferecer ainda mais opções, vantagens e experiências personalizadas. Mais do que vender viagens, nossa missão é auxiliar na criação de memórias inesquecíveis, proporcionando experiências únicas em qualquer destino que o cliente desejar. 
+              Nós da Marshe Viagens transformamos seus sonhos em realidade. Oferecemos as melhores experiências de viagem com atendimento personalizado e preços imbatíveis.
             </p>
             
             
@@ -55,7 +51,7 @@ Seguimos ampliando constantemente nossos destinos e fortalecendo parcerias estra
               </svg>
             </div>
             
-            <img src={heroImage} alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl" />
+            <img alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl" src="/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png" />
           </div>
         </div>
       </div>
