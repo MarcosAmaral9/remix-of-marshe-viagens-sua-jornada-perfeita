@@ -6,7 +6,7 @@ const WhatsAppClub = () => {
   const whatsappGroupLink = "https://chat.whatsapp.com/GkDtzLywfKOAMmASHQB5Vg";
 
   return (
-    <section className="py-20 lg:py-32">
+    <section id="grupo-whatsapp" className="py-20 lg:py-32">
       <div className="container mx-auto px-4">
         <div className="relative bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 lg:p-16 overflow-hidden">
           {/* Decorative */}
