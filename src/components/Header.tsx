@@ -10,7 +10,7 @@ const Header = () => {
     { name: "Serviços", href: "#servicos" },
     { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#contato" },
-    { name: "Grupo WhatsApp", href: "#whatsapp-club" },
+    { name: "Grupo WhatsApp", href: "#grupo-whatsapp" },
   ];
 
   return (
