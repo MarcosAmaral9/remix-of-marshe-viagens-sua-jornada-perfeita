@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Plane } from "lucide-react";
 import heroImage from "@/assets/hero-traveler.png";
 const Hero = () => {
   return <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-20">
@@ -62,9 +63,12 @@ Seguimos ampliando constantemente nossos destinos e fortalecendo parcerias estra
             <img alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl rounded-3xl" src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png" />
             
             {/* Destinations badge */}
-            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20">
-              <p className="text-2xl font-bold text-primary text-center">+ 60 Destinos</p>
-              <p className="text-sm text-muted-foreground text-center">Nacionais e internacionais</p>
+            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
+              <Plane className="w-8 h-8 text-primary" />
+              <div>
+                <p className="text-2xl font-bold text-primary">+ 60 Destinos</p>
+                <p className="text-sm text-muted-foreground">Nacionais e internacionais</p>
+              </div>
             </div>
           </div>
         </div>
