@@ -6,8 +6,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Destinos", href: "#destinos" },
     { name: "Serviços", href: "#servicos" },
+    { name: "Destinos", href: "#destinos" },
     { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#contato" },
     { name: "Grupo WhatsApp", href: "#grupo-whatsapp" },
