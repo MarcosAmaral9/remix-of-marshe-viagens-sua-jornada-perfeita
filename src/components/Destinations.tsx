@@ -24,7 +24,7 @@ const destinationsByRegion = [{
   }, {
     name: "Fortaleza",
     location: "Ceará, Brasil",
-    price: "R$ 2.849",
+    price: "R$ 2.638",
     duration: "8 dias",
     dates: "21/01/26 a 28/01/26",
     image: fortalezaImg
