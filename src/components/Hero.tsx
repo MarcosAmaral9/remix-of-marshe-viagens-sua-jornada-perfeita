@@ -33,13 +33,16 @@ const Hero = () => {
               vida nova e plena
             </h1>
             
-            <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-               
+            <p className="text-muted-foreground text-lg max-w-md leading-relaxed">A Marshe Viagens é uma empresa familiar criada com o propósito de cuidar da sua viagem com a mesma atenção e dedicação que cuidamos da nossa própria família. 
 
 
-A Marshe Viagens é uma empresa familiar criada com o propósito de cuidar da sua viagem com a mesma atenção e dedicação que cuidamos da nossa própria família. Nossa história teve início em um momento desafiador, marcado pela busca por novas oportunidades após os impactos causados pela pandemia da Covid-19. Desde então, construímos nossa trajetória com base no comprometimento, transparência e excelência no atendimento. Esse trabalho consistente resultou no reconhecimento de clientes e parceiros, permitindo a expansão contínua do nosso portfólio de serviços.  Seguimos ampliando constantemente nossos destinos e fortalecendo parcerias estratégicas para oferecer ainda mais opções, vantagens e experiências personalizadas. Mais do que vender viagens, nossa missão é auxiliar na criação de memórias inesquecíveis, proporcionando experiências únicas em qualquer destino que o cliente desejar.
- 
-            </p>
+Nossa história teve início em um momento desafiador, marcado pela busca por novas oportunidades após os impactos causados pela pandemia da Covid-19. 
+
+
+Desde então, construímos nossa trajetória com base no comprometimento, transparência e excelência no atendimento. Esse trabalho consistente resultou no reconhecimento de clientes e parceiros, permitindo a expansão contínua do nosso portfólio de serviços.
+
+
+Mais do que vender viagens, nossa missão é auxiliar na criação de memórias inesquecíveis, proporcionando experiências únicas em qualquer destino que o cliente desejar.</p>
             
             
           </div>
