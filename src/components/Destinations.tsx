@@ -134,7 +134,14 @@ const Destinations = () => {
                           <Calendar className="w-4 h-4" />
                           {dest.duration}
                         </div>
-                        {dest.dates && <span className="text-xs">{dest.dates}</span>}
+                        {dest.dates && <span className="text-xs">
+                          {dest.dates.match(/^([A-Za-zÀ-ú\s]+)(\d{2}\/\d{2}\/\d{2}.*)$/) ? (
+                            <>
+                              <span className="block">{dest.dates.match(/^([A-Za-zÀ-ú\s]+)(\d{2}\/\d{2}\/\d{2}.*)$/)?.[1]}</span>
+                              <span className="block">{dest.dates.match(/^([A-Za-zÀ-ú\s]+)(\d{2}\/\d{2}\/\d{2}.*)$/)?.[2]}</span>
+                            </>
+                          ) : dest.dates}
+                        </span>}
                       </div>
                       <div className="text-right">
                         <span className="text-xs text-muted-foreground">a partir de</span>
