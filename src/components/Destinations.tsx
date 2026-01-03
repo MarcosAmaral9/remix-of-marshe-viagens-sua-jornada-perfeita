@@ -69,9 +69,9 @@ const destinationsByRegion = [{
   }, {
     name: "Gramado",
     location: "Rio Grande do Sul, Brasil",
-    price: "R$ 4.390",
-    duration: "8 dias",
-    dates: "10/01/26 a 17/01/26",
+    price: "R$ 3.500",
+    duration: "7 dias",
+    dates: "Dia dos Namorados 11/06/26 a 17/06/26",
     image: gramadoImg
   }]
 }];
