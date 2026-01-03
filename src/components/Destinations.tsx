@@ -62,9 +62,9 @@ const destinationsByRegion = [{
   destinations: [{
     name: "Foz do Iguaçu",
     location: "Paraná, Brasil",
-    price: "R$ 1.830",
-    duration: "5 dias",
-    dates: "14/01/26 a 18/01/26",
+    price: "R$ 1.842",
+    duration: "6 dias",
+    dates: "Dia dos Namorados 09/06/26 a 14/06/26",
     image: fozDoIguacuImg
   }, {
     name: "Gramado",
