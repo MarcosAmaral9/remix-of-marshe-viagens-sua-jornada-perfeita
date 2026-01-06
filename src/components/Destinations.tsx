@@ -4,6 +4,7 @@ import { getVideoIndexByDestination } from "./HowItWorks";
 import VideoModal from "./VideoModal";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import fortalezaImg from "@/assets/dest-fortaleza.jpg";
+import maceioImg from "@/assets/dest-maceio.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
 import natalImg from "@/assets/dest-natal.jpg";
 import portoGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
@@ -28,6 +29,13 @@ const destinationsByRegion = [{
     duration: "8 dias",
     dates: "21/01/26 a 28/01/26",
     image: fortalezaImg
+  }, {
+    name: "Maceió",
+    location: "Alagoas, Brasil",
+    price: "R$ 3.250",
+    duration: "8 dias",
+    dates: "13/06/26 a 20/06/26",
+    image: maceioImg
   }, {
     name: "Natal",
     location: "Rio Grande do Norte, Brasil",
