@@ -12,7 +12,8 @@ export const destinationVideos = [
   {
     name: "Fortaleza",
     dates: "21/01/26 a 28/01/26",
-    videoUrl: "https://player.vimeo.com/video/517090871?autoplay=1&loop=1&muted=1&background=1",
+    videoUrl: "/videos/fortaleza.mp4",
+    isLocal: true,
   },
   {
     name: "Natal",
