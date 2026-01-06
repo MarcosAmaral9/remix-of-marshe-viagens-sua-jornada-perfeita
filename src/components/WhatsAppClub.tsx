@@ -43,7 +43,7 @@ const WhatsAppClub = () => {
 
               <Button
                 asChild
-                className="bg-white text-green-600 hover:bg-white/90 font-bold px-8 py-6 text-lg"
+                className="bg-white text-green-600 hover:bg-white/90 font-bold px-8 py-6 text-lg lg:hidden"
               >
                 <a href={whatsappGroupLink} target="_blank" rel="noopener noreferrer">
                   Entrar no Grupo
