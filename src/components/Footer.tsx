@@ -59,11 +59,11 @@ const Footer = () => {
               <div className="space-y-3 text-muted-foreground">
                 <p className="flex items-start gap-2">
                   <span className="font-medium text-foreground">Telefone:</span>
-                  <a href="tel:+553172391400" className="hover:text-primary transition-colors">(31) 97239-1400</a>
+                  <span>(31) 97239-1400</span>
                 </p>
                 <p className="flex items-start gap-2">
                   <span className="font-medium text-foreground">E-mail:</span>
-                  <a href="mailto:marshe.viagens@gmail.com" className="hover:text-primary transition-colors">marshe.viagens@gmail.com</a>
+                  <span>marshe.viagens@gmail.com</span>
                 </p>
                 <p className="flex items-start gap-2">
                   <span className="font-medium text-foreground">Endereço:</span>
