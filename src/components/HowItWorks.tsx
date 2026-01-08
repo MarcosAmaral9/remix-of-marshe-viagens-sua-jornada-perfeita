@@ -10,12 +10,6 @@ export const destinationVideos = [
     isLocal: true,
   },
   {
-    name: "Fortaleza",
-    dates: "21/01/26 a 28/01/26",
-    videoUrl: "/videos/fortaleza.mp4",
-    isLocal: true,
-  },
-  {
     name: "Maceió",
     dates: "13/06/26 a 20/06/26",
     videoUrl: "/videos/maceio.mp4",
