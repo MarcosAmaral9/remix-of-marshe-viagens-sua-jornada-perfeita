@@ -21,7 +21,7 @@ const FAQ = () => {
     },
     {
       question: "O que está incluso nos pacotes de viagem?",
-      answer: "Nossos pacotes geralmente incluem hospedagem, transporte (aéreo ou terrestre), traslados e, em alguns casos, passeios e refeições. Cada pacote tem suas especificidades, que são detalhadas no momento da consulta."
+      answer: "Nossos pacotes incluem aéreo, hospedagem com café da manhã, traslados e, em alguns casos, passeios. Cada pacote tem suas especificidades, que são detalhadas no momento da consulta."
     },
     {
       question: "Posso personalizar meu roteiro de viagem?",
