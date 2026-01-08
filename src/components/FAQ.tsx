@@ -17,7 +17,7 @@ const FAQ = () => {
     },
     {
       question: "Com quanto tempo de antecedência devo reservar minha viagem?",
-      answer: "Recomendamos reservar com pelo menos 30 dias de antecedência para viagens nacionais e 60 dias para internacionais. Isso garante melhores preços e disponibilidade. Porém, também trabalhamos com viagens de última hora!"
+      answer: "Recomendamos reservar com pelo menos 3 a 6 meses de antecedência para viagens nacionais e internacionais. Isso garante melhores preços e disponibilidade. Porém, também trabalhamos com viagens de última hora!"
     },
     {
       question: "O que está incluso nos pacotes de viagem?",
