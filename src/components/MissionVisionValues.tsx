@@ -6,7 +6,7 @@ const MissionVisionValues = () => {
       icon: Target,
       title: "Missão",
       description:
-        "Proporcionar experiências de viagem inesquecíveis, conectando pessoas aos destinos mais encantadores do Brasil com atendimento personalizado, segurança e o melhor custo-benefício.",
+        "Proporcionar experiências de viagem inesquecíveis, conectando pessoas aos destinos mais encantadores, nacionais e internacionais, com atendimento personalizado, segurança e o melhor custo-benefício.",
     },
     {
       icon: Eye,
