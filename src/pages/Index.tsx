@@ -7,6 +7,7 @@ import Destinations from "@/components/Destinations";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import WhatsAppClub from "@/components/WhatsAppClub";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
         <Testimonials />
         <ContactSection />
         <WhatsAppClub />
+        <FAQ />
       </main>
       <Footer />
     </div>
