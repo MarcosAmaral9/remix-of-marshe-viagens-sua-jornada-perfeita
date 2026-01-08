@@ -13,7 +13,7 @@ const FAQ = () => {
     },
     {
       question: "Quais formas de pagamento são aceitas?",
-      answer: "Aceitamos diversas formas de pagamento: cartão de crédito (em até 12x), PIX, transferência bancária e boleto. Consulte nossa equipe para condições especiais de parcelamento."
+      answer: "Aceitamos diversas formas de pagamento: cartão de crédito (em até 10x), PIX e transferência bancária. Consulte nossa equipe para condições especiais de parcelamento."
     },
     {
       question: "Com quanto tempo de antecedência devo reservar minha viagem?",
