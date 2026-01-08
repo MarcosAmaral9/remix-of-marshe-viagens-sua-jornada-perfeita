@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getVideoIndexByDestination } from "./HowItWorks";
 import VideoModal from "./VideoModal";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
-import fortalezaImg from "@/assets/dest-fortaleza.jpg";
+
 import maceioImg from "@/assets/dest-maceio.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
 import natalImg from "@/assets/dest-natal.jpg";
@@ -22,13 +22,6 @@ const destinationsByRegion = [{
     duration: "8 dias",
     dates: "16/05/26 a 23/05/26",
     image: caboSantoAgostinhoImg
-  }, {
-    name: "Fortaleza",
-    location: "Ceará, Brasil",
-    price: "R$ 2.638",
-    duration: "8 dias",
-    dates: "21/01/26 a 28/01/26",
-    image: fortalezaImg
   }, {
     name: "Maceió",
     location: "Alagoas, Brasil",
