@@ -41,13 +41,13 @@ export const destinationVideos = [
   },
   {
     name: "Foz do Iguaçu",
-    dates: "14/01/26 a 18/01/26",
+    dates: "09/06/26 a 14/06/26",
     videoUrl: "/videos/foz-do-iguacu.mp4",
     isLocal: true,
   },
   {
     name: "Gramado",
-    dates: "10/01/26 a 17/01/26",
+    dates: "11/06/26 a 17/06/26",
     videoUrl: "/videos/gramado.mp4",
     isLocal: true,
   },
