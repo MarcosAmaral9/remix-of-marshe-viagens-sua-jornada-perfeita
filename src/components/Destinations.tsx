@@ -9,6 +9,7 @@ import salvadorImg from "@/assets/dest-salvador.jpg";
 import natalImg from "@/assets/dest-natal.jpg";
 import portoGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
 import caboSantoAgostinhoImg from "@/assets/dest-cabo-santo-agostinho.jpg";
+import fortalezaImg from "@/assets/dest-fortaleza.jpg";
 import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 
@@ -22,6 +23,13 @@ const destinationsByRegion = [{
     duration: "8 dias",
     dates: "16/05/26 a 23/05/26",
     image: caboSantoAgostinhoImg
+  }, {
+    name: "Fortaleza",
+    location: "Ceará, Brasil",
+    price: "R$ 4.100",
+    duration: "6 dias",
+    dates: "19/04/26 a 25/04/26",
+    image: fortalezaImg
   }, {
     name: "Maceió",
     location: "Alagoas, Brasil",
