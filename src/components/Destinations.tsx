@@ -10,6 +10,7 @@ import natalImg from "@/assets/dest-natal.jpg";
 import portoGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
 import caboSantoAgostinhoImg from "@/assets/dest-cabo-santo-agostinho.jpg";
 import fortalezaImg from "@/assets/dest-fortaleza.jpg";
+import joaoPessoaImg from "@/assets/dest-joao-pessoa.jpg";
 import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 
@@ -30,6 +31,13 @@ const destinationsByRegion = [{
     duration: "6 dias",
     dates: "19/04/26 a 25/04/26",
     image: fortalezaImg
+  }, {
+    name: "João Pessoa",
+    location: "Paraíba, Brasil",
+    price: "R$ 3.200",
+    duration: "8 dias",
+    dates: "29/03/26 a 05/04/26",
+    image: joaoPessoaImg
   }, {
     name: "Maceió",
     location: "Alagoas, Brasil",
