@@ -12,3 +12,10 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://marsheviagens.com.br/sitemap.xml
+
+# Crawl-delay for polite crawling
+User-agent: *
+Crawl-delay: 1
