@@ -58,9 +58,9 @@ const destinationsByRegion = [{
   }, {
     name: "Porto Seguro",
     location: "Bahia, Brasil",
-    price: "R$ 3.357",
-    duration: "6 dias",
-    dates: "Carnaval 13/02/26 a 18/02/26",
+    price: "R$ 1.838",
+    duration: "4 dias",
+    dates: "04/05/26 a 08/05/26",
     image: portoSeguroImg
   }, {
     name: "Salvador",
