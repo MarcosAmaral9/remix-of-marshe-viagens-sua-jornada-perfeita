@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const navLinks = [
     { name: "Serviços", href: "#servicos" },
@@ -18,67 +22,100 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl font-serif font-bold text-foreground">
               Marshe <span className="text-primary">Viagens</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
+            {isHomePage ? (
+              navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  {link.name}
+                </a>
+              ))
+            ) : (
+              <Link
+                to="/"
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
-                {link.name}
-              </a>
-            ))}
+                Voltar ao Início
+              </Link>
+            )}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button 
               variant="hero" 
               size="sm" 
               className="px-6 py-2 h-auto"
-              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                if (isHomePage) {
+                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contato';
+                }
+              }}
             >
               Fale Conosco
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
+              {isHomePage ? (
+                navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ))
+              ) : (
+                <Link
+                  to="/"
                   className="text-muted-foreground hover:text-foreground transition-colors font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.name}
-                </a>
-              ))}
+                  Voltar ao Início
+                </Link>
+              )}
               <Button 
                 variant="hero" 
                 size="sm" 
                 className="w-full"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                  if (isHomePage) {
+                    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#contato';
+                  }
                 }}
               >
                 Fale Conosco
