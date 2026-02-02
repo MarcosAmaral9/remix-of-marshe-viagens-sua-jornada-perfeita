@@ -20,7 +20,7 @@ const Hero = () => {
               Melhores destinos do mundo
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-secondary-foreground">
               Viaje, aproveite
               <br />
               <span className="relative">
