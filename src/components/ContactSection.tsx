@@ -14,7 +14,7 @@ const contacts = [
     href: "https://wa.me/5531972391400",
     color: "bg-green-500/10 text-green-600",
     isCustomIcon: false,
-    desktopOnly: false,
+    mobileOnly: true,
   },
   {
     icon: Mail,
@@ -23,7 +23,7 @@ const contacts = [
     href: "mailto:marshe.viagens@gmail.com",
     color: "bg-primary/10 text-primary",
     isCustomIcon: false,
-    desktopOnly: false,
+    mobileOnly: false,
   },
   {
     icon: Instagram,
@@ -32,7 +32,7 @@ const contacts = [
     href: "https://www.instagram.com/marsheviagens",
     color: "bg-pink-500/10 text-pink-600",
     isCustomIcon: false,
-    desktopOnly: false,
+    mobileOnly: true,
   },
   {
     icon: TikTokIcon,
@@ -41,7 +41,7 @@ const contacts = [
     href: "https://www.tiktok.com/@marshe.viagens",
     color: "bg-foreground/10 text-foreground",
     isCustomIcon: true,
-    desktopOnly: false,
+    mobileOnly: true,
   },
 ];
 
@@ -62,11 +62,8 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4 md:gap-8 max-w-5xl lg:max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-4 md:gap-8 max-w-5xl lg:max-w-md mx-auto">
           {contacts.map((contact) => {
-            // Hide Instagram and TikTok on desktop (lg and above)
-            const isSocialOnly = contact.title === "Instagram" || contact.title === "TikTok";
-            
             return (
               <a
                 key={contact.title}
@@ -74,7 +71,7 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex flex-col items-center text-center p-6 md:p-8 bg-card rounded-2xl border border-border hover:shadow-xl hover:scale-105 transition-all duration-300 group touch-manipulation ${
-                  isSocialOnly ? "lg:hidden" : ""
+                  contact.mobileOnly ? "lg:hidden" : ""
                 }`}
               >
                 <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl ${contact.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>

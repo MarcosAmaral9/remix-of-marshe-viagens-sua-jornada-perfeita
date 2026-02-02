@@ -72,7 +72,7 @@ const Footer = () => {
                   href={socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="block text-muted-foreground hover:text-primary transition-colors lg:hidden"
                 >
                   Instagram
                 </a>
@@ -80,7 +80,7 @@ const Footer = () => {
                   href={socialLinks.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="block text-muted-foreground hover:text-primary transition-colors lg:hidden"
                 >
                   TikTok
                 </a>
