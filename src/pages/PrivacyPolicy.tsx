@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
                 1. Introdução
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A Marshe Viagens ("nós", "nosso" ou "empresa") está comprometida em proteger a privacidade 
+                Nossa empresa Marshe Viagens está comprometida em proteger a privacidade 
                 dos visitantes do nosso site. Esta Política de Privacidade explica como coletamos, usamos, 
                 compartilhamos e protegemos suas informações pessoais quando você visita nosso site.
               </p>

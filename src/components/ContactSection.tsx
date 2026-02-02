@@ -62,10 +62,10 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-4 md:gap-8 max-w-5xl lg:max-w-md mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4 md:gap-8 max-w-5xl lg:max-w-2xl mx-auto">
           {contacts.map((contact) => {
-            // On desktop (lg), show only email
-            const isEmail = contact.title === "E-mail";
+            // Hide Instagram and TikTok on desktop (lg and above)
+            const isSocialOnly = contact.title === "Instagram" || contact.title === "TikTok";
             
             return (
               <a
@@ -74,7 +74,7 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex flex-col items-center text-center p-6 md:p-8 bg-card rounded-2xl border border-border hover:shadow-xl hover:scale-105 transition-all duration-300 group touch-manipulation ${
-                  isEmail ? "" : "lg:hidden"
+                  isSocialOnly ? "lg:hidden" : ""
                 }`}
               >
                 <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl ${contact.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
