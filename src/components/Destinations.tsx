@@ -1,4 +1,6 @@
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import maceioImg from "@/assets/dest-maceio.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
@@ -106,9 +108,16 @@ const Destinations = () => {
         {/* Destinations by Region */}
         {destinationsByRegion.map(regionData => (
           <div key={regionData.region} className="mb-12 last:mb-0">
-            <h3 className="text-2xl font-serif font-semibold text-foreground mb-6 border-l-4 border-primary pl-4">
-              {regionData.region}
-            </h3>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-serif font-semibold text-foreground border-l-4 border-primary pl-4">
+                {regionData.region}
+              </h3>
+              <Button variant="ghost" asChild className="gap-2">
+                <Link to={`/destinos/${regionData.region.toLowerCase()}`}>
+                  Ver todos <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {regionData.destinations.map(dest => (
                 <div key={dest.name} className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
