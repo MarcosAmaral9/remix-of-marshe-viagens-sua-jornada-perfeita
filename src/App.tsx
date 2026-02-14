@@ -12,6 +12,16 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import DestinosNordeste from "./pages/DestinosNordeste";
 import DestinosSul from "./pages/DestinosSul";
+import CaboSantoAgostinho from "./pages/destinos/CaboSantoAgostinho";
+import Fortaleza from "./pages/destinos/Fortaleza";
+import JoaoPessoa from "./pages/destinos/JoaoPessoa";
+import Maceio from "./pages/destinos/Maceio";
+import Natal from "./pages/destinos/Natal";
+import PortoDeGalinhas from "./pages/destinos/PortoDeGalinhas";
+import PortoSeguro from "./pages/destinos/PortoSeguro";
+import Salvador from "./pages/destinos/Salvador";
+import FozDoIguacu from "./pages/destinos/FozDoIguacu";
+import Gramado from "./pages/destinos/Gramado";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +40,16 @@ const App = () => (
             <Route path="/termos" element={<TermsConditions />} />
             <Route path="/destinos/nordeste" element={<DestinosNordeste />} />
             <Route path="/destinos/sul" element={<DestinosSul />} />
+            <Route path="/destinos/cabo-de-santo-agostinho" element={<CaboSantoAgostinho />} />
+            <Route path="/destinos/fortaleza" element={<Fortaleza />} />
+            <Route path="/destinos/joao-pessoa" element={<JoaoPessoa />} />
+            <Route path="/destinos/maceio" element={<Maceio />} />
+            <Route path="/destinos/natal" element={<Natal />} />
+            <Route path="/destinos/porto-de-galinhas" element={<PortoDeGalinhas />} />
+            <Route path="/destinos/porto-seguro" element={<PortoSeguro />} />
+            <Route path="/destinos/salvador" element={<Salvador />} />
+            <Route path="/destinos/foz-do-iguacu" element={<FozDoIguacu />} />
+            <Route path="/destinos/gramado" element={<Gramado />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
