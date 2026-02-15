@@ -1,0 +1,190 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import { blogPosts } from "@/data/blogPosts";
+import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+
+const BlogPost = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Marshe Viagens Blog`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", post.metaDescription);
+    }
+  }, [post]);
+
+  if (!post) return <Navigate to="/blog" replace />;
+
+  const relatedPosts = blogPosts
+    .filter((p) => p.slug !== post.slug && (p.category === post.category || p.tags.some((t) => post.tags.includes(t))))
+    .slice(0, 3);
+
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-24">
+        <article>
+          {/* Header */}
+          <section className="relative py-12 lg:py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
+                <ArrowLeft className="w-4 h-4" /> Voltar ao blog
+              </Link>
+
+              <span className="inline-block bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full mb-4">
+                {post.categoryLabel}
+              </span>
+
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
+                {post.title}
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <User className="w-4 h-4" /> {post.author}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-4 h-4" /> {new Date(post.date).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" /> {post.readTime} de leitura
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-4">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="text-xs bg-muted text-muted-foreground px-3 py-1 rounded-full flex items-center gap-1">
+                    <Tag className="w-3 h-3" /> {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Content */}
+          <section className="py-12 lg:py-16">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="flex justify-end mb-8">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({ title: post.title, url: shareUrl });
+                    } else {
+                      navigator.clipboard.writeText(shareUrl);
+                    }
+                  }}
+                >
+                  <Share2 className="w-4 h-4" /> Compartilhar
+                </Button>
+              </div>
+
+              <div
+                className="prose prose-lg max-w-none dark:prose-invert
+                  prose-headings:font-serif prose-headings:text-foreground
+                  prose-p:text-muted-foreground prose-p:leading-relaxed
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                  prose-strong:text-foreground
+                  prose-li:text-muted-foreground
+                  prose-blockquote:border-primary prose-blockquote:text-muted-foreground"
+                dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
+              />
+
+              {/* CTA */}
+              <div className="mt-12 p-8 bg-primary/5 border border-primary/20 rounded-2xl text-center">
+                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+                  Pronto para sua próxima viagem?
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  A Marshe Viagens tem pacotes completos saindo de Belo Horizonte com aéreo, hospedagem e traslados.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button asChild variant="hero">
+                    <Link to="/#destinos">Ver Destinos</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <a href="https://wa.me/5531972391400" target="_blank" rel="noopener noreferrer">
+                      Falar no WhatsApp
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Related */}
+          {relatedPosts.length > 0 && (
+            <section className="py-12 lg:py-16 bg-muted/30">
+              <div className="container mx-auto px-4 max-w-4xl">
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-8">Posts Relacionados</h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {relatedPosts.map((rp) => (
+                    <Link
+                      key={rp.slug}
+                      to={`/blog/${rp.slug}`}
+                      className="group bg-card rounded-xl p-5 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <span className="text-xs text-primary font-medium">{rp.categoryLabel}</span>
+                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                        {rp.title}
+                      </h3>
+                      <span className="text-xs text-muted-foreground mt-2 block">{rp.readTime}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+        </article>
+
+        {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.metaDescription,
+              author: { "@type": "Organization", name: post.author },
+              datePublished: post.date,
+              publisher: {
+                "@type": "Organization",
+                name: "Marshe Viagens",
+                url: "https://marsheviagens.com.br",
+              },
+              mainEntityOfPage: shareUrl,
+            }),
+          }}
+        />
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </div>
+  );
+};
+
+function markdownToHtml(md: string): string {
+  return md
+    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+    .replace(/^\- (.*$)/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^(?!<[hul])/gm, (match) => match ? `<p>${match}` : match)
+    .replace(/\n/g, '<br/>');
+}
+
+export default BlogPost;
