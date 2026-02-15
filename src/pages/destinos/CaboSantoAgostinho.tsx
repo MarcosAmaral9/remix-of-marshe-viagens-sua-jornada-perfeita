@@ -106,7 +106,7 @@ const CaboSantoAgostinho = () => {
                   <li className="flex items-start gap-2">✈️ Passagem aérea ida e volta</li>
                   <li className="flex items-start gap-2">🏨 Hospedagem com café da manhã</li>
                   <li className="flex items-start gap-2">🚐 Traslado aeroporto/hotel</li>
-                  <li className="flex items-start gap-2">🛡️ Seguro viagem incluso</li>
+                  
                 </ul>
 
                 <Button variant="hero" size="lg" className="w-full" asChild>

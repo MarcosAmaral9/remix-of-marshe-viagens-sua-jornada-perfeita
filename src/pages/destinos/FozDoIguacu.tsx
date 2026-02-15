@@ -101,7 +101,7 @@ const FozDoIguacu = () => {
                   <li>✈️ Passagem aérea ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
                   <li>🚐 Traslado aeroporto/hotel</li>
-                  <li>🛡️ Seguro viagem incluso</li>
+                  
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu - Dia dos Namorados (09/06/26 a 14/06/26)" target="_blank" rel="noopener noreferrer">
