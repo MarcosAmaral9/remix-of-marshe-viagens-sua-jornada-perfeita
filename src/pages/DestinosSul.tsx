@@ -19,8 +19,8 @@ const DestinosSul = () => {
       <main className="pt-24">
         <section className="relative py-16 lg:py-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
           <div className="container mx-auto px-4">
-            <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4" /> Voltar ao início
+            <Link to="/#destinos" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
+              <ArrowLeft className="w-4 h-4" /> Voltar aos destinos
             </Link>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               Pacotes Aéreos — <span className="text-primary">Sul</span>
