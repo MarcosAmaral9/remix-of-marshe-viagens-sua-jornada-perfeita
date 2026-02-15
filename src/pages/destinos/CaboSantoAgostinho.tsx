@@ -111,7 +111,7 @@ const CaboSantoAgostinho = () => {
 
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531991292442?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho (16/05/26 a 23/05/26)"
+                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho (16/05/26 a 23/05/26)"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

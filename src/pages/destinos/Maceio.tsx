@@ -103,7 +103,7 @@ const Maceio = () => {
                   <li>🛡️ Seguro viagem incluso</li>
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531991292442?text=Olá! Tenho interesse no pacote para Maceió (13/06/26 a 20/06/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Maceió (13/06/26 a 20/06/26)" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
