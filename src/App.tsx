@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/use-theme";
 import RouteScrollToTop from "@/components/RouteScrollToTop";
 import Index from "./pages/Index";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -50,6 +52,8 @@ const App = () => (
             <Route path="/destinos/salvador" element={<Salvador />} />
             <Route path="/destinos/foz-do-iguacu" element={<FozDoIguacu />} />
             <Route path="/destinos/gramado" element={<Gramado />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

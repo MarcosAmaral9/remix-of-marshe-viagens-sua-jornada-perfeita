@@ -12,6 +12,7 @@ const Header = () => {
   const navLinks = [
     { name: "Serviços", href: "#servicos" },
     { name: "Destinos", href: "#destinos" },
+    { name: "Blog", href: "/blog", isRoute: true },
     { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#contato" },
     { name: "Grupo WhatsApp", href: "#grupo-whatsapp" },
@@ -32,21 +33,39 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             {isHomePage ? (
               navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))
             ) : (
-              <Link
-                to="/"
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-              >
-                Voltar ao Início
-              </Link>
+              <>
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  Início
+                </Link>
+                <Link
+                  to="/blog"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  Blog
+                </Link>
+              </>
             )}
           </nav>
 
@@ -87,23 +106,43 @@ const Header = () => {
             <div className="flex flex-col gap-4">
               {isHomePage ? (
                 navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
+                  link.isRoute ? (
+                    <Link
+                      key={link.name}
+                      to={link.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )
+                ))
+              ) : (
+                <>
+                  <Link
+                    to="/"
                     className="text-muted-foreground hover:text-foreground transition-colors font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {link.name}
-                  </a>
-                ))
-              ) : (
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Voltar ao Início
-                </Link>
+                    Início
+                  </Link>
+                  <Link
+                    to="/blog"
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blog
+                  </Link>
+                </>
               )}
               <Button 
                 variant="hero" 
