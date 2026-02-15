@@ -34,7 +34,7 @@ const Destinations = () => {
             Destinos Populares
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
-            Pacotes Aéreos Completos
+            Pacotes Aéreos Completos Saindo de Belo Horizonte / Confins
           </h2>
           <p className="text-muted-foreground mt-4">
             Escolha a região e descubra destinos incríveis com pacotes completos incluindo aéreo, hospedagem e traslados.
