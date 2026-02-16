@@ -19,11 +19,11 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <BlogPreview />
         <MissionVisionValues />
         <Services />
         <BookingSteps />
         <Destinations />
-        <BlogPreview />
         <Testimonials />
         <ContactSection />
         <WhatsAppClub />

@@ -3,9 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Tag, User, Share2, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -85,11 +86,17 @@ const BlogPost = () => {
                   variant="outline"
                   size="sm"
                   className="gap-2"
-                  onClick={() => {
+                  onClick={async () => {
+                    const url = window.location.href;
                     if (navigator.share) {
-                      navigator.share({ title: post.title, url: shareUrl });
+                      try {
+                        await navigator.share({ title: post.title, text: post.excerpt, url });
+                      } catch (e) {
+                        // user cancelled share
+                      }
                     } else {
-                      navigator.clipboard.writeText(shareUrl);
+                      await navigator.clipboard.writeText(url);
+                      toast.success("Link copiado!");
                     }
                   }}
                 >
