@@ -4,6 +4,7 @@ import MissionVisionValues from "@/components/MissionVisionValues";
 import Services from "@/components/Services";
 import BookingSteps from "@/components/BookingSteps";
 import Destinations from "@/components/Destinations";
+import BlogPreview from "@/components/BlogPreview";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import WhatsAppClub from "@/components/WhatsAppClub";
@@ -22,6 +23,7 @@ const Index = () => {
         <Services />
         <BookingSteps />
         <Destinations />
+        <BlogPreview />
         <Testimonials />
         <ContactSection />
         <WhatsAppClub />

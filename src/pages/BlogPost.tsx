@@ -47,6 +47,14 @@ const BlogPost = () => {
                 {post.title}
               </h1>
 
+              <div className="mt-6 rounded-2xl overflow-hidden max-h-96">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
               <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <User className="w-4 h-4" /> {post.author}
