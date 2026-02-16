@@ -87,10 +87,12 @@ const Blog = () => {
                     className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                   >
                     <div className="relative h-48 overflow-hidden bg-primary/10">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-6xl opacity-30">✈️</span>
-                      </div>
-                      <div className="absolute top-4 left-4">
+                       <img
+                         src={post.image}
+                         alt={post.title}
+                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                       />
+                       <div className="absolute top-4 left-4">
                         <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
                           {post.categoryLabel}
                         </span>

@@ -1,3 +1,13 @@
+import portoDeGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
+import gramadoImg from "@/assets/dest-gramado.jpg";
+import malaPraiaImg from "@/assets/blog-mala-praia.jpg";
+import salvadorImg from "@/assets/dest-salvador.jpg";
+import economizarImg from "@/assets/blog-economizar-nordeste.jpg";
+import fozImg from "@/assets/dest-foz-do-iguacu.jpg";
+import natalImg from "@/assets/dest-natal.jpg";
+import documentosImg from "@/assets/blog-documentos-viagem.jpg";
+import joaoPessoaImg from "@/assets/dest-joao-pessoa.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -70,7 +80,7 @@ Reserve seu pacote com antecedência para garantir os melhores preços e disponi
     author: "Marshe Viagens",
     date: "2026-02-10",
     readTime: "8 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: portoDeGalinhasImg,
     tags: ["Porto de Galinhas", "Nordeste", "Pernambuco", "Praias", "Piscinas Naturais"],
     metaDescription: "Guia completo de Porto de Galinhas: piscinas naturais, melhores praias, restaurantes, melhor época para visitar e como chegar saindo de BH. Planeje sua viagem!",
   },
@@ -136,7 +146,7 @@ A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horiz
     author: "Marshe Viagens",
     date: "2026-02-08",
     readTime: "10 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: gramadoImg,
     tags: ["Gramado", "Canela", "Serra Gaúcha", "Roteiro", "Sul"],
     metaDescription: "Roteiro completo de 7 dias em Gramado e Canela: passeios dia a dia, restaurantes, vinícolas e dicas práticas. Planeje sua viagem à Serra Gaúcha!",
   },
@@ -204,7 +214,7 @@ Com os pacotes da **Marshe Viagens**, você cuida apenas da mala — nós cuidam
     author: "Marshe Viagens",
     date: "2026-02-05",
     readTime: "6 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: malaPraiaImg,
     tags: ["Dicas", "Mala de Viagem", "Praia", "Organização"],
     metaDescription: "Lista completa do que levar na mala para viagem de praia: roupas, proteção solar, documentos e acessórios. Dicas práticas para não esquecer nada!",
   },
@@ -266,7 +276,7 @@ A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins a
     author: "Marshe Viagens",
     date: "2026-01-28",
     readTime: "9 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: salvadorImg,
     tags: ["Salvador", "Bahia", "Nordeste", "Pelourinho", "Cultura"],
     metaDescription: "Guia completo de Salvador: Pelourinho, praias, gastronomia baiana, pontos turísticos e dicas. Planeje sua viagem à capital da alegria!",
   },
@@ -332,7 +342,7 @@ Nossos pacotes já incluem aéreo, hospedagem com café da manhã e traslados, a
     author: "Marshe Viagens",
     date: "2026-01-20",
     readTime: "7 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: economizarImg,
     tags: ["Economia", "Nordeste", "Dicas", "Planejamento", "Orçamento"],
     metaDescription: "10 dicas práticas para economizar na viagem ao Nordeste: passagens, hospedagem, alimentação e passeios. Viaje mais gastando menos!",
   },
@@ -403,8 +413,206 @@ Foz do Iguaçu recebe turistas o ano inteiro, mas os meses de **março a maio e 
     author: "Marshe Viagens",
     date: "2026-01-15",
     readTime: "9 min",
-    image: "/lovable-uploads/6da51e3b-b70c-43eb-8483-60450d7a4545.png",
+    image: fozImg,
     tags: ["Foz do Iguaçu", "Cataratas", "Itaipu", "Roteiro", "Sul"],
     metaDescription: "Roteiro de 5 dias em Foz do Iguaçu: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e Parque das Aves. Planeje sua viagem!",
+  },
+  // ===== 3 NOVOS POSTS =====
+  {
+    slug: "guia-natal-praias-dunas-gastronomia",
+    title: "Guia de Natal: Praias, Dunas e a Gastronomia Potiguar que Surpreende",
+    excerpt: "Descubra Natal, a Cidade do Sol: das dunas de Genipabu às praias de Ponta Negra, passando pela culinária local e passeios imperdíveis.",
+    content: `
+## Natal: a Cidade do Sol
+
+Natal é conhecida como a **Cidade do Sol** por ter um dos climas mais agradáveis do Brasil, com sol praticamente o ano inteiro. A capital do Rio Grande do Norte combina praias deslumbrantes, dunas impressionantes e uma gastronomia que surpreende os visitantes.
+
+## Principais pontos turísticos
+
+### Praia de Ponta Negra
+O **Morro do Careca** é o cartão-postal de Natal. A praia de Ponta Negra é a mais badalada da cidade, com ótima infraestrutura de bares, restaurantes e vida noturna.
+
+### Dunas de Genipabu
+O passeio de buggy pelas **Dunas de Genipabu** é obrigatório. A famosa pergunta "com ou sem emoção?" define a intensidade do passeio nas dunas. A Lagoa de Genipabu completa a experiência.
+
+### Forte dos Reis Magos
+Construído em 1598, o **Forte dos Reis Magos** é o marco fundador da cidade. Localizado na ponta de uma península, oferece uma vista panorâmica da foz do Rio Potengi.
+
+### Parrachos de Maracajaú
+A cerca de 60 km de Natal, os **Parrachos de Maracajaú** são piscinas naturais em alto-mar, ideais para mergulho e snorkel entre peixes coloridos e corais.
+
+## Praias imperdíveis
+
+1. **Ponta Negra** — a mais famosa, com o Morro do Careca
+2. **Praia do Forte** — em frente ao Forte dos Reis Magos
+3. **Praia de Pirangi** — onde fica o maior cajueiro do mundo
+4. **Praia da Pipa** — a 85 km de Natal, com falésias e golfinhos
+
+## Gastronomia potiguar
+
+- **Camarão na moranga** — camarão cremoso servido dentro de uma abóbora assada
+- **Ginga com tapioca** — petisco típico, peixinho frito com tapioca
+- **Carne de sol com queijo coalho** — clássico nordestino
+- **Cartola** — banana frita com queijo coalho e canela
+
+### Onde comer
+- **Camarões Potiguar** — referência em frutos do mar
+- **Mangai** — buffet de comida regional nordestina
+- **Old Five** — gastronomia contemporânea com vista para Ponta Negra
+
+## Melhor época
+
+Natal tem sol o ano inteiro, mas os meses de **setembro a fevereiro** são os mais secos. A temperatura média é de 28°C durante todo o ano.
+
+## Pacotes saindo de BH
+
+A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins a partir de **R$ 2.387 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+    `,
+    category: "guias",
+    categoryLabel: "Guias de Destinos",
+    author: "Marshe Viagens",
+    date: "2026-02-14",
+    readTime: "8 min",
+    image: natalImg,
+    tags: ["Natal", "Rio Grande do Norte", "Nordeste", "Praias", "Dunas"],
+    metaDescription: "Guia completo de Natal: praias, dunas de Genipabu, Ponta Negra, gastronomia potiguar e dicas práticas. Planeje sua viagem à Cidade do Sol!",
+  },
+  {
+    slug: "documentos-necessarios-viagem-nacional",
+    title: "Documentos Necessários para Viagem Nacional: Checklist Completo 2026",
+    excerpt: "Não corra riscos! Confira todos os documentos que você precisa levar em viagens nacionais: adultos, crianças, idosos e situações especiais.",
+    content: `
+## Viaje preparado: documentos em dia
+
+Nada pior do que chegar ao aeroporto e descobrir que esqueceu um documento importante. Este **checklist completo** cobre todas as situações para você viajar tranquilo em 2026.
+
+## Documentos obrigatórios para adultos
+
+- ✅ **RG** (com menos de 10 anos de emissão e em bom estado) OU
+- ✅ **CNH** (dentro da validade)
+- ✅ **Passaporte** (aceito como documento de identidade)
+
+**Atenção:** Carteiras profissionais (OAB, CRM, CREA) são aceitas como documento de identidade em voos nacionais.
+
+## Crianças e adolescentes
+
+### Viajando com os pais
+- ✅ Certidão de nascimento original OU RG da criança
+- ✅ Documento dos pais
+
+### Viajando com apenas um dos pais
+- ✅ Documentos da criança
+- ✅ **Autorização do outro genitor** com firma reconhecida em cartório OU
+- ✅ Autorização judicial
+
+### Viajando com terceiros (avós, tios, etc.)
+- ✅ **Autorização de ambos os pais** com firma reconhecida
+- ✅ Documento do acompanhante
+
+## Idosos (60+)
+
+- ✅ RG ou CNH (mesmo documento dos adultos)
+- ✅ **Carteira do Idoso** (para descontos em ônibus e hotéis)
+
+## Documentos recomendados (não obrigatórios)
+
+- 📋 Cartão do plano de saúde
+- 📋 Receitas médicas (se tomar medicamentos controlados)
+- 📋 Comprovante de reserva do hotel
+- 📋 Comprovante de passagem (digital ou impresso)
+- 📋 Cartão de vacinação (especialmente para destinos na Amazônia)
+
+## Dicas importantes
+
+### No aeroporto
+- Chegue com **2h de antecedência** para voos domésticos
+- Check-in online agiliza o embarque
+- Documentos digitais (RG digital, CNH digital) são aceitos em aeroportos
+
+### Cópias de segurança
+- Tire **fotos de todos os documentos** e salve na nuvem
+- Tenha uma **cópia impressa** na mala despachada
+- Compartilhe as fotos com alguém de confiança
+
+### Documentos vencidos
+- RG com **mais de 10 anos** pode ser recusado
+- CNH vencida **não é aceita** como documento de viagem
+- Providencie a renovação com antecedência
+
+## Viaje sem preocupação
+
+Com os pacotes da **Marshe Viagens**, além de cuidar do aéreo, hospedagem e traslados, enviamos um guia completo pré-viagem com tudo que você precisa saber. Consulte nossos destinos!
+    `,
+    category: "dicas",
+    categoryLabel: "Dicas de Viagem",
+    author: "Marshe Viagens",
+    date: "2026-02-12",
+    readTime: "6 min",
+    image: documentosImg,
+    tags: ["Documentos", "Dicas", "Planejamento", "Aeroporto", "Viagem Nacional"],
+    metaDescription: "Checklist completo de documentos para viagem nacional em 2026: adultos, crianças, idosos e situações especiais. Não esqueça nada!",
+  },
+  {
+    slug: "roteiro-4-dias-joao-pessoa-litoral-sul",
+    title: "Roteiro de 4 Dias em João Pessoa: Praias, Pôr do Sol e Litoral Sul",
+    excerpt: "Aproveite o melhor de João Pessoa em 4 dias: praias urbanas, o pôr do sol do Jacaré, praias do litoral sul e a gastronomia paraibana.",
+    content: `
+## João Pessoa: onde o sol nasce primeiro
+
+João Pessoa é a **capital mais verde do Brasil** e o ponto mais oriental das Américas — onde o sol nasce primeiro. Com praias lindas, clima agradável e um custo-benefício excelente, é um destino que encanta.
+
+## Dia 1 — Praias Urbanas e Centro Histórico
+
+- Manhã: **Praia de Tambaú** — a mais famosa, com boa infraestrutura
+- Almoço na **Feirinha de Tambaú** — artesanato e comida regional
+- Tarde: **Centro Histórico** — igrejas barrocas e casarões coloniais
+- Noite: Pôr do sol no **Jacaré** com som de Bolero de Ravel ao saxofone (imperdível!)
+
+## Dia 2 — Litoral Sul
+
+O Litoral Sul de João Pessoa é um espetáculo:
+
+- Manhã: **Praia do Conde** — águas calmas e coqueirais
+- **Praia de Coqueirinho** — considerada uma das mais bonitas do Nordeste
+- **Praia de Tambaba** — primeira praia oficial de naturismo do Nordeste (área mista disponível)
+- Almoço em restaurante à beira-mar em Coqueirinho
+
+## Dia 3 — Litoral Norte e Picãozinho
+
+- Manhã: Passeio de barco até as **piscinas naturais de Picãozinho** na maré baixa
+- Tarde: **Praia do Bessa** — mais tranquila, ótima para relaxar
+- Visite o **Farol do Cabo Branco** — ponto mais oriental das Américas
+- Noite: Jantar no **Mangai** — buffet de comida nordestina autêntica
+
+## Dia 4 — Compras e Retorno
+
+- Manhã: Compras no **Mercado de Artesanato Paraibano**
+- Visite a **Estação Cabo Branco** — centro cultural projetado por Oscar Niemeyer
+- Último mergulho em Tambaú
+- Retorno ao aeroporto
+
+## Gastronomia paraibana
+
+- **Rubacão** — arroz com feijão verde, carne de sol, queijo coalho e nata
+- **Tapioca** — a melhor tapioca do Brasil, segundo os locais
+- **Caranguejo** — servido em praticamente todas as barracas de praia
+- **Rapadura** — doce típico paraibano
+
+## Quanto custa?
+
+A Marshe Viagens oferece pacotes de **8 dias para João Pessoa** saindo de Belo Horizonte/Confins a partir de **R$ 2.182 por pessoa**, incluindo aéreo, hospedagem com café da manhã e traslados.
+
+## Melhor época
+
+João Pessoa tem clima tropical o ano inteiro. Os meses mais secos são de **setembro a fevereiro**. Evite junho e julho por conta das chuvas.
+    `,
+    category: "roteiros",
+    categoryLabel: "Roteiros",
+    author: "Marshe Viagens",
+    date: "2026-02-13",
+    readTime: "7 min",
+    image: joaoPessoaImg,
+    tags: ["João Pessoa", "Paraíba", "Nordeste", "Roteiro", "Litoral Sul"],
+    metaDescription: "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
   },
 ];
