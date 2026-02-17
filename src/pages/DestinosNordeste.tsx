@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,12 @@ const destinations = [
 ];
 
 const DestinosNordeste = () => {
+  useSeo({
+    title: "Pacotes Aéreos Nordeste | Marshe Viagens - Saindo de BH",
+    description: "Pacotes de viagem para o Nordeste saindo de Belo Horizonte. Porto Seguro, Fortaleza, Salvador, Maceió, Natal e mais com aéreo, hospedagem e traslados.",
+    canonical: "https://marsheviagens.com.br/destinos/nordeste",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

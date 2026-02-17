@@ -2,8 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import { useSeo } from "@/hooks/use-seo";
 
 const PrivacyPolicy = () => {
+  useSeo({
+    title: "Política de Privacidade | Marshe Viagens",
+    description: "Política de privacidade da Marshe Viagens. Saiba como coletamos, usamos e protegemos seus dados pessoais.",
+    canonical: "https://marsheviagens.com.br/privacidade",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-fortaleza.jpg";
 
 const Fortaleza = () => {
+  useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com.br/destinos/fortaleza" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

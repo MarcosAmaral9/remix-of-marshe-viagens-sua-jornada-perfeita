@@ -7,6 +7,9 @@ import fozImg from "@/assets/dest-foz-do-iguacu.jpg";
 import natalImg from "@/assets/dest-natal.jpg";
 import documentosImg from "@/assets/blog-documentos-viagem.jpg";
 import joaoPessoaImg from "@/assets/dest-joao-pessoa.jpg";
+import maceioImg from "@/assets/blog-guia-maceio.jpg";
+import viagemCriancasImg from "@/assets/blog-viagem-criancas.jpg";
+import portoSeguroImg from "@/assets/blog-roteiro-porto-seguro.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -614,5 +617,232 @@ João Pessoa tem clima tropical o ano inteiro. Os meses mais secos são de **set
     image: joaoPessoaImg,
     tags: ["João Pessoa", "Paraíba", "Nordeste", "Roteiro", "Litoral Sul"],
     metaDescription: "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
+  },
+  // ===== 3 NOVOS POSTS (Fev 2026) =====
+  {
+    slug: "guia-maceio-praias-piscinas-naturais",
+    title: "Guia de Maceió: Praias Caribenhas, Piscinas Naturais e Gastronomia Alagoana",
+    excerpt: "Descubra Maceió, o Caribe brasileiro: das piscinas naturais de Pajuçara às praias de São Miguel dos Milagres, passando pela culinária alagoana.",
+    content: `
+## Maceió: o Caribe brasileiro
+
+Maceió é a capital de Alagoas e um dos destinos mais surpreendentes do Nordeste. Com águas em tons de verde e azul que lembram o Caribe, **praias de tirar o fôlego** e uma gastronomia rica, a cidade conquista todos os visitantes.
+
+## Principais pontos turísticos
+
+### Piscinas Naturais de Pajuçara
+Na maré baixa, formam-se **piscinas naturais** a cerca de 1 km da costa. O passeio de jangada é imperdível e custa em média R$ 30 por pessoa.
+
+### Praia do Francês
+A cerca de 20 km do centro, a **Praia do Francês** é uma das mais bonitas do estado, com barreira de corais que forma uma área de águas calmas e outra com ondas para surfe.
+
+### São Miguel dos Milagres
+A 100 km de Maceió, **São Miguel dos Milagres** é um paraíso preservado com piscinas naturais cristalinas e coqueirais infinitos. É possível nadar com tartarugas marinhas!
+
+### Praia do Gunga
+Considerada uma das praias mais bonitas do Brasil, a **Praia do Gunga** tem águas verdes esmeralda, falésias coloridas e coqueirais.
+
+## Praias imperdíveis
+
+1. **Pajuçara** — a mais famosa, com piscinas naturais
+2. **Ponta Verde** — ótima infraestrutura, ideal para caminhadas
+3. **Praia do Francês** — barreira de coral e águas cristalinas
+4. **Praia do Gunga** — falésias e paisagem espetacular
+5. **Barra de São Miguel** — águas calmas e tranquilidade
+
+## Gastronomia alagoana
+
+- **Sururu** — molusco típico em caldos e moquecas
+- **Tapioca recheada** — com carne de sol, queijo e coco
+- **Peixe frito com pirão** — clássico à beira-mar
+- **Bolo de goma** — sobremesa regional
+
+### Onde comer
+- **Wanchako** — gastronomia contemporânea com frutos do mar
+- **Massarella** — culinária italiana com toque alagoano
+- **Lopana** — pratos regionais com vista para o mar
+
+## Melhor época
+
+Os meses de **setembro a março** são os mais secos e com melhor visibilidade nas piscinas naturais. A temperatura média é de 27°C o ano inteiro.
+
+## Pacotes saindo de BH
+
+A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins a partir de **R$ 3.250 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+    `,
+    category: "guias",
+    categoryLabel: "Guias de Destinos",
+    author: "Marshe Viagens",
+    date: "2026-02-16",
+    readTime: "8 min",
+    image: maceioImg,
+    tags: ["Maceió", "Alagoas", "Nordeste", "Praias", "Piscinas Naturais"],
+    metaDescription: "Guia completo de Maceió: praias caribenhas, piscinas naturais de Pajuçara, São Miguel dos Milagres, gastronomia alagoana e dicas. Planeje sua viagem!",
+  },
+  {
+    slug: "dicas-viajar-com-criancas-sem-estresse",
+    title: "Como Viajar com Crianças Sem Estresse: 12 Dicas Práticas Para Famílias",
+    excerpt: "Viajar com filhos pequenos pode ser divertido! Confira 12 dicas práticas para planejar viagens em família com tranquilidade, desde a escolha do destino até o entretenimento no avião.",
+    content: `
+## Viagem em família sem estresse
+
+Viajar com crianças pode parecer desafiador, mas com o **planejamento certo** a experiência se torna incrível para toda a família. Confira nossas dicas testadas e aprovadas.
+
+## 1. Escolha o destino certo
+
+Nem todo destino é ideal para crianças. Prefira locais com:
+- **Praias de águas calmas** (Porto de Galinhas, Muro Alto, Porto da Barra)
+- **Infraestrutura familiar** (hotéis com kids club, brinquedoteca)
+- **Atrações para todas as idades**
+
+## 2. Reserve voos em horários estratégicos
+
+Voos no **início da manhã ou à noite** coincidem com horários de sono das crianças, reduzindo agitação. Evite conexões longas.
+
+## 3. Leve lanches e entretenimento
+
+No avião, leve:
+- 🍪 Lanches que a criança gosta
+- 📱 Tablet com filmes e jogos baixados (modo offline!)
+- 🎨 Kit de colorir e adesivos
+- 🎧 Fones de ouvido infantis
+
+## 4. Faça check-in online
+
+Evite filas no aeroporto. Faça **check-in online** e chegue com tempo suficiente para embarcar sem correria.
+
+## 5. Escolha hospedagem com cozinha
+
+Hotéis ou apart-hotéis com **cozinha básica** permitem preparar refeições simples, economizar e atender restrições alimentares.
+
+## 6. Respeite o ritmo das crianças
+
+Não tente fazer tudo em um dia. **Intercale passeios com momentos de descanso**. Crianças cansadas = crianças irritadas.
+
+## 7. Proteção solar redobrada
+
+Crianças têm pele mais sensível. Use:
+- ☀️ Protetor solar FPS 60+ infantil
+- 🧢 Chapéu e camiseta UV
+- ⏰ Evite sol entre 10h e 16h
+
+## 8. Documentos das crianças
+
+Para voos nacionais com crianças:
+- ✅ Certidão de nascimento ou RG
+- ✅ Se viajar com apenas um dos pais: **autorização do outro** com firma reconhecida
+- ✅ Se viajar com avós/tios: autorização de **ambos os pais**
+
+## 9. Contrate seguro viagem
+
+Imprevistos acontecem mais com crianças. Um **seguro viagem familiar** custa pouco e garante tranquilidade.
+
+## 10. Envolva as crianças no planejamento
+
+Deixe as crianças **escolherem um passeio** do roteiro. Isso aumenta o entusiasmo e a cooperação durante a viagem.
+
+## 11. Leve medicamentos básicos
+
+Monte um **kit farmácia infantil**: antitérmico, antialérgico, soro fisiológico, band-aids e medicamentos de uso contínuo.
+
+## 12. Pacotes com tudo incluso são aliados
+
+Pacotes que incluem **aéreo, hospedagem e traslados** eliminam a preocupação com logística. A Marshe Viagens oferece opções perfeitas para famílias.
+
+## Destinos ideais para famílias
+
+A Marshe Viagens recomenda:
+- **Porto de Galinhas** — piscinas naturais rasas, perfeitas para crianças
+- **Gramado** — Mini Mundo, Mundo de Chocolate e Alpen Park
+- **Foz do Iguaçu** — Parque das Aves e Cataratas
+
+Consulte nossos pacotes com saída de Belo Horizonte!
+    `,
+    category: "dicas",
+    categoryLabel: "Dicas de Viagem",
+    author: "Marshe Viagens",
+    date: "2026-02-15",
+    readTime: "7 min",
+    image: viagemCriancasImg,
+    tags: ["Crianças", "Família", "Dicas", "Planejamento", "Viagem em Família"],
+    metaDescription: "12 dicas práticas para viajar com crianças sem estresse: destinos, documentos, lanches no avião, proteção solar e planejamento. Guia completo para famílias!",
+  },
+  {
+    slug: "roteiro-6-dias-porto-seguro-arraial-trancoso",
+    title: "Roteiro de 6 Dias em Porto Seguro, Arraial d'Ajuda e Trancoso",
+    excerpt: "Aproveite o melhor do sul da Bahia em 6 dias: as praias de Porto Seguro, o charme de Arraial d'Ajuda e a sofisticação de Trancoso em um roteiro completo.",
+    content: `
+## Sul da Bahia: Porto Seguro e região
+
+O sul da Bahia concentra alguns dos destinos mais encantadores do Brasil. **Porto Seguro, Arraial d'Ajuda e Trancoso** formam um trio perfeito que combina praias paradisíacas, história e badalação.
+
+## Dia 1 — Chegada e Centro Histórico
+
+- Chegada ao aeroporto de Porto Seguro
+- Tarde: **Centro Histórico** — onde o Brasil foi descoberto em 1500
+- Visite o **Marco do Descobrimento** e a **Igreja de Nossa Senhora da Pena**
+- Noite: **Passarela do Álcool** — rua animada com bares, restaurantes e artesanato
+
+## Dia 2 — Praias de Porto Seguro
+
+- Manhã: **Praia de Taperapuã** — a mais famosa, com barracas como Axé Moi e Tôa Tôa
+- Tarde: **Praia de Mutá** — mais tranquila, com coqueirais
+- Passeio de escuna pela costa (saída do centro)
+- Noite: Luau na praia
+
+## Dia 3 — Arraial d'Ajuda
+
+Atravesse de balsa (10 min) para **Arraial d'Ajuda**:
+
+- Manhã: **Praia de Pitinga** — falésias coloridas e águas cristalinas
+- Almoço: **Rua do Mucugê** — a rua mais charmosa, com restaurantes e lojas
+- Tarde: **Praia do Parracho** — boa para snorkel na maré baixa
+- Noite: Shows e festas no centrinho de Arraial
+
+## Dia 4 — Trancoso
+
+Siga para **Trancoso** (45 min de carro):
+
+- Manhã: **Quadrado de Trancoso** — Patrimônio Histórico, com casinhas coloridas e a Igreja de São João Batista
+- Almoço em um dos restaurantes sofisticados do Quadrado
+- Tarde: **Praia dos Nativos** — águas mornas e areia dourada
+- **Praia do Espelho** — considerada uma das mais bonitas do Brasil (30 min ao sul)
+
+## Dia 5 — Parque Marinho de Recife de Fora
+
+- Manhã: Passeio de barco ao **Recife de Fora** — mergulho em piscinas naturais com peixes coloridos e corais
+- Tarde: Relaxar na **Praia do Mundaí** 
+- Compras de artesanato indígena Pataxó
+- Noite: Jantar especial na Passarela do Álcool
+
+## Dia 6 — Últimos mergulhos e retorno
+
+- Manhã: Último mergulho na praia
+- Compras de souvenirs e lembranças
+- Retorno ao aeroporto
+
+## Gastronomia do sul da Bahia
+
+- **Moqueca capixaba x baiana** — prove as duas versões!
+- **Acarajé** — presente em todas as praias
+- **Peixe na folha de bananeira** — especialidade local
+- **Cocada e doces regionais** — imperdíveis
+
+## Quanto custa?
+
+A Marshe Viagens oferece pacotes de **4 dias para Porto Seguro** saindo de Belo Horizonte/Confins a partir de **R$ 1.838 por pessoa**, incluindo aéreo, hospedagem e traslados. Para roteiros estendidos com Arraial e Trancoso, consulte condições especiais.
+
+## Melhor época
+
+O sul da Bahia tem clima agradável o ano inteiro. Os meses de **setembro a março** são mais secos, com temperaturas entre 25°C e 32°C. Evite junho-julho por conta das chuvas.
+    `,
+    category: "roteiros",
+    categoryLabel: "Roteiros",
+    author: "Marshe Viagens",
+    date: "2026-02-17",
+    readTime: "9 min",
+    image: portoSeguroImg,
+    tags: ["Porto Seguro", "Arraial d'Ajuda", "Trancoso", "Bahia", "Roteiro"],
+    metaDescription: "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
   },
 ];

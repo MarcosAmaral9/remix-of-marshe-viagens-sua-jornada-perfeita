@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-salvador.jpg";
 
 const Salvador = () => {
+  useSeo({ title: "Pacote Salvador | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Salvador, BA. Pelourinho, Farol da Barra, praias e cultura baiana. Aéreo, hospedagem e traslados inclusos.", canonical: "https://marsheviagens.com.br/destinos/salvador" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

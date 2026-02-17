@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-foz-do-iguacu.jpg";
 
 const FozDoIguacu = () => {
+  useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/foz-do-iguacu" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

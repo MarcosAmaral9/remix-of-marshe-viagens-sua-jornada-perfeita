@@ -2,8 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import { useSeo } from "@/hooks/use-seo";
 
 const TermsConditions = () => {
+  useSeo({
+    title: "Termos e Condições | Marshe Viagens",
+    description: "Termos e condições de uso da Marshe Viagens. Leia antes de contratar nossos serviços de viagem.",
+    canonical: "https://marsheviagens.com.br/termos",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

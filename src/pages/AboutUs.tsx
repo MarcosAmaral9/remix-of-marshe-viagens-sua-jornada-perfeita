@@ -2,8 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import { useSeo } from "@/hooks/use-seo";
 
 const AboutUs = () => {
+  useSeo({
+    title: "Sobre Nós | Marshe Viagens - Agência de Viagens em Contagem, MG",
+    description: "Conheça a Marshe Viagens: nossa história, missão, visão e valores. Agência de viagens em Contagem, MG, especializada em pacotes para o Nordeste e Sul do Brasil.",
+    canonical: "https://marsheviagens.com.br/sobre",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -3,13 +3,21 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import AdSense from "@/components/AdSense";
 import { blogPosts, categories } from "@/data/blogPosts";
+import { useSeo } from "@/hooks/use-seo";
 import { Calendar, Clock, Tag, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
+
+  useSeo({
+    title: "Blog - Guias, Dicas e Roteiros de Viagem | Marshe Viagens",
+    description: "Conteúdo completo para planejar sua próxima viagem. Guias de destinos, dicas práticas e roteiros detalhados para o Nordeste, Sul e mais.",
+    canonical: "https://marsheviagens.com.br/blog",
+  });
 
   const filteredPosts = blogPosts.filter((post) => {
     const matchesCategory = activeCategory === "todos" || post.category === activeCategory;
@@ -28,9 +36,7 @@ const Blog = () => {
         {/* Hero */}
         <section className="relative py-16 lg:py-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
           <div className="container mx-auto px-4">
-            <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
-              Blog Marshe Viagens
-            </span>
+            <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Blog Marshe Viagens</span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mt-4">
               Guias, Dicas e Roteiros de <span className="text-primary">Viagem</span>
             </h1>
@@ -46,13 +52,7 @@ const Blog = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
-                  <Button
-                    key={cat.value}
-                    variant={activeCategory === cat.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActiveCategory(cat.value)}
-                    className="rounded-full"
-                  >
+                  <Button key={cat.value} variant={activeCategory === cat.value ? "default" : "outline"} size="sm" onClick={() => setActiveCategory(cat.value)} className="rounded-full">
                     {cat.label}
                   </Button>
                 ))}
@@ -71,6 +71,11 @@ const Blog = () => {
           </div>
         </section>
 
+        {/* Ad after filters */}
+        <div className="container mx-auto px-4">
+          <AdSense slot="4567890123" format="horizontal" />
+        </div>
+
         {/* Posts Grid */}
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4">
@@ -79,55 +84,47 @@ const Blog = () => {
                 <p className="text-muted-foreground text-lg">Nenhum post encontrado.</p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredPosts.map((post) => (
-                  <Link
-                    key={post.slug}
-                    to={`/blog/${post.slug}`}
-                    className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-                  >
-                    <div className="relative h-48 overflow-hidden bg-primary/10">
-                       <img
-                         src={post.image}
-                         alt={post.title}
-                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                       />
-                       <div className="absolute top-4 left-4">
-                        <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                          {post.categoryLabel}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="p-5">
-                      <h2 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
-                        {post.title}
-                      </h2>
-                      <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {new Date(post.date).toLocaleDateString("pt-BR")}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-1 mt-3">
-                        {post.tags.slice(0, 3).map((tag) => (
-                          <span key={tag} className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full flex items-center gap-1">
-                            <Tag className="w-2.5 h-2.5" />
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filteredPosts.map((post, index) => (
+                    <>
+                      <Link
+                        key={post.slug}
+                        to={`/blog/${post.slug}`}
+                        className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                      >
+                        <div className="relative h-48 overflow-hidden bg-primary/10">
+                          <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                          <div className="absolute top-4 left-4">
+                            <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">{post.categoryLabel}</span>
+                          </div>
+                        </div>
+                        <div className="p-5">
+                          <h2 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">{post.title}</h2>
+                          <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{post.excerpt}</p>
+                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                            <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{new Date(post.date).toLocaleDateString("pt-BR")}</span>
+                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
+                          </div>
+                          <div className="flex flex-wrap gap-1 mt-3">
+                            {post.tags.slice(0, 3).map((tag) => (
+                              <span key={tag} className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <Tag className="w-2.5 h-2.5" />{tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </Link>
+                      {/* Ad after every 6th post */}
+                      {(index + 1) % 6 === 0 && index < filteredPosts.length - 1 && (
+                        <div key={`ad-${index}`} className="md:col-span-2 lg:col-span-3">
+                          <AdSense slot="5678901234" format="horizontal" />
+                        </div>
+                      )}
+                    </>
+                  ))}
+                </div>
+              </>
             )}
           </div>
         </section>
