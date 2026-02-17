@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -13,6 +14,12 @@ const destinations = [
 ];
 
 const DestinosSul = () => {
+  useSeo({
+    title: "Pacotes Aéreos Sul | Marshe Viagens - Gramado e Foz do Iguaçu",
+    description: "Pacotes de viagem para o Sul do Brasil saindo de BH. Gramado, Canela e Foz do Iguaçu com aéreo, hospedagem e traslados inclusos.",
+    canonical: "https://marsheviagens.com.br/destinos/sul",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

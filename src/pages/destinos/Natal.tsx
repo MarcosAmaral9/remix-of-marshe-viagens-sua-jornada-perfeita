@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-natal.jpg";
 
 const Natal = () => {
+  useSeo({ title: "Pacote Natal | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Natal, RN. Dunas de Genipabu, Ponta Negra, Pipa e mais. Aéreo, hospedagem e traslados inclusos.", canonical: "https://marsheviagens.com.br/destinos/natal" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

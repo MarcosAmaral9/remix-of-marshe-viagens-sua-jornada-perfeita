@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
 
 const CaboSantoAgostinho = () => {
+  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com.br/destinos/cabo-de-santo-agostinho" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

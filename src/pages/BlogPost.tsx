@@ -2,23 +2,22 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import AdSense from "@/components/AdSense";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, Tag, User, Share2, Copy, Check } from "lucide-react";
+import { useSeo } from "@/hooks/use-seo";
+import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
 
-  useEffect(() => {
-    if (post) {
-      document.title = `${post.title} | Marshe Viagens Blog`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", post.metaDescription);
-    }
-  }, [post]);
+  useSeo({
+    title: post ? `${post.title} | Marshe Viagens Blog` : "Blog | Marshe Viagens",
+    description: post?.metaDescription || "",
+    canonical: post ? `https://marsheviagens.com.br/blog/${post.slug}` : undefined,
+  });
 
   if (!post) return <Navigate to="/blog" replace />;
 
@@ -27,6 +26,12 @@ const BlogPost = () => {
     .slice(0, 3);
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // Split content into sections for ad insertion
+  const htmlContent = markdownToHtml(post.content);
+  const sections = htmlContent.split(/<h2>/);
+  const firstHalf = sections.slice(0, Math.ceil(sections.length / 2)).join("<h2>");
+  const secondHalf = "<h2>" + sections.slice(Math.ceil(sections.length / 2)).join("<h2>");
 
   return (
     <div className="min-h-screen bg-background">
@@ -49,23 +54,13 @@ const BlogPost = () => {
               </h1>
 
               <div className="mt-6 rounded-2xl overflow-hidden max-h-96">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover"
-                />
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <User className="w-4 h-4" /> {post.author}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" /> {new Date(post.date).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" /> {post.readTime} de leitura
-                </span>
+                <span className="flex items-center gap-1"><User className="w-4 h-4" /> {post.author}</span>
+                <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {new Date(post.date).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}</span>
+                <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {post.readTime} de leitura</span>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-4">
@@ -78,7 +73,12 @@ const BlogPost = () => {
             </div>
           </section>
 
-          {/* Content */}
+          {/* Ad after header */}
+          <div className="container mx-auto px-4 max-w-4xl">
+            <AdSense slot="1234567890" format="horizontal" />
+          </div>
+
+          {/* Content with mid-article ad */}
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="flex justify-end mb-8">
@@ -91,9 +91,7 @@ const BlogPost = () => {
                     if (navigator.share) {
                       try {
                         await navigator.share({ title: post.title, text: post.excerpt, url });
-                      } catch (e) {
-                        // user cancelled share
-                      }
+                      } catch (e) { /* cancelled */ }
                     } else {
                       await navigator.clipboard.writeText(url);
                       toast.success("Link copiado!");
@@ -104,16 +102,32 @@ const BlogPost = () => {
                 </Button>
               </div>
 
+              {/* First half of content */}
               <div
                 className="prose prose-lg max-w-none dark:prose-invert
                   prose-headings:font-serif prose-headings:text-foreground
                   prose-p:text-muted-foreground prose-p:leading-relaxed
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                  prose-strong:text-foreground
-                  prose-li:text-muted-foreground
+                  prose-strong:text-foreground prose-li:text-muted-foreground
                   prose-blockquote:border-primary prose-blockquote:text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
+                dangerouslySetInnerHTML={{ __html: firstHalf }}
               />
+
+              {/* Mid-article ad */}
+              <AdSense slot="2345678901" format="rectangle" />
+
+              {/* Second half of content */}
+              {sections.length > 1 && (
+                <div
+                  className="prose prose-lg max-w-none dark:prose-invert
+                    prose-headings:font-serif prose-headings:text-foreground
+                    prose-p:text-muted-foreground prose-p:leading-relaxed
+                    prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                    prose-strong:text-foreground prose-li:text-muted-foreground
+                    prose-blockquote:border-primary prose-blockquote:text-muted-foreground"
+                  dangerouslySetInnerHTML={{ __html: secondHalf }}
+                />
+              )}
 
               {/* CTA */}
               <div className="mt-12 p-8 bg-primary/5 border border-primary/20 rounded-2xl text-center">
@@ -137,6 +151,11 @@ const BlogPost = () => {
             </div>
           </section>
 
+          {/* Ad before related posts */}
+          <div className="container mx-auto px-4 max-w-4xl">
+            <AdSense slot="3456789012" format="horizontal" />
+          </div>
+
           {/* Related */}
           {relatedPosts.length > 0 && (
             <section className="py-12 lg:py-16 bg-muted/30">
@@ -144,15 +163,9 @@ const BlogPost = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-8">Posts Relacionados</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedPosts.map((rp) => (
-                    <Link
-                      key={rp.slug}
-                      to={`/blog/${rp.slug}`}
-                      className="group bg-card rounded-xl p-5 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    >
+                    <Link key={rp.slug} to={`/blog/${rp.slug}`} className="group bg-card rounded-xl p-5 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <span className="text-xs text-primary font-medium">{rp.categoryLabel}</span>
-                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors mt-1 line-clamp-2">
-                        {rp.title}
-                      </h3>
+                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors mt-1 line-clamp-2">{rp.title}</h3>
                       <span className="text-xs text-muted-foreground mt-2 block">{rp.readTime}</span>
                     </Link>
                   ))}
@@ -171,6 +184,7 @@ const BlogPost = () => {
               "@type": "BlogPosting",
               headline: post.title,
               description: post.metaDescription,
+              image: post.image,
               author: { "@type": "Organization", name: post.author },
               datePublished: post.date,
               publisher: {

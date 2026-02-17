@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-joao-pessoa.jpg";
 
 const JoaoPessoa = () => {
+  useSeo({ title: "Pacote João Pessoa | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para João Pessoa, PB. Praias, pôr do sol do Jacaré e litoral sul. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/joao-pessoa" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

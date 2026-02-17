@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-de-galinhas.jpg";
 
 const PortoDeGalinhas = () => {
+  useSeo({ title: "Pacote Porto de Galinhas | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto de Galinhas, PE. Piscinas naturais, Muro Alto e praias paradisíacas. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/porto-de-galinhas" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

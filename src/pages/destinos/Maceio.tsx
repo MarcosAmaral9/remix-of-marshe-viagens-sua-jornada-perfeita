@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-maceio.jpg";
 
 const Maceio = () => {
+  useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/maceio" });
   return (
     <div className="min-h-screen bg-background">
       <Header />
