@@ -43,7 +43,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "guia-completo-porto-de-galinhas",
     title: "Guia Completo de Porto de Galinhas: O Que Fazer, Onde Comer e Melhor Época",
-    excerpt: "Descubra tudo sobre Porto de Galinhas: das piscinas naturais aos melhores restaurantes. Um guia completo para planejar sua viagem perfeita ao paraíso pernambucano.",
+    excerpt:
+      "Descubra tudo sobre Porto de Galinhas: das piscinas naturais aos melhores restaurantes. Um guia completo para planejar sua viagem perfeita ao paraíso pernambucano.",
     content: `
 ## Por que visitar Porto de Galinhas?
 
@@ -91,12 +92,14 @@ Reserve seu pacote com antecedência para garantir os melhores preços e disponi
     readTime: "8 min",
     image: portoDeGalinhasImg,
     tags: ["Porto de Galinhas", "Nordeste", "Pernambuco", "Praias", "Piscinas Naturais"],
-    metaDescription: "Guia completo de Porto de Galinhas: piscinas naturais, melhores praias, restaurantes, melhor época para visitar e como chegar saindo de BH. Planeje sua viagem!",
+    metaDescription:
+      "Guia completo de Porto de Galinhas: piscinas naturais, melhores praias, restaurantes, melhor época para visitar e como chegar saindo de BH. Planeje sua viagem!",
   },
   {
     slug: "roteiro-7-dias-gramado-canela",
     title: "Roteiro de 7 Dias em Gramado e Canela: Dia a Dia Completo",
-    excerpt: "Planeje sua viagem à Serra Gaúcha com este roteiro detalhado de 7 dias por Gramado e Canela, incluindo passeios, restaurantes e dicas práticas.",
+    excerpt:
+      "Planeje sua viagem à Serra Gaúcha com este roteiro detalhado de 7 dias por Gramado e Canela, incluindo passeios, restaurantes e dicas práticas.",
     content: `
 ## Gramado e Canela em 7 Dias
 
@@ -157,12 +160,14 @@ A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horiz
     readTime: "10 min",
     image: gramadoImg,
     tags: ["Gramado", "Canela", "Serra Gaúcha", "Roteiro", "Sul"],
-    metaDescription: "Roteiro completo de 7 dias em Gramado e Canela: passeios dia a dia, restaurantes, vinícolas e dicas práticas. Planeje sua viagem à Serra Gaúcha!",
+    metaDescription:
+      "Roteiro completo de 7 dias em Gramado e Canela: passeios dia a dia, restaurantes, vinícolas e dicas práticas. Planeje sua viagem à Serra Gaúcha!",
   },
   {
     slug: "como-fazer-mala-viagem-praia",
     title: "Como Fazer a Mala Perfeita para Viagem de Praia: Lista Completa",
-    excerpt: "Nunca mais esqueça nada! Confira nossa lista completa e organizada do que levar na mala para sua viagem de praia, com dicas práticas para economizar espaço.",
+    excerpt:
+      "Nunca mais esqueça nada! Confira nossa lista completa e organizada do que levar na mala para sua viagem de praia, com dicas práticas para economizar espaço.",
     content: `
 ## A mala perfeita para a praia
 
@@ -225,12 +230,14 @@ Com os pacotes da **Marshe Viagens**, você cuida apenas da mala — nós cuidam
     readTime: "6 min",
     image: malaPraiaImg,
     tags: ["Dicas", "Mala de Viagem", "Praia", "Organização"],
-    metaDescription: "Lista completa do que levar na mala para viagem de praia: roupas, proteção solar, documentos e acessórios. Dicas práticas para não esquecer nada!",
+    metaDescription:
+      "Lista completa do que levar na mala para viagem de praia: roupas, proteção solar, documentos e acessórios. Dicas práticas para não esquecer nada!",
   },
   {
     slug: "guia-salvador-pelourinho-praias",
     title: "Guia de Salvador: Pelourinho, Praias e a Cultura Baiana que Encanta",
-    excerpt: "Conheça Salvador, a capital da alegria: do Pelourinho histórico às praias paradisíacas, passando pelo acarajé e pelo axé. Um guia completo para sua viagem.",
+    excerpt:
+      "Conheça Salvador, a capital da alegria: do Pelourinho histórico às praias paradisíacas, passando pelo acarajé e pelo axé. Um guia completo para sua viagem.",
     content: `
 ## Salvador: onde história e alegria se encontram
 
@@ -287,12 +294,14 @@ A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins a
     readTime: "9 min",
     image: salvadorImg,
     tags: ["Salvador", "Bahia", "Nordeste", "Pelourinho", "Cultura"],
-    metaDescription: "Guia completo de Salvador: Pelourinho, praias, gastronomia baiana, pontos turísticos e dicas. Planeje sua viagem à capital da alegria!",
+    metaDescription:
+      "Guia completo de Salvador: Pelourinho, praias, gastronomia baiana, pontos turísticos e dicas. Planeje sua viagem à capital da alegria!",
   },
   {
     slug: "economizar-viagem-nordeste-dicas",
     title: "10 Dicas Para Economizar na Sua Viagem ao Nordeste Sem Perder a Qualidade",
-    excerpt: "Viajar para o Nordeste não precisa ser caro! Confira 10 dicas práticas para economizar em passagens, hospedagem e passeios sem abrir mão do conforto.",
+    excerpt:
+      "Viajar para o Nordeste não precisa ser caro! Confira 10 dicas práticas para economizar em passagens, hospedagem e passeios sem abrir mão do conforto.",
     content: `
 ## Viaje mais gastando menos
 
@@ -353,12 +362,14 @@ Nossos pacotes já incluem aéreo, hospedagem com café da manhã e traslados, a
     readTime: "7 min",
     image: economizarImg,
     tags: ["Economia", "Nordeste", "Dicas", "Planejamento", "Orçamento"],
-    metaDescription: "10 dicas práticas para economizar na viagem ao Nordeste: passagens, hospedagem, alimentação e passeios. Viaje mais gastando menos!",
+    metaDescription:
+      "10 dicas práticas para economizar na viagem ao Nordeste: passagens, hospedagem, alimentação e passeios. Viaje mais gastando menos!",
   },
   {
     slug: "roteiro-5-dias-foz-do-iguacu",
     title: "Roteiro de 5 Dias em Foz do Iguaçu: Cataratas, Itaipu e Mais",
-    excerpt: "Aproveite ao máximo Foz do Iguaçu com este roteiro de 5 dias: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e muito mais.",
+    excerpt:
+      "Aproveite ao máximo Foz do Iguaçu com este roteiro de 5 dias: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e muito mais.",
     content: `
 ## Foz do Iguaçu: grandiosidade em cada esquina
 
@@ -424,13 +435,15 @@ Foz do Iguaçu recebe turistas o ano inteiro, mas os meses de **março a maio e 
     readTime: "9 min",
     image: fozImg,
     tags: ["Foz do Iguaçu", "Cataratas", "Itaipu", "Roteiro", "Sul"],
-    metaDescription: "Roteiro de 5 dias em Foz do Iguaçu: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e Parque das Aves. Planeje sua viagem!",
+    metaDescription:
+      "Roteiro de 5 dias em Foz do Iguaçu: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e Parque das Aves. Planeje sua viagem!",
   },
   // ===== 3 NOVOS POSTS =====
   {
     slug: "guia-natal-praias-dunas-gastronomia",
     title: "Guia de Natal: Praias, Dunas e a Gastronomia Potiguar que Surpreende",
-    excerpt: "Descubra Natal, a Cidade do Sol: das dunas de Genipabu às praias de Ponta Negra, passando pela culinária local e passeios imperdíveis.",
+    excerpt:
+      "Descubra Natal, a Cidade do Sol: das dunas de Genipabu às praias de Ponta Negra, passando pela culinária local e passeios imperdíveis.",
     content: `
 ## Natal: a Cidade do Sol
 
@@ -484,12 +497,14 @@ A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins a pa
     readTime: "8 min",
     image: natalImg,
     tags: ["Natal", "Rio Grande do Norte", "Nordeste", "Praias", "Dunas"],
-    metaDescription: "Guia completo de Natal: praias, dunas de Genipabu, Ponta Negra, gastronomia potiguar e dicas práticas. Planeje sua viagem à Cidade do Sol!",
+    metaDescription:
+      "Guia completo de Natal: praias, dunas de Genipabu, Ponta Negra, gastronomia potiguar e dicas práticas. Planeje sua viagem à Cidade do Sol!",
   },
   {
     slug: "documentos-necessarios-viagem-nacional",
     title: "Documentos Necessários para Viagem Nacional: Checklist Completo 2026",
-    excerpt: "Não corra riscos! Confira todos os documentos que você precisa levar em viagens nacionais: adultos, crianças, idosos e situações especiais.",
+    excerpt:
+      "Não corra riscos! Confira todos os documentos que você precisa levar em viagens nacionais: adultos, crianças, idosos e situações especiais.",
     content: `
 ## Viaje preparado: documentos em dia
 
@@ -559,12 +574,14 @@ Com os pacotes da **Marshe Viagens**, além de cuidar do aéreo, hospedagem e tr
     readTime: "6 min",
     image: documentosImg,
     tags: ["Documentos", "Dicas", "Planejamento", "Aeroporto", "Viagem Nacional"],
-    metaDescription: "Checklist completo de documentos para viagem nacional em 2026: adultos, crianças, idosos e situações especiais. Não esqueça nada!",
+    metaDescription:
+      "Checklist completo de documentos para viagem nacional em 2026: adultos, crianças, idosos e situações especiais. Não esqueça nada!",
   },
   {
     slug: "roteiro-4-dias-joao-pessoa-litoral-sul",
     title: "Roteiro de 4 Dias em João Pessoa: Praias, Pôr do Sol e Litoral Sul",
-    excerpt: "Aproveite o melhor de João Pessoa em 4 dias: praias urbanas, o pôr do sol do Jacaré, praias do litoral sul e a gastronomia paraibana.",
+    excerpt:
+      "Aproveite o melhor de João Pessoa em 4 dias: praias urbanas, o pôr do sol do Jacaré, praias do litoral sul e a gastronomia paraibana.",
     content: `
 ## João Pessoa: onde o sol nasce primeiro
 
@@ -622,13 +639,15 @@ João Pessoa tem clima tropical o ano inteiro. Os meses mais secos são de **set
     readTime: "7 min",
     image: joaoPessoaImg,
     tags: ["João Pessoa", "Paraíba", "Nordeste", "Roteiro", "Litoral Sul"],
-    metaDescription: "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
+    metaDescription:
+      "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
   },
   // ===== 3 NOVOS POSTS (Fev 2026) =====
   {
     slug: "guia-maceio-praias-piscinas-naturais",
     title: "Guia de Maceió: Praias Caribenhas, Piscinas Naturais e Gastronomia Alagoana",
-    excerpt: "Descubra Maceió, o Caribe brasileiro: das piscinas naturais de Pajuçara às praias de São Miguel dos Milagres, passando pela culinária alagoana.",
+    excerpt:
+      "Descubra Maceió, o Caribe brasileiro: das piscinas naturais de Pajuçara às praias de São Miguel dos Milagres, passando pela culinária alagoana.",
     content: `
 ## Maceió: o Caribe brasileiro
 
@@ -683,12 +702,14 @@ A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins a 
     readTime: "8 min",
     image: maceioImg,
     tags: ["Maceió", "Alagoas", "Nordeste", "Praias", "Piscinas Naturais"],
-    metaDescription: "Guia completo de Maceió: praias caribenhas, piscinas naturais de Pajuçara, São Miguel dos Milagres, gastronomia alagoana e dicas. Planeje sua viagem!",
+    metaDescription:
+      "Guia completo de Maceió: praias caribenhas, piscinas naturais de Pajuçara, São Miguel dos Milagres, gastronomia alagoana e dicas. Planeje sua viagem!",
   },
   {
     slug: "dicas-viajar-com-criancas-sem-estresse",
     title: "Como Viajar com Crianças Sem Estresse: 12 Dicas Práticas Para Famílias",
-    excerpt: "Viajar com filhos pequenos pode ser divertido! Confira 12 dicas práticas para planejar viagens em família com tranquilidade, desde a escolha do destino até o entretenimento no avião.",
+    excerpt:
+      "Viajar com filhos pequenos pode ser divertido! Confira 12 dicas práticas para planejar viagens em família com tranquilidade, desde a escolha do destino até o entretenimento no avião.",
     content: `
 ## Viagem em família sem estresse
 
@@ -771,12 +792,14 @@ Consulte nossos pacotes com saída de Belo Horizonte!
     readTime: "7 min",
     image: viagemCriancasImg,
     tags: ["Crianças", "Família", "Dicas", "Planejamento", "Viagem em Família"],
-    metaDescription: "12 dicas práticas para viajar com crianças sem estresse: destinos, documentos, lanches no avião, proteção solar e planejamento. Guia completo para famílias!",
+    metaDescription:
+      "12 dicas práticas para viajar com crianças sem estresse: destinos, documentos, lanches no avião, proteção solar e planejamento. Guia completo para famílias!",
   },
   {
     slug: "roteiro-6-dias-porto-seguro-arraial-trancoso",
     title: "Roteiro de 6 Dias em Porto Seguro, Arraial d'Ajuda e Trancoso",
-    excerpt: "Aproveite o melhor do sul da Bahia em 6 dias: as praias de Porto Seguro, o charme de Arraial d'Ajuda e a sofisticação de Trancoso em um roteiro completo.",
+    excerpt:
+      "Aproveite o melhor do sul da Bahia em 6 dias: as praias de Porto Seguro, o charme de Arraial d'Ajuda e a sofisticação de Trancoso em um roteiro completo.",
     content: `
 ## Sul da Bahia: Porto Seguro e região
 
@@ -849,13 +872,15 @@ O sul da Bahia tem clima agradável o ano inteiro. Os meses de **setembro a mar�
     readTime: "9 min",
     image: portoSeguroImg,
     tags: ["Porto Seguro", "Arraial d'Ajuda", "Trancoso", "Bahia", "Roteiro"],
-    metaDescription: "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
+    metaDescription:
+      "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
   },
   // ===== 6 NOVOS POSTS — Keywords de alta busca =====
   {
     slug: "melhor-epoca-viajar-maceio",
     title: "Melhor Época para Viajar para Maceió: Guia Mês a Mês Completo",
-    excerpt: "Quando é o melhor momento para visitar Maceió? Descubra as condições climáticas, preços e dicas mês a mês para planejar sua viagem ao Caribe brasileiro.",
+    excerpt:
+      "Quando é o melhor momento para visitar Maceió? Descubra as condições climáticas, preços e dicas mês a mês para planejar sua viagem ao Caribe brasileiro.",
     content: `
 ## Quando visitar Maceió?
 
@@ -928,12 +953,14 @@ Nossos pacotes para Maceió saindo de Belo Horizonte têm melhores preços justa
     readTime: "8 min",
     image: melhorEpocaMaceioImg,
     tags: ["Maceió", "Alagoas", "Melhor Época", "Nordeste", "Clima"],
-    metaDescription: "Melhor época para viajar para Maceió: guia mês a mês com clima, preços e dicas. Saiba quando visitar para aproveitar as piscinas naturais e praias!",
+    metaDescription:
+      "Melhor época para viajar para Maceió: guia mês a mês com clima, preços e dicas. Saiba quando visitar para aproveitar as piscinas naturais e praias!",
   },
   {
     slug: "quanto-custa-viajar-nordeste-2026",
     title: "Quanto Custa Viajar para o Nordeste em 2026: Guia Completo de Preços",
-    excerpt: "Planeje seu orçamento com precisão! Descubra quanto custa viajar para os principais destinos do Nordeste em 2026: passagens, hospedagem, passeios e alimentação.",
+    excerpt:
+      "Planeje seu orçamento com precisão! Descubra quanto custa viajar para os principais destinos do Nordeste em 2026: passagens, hospedagem, passeios e alimentação.",
     content: `
 ## Planeje seu orçamento para o Nordeste em 2026
 
@@ -1033,12 +1060,14 @@ Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
     readTime: "9 min",
     image: custoNordesteImg,
     tags: ["Custo", "Nordeste", "Orçamento", "Preços 2026", "Planejamento"],
-    metaDescription: "Quanto custa viajar para o Nordeste em 2026? Guia completo de preços: passagens de BH, hospedagem, alimentação e passeios nos principais destinos. Planeje seu orçamento!",
+    metaDescription:
+      "Quanto custa viajar para o Nordeste em 2026? Guia completo de preços: passagens de BH, hospedagem, alimentação e passeios nos principais destinos. Planeje seu orçamento!",
   },
   {
     slug: "pacotes-baratos-nordeste-2026",
     title: "Pacotes Baratos para o Nordeste em 2026: Os Melhores Destinos e Preços",
-    excerpt: "Encontre os melhores pacotes de viagem para o Nordeste em 2026. Compare destinos, preços e dicas para fechar o pacote ideal saindo de Belo Horizonte.",
+    excerpt:
+      "Encontre os melhores pacotes de viagem para o Nordeste em 2026. Compare destinos, preços e dicas para fechar o pacote ideal saindo de Belo Horizonte.",
     content: `
 ## Os melhores pacotes para o Nordeste em 2026
 
@@ -1116,13 +1145,15 @@ A Marshe Viagens oferece parcelamento em até **12x no cartão de crédito sem j
     readTime: "8 min",
     image: pacotesBaratosImg,
     tags: ["Pacotes", "Nordeste", "Preços Baratos", "2026", "Viagem Econômica"],
-    metaDescription: "Pacotes baratos para o Nordeste em 2026: compare os melhores destinos e preços saindo de BH. João Pessoa, Fortaleza, Maceió, Natal e mais com aéreo incluso!",
+    metaDescription:
+      "Pacotes baratos para o Nordeste em 2026: compare os melhores destinos e preços saindo de BH. João Pessoa, Fortaleza, Maceió, Natal e mais com aéreo incluso!",
   },
   // ===== 3 POSTS EXTRAS (1 por categoria) =====
   {
     slug: "guia-completo-fortaleza-ce",
     title: "Guia Completo de Fortaleza: Praias, Cultura, Gastronomia e Passeios",
-    excerpt: "Descubra Fortaleza além do óbvio: da Praia do Futuro ao Mercado Central, do lagostim ao caju, passando pelos melhores bairros e dicas para aproveitar ao máximo.",
+    excerpt:
+      "Descubra Fortaleza além do óbvio: da Praia do Futuro ao Mercado Central, do lagostim ao caju, passando pelos melhores bairros e dicas para aproveitar ao máximo.",
     content: `
 ## Fortaleza: a Capital do Ceará
 
@@ -1186,12 +1217,14 @@ A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins 
     readTime: "9 min",
     image: guiaFortalezaImg,
     tags: ["Fortaleza", "Ceará", "Nordeste", "Praias", "Jericoacoara"],
-    metaDescription: "Guia completo de Fortaleza: praias, Mercado Central, Dragão do Mar, gastronomia cearense, Jericoacoara e Canoa Quebrada. Planeje sua viagem à capital cearense!",
+    metaDescription:
+      "Guia completo de Fortaleza: praias, Mercado Central, Dragão do Mar, gastronomia cearense, Jericoacoara e Canoa Quebrada. Planeje sua viagem à capital cearense!",
   },
   {
     slug: "seguro-viagem-vale-a-pena-contratar",
     title: "Seguro Viagem: Vale a Pena Contratar? Guia Completo Para Decidir",
-    excerpt: "Entenda de uma vez por todas se o seguro viagem compensa, o que cobre, quanto custa e como escolher o melhor plano para sua viagem nacional ou internacional.",
+    excerpt:
+      "Entenda de uma vez por todas se o seguro viagem compensa, o que cobre, quanto custa e como escolher o melhor plano para sua viagem nacional ou internacional.",
     content: `
 ## Seguro viagem: uma proteção que pode salvar sua viagem
 
@@ -1272,12 +1305,14 @@ Os pacotes da Marshe Viagens podem ser complementados com **seguro viagem sob me
     readTime: "8 min",
     image: seguroViagemImg,
     tags: ["Seguro Viagem", "Dicas", "Planejamento", "Proteção", "Viagem Segura"],
-    metaDescription: "Seguro viagem vale a pena? Guia completo: o que cobre, quanto custa, quando contratar e como escolher o melhor plano para viagem nacional e internacional.",
+    metaDescription:
+      "Seguro viagem vale a pena? Guia completo: o que cobre, quanto custa, quando contratar e como escolher o melhor plano para viagem nacional e internacional.",
   },
   {
     slug: "roteiro-3-dias-cabo-santo-agostinho",
     title: "Roteiro de 3 Dias em Cabo de Santo Agostinho: Praias Secretas de Pernambuco",
-    excerpt: "Descubra as praias secretas perto de Recife em 3 dias: Cabo de Santo Agostinho concentra Cupe, Muro Alto, Porto de Galinhas e algumas das praias mais bonitas do Nordeste.",
+    excerpt:
+      "Descubra as praias secretas perto de Recife em 3 dias: Cabo de Santo Agostinho concentra Cupe, Muro Alto, Porto de Galinhas e algumas das praias mais bonitas do Nordeste.",
     content: `
 ## Cabo de Santo Agostinho: o destino que surpreende
 
@@ -1303,7 +1338,6 @@ O segundo dia é para praias mais tranquilas:
 - Almoço: Barracas de praia em Muro Alto
 - Tarde: **Praia de Cupe** — quase deserta, com coqueirais e areias brancas
 - **Praia de Serrambi** — acesso mais difícil, mas vale a pena pela beleza selvagem
-- Sundowner: Pôr do sol na praia de Maracaípe
 
 ## Dia 3 — Forte Orange e Retorno
 
@@ -1349,6 +1383,7 @@ A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de S
     readTime: "7 min",
     image: roteirosCaboImg,
     tags: ["Cabo de Santo Agostinho", "Pernambuco", "Porto de Galinhas", "Muro Alto", "Nordeste"],
-    metaDescription: "Roteiro de 3 dias em Cabo de Santo Agostinho: Porto de Galinhas, Muro Alto, Cupe e praias desertas de Pernambuco. Guia completo para planejar sua viagem!",
+    metaDescription:
+      "Roteiro de 3 dias em Cabo de Santo Agostinho: Porto de Galinhas, Muro Alto, Cupe e praias desertas de Pernambuco. Guia completo para planejar sua viagem!",
   },
 ];
