@@ -10,6 +10,12 @@ import joaoPessoaImg from "@/assets/dest-joao-pessoa.jpg";
 import maceioImg from "@/assets/blog-guia-maceio.jpg";
 import viagemCriancasImg from "@/assets/blog-viagem-criancas.jpg";
 import portoSeguroImg from "@/assets/blog-roteiro-porto-seguro.jpg";
+import melhorEpocaMaceioImg from "@/assets/blog-melhor-epoca-maceio.jpg";
+import custoNordesteImg from "@/assets/blog-custo-nordeste.jpg";
+import pacotesBaratosImg from "@/assets/blog-pacotes-baratos-nordeste.jpg";
+import guiaFortalezaImg from "@/assets/blog-guia-fortaleza.jpg";
+import seguroViagemImg from "@/assets/blog-seguro-viagem.jpg";
+import roteirosCaboImg from "@/assets/blog-roteiro-cabo-agostinho.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -844,5 +850,505 @@ O sul da Bahia tem clima agradável o ano inteiro. Os meses de **setembro a mar�
     image: portoSeguroImg,
     tags: ["Porto Seguro", "Arraial d'Ajuda", "Trancoso", "Bahia", "Roteiro"],
     metaDescription: "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
+  },
+  // ===== 6 NOVOS POSTS — Keywords de alta busca =====
+  {
+    slug: "melhor-epoca-viajar-maceio",
+    title: "Melhor Época para Viajar para Maceió: Guia Mês a Mês Completo",
+    excerpt: "Quando é o melhor momento para visitar Maceió? Descubra as condições climáticas, preços e dicas mês a mês para planejar sua viagem ao Caribe brasileiro.",
+    content: `
+## Quando visitar Maceió?
+
+Maceió, a capital de Alagoas, tem um clima tropical úmido com temperaturas agradáveis durante todo o ano — a média fica entre 24°C e 30°C. Mas a época certa de visitar faz toda a diferença para aproveitar as **piscinas naturais de Pajuçara**, as praias cristalinas e os passeios pela região.
+
+## Tabela climática mês a mês
+
+### Janeiro e Fevereiro — Início da estação chuvosa
+- 🌤️ Temperatura: 27-30°C
+- 🌧️ Chuva: moderada (pode chover à tarde)
+- 💰 Preços: **altos** (alta temporada, verão)
+- ✅ Vale a pena? Sim, mas reserve com antecedência
+
+### Março e Abril — Pico da estação chuvosa
+- 🌧️ Temperatura: 26-29°C
+- 🌧️ Chuva: frequente
+- 💰 Preços: **baixos a moderados**
+- ⚠️ Atenção: chuvas podem afetar visibilidade das piscinas naturais
+
+### Maio e Junho — Início do inverno nordestino
+- 🌥️ Temperatura: 24-27°C
+- 🌧️ Chuva: ainda presente
+- 💰 Preços: **baixos** (excelente custo-benefício)
+- ⚠️ Mar pode estar agitado
+
+### Julho — Férias de inverno
+- ⛅ Temperatura: 23-26°C
+- 🌧️ Chuva: diminuindo
+- 💰 Preços: **altos** (alta temporada de férias)
+- ✅ Boa movimentação e infraestrutura plena
+
+### Agosto — Transição
+- ⛅ Temperatura: 24-27°C
+- 🌤️ Chuva: poucas
+- 💰 Preços: **moderados**
+- ✅ Ótima relação custo-benefício
+
+### Setembro a Novembro — **MELHOR ÉPOCA**
+- ☀️ Temperatura: 26-30°C
+- ☀️ Chuva: mínima
+- 💰 Preços: **baixos a moderados**
+- ✅✅ **Recomendado**: piscinas naturais visíveis, mar calmo, preços menores
+
+### Dezembro — Pré-temporada
+- ☀️ Temperatura: 27-31°C
+- 🌤️ Chuva: pouca
+- 💰 Preços: **subindo** (pré-carnaval e Réveillon)
+- ✅ Boa opção antes do pico de preços
+
+## Resumo: qual é a melhor época?
+
+A **melhor época para viajar para Maceió é entre setembro e novembro**. Nesse período:
+- ☀️ Sol garantido quase todos os dias
+- 🌊 Piscinas naturais com máxima visibilidade na maré baixa
+- 💰 Preços até 30% mais baixos que na alta temporada
+- 🐢 Temporada de tartarugas marinhas em São Miguel dos Milagres
+
+## Evite esses períodos
+- **Março a maio**: maior índice de chuvas, reduz a visibilidade das piscinas naturais
+- **Julho**: alta temporada com preços elevados e maior lotação das praias
+
+## Dica Marshe Viagens
+
+Nossos pacotes para Maceió saindo de Belo Horizonte têm melhores preços justamente nos meses de **setembro a novembro**. Reserve com 60 dias de antecedência para garantir as melhores tarifas!
+    `,
+    category: "guias",
+    categoryLabel: "Guias de Destinos",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "8 min",
+    image: melhorEpocaMaceioImg,
+    tags: ["Maceió", "Alagoas", "Melhor Época", "Nordeste", "Clima"],
+    metaDescription: "Melhor época para viajar para Maceió: guia mês a mês com clima, preços e dicas. Saiba quando visitar para aproveitar as piscinas naturais e praias!",
+  },
+  {
+    slug: "quanto-custa-viajar-nordeste-2026",
+    title: "Quanto Custa Viajar para o Nordeste em 2026: Guia Completo de Preços",
+    excerpt: "Planeje seu orçamento com precisão! Descubra quanto custa viajar para os principais destinos do Nordeste em 2026: passagens, hospedagem, passeios e alimentação.",
+    content: `
+## Planeje seu orçamento para o Nordeste em 2026
+
+Viajar para o Nordeste é um sonho de muitos brasileiros — mas quanto custa de verdade? Preparamos um guia completo com os valores atualizados para 2026, para você planejar sua viagem sem surpresas.
+
+## Passagens aéreas saindo de Belo Horizonte
+
+Os preços abaixo são estimativas para voos saindo de **Confins (BH)** em 2026:
+
+| Destino | Baixa Temporada | Alta Temporada |
+|---------|----------------|----------------|
+| Maceió | R$ 650 - R$ 900 | R$ 1.200 - R$ 1.800 |
+| Natal | R$ 700 - R$ 950 | R$ 1.300 - R$ 2.000 |
+| Fortaleza | R$ 600 - R$ 850 | R$ 1.100 - R$ 1.700 |
+| Salvador | R$ 500 - R$ 750 | R$ 950 - R$ 1.500 |
+| Porto de Galinhas | R$ 650 - R$ 900 | R$ 1.200 - R$ 1.800 |
+| João Pessoa | R$ 700 - R$ 1.000 | R$ 1.300 - R$ 2.000 |
+
+**Dica:** Pacotes com aéreo incluído costumam sair até 25% mais baratos do que comprar separado.
+
+## Hospedagem por noite
+
+### Maceió
+- **Pousada simples** (sem ar-condicionado): R$ 80-150/noite
+- **Hotel 3 estrelas** (com café da manhã): R$ 200-350/noite
+- **Hotel 4 estrelas** (beira-mar): R$ 400-700/noite
+
+### Natal
+- **Pousada simples**: R$ 90-160/noite
+- **Hotel 3 estrelas**: R$ 220-380/noite
+- **Hotel 4 estrelas**: R$ 450-750/noite
+
+### Porto de Galinhas
+- **Pousada simples**: R$ 120-200/noite
+- **Bangalô em resort**: R$ 400-800/noite
+- **Resort all-inclusive**: R$ 800-1.500/noite
+
+## Alimentação por dia
+
+- **Refeição em restaurante popular**: R$ 25-40
+- **Refeição em restaurante turístico**: R$ 60-100
+- **Frutos do mar em restaurante médio**: R$ 80-150
+- **Lanche em barraca de praia**: R$ 20-40
+
+**Média diária para 2 refeições + lanches**: R$ 100-180 por pessoa
+
+## Passeios e atrações
+
+### Maceió
+- Passeio de jangada (Pajuçara): R$ 30-50
+- Passeio para São Miguel dos Milagres: R$ 150-250
+- Praia do Gunga: R$ 80-120 (inclui traslado)
+
+### Natal
+- Buggy nas dunas de Genipabu: R$ 80-150 por buggy
+- Parrachos de Maracajaú: R$ 120-180
+
+### Porto de Galinhas
+- Jangada + piscinas naturais: R$ 40-60
+- Passeio de barco para Praia dos Carneiros: R$ 120-200
+
+## Quanto levar por pessoa para 8 dias?
+
+Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
+
+- 💰 **Alimentação**: R$ 100-150/dia × 8 dias = **R$ 800-1.200**
+- 🚤 **Passeios**: R$ 300-600 (total da viagem)
+- 🛍️ **Compras e souvenirs**: R$ 200-400
+- 🧴 **Extras (protetor solar, farmácia)**: R$ 100-200
+
+**Total extras estimado**: R$ 1.400-2.400 por pessoa, além do pacote.
+
+## Pacotes prontos Marshe Viagens 2026
+
+| Destino | Duração | A partir de |
+|---------|---------|------------|
+| Maceió | 8 dias | R$ 3.250/pessoa |
+| Natal | 8 dias | R$ 2.387/pessoa |
+| Salvador | 8 dias | R$ 2.750/pessoa |
+| Porto de Galinhas | 8 dias | R$ 2.319/pessoa |
+| João Pessoa | 8 dias | R$ 2.182/pessoa |
+
+*Pacotes incluem aéreo, hospedagem com café da manhã e traslados.*
+
+## Economize até 30% com estas dicas
+
+1. **Viaje em baixa temporada** (abril-junho, agosto-outubro)
+2. **Reserve com 3-6 meses de antecedência**
+3. **Prefira pacotes completos** a comprar tudo separado
+4. **Coma onde os locais comem** — 2-3 quadras da praia principal
+5. **Compartilhe passeios** de barco e buggy com outros turistas
+    `,
+    category: "dicas",
+    categoryLabel: "Dicas de Viagem",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "9 min",
+    image: custoNordesteImg,
+    tags: ["Custo", "Nordeste", "Orçamento", "Preços 2026", "Planejamento"],
+    metaDescription: "Quanto custa viajar para o Nordeste em 2026? Guia completo de preços: passagens de BH, hospedagem, alimentação e passeios nos principais destinos. Planeje seu orçamento!",
+  },
+  {
+    slug: "pacotes-baratos-nordeste-2026",
+    title: "Pacotes Baratos para o Nordeste em 2026: Os Melhores Destinos e Preços",
+    excerpt: "Encontre os melhores pacotes de viagem para o Nordeste em 2026. Compare destinos, preços e dicas para fechar o pacote ideal saindo de Belo Horizonte.",
+    content: `
+## Os melhores pacotes para o Nordeste em 2026
+
+Viajar para o Nordeste com qualidade e sem gastar uma fortuna é possível — especialmente quando você escolhe o destino certo, na época certa e com a agência certa. A **Marshe Viagens** preparou um comparativo completo dos melhores pacotes para 2026.
+
+## Por que escolher um pacote?
+
+- ✅ **Economia**: pacotes costumam ser 20-30% mais baratos que comprar tudo separado
+- ✅ **Praticidade**: aéreo, hotel e traslado em um único pagamento
+- ✅ **Segurança**: suporte especializado em caso de imprevistos
+- ✅ **Parcelamento**: pague em até 12x sem juros
+
+## Destinos mais baratos do Nordeste em 2026
+
+### 1. João Pessoa — A partir de R$ 2.182/pessoa
+A capital paraibana é **um dos destinos mais baratos** do Nordeste, com praias lindas como Coqueirinho e o famoso pôr do sol do Jacaré. Ideal para quem quer Nordeste sem pagar caro.
+
+**O que inclui:** Aéreo BH → João Pessoa, 7 noites com café da manhã, traslados.
+
+### 2. Fortaleza — A partir de R$ 2.250/pessoa
+Fortaleza combina **praia, cultura e diversão** com preços acessíveis. A Praia do Futuro, o Mercado Central e as dunas de Jericoacoara (excursão) são os destaques.
+
+**O que inclui:** Aéreo BH → Fortaleza, 7 noites com café da manhã, traslados.
+
+### 3. Salvador — A partir de R$ 2.750/pessoa
+A capital baiana oferece **cultura, história e praias** em um único destino. Pelourinho, Farol da Barra e acarajé são imperdíveis.
+
+**O que inclui:** Aéreo BH → Salvador, 7 noites com café da manhã, traslados.
+
+### 4. Natal — A partir de R$ 2.387/pessoa
+Natal tem sol o ano inteiro e os buggys pelas dunas são uma experiência única. A Praia de Ponta Negra e os Parrachos de Maracajaú são os grandes atrativos.
+
+**O que inclui:** Aéreo BH → Natal, 7 noites com café da manhã, traslados.
+
+### 5. Porto de Galinhas — A partir de R$ 2.319/pessoa
+As **piscinas naturais** de Porto de Galinhas são únicas no mundo. É um destino um pouco mais caro, mas o custo-benefício compensa.
+
+**O que inclui:** Aéreo BH → Recife + traslado, 7 noites com café da manhã, traslados.
+
+### 6. Maceió — A partir de R$ 3.250/pessoa
+O "Caribe brasileiro" justifica o investimento: águas em tons de turquesa, praias desertas e a experiência de nadar com tartarugas em São Miguel dos Milagres.
+
+**O que inclui:** Aéreo BH → Maceió, 7 noites com café da manhã, traslados.
+
+## Dicas para conseguir os melhores preços
+
+### Reserve com antecedência
+Pacotes reservados com **3 a 6 meses de antecedência** têm tarifas de 15-25% mais baixas. Para alta temporada (julho, dezembro-janeiro), reserve com ainda mais tempo.
+
+### Viaje na baixa temporada
+Os meses de **abril, maio, agosto, setembro e outubro** têm os melhores preços e menos turistas. O clima ainda é bom na maioria dos destinos nordestinos.
+
+### Aproveite promoções relâmpago
+Cadastre-se no grupo do WhatsApp da Marshe Viagens para receber promoções exclusivas em primeira mão.
+
+### Compare datas de ida e volta
+Às vezes, mudar a data de ida ou volta em 1-2 dias pode gerar economias significativas.
+
+## Parcelamento facilitado
+
+A Marshe Viagens oferece parcelamento em até **12x no cartão de crédito sem juros** para pacotes selecionados. Entre em contato pelo WhatsApp e simule seu pacote ideal.
+
+## Por que a Marshe Viagens?
+
+- 🏆 Especialistas em turismo saindo de Belo Horizonte
+- 📱 Suporte pelo WhatsApp antes, durante e após a viagem
+- 🛫 Parcerias com as principais companhias aéreas
+- 🏨 Hotéis selecionados e avaliados pela nossa equipe
+- 💳 Parcelamento em até 12x sem juros
+    `,
+    category: "roteiros",
+    categoryLabel: "Roteiros",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "8 min",
+    image: pacotesBaratosImg,
+    tags: ["Pacotes", "Nordeste", "Preços Baratos", "2026", "Viagem Econômica"],
+    metaDescription: "Pacotes baratos para o Nordeste em 2026: compare os melhores destinos e preços saindo de BH. João Pessoa, Fortaleza, Maceió, Natal e mais com aéreo incluso!",
+  },
+  // ===== 3 POSTS EXTRAS (1 por categoria) =====
+  {
+    slug: "guia-completo-fortaleza-ce",
+    title: "Guia Completo de Fortaleza: Praias, Cultura, Gastronomia e Passeios",
+    excerpt: "Descubra Fortaleza além do óbvio: da Praia do Futuro ao Mercado Central, do lagostim ao caju, passando pelos melhores bairros e dicas para aproveitar ao máximo.",
+    content: `
+## Fortaleza: a Capital do Ceará
+
+Fortaleza é a **quinta maior cidade do Brasil** e um dos destinos turísticos mais visitados do país. Com 34 km de litoral urbano, culinária diversificada, vida noturna intensa e o interior cheio de atrações como Jericoacoara e Canoa Quebrada, a cidade agrada a todos os perfis de viajante.
+
+## Principais pontos turísticos
+
+### Praia do Futuro
+A **Praia do Futuro** é a praia mais famosa de Fortaleza, com seus tradicionais quiosques de palha, o famoso caranguejo e a famosa "quinta da praia do futuro" — terças-feiras com muito forró.
+
+### Beira-Mar
+A **Avenida Beira-Mar** é o cartão-postal de Fortaleza: ciclovia, calçadão, barracas coloridas e uma das melhores feiras de artesanato e rendas do Nordeste.
+
+### Mercado Central
+O **Mercado Central** é imperdível para compras: renda, artesanato em madeira, cajuína, rapadura, bordados e muito mais. Quatro andares de cultura cearense.
+
+### Dragão do Mar
+O **Centro Dragão do Mar de Arte e Cultura** é o coração cultural de Fortaleza: museus, teatro, cinema, bares e o Museu da Cultura Cearense.
+
+### Cais do Porto
+Um dos complexos gastronômicos mais animados de Fortaleza, com bares, restaurantes e shows de forró ao vivo.
+
+## Praias imperdíveis
+
+1. **Praia do Futuro** — badalada, com barracas e quiosques
+2. **Praia de Iracema** — histórica, com o famoso "Iracema à beira-mar"
+3. **Praia Meireles** — urbanizada, ótima para caminhadas
+4. **Canoa Quebrada** (175 km) — falésias cor-de-rosa e duna
+5. **Jericoacoara** (300 km) — paraíso preservado, na lista de 10 melhores praias do mundo
+
+## Gastronomia cearense
+
+- **Lagosta e camarão** — frutos do mar abundantes e frescos
+- **Caranguejo** — especialidade da Praia do Futuro
+- **Paçoca de pilão** — amendoim moído com rapadura
+- **Caju-amigo** — suco de caju com vodca, típico de Fortaleza
+
+### Onde comer
+- **Coco Bambu** — referência em frutos do mar
+- **La Tablita** — espetinhos e petiscos com vista para a Beira-Mar
+- **Restaurante Colher de Pau** — culinária cearense autêntica
+
+## Melhor época
+
+Fortaleza tem sol praticamente o ano inteiro. Os meses de **agosto a dezembro** têm menos chuva. De dezembro a março, o vento é forte — ótimo para kite surf!
+
+## Excursões imperdíveis
+
+- **Jericoacoara**: 300 km, mas vale cada quilômetro. Reserve 1-2 dias
+- **Canoa Quebrada**: 175 km, falésias e dunas deslumbrantes
+- **Canyons do Guarani**: para os amantes de aventura e natureza
+
+## Pacotes saindo de BH
+
+A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins a partir de **R$ 2.250 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+    `,
+    category: "guias",
+    categoryLabel: "Guias de Destinos",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "9 min",
+    image: guiaFortalezaImg,
+    tags: ["Fortaleza", "Ceará", "Nordeste", "Praias", "Jericoacoara"],
+    metaDescription: "Guia completo de Fortaleza: praias, Mercado Central, Dragão do Mar, gastronomia cearense, Jericoacoara e Canoa Quebrada. Planeje sua viagem à capital cearense!",
+  },
+  {
+    slug: "seguro-viagem-vale-a-pena-contratar",
+    title: "Seguro Viagem: Vale a Pena Contratar? Guia Completo Para Decidir",
+    excerpt: "Entenda de uma vez por todas se o seguro viagem compensa, o que cobre, quanto custa e como escolher o melhor plano para sua viagem nacional ou internacional.",
+    content: `
+## Seguro viagem: uma proteção que pode salvar sua viagem
+
+Você já se perguntou se o **seguro viagem vale a pena**? A resposta curta é: sim, especialmente para viagens internacionais. Mas para viagens nacionais também há situações em que ele faz toda a diferença.
+
+## O que é seguro viagem?
+
+O seguro viagem é um produto que cobre **imprevistos durante a viagem**: problemas médicos, cancelamentos, extravio de bagagem, atrasos de voo e muito mais. Existem planos para viagens nacionais e internacionais.
+
+## O que cobre o seguro viagem nacional?
+
+### Coberturas mais comuns
+- ✅ **Assistência médica** em caso de acidentes ou emergências
+- ✅ **Cancelamento ou interrupção** da viagem (em alguns planos)
+- ✅ **Extravio de bagagem** e reembolso por itens essenciais
+- ✅ **Atraso de voo** — reembolso de despesas extras
+- ✅ **Assistência jurídica** em caso de acidentes
+
+### O que geralmente não cobre
+- ❌ Doenças preexistentes (na maioria dos planos básicos)
+- ❌ Esportes radicais sem addendum específico
+- ❌ Danos a terceiros
+- ❌ Casos que não sejam emergências médicas
+
+## Quanto custa?
+
+Para viagens **nacionais** (8-10 dias):
+- Plano básico: R$ 30-60
+- Plano intermediário: R$ 60-120
+- Plano completo: R$ 100-200
+
+Para viagens **internacionais** (10 dias):
+- América do Sul: R$ 80-200
+- Europa/EUA: R$ 200-500
+- Planos premium: R$ 400-800
+
+## Quando o seguro viagem é obrigatório?
+
+- 🌍 **Europa (Schengen)**: obrigatório para obter o visto, com cobertura mínima de €30.000
+- 🌎 **Estados Unidos**: não obrigatório, mas altamente recomendado — uma consulta médica pode custar US$ 500-5.000
+- 🇧🇷 **Brasil**: não obrigatório, mas recomendado em destinos remotos
+
+## Vale a pena para viagens nacionais?
+
+**Sim, em algumas situações:**
+- Viagem de avião (atraso/cancelamento de voo é mais frequente do que parece)
+- Destinos com baixa infraestrutura médica (interior, praia remota)
+- Viagem com crianças ou idosos
+- Quando a viagem tem custo total alto
+
+**Pode dispensar:**
+- Viagem curta (fim de semana) de carro
+- Destinos com boa infraestrutura médica e hospital perto
+- Quando você tem plano de saúde com boa cobertura nacional
+
+## Como escolher o melhor seguro?
+
+### 1. Analise a cobertura médica
+Para viagens nacionais, verifique se já tem **plano de saúde** com cobertura no destino. Se sim, o seguro adicional pode focar em assistência de viagem.
+
+### 2. Verifique a rede credenciada
+Prefira seguradoras com ampla rede de atendimento no destino.
+
+### 3. Compare exclusões
+Leia o contrato com atenção. Atividades de aventura (mergulho, rapel, kite surf) geralmente precisam de cobertura adicional.
+
+### 4. Prefira franquias menores
+Franquia é o valor que você paga antes do seguro entrar. Franquias menores significam menos gasto no seu bolso.
+
+## Seguro viagem nos pacotes Marshe
+
+Os pacotes da Marshe Viagens podem ser complementados com **seguro viagem sob medida**. Consulte nossos especialistas pelo WhatsApp para adicionar essa proteção ao seu pacote por um valor acessível.
+    `,
+    category: "dicas",
+    categoryLabel: "Dicas de Viagem",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "8 min",
+    image: seguroViagemImg,
+    tags: ["Seguro Viagem", "Dicas", "Planejamento", "Proteção", "Viagem Segura"],
+    metaDescription: "Seguro viagem vale a pena? Guia completo: o que cobre, quanto custa, quando contratar e como escolher o melhor plano para viagem nacional e internacional.",
+  },
+  {
+    slug: "roteiro-3-dias-cabo-santo-agostinho",
+    title: "Roteiro de 3 Dias em Cabo de Santo Agostinho: Praias Secretas de Pernambuco",
+    excerpt: "Descubra as praias secretas perto de Recife em 3 dias: Cabo de Santo Agostinho concentra Cupe, Muro Alto, Porto de Galinhas e algumas das praias mais bonitas do Nordeste.",
+    content: `
+## Cabo de Santo Agostinho: o destino que surpreende
+
+A menos de 60 km de Recife, o município de **Cabo de Santo Agostinho** reúne algumas das praias mais deslumbrantes de Pernambuco. De Porto de Galinhas a Muro Alto, passando por praias praticamente desertas, é um destino que surpreende até os viajantes mais experientes.
+
+## Dia 1 — Porto de Galinhas e Piscinas Naturais
+
+Comece pelo destino mais famoso da região:
+
+- Manhã: Chegada em **Porto de Galinhas** e café da manhã com tapioca
+- 9h: **Passeio de jangada** até as piscinas naturais (maré baixa — chegue cedo!)
+- Almoço: **Beijupirá** ou **Barcaxeira** — restaurantes icônicos da vila
+- Tarde: **Praia de Maracaípe** — ótima para surf e observação de cavalos-marinhos
+- Noite: Explorar a vila de Porto de Galinhas, bares e lojas
+
+**Dica:** Compre o passeio de jangada direto na praia, sem intermediários.
+
+## Dia 2 — Muro Alto e Praias Desertas
+
+O segundo dia é para praias mais tranquilas:
+
+- Manhã: **Praia de Muro Alto** — extensa barreira de recifes cria uma enorme piscina natural calma, perfeita para famílias
+- Almoço: Barracas de praia em Muro Alto
+- Tarde: **Praia de Cupe** — quase deserta, com coqueirais e areias brancas
+- **Praia de Serrambi** — acesso mais difícil, mas vale a pena pela beleza selvagem
+- Sundowner: Pôr do sol na praia de Maracaípe
+
+## Dia 3 — Forte Orange e Retorno
+
+O último dia para história e paisagem:
+
+- Manhã: **Ilha de Itamaracá** (ao norte, 1h de carro) — Forte Orange, construído pelos holandeses em 1631
+- Visita ao **Centro de Mamíferos Aquáticos** — projeto de preservação de peixe-boi
+- Almoço de frutos do mar em Itamaracá
+- Tarde: Passeio pela **Vila Velha de Itamaracá** — a primeira capital de Pernambuco
+- Retorno a Recife
+
+## Praias do Cabo para todos os perfis
+
+| Praia | Perfil | Destaque |
+|-------|--------|---------|
+| Porto de Galinhas | Todos | Piscinas naturais de jangada |
+| Muro Alto | Famílias | Águas calmas, sem ondas |
+| Maracaípe | Surfistas | Ondas perfeitas |
+| Cupe | Casais | Isolada e romântica |
+| Serrambi | Aventureiros | Preservada e selvagem |
+
+## Gastronomia pernambucana
+
+- **Tainha na brasa** — peixe típico das barracas de praia
+- **Casquinha de caranguejo** — entrada obrigatória
+- **Caldo de sururu** — molusco típico em caldo temperado
+- **Bolo de rolo** — doce pernambucano com goiabada
+
+## Onde ficar?
+
+- **Porto de Galinhas**: pousadas charmosas a partir de R$ 250/noite
+- **Muro Alto**: resorts com área de piscinas naturais (R$ 600-1.500/noite)
+- **Recife**: hotéis com preços menores e aluguel de carro para explorar a região
+
+## Quanto custa?
+
+A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de Santo Agostinho) saindo de Belo Horizonte/Confins a partir de **R$ 2.319 por pessoa**, incluindo aéreo, hospedagem e traslados.
+    `,
+    category: "roteiros",
+    categoryLabel: "Roteiros",
+    author: "Marshe Viagens",
+    date: "2026-02-18",
+    readTime: "7 min",
+    image: roteirosCaboImg,
+    tags: ["Cabo de Santo Agostinho", "Pernambuco", "Porto de Galinhas", "Muro Alto", "Nordeste"],
+    metaDescription: "Roteiro de 3 dias em Cabo de Santo Agostinho: Porto de Galinhas, Muro Alto, Cupe e praias desertas de Pernambuco. Guia completo para planejar sua viagem!",
   },
 ];
