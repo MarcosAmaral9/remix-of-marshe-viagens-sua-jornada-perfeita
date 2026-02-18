@@ -944,7 +944,7 @@ A **melhor época para viajar para Maceió é entre setembro e novembro**. Nesse
 
 ## Dica Marshe Viagens
 
-Nossos pacotes para Maceió saindo de Belo Horizonte têm melhores preços justamente nos meses de **setembro a novembro**. Reserve com 60 dias de antecedência para garantir as melhores tarifas!
+Nossos pacotes para Maceió saindo de Belo Horizonte têm melhores preços justamente nos meses de **setembro a novembro**. Reserve com pelo menos 90 dias de antecedência para garantir as melhores tarifas!
     `,
     category: "guias",
     categoryLabel: "Guias de Destinos",
@@ -1024,7 +1024,7 @@ Os preços abaixo são estimativas para voos saindo de **Confins (BH)** em 2026:
 
 ## Quanto levar por pessoa para 8 dias?
 
-Com **pacote da Marshe Viagens** (aéreo + hotel com café da manhã + traslados inclusos), calcule:
+Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
 
 - 💰 **Alimentação**: R$ 100-150/dia × 8 dias = **R$ 800-1.200**
 - 🚤 **Passeios**: R$ 300-600 (total da viagem)
