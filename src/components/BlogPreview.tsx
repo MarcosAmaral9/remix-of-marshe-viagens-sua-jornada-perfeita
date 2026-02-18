@@ -36,43 +36,45 @@ const BlogPreview = () => {
         </div>
 
         {/* Featured post card */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <Link
             to={`/blog/${post.slug}`}
-            className="group block bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-500"
+            className="group block bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-500"
           >
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-80 overflow-hidden">
+              <div className="relative h-72 md:h-[420px] overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+                <div className="absolute top-5 left-5">
+                  <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1.5 rounded-full">
                     {post.categoryLabel}
                   </span>
                 </div>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 md:hidden" />
               </div>
-              <div className="p-6 md:p-8 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors line-clamp-3 mb-3">
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground group-hover:text-primary transition-colors line-clamp-3 mb-4">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
+                <p className="text-muted-foreground line-clamp-4 mb-6 leading-relaxed">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4" />
                     {new Date(post.date).toLocaleDateString("pt-BR")}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {post.readTime}
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="w-4 h-4" />
+                    {post.readTime} de leitura
                   </span>
                 </div>
-                <span className="text-primary font-medium text-sm group-hover:underline">
-                  Ler artigo completo →
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                  Ler artigo completo <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
             </div>
@@ -84,10 +86,10 @@ const BlogPreview = () => {
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2.5 rounded-full transition-all duration-300 ${
                   i === activeIndex
                     ? "bg-primary w-8"
-                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50 w-2.5"
                 }`}
                 aria-label={`Ver post ${i + 1}`}
               />

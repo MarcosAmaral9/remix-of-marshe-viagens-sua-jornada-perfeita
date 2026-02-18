@@ -163,10 +163,23 @@ const BlogPost = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-8">Posts Relacionados</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedPosts.map((rp) => (
-                    <Link key={rp.slug} to={`/blog/${rp.slug}`} className="group bg-card rounded-xl p-5 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                      <span className="text-xs text-primary font-medium">{rp.categoryLabel}</span>
-                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors mt-1 line-clamp-2">{rp.title}</h3>
-                      <span className="text-xs text-muted-foreground mt-2 block">{rp.readTime}</span>
+                    <Link key={rp.slug} to={`/blog/${rp.slug}`} className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <div className="relative h-40 overflow-hidden bg-primary/10">
+                        <img
+                          src={rp.image}
+                          alt={rp.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span className="bg-primary text-primary-foreground text-xs font-medium px-2 py-0.5 rounded-full">
+                            {rp.categoryLabel}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">{rp.title}</h3>
+                        <span className="text-xs text-muted-foreground">{rp.readTime} de leitura</span>
+                      </div>
                     </Link>
                   ))}
                 </div>
