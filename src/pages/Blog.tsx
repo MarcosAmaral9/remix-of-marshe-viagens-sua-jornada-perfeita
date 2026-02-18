@@ -19,15 +19,17 @@ const Blog = () => {
     canonical: "https://marsheviagens.com.br/blog",
   });
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = activeCategory === "todos" || post.category === activeCategory;
-    const matchesSearch =
-      searchQuery === "" ||
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
-  });
+  const filteredPosts = blogPosts
+    .filter((post) => {
+      const matchesCategory = activeCategory === "todos" || post.category === activeCategory;
+      const matchesSearch =
+        searchQuery === "" ||
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="min-h-screen bg-background">

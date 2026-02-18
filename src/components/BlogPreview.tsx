@@ -4,13 +4,18 @@ import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const latestPosts = blogPosts.slice(0, 3);
+// 1 post mais recente de cada categoria
+const categoryPosts = (["guias", "dicas", "roteiros"] as const).map((cat) =>
+  blogPosts
+    .filter((p) => p.category === cat)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
+).filter(Boolean);
 
 const BlogPreview = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % latestPosts.length);
+    setActiveIndex((prev) => (prev + 1) % categoryPosts.length);
   }, []);
 
   useEffect(() => {
@@ -18,7 +23,7 @@ const BlogPreview = () => {
     return () => clearInterval(timer);
   }, [nextSlide]);
 
-  const post = latestPosts[activeIndex];
+  const post = categoryPosts[activeIndex];
 
   return (
     <section className="py-20 lg:py-32 bg-muted/30">
@@ -82,7 +87,7 @@ const BlogPreview = () => {
 
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
-            {latestPosts.map((_, i) => (
+            {categoryPosts.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}

@@ -21,9 +21,15 @@ const BlogPost = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const relatedPosts = blogPosts
-    .filter((p) => p.slug !== post.slug && (p.category === post.category || p.tags.some((t) => post.tags.includes(t))))
-    .slice(0, 3);
+  // 1 post de cada categoria (excluindo o atual), ordenado por data mais recente
+  const categories = ["guias", "dicas", "roteiros"] as const;
+  const relatedPosts = categories
+    .map((cat) =>
+      blogPosts
+        .filter((p) => p.slug !== post.slug && p.category === cat)
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
+    )
+    .filter(Boolean) as typeof blogPosts;
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
