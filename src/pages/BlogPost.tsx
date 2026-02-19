@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import AdSense from "@/components/AdSense";
+import AudioNarrator from "@/components/AudioNarrator";
 import { blogPosts } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
 import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
@@ -32,6 +33,15 @@ const BlogPost = () => {
     .filter(Boolean) as typeof blogPosts;
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // Plain text for TTS narration (strip markdown)
+  const narratorText = `${post.title}. ${post.content
+    .replace(/#{1,3} /g, "")
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/- /g, "")
+    .replace(/\n\n+/g, ". ")
+    .replace(/\n/g, " ")
+    .trim()}`;
 
   // Split content into sections for ad insertion
   const htmlContent = markdownToHtml(post.content);
@@ -87,11 +97,15 @@ const BlogPost = () => {
           {/* Content with mid-article ad */}
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 max-w-4xl">
-              <div className="flex justify-end mb-8">
+              {/* Audio Narrator + Share row */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+                <div className="flex-1">
+                  <AudioNarrator text={narratorText} title={post.title} />
+                </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2"
+                  className="gap-2 shrink-0"
                   onClick={async () => {
                     const url = window.location.href;
                     if (navigator.share) {
