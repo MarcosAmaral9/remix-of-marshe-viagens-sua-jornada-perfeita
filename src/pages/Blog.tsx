@@ -6,12 +6,15 @@ import ScrollToTop from "@/components/ScrollToTop";
 import AdSense from "@/components/AdSense";
 import { blogPosts, categories } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
-import { Calendar, Clock, Tag, Search } from "lucide-react";
+import { Calendar, Clock, Tag, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const POSTS_PER_PAGE = 9;
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   useSeo({
     title: "Blog - Guias, Dicas e Roteiros de Viagem | Marshe Viagens",
@@ -30,6 +33,22 @@ const Blog = () => {
       return matchesCategory && matchesSearch;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
+  const handleCategoryChange = (value: string) => {
+    setActiveCategory(value);
+    setCurrentPage(1);
+  };
+
+  const handleSearch = (value: string) => {
+    setSearchQuery(value);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,7 +73,7 @@ const Blog = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
-                  <Button key={cat.value} variant={activeCategory === cat.value ? "default" : "outline"} size="sm" onClick={() => setActiveCategory(cat.value)} className="rounded-full">
+                  <Button key={cat.value} variant={activeCategory === cat.value ? "default" : "outline"} size="sm" onClick={() => handleCategoryChange(cat.value)} className="rounded-full">
                     {cat.label}
                   </Button>
                 ))}
@@ -65,7 +84,7 @@ const Blog = () => {
                   type="text"
                   placeholder="Buscar posts..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => handleSearch(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 rounded-full border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
@@ -87,8 +106,16 @@ const Blog = () => {
               </div>
             ) : (
               <>
+                {/* Results info */}
+                <div className="flex items-center justify-between mb-8">
+                  <p className="text-sm text-muted-foreground">
+                    {filteredPosts.length} {filteredPosts.length === 1 ? "post encontrado" : "posts encontrados"}
+                    {totalPages > 1 && ` — Página ${currentPage} de ${totalPages}`}
+                  </p>
+                </div>
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredPosts.map((post, index) => (
+                  {paginatedPosts.map((post, index) => (
                     <>
                       <Link
                         key={post.slug}
@@ -118,7 +145,7 @@ const Blog = () => {
                         </div>
                       </Link>
                       {/* Ad after every 6th post */}
-                      {(index + 1) % 6 === 0 && index < filteredPosts.length - 1 && (
+                      {(index + 1) % 6 === 0 && index < paginatedPosts.length - 1 && (
                         <div key={`ad-${index}`} className="md:col-span-2 lg:col-span-3">
                           <AdSense slot="5678901234" format="horizontal" />
                         </div>
@@ -126,6 +153,47 @@ const Blog = () => {
                     </>
                   ))}
                 </div>
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex items-center justify-center gap-3 mt-12">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => { setCurrentPage((p) => p - 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      disabled={currentPage === 1}
+                      className="gap-1.5"
+                    >
+                      <ChevronLeft className="w-4 h-4" /> Anterior
+                    </Button>
+
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <button
+                          key={page}
+                          onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className={`h-9 w-9 rounded-lg text-sm font-medium transition-colors ${
+                            page === currentPage
+                              ? "bg-primary text-primary-foreground"
+                              : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => { setCurrentPage((p) => p + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      disabled={currentPage === totalPages}
+                      className="gap-1.5"
+                    >
+                      Próximo <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                )}
               </>
             )}
           </div>
