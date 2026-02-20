@@ -12,6 +12,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <Services />
         <BookingSteps />
         <Destinations />
+        <LeadCaptureForm />
         <Testimonials />
         <ContactSection />
         <WhatsAppClub />

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import AdSense from "@/components/AdSense";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { blogPosts, categories } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
 import { Calendar, Clock, Tag, Search, ChevronLeft, ChevronRight } from "lucide-react";
@@ -199,6 +200,7 @@ const Blog = () => {
           </div>
         </section>
       </main>
+      <LeadCaptureForm variant="blog" />
       <Footer />
       <ScrollToTop />
     </div>
