@@ -43,7 +43,7 @@ serve(async (req) => {
       `👥 *Viajantes:* ${travelers || "Não informado"}`,
       `📅 *Data da viagem:* ${formattedDate}`,
       "",
-      "✨ _Contato recebido pelo site marsheviagens.com.br_",
+      "✨ _Contato recebido pelo site marsheviagens.com_",
     ]
       .filter((line) => line !== null)
       .join("\n");
