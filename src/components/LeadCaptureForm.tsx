@@ -88,6 +88,7 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
 
   return (
     <section
+      id={isBlog ? undefined : "orcamento"}
       className={
         isBlog
           ? "py-12 bg-muted/40 border-y border-border"
