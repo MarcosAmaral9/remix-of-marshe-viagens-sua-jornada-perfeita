@@ -14,7 +14,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://marsheviagens.com.br/sitemap.xml
+Sitemap: https://marsheviagens.com/sitemap.xml
 
 # Crawl-delay for polite crawling
 User-agent: *
