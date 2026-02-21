@@ -17,7 +17,7 @@ const BlogPost = () => {
   useSeo({
     title: post ? `${post.title} | Marshe Viagens Blog` : "Blog | Marshe Viagens",
     description: post?.metaDescription || "",
-    canonical: post ? `https://marsheviagens.com.br/blog/${post.slug}` : undefined,
+    canonical: post ? `https://marsheviagens.com/blog/${post.slug}` : undefined,
   });
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -100,7 +100,7 @@ const BlogPost = () => {
               {/* Audio Narrator + Share row */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
                 <div className="flex-1">
-                  <AudioNarrator text={narratorText} title={post.title} />
+                  <AudioNarrator text={narratorText} title={post.title} articleSlug={post.slug} />
                 </div>
                 <Button
                   variant="outline"
@@ -223,7 +223,7 @@ const BlogPost = () => {
               publisher: {
                 "@type": "Organization",
                 name: "Marshe Viagens",
-                url: "https://marsheviagens.com.br",
+                url: "https://marsheviagens.com",
               },
               mainEntityOfPage: shareUrl,
             }),
