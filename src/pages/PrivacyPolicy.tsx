@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
   useSeo({
     title: "Política de Privacidade | Marshe Viagens",
     description: "Política de privacidade da Marshe Viagens. Saiba como coletamos, usamos e protegemos seus dados pessoais.",
-    canonical: "https://marsheviagens.com.br/privacidade",
+    canonical: "https://marsheviagens.com/privacidade",
   });
 
   return (
@@ -44,10 +44,12 @@ const PrivacyPolicy = () => {
                 Podemos coletar os seguintes tipos de informações:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li><strong className="text-foreground">Dados de navegação:</strong> Endereço IP, tipo de navegador, páginas visitadas, tempo de permanência</li>
+                <li><strong className="text-foreground">Dados de navegação:</strong> Endereço IP, tipo de navegador, páginas visitadas, tempo de permanência, dispositivo utilizado</li>
                 <li><strong className="text-foreground">Cookies:</strong> Utilizamos cookies para melhorar sua experiência e para fins publicitários</li>
-                <li><strong className="text-foreground">Dados de contato:</strong> Nome, e-mail e telefone, quando fornecidos voluntariamente</li>
+                <li><strong className="text-foreground">Dados de contato:</strong> Nome, e-mail, WhatsApp, destino de interesse e informações de viagem, quando fornecidos voluntariamente através do formulário de orçamento</li>
                 <li><strong className="text-foreground">Dados de localização:</strong> Região geográfica aproximada baseada no IP</li>
+                <li><strong className="text-foreground">Dados de uso de recursos:</strong> Informações sobre uso do recurso de narração de áudio, incluindo tempo de escuta, velocidade de reprodução e artigos ouvidos</li>
+                <li><strong className="text-foreground">Dados de sessão:</strong> Identificador anônimo de sessão, páginas visitadas e tempo de permanência em cada página, armazenados em nosso banco de dados para fins de análise interna</li>
               </ul>
             </section>
 
@@ -62,8 +64,10 @@ const PrivacyPolicy = () => {
                 <li>Melhorar nosso site e serviços</li>
                 <li>Personalizar sua experiência de navegação</li>
                 <li>Exibir anúncios relevantes através do Google AdSense</li>
-                <li>Analisar o tráfego do site através do Google Analytics</li>
-                <li>Responder às suas solicitações de contato</li>
+                <li>Analisar o tráfego do site através do Google Analytics e sistema interno de analytics</li>
+                <li>Responder às suas solicitações de contato e orçamento</li>
+                <li>Armazenar e fornecer narrações em áudio dos artigos do blog</li>
+                <li>Monitorar a performance e usabilidade do site</li>
                 <li>Cumprir obrigações legais</li>
               </ul>
             </section>
@@ -115,6 +119,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li>Google (Analytics e AdSense) para análise e publicidade</li>
+                <li>Provedor de hospedagem e banco de dados para armazenamento seguro dos dados analíticos e arquivos de áudio</li>
                 <li>Autoridades legais, quando exigido por lei</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">

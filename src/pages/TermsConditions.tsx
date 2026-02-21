@@ -8,7 +8,7 @@ const TermsConditions = () => {
   useSeo({
     title: "Termos e Condições | Marshe Viagens",
     description: "Termos e condições de uso da Marshe Viagens. Leia antes de contratar nossos serviços de viagem.",
-    canonical: "https://marsheviagens.com.br/termos",
+    canonical: "https://marsheviagens.com/termos",
   });
 
   return (
@@ -108,6 +108,8 @@ const TermsConditions = () => {
                 <li><strong className="text-foreground">Dados técnicos:</strong> Endereço IP, tipo de dispositivo, navegador utilizado</li>
                 <li><strong className="text-foreground">Preferências:</strong> Configurações de tema, idioma e consentimento de cookies</li>
                 <li><strong className="text-foreground">Dados de anúncios:</strong> Interações com anúncios para personalização publicitária</li>
+                <li><strong className="text-foreground">Dados de uso de recursos:</strong> Estatísticas de uso do recurso de narração em áudio (tempo de escuta, artigos ouvidos, velocidade de reprodução)</li>
+                <li><strong className="text-foreground">Dados de sessão:</strong> Identificadores anônimos para análise interna de tráfego e comportamento de navegação</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Estes dados são utilizados para melhorar a experiência do usuário, análise de tráfego 

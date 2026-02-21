@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      audio_files: {
+        Row: {
+          article_slug: string
+          created_at: string
+          duration_seconds: number | null
+          file_path: string
+          id: string
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          article_slug: string
+          created_at?: string
+          duration_seconds?: number | null
+          file_path: string
+          id?: string
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          article_slug?: string
+          created_at?: string
+          duration_seconds?: number | null
+          file_path?: string
+          id?: string
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      audio_usage: {
+        Row: {
+          article_slug: string
+          completed: boolean | null
+          created_at: string
+          duration_listened_seconds: number | null
+          id: string
+          playback_speed: number | null
+          session_id: string
+          total_duration_seconds: number | null
+        }
+        Insert: {
+          article_slug: string
+          completed?: boolean | null
+          created_at?: string
+          duration_listened_seconds?: number | null
+          id?: string
+          playback_speed?: number | null
+          session_id: string
+          total_duration_seconds?: number | null
+        }
+        Update: {
+          article_slug?: string
+          completed?: boolean | null
+          created_at?: string
+          duration_listened_seconds?: number | null
+          id?: string
+          playback_speed?: number | null
+          session_id?: string
+          total_duration_seconds?: number | null
+        }
+        Relationships: []
+      }
+      page_views: {
+        Row: {
+          created_at: string
+          duration_seconds: number | null
+          id: string
+          page_path: string
+          referrer: string | null
+          session_id: string
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          page_path: string
+          referrer?: string | null
+          session_id: string
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          page_path?: string
+          referrer?: string | null
+          session_id?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      site_sessions: {
+        Row: {
+          created_at: string
+          device_type: string | null
+          first_page: string | null
+          id: string
+          last_active_at: string
+          session_id: string
+          total_duration_seconds: number | null
+          total_pages_viewed: number | null
+        }
+        Insert: {
+          created_at?: string
+          device_type?: string | null
+          first_page?: string | null
+          id?: string
+          last_active_at?: string
+          session_id: string
+          total_duration_seconds?: number | null
+          total_pages_viewed?: number | null
+        }
+        Update: {
+          created_at?: string
+          device_type?: string | null
+          first_page?: string | null
+          id?: string
+          last_active_at?: string
+          session_id?: string
+          total_duration_seconds?: number | null
+          total_pages_viewed?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
