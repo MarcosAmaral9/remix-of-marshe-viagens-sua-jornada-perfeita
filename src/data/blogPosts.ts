@@ -1078,7 +1078,7 @@ Viajar para o Nordeste com qualidade e sem gastar uma fortuna é possível — e
 - ✅ **Economia**: pacotes costumam ser 20-30% mais baratos que comprar tudo separado
 - ✅ **Praticidade**: aéreo, hotel e traslado em um único pagamento
 - ✅ **Segurança**: suporte especializado em caso de imprevistos
-- ✅ **Parcelamento**: pague em até 12x sem juros
+- ✅ **Parcelamento**: pague em até 10x sem juros
 
 ## Destinos mais baratos do Nordeste em 2026
 
@@ -1128,7 +1128,7 @@ Cadastre-se no grupo do WhatsApp da Marshe Viagens para receber promoções excl
 
 ## Parcelamento facilitado
 
-A Marshe Viagens oferece parcelamento em até **12x no cartão de crédito sem juros** para pacotes selecionados. Entre em contato pelo WhatsApp e simule seu pacote ideal.
+A Marshe Viagens oferece parcelamento em até **10x no cartão de crédito sem juros** para pacotes selecionados. Entre em contato pelo WhatsApp e simule seu pacote ideal.
 
 ## Por que a Marshe Viagens?
 
@@ -1136,7 +1136,7 @@ A Marshe Viagens oferece parcelamento em até **12x no cartão de crédito sem j
 - 📱 Suporte pelo WhatsApp antes, durante e após a viagem
 - 🛫 Parcerias com as principais companhias aéreas
 - 🏨 Hotéis selecionados e avaliados pela nossa equipe
-- 💳 Parcelamento em até 12x sem juros
+- 💳 Parcelamento em até 10x sem juros
     `,
     category: "roteiros",
     categoryLabel: "Roteiros",
