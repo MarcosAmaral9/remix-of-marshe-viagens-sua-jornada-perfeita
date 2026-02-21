@@ -124,10 +124,10 @@ const Header = () => {
               size="sm"
               className="px-6 py-2 h-auto"
               onClick={() => {
-                if (isHomePage) {
-                  document.getElementById("orcamento")?.scrollIntoView({ behavior: "smooth" });
+              if (isHomePage) {
+                  document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
                 } else {
-                  window.location.href = "/#orcamento";
+                  window.location.href = "/#contato";
                 }
               }}
             >
@@ -221,9 +221,9 @@ const Header = () => {
                 onClick={() => {
                   setIsMenuOpen(false);
                   if (isHomePage) {
-                    document.getElementById("orcamento")?.scrollIntoView({ behavior: "smooth" });
+                    document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
                   } else {
-                    window.location.href = "/#orcamento";
+                    window.location.href = "/#contato";
                   }
                 }}
               >
