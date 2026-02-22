@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -54,6 +54,8 @@ const Blog = () => {
     currentPage * POSTS_PER_PAGE
   );
 
+  const topRef = useRef<HTMLDivElement>(null);
+
   const goToPage = (page: number) => {
     setCurrentPage(page);
     if (page === 1) {
@@ -62,7 +64,10 @@ const Blog = () => {
       searchParams.set("page", String(page));
     }
     setSearchParams(searchParams, { replace: true });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll to top using multiple strategies for iframe compatibility
+    setTimeout(() => {
+      topRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
   };
 
   const handleCategoryChange = (value: string) => {
@@ -77,6 +82,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div ref={topRef} />
       <Header />
       <main className="pt-24">
         {/* Hero */}
