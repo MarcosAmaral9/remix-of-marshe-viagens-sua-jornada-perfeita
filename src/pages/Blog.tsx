@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -13,9 +13,22 @@ import { Button } from "@/components/ui/button";
 const POSTS_PER_PAGE = 9;
 
 const Blog = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    return isNaN(page) || page < 1 ? 1 : page;
+  });
+
+  useEffect(() => {
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    const validPage = isNaN(page) || page < 1 ? 1 : page;
+    if (validPage !== currentPage) {
+      setCurrentPage(validPage);
+      window.scrollTo(0, 0);
+    }
+  }, [searchParams]);
 
   useSeo({
     title: "Blog - Guias, Dicas e Roteiros de Viagem | Marshe Viagens",
@@ -41,14 +54,25 @@ const Blog = () => {
     currentPage * POSTS_PER_PAGE
   );
 
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    if (page === 1) {
+      searchParams.delete("page");
+    } else {
+      searchParams.set("page", String(page));
+    }
+    setSearchParams(searchParams, { replace: true });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleCategoryChange = (value: string) => {
     setActiveCategory(value);
-    setCurrentPage(1);
+    goToPage(1);
   };
 
   const handleSearch = (value: string) => {
     setSearchQuery(value);
-    setCurrentPage(1);
+    goToPage(1);
   };
 
   return (
@@ -158,10 +182,10 @@ const Blog = () => {
                 {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="flex items-center justify-center gap-3 mt-12">
-                    <Button
+                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => { setCurrentPage((p) => p - 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      onClick={() => goToPage(currentPage - 1)}
                       disabled={currentPage === 1}
                       className="gap-1.5"
                     >
@@ -172,7 +196,7 @@ const Blog = () => {
                       {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                         <button
                           key={page}
-                          onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          onClick={() => goToPage(page)}
                           className={`h-9 w-9 rounded-lg text-sm font-medium transition-colors ${
                             page === currentPage
                               ? "bg-primary text-primary-foreground"
@@ -187,7 +211,7 @@ const Blog = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => { setCurrentPage((p) => p + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      onClick={() => goToPage(currentPage + 1)}
                       disabled={currentPage === totalPages}
                       className="gap-1.5"
                     >
