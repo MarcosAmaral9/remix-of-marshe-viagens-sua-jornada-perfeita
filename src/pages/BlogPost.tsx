@@ -6,6 +6,8 @@ import AdSense from "@/components/AdSense";
 import AudioNarrator from "@/components/AudioNarrator";
 import { blogPosts } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
+
+const POSTS_PER_PAGE = 9;
 import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -57,9 +59,17 @@ const BlogPost = () => {
           {/* Header */}
           <section className="relative py-12 lg:py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
             <div className="container mx-auto px-4 max-w-4xl">
-              <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
-                <ArrowLeft className="w-4 h-4" /> Voltar ao blog
-              </Link>
+              {(() => {
+                const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+                const postIndex = sortedPosts.findIndex((p) => p.slug === post.slug);
+                const page = Math.floor(postIndex / POSTS_PER_PAGE) + 1;
+                const to = page > 1 ? `/blog?page=${page}` : "/blog";
+                return (
+                  <Link to={to} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
+                    <ArrowLeft className="w-4 h-4" /> Voltar ao blog
+                  </Link>
+                );
+              })()}
 
               <span className="inline-block bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full mb-4">
                 {post.categoryLabel}
