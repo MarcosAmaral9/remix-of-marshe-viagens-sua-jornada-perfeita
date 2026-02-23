@@ -108,59 +108,45 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
   const fetchAndPlay = useCallback(async () => {
     setIsLoading(true);
     try {
-      // 1. Check if there's a stored audio file for this article
-      if (articleSlug) {
-        const { data: audioFile } = await supabase
-          .from("audio_files")
-          .select("file_path")
-          .eq("article_slug", articleSlug)
-          .maybeSingle();
-
-        if (audioFile?.file_path) {
-          const { data: urlData } = supabase.storage
-            .from("audio-files")
-            .getPublicUrl(audioFile.file_path);
-
-          if (urlData?.publicUrl) {
-            setAudioUrl(urlData.publicUrl);
-            const audio = setupAudio(urlData.publicUrl);
-            await audio.play();
-            setIsPlaying(true);
-            setIsLoading(false);
-            return;
-          }
-        }
+      if (!articleSlug) {
+        toast.error("Áudio não disponível para este artigo.");
+        setIsLoading(false);
+        return;
       }
 
-      // 2. Fallback to TTS generation
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+      const { data: audioFile } = await supabase
+        .from("audio_files")
+        .select("file_path")
+        .eq("article_slug", articleSlug)
+        .maybeSingle();
 
-      const response = await fetch(`${supabaseUrl}/functions/v1/tts-narrate`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-        },
-        body: JSON.stringify({ text }),
-      });
+      if (!audioFile?.file_path) {
+        toast.error("Áudio ainda não disponível para este artigo.");
+        setIsLoading(false);
+        return;
+      }
 
-      if (!response.ok) throw new Error("Erro ao gerar narração. Tente novamente.");
+      const { data: urlData } = supabase.storage
+        .from("audio-files")
+        .getPublicUrl(audioFile.file_path);
 
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setAudioUrl(url);
-      const audio = setupAudio(url);
+      if (!urlData?.publicUrl) {
+        toast.error("Erro ao carregar o áudio.");
+        setIsLoading(false);
+        return;
+      }
+
+      setAudioUrl(urlData.publicUrl);
+      const audio = setupAudio(urlData.publicUrl);
       await audio.play();
       setIsPlaying(true);
     } catch (err) {
       console.error(err);
-      toast.error(err instanceof Error ? err.message : "Erro ao gerar narração.");
+      toast.error(err instanceof Error ? err.message : "Erro ao carregar narração.");
     } finally {
       setIsLoading(false);
     }
-  }, [text, articleSlug, setupAudio]);
+  }, [articleSlug, setupAudio]);
 
   const togglePlay = () => {
     if (!audioRef.current) {
