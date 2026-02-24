@@ -25,6 +25,8 @@ import PortoSeguro from "./pages/destinos/PortoSeguro";
 import Salvador from "./pages/destinos/Salvador";
 import FozDoIguacu from "./pages/destinos/FozDoIguacu";
 import Gramado from "./pages/destinos/Gramado";
+import CircuitosEuropa from "./pages/CircuitosEuropa";
+import CircuitoDetail from "./pages/circuitos/CircuitoDetail";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +61,8 @@ const App = () => (
               <Route path="/destinos/salvador" element={<Salvador />} />
               <Route path="/destinos/foz-do-iguacu" element={<FozDoIguacu />} />
               <Route path="/destinos/gramado" element={<Gramado />} />
+              <Route path="/circuitos/europa" element={<CircuitosEuropa />} />
+              <Route path="/circuitos/europa/:slug" element={<CircuitoDetail />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -8,6 +8,7 @@ import BlogPreview from "@/components/BlogPreview";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import WhatsAppClub from "@/components/WhatsAppClub";
+import CircuitosViagem from "@/components/CircuitosViagem";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -25,6 +26,7 @@ const Index = () => {
         <Services />
         <BookingSteps />
         <Destinations />
+        <CircuitosViagem />
         <LeadCaptureForm />
         <Testimonials />
         <ContactSection />
