@@ -39,8 +39,8 @@ const destinations = [
   {
     name: "João Pessoa",
     location: "Paraíba",
-    price: "R$ 3.200",
-    duration: "8 dias",
+    price: "R$ 2.790",
+    duration: "7 dias",
     dates: "13/06/26 a 20/06/26",
     image: joaoPessoaImg,
     slug: "joao-pessoa",
