@@ -25,6 +25,7 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const speedMenuRef = useRef<HTMLDivElement>(null);
   const listenStartRef = useRef<number>(0);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
 
   // Close speed menu on outside click
   useEffect(() => {
@@ -138,8 +139,9 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
 
       setAudioUrl(urlData.publicUrl);
       const audio = setupAudio(urlData.publicUrl);
-      await audio.play();
-      setIsPlaying(true);
+      playPromiseRef.current = audio.play();
+      try { await playPromiseRef.current; } catch (e) { /* interrupted */ }
+      setIsPlaying(!audio.paused);
     } catch (err) {
       console.error(err);
       toast.error(err instanceof Error ? err.message : "Erro ao carregar narração.");
@@ -148,15 +150,19 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
     }
   }, [articleSlug, setupAudio]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (!audioRef.current) {
       fetchAndPlay();
       return;
     }
     if (isPlaying) {
+      if (playPromiseRef.current) {
+        try { await playPromiseRef.current; } catch (e) { /* interrupted */ }
+      }
       audioRef.current.pause();
     } else {
-      audioRef.current.play();
+      playPromiseRef.current = audioRef.current.play();
+      try { await playPromiseRef.current; } catch (e) { /* interrupted */ }
     }
   };
 
