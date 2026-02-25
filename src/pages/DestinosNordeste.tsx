@@ -59,9 +59,9 @@ const destinations = [
   {
     name: "Natal",
     location: "Rio Grande do Norte",
-    price: "R$ 3.640",
+    price: "R$ 3.600",
     duration: "8 dias",
-    dates: "21/03/26 a 28/03/26",
+    dates: "21/06/26 a 28/06/26",
     image: natalImg,
     slug: "natal",
     highlights: ["Dunas de Genipabu", "Praia de Pipa", "Forte dos Reis Magos"],
@@ -89,9 +89,9 @@ const destinations = [
   {
     name: "Salvador",
     location: "Bahia",
-    price: "R$ 2.750",
+    price: "R$ 1.800",
     duration: "8 dias",
-    dates: "04/03/26 a 11/03/26",
+    dates: "19/04/26 a 26/04/26",
     image: salvadorImg,
     slug: "salvador",
     highlights: ["Pelourinho", "Elevador Lacerda", "Praia do Farol da Barra"],
