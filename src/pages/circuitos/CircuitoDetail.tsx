@@ -5,6 +5,7 @@ import { useSeo } from "@/hooks/use-seo";
 import { ArrowLeft, Calendar, Moon, Users, Globe, Check, Hotel, MapPin, CreditCard, AlertTriangle, Info } from "lucide-react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 import { circuitosEuropa, paymentInfo } from "@/data/circuitos";
 import {
   Accordion,
@@ -67,20 +68,32 @@ const CircuitoDetail = () => {
               <span className="text-2xl font-bold ml-2">{circuit.pricePerPerson}</span>
               <span className="text-sm opacity-80 ml-1">por pessoa, sujeito a reajuste</span>
             </div>
-            <Button
-              variant="hero-outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-              onClick={() => {
-                const el = document.getElementById("contato");
-                if (el) {
-                  el.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  window.location.href = "/#contato";
+            <div className="flex flex-wrap gap-3">
+              <Button
+                variant="hero-outline"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                asChild
+              >
+                <a
+                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Reservar pelo WhatsApp
+                </a>
+              </Button>
+              <OrcamentoDialog
+                defaultDestination={`Circuito ${circuit.name.includes("Itália") ? "Itália e Paris com Disneyland" : circuit.name.includes("Lisboa") ? "Lisboa, Madri e Paris com Disneyland" : "Madri e Paris com Disneyland"}`}
+                trigger={
+                  <Button
+                    variant="hero-outline"
+                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  >
+                    Solicitar Orçamento
+                  </Button>
                 }
-              }}
-            >
-              Solicitar Orçamento
-            </Button>
+              />
+            </div>
           </div>
         </section>
 
@@ -194,19 +207,26 @@ const CircuitoDetail = () => {
           <section className="text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-10">
             <h2 className="text-2xl font-serif font-bold text-foreground mb-3">Interessado neste circuito?</h2>
             <p className="text-muted-foreground mb-6">Entre em contato conosco para solicitar um orçamento personalizado.</p>
-            <Button
-              variant="hero"
-              onClick={() => {
-                const el = document.getElementById("contato");
-                if (el) {
-                  el.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  window.location.href = "/#contato";
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" asChild>
+                <a
+                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Reservar pelo WhatsApp
+                </a>
+              </Button>
+              <OrcamentoDialog
+                defaultDestination={`Circuito ${circuit.name.includes("Itália") ? "Itália e Paris com Disneyland" : circuit.name.includes("Lisboa") ? "Lisboa, Madri e Paris com Disneyland" : "Madri e Paris com Disneyland"}`}
+                trigger={
+                  <Button variant="outline" className="gap-2">
+                    Solicitar Orçamento
+                  </Button>
                 }
-              }}
-            >
-              Solicitar Orçamento
-            </Button>
+              />
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">Quer reservar uma data diferente? Entre em contato conosco</p>
           </section>
         </div>
       </main>

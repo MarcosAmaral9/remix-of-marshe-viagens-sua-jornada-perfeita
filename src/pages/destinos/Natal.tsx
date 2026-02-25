@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-natal.jpg";
@@ -109,6 +110,10 @@ const Natal = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
+                  <OrcamentoDialog defaultDestination="Natal" />
+                </div>
               </div>
             </div>
           </div>

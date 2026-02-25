@@ -19,6 +19,9 @@ const DESTINATIONS = [
   "Cabo Santo Agostinho",
   "Gramado",
   "Foz do Iguaçu",
+  "Circuito Madri e Paris com Disneyland",
+  "Circuito Lisboa, Madri e Paris com Disneyland",
+  "Circuito Itália e Paris com Disneyland",
   "Outro destino",
 ];
 
@@ -33,16 +36,19 @@ const schema = z.object({
     .regex(/^[\d\s\(\)\-\+]+$/, "Número inválido"),
   destination: z.string().min(1, "Selecione um destino"),
   travelers: z.string().optional(),
-  travelDate: z.string().optional(),
+  travelDateStart: z.string().optional(),
+  travelDateEnd: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
 
-interface LeadCaptureFormProps {
-  variant?: "default" | "blog";
+export interface LeadCaptureFormProps {
+  variant?: "default" | "blog" | "dialog";
+  defaultDestination?: string;
+  onSuccess?: () => void;
 }
 
-const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
+const LeadCaptureForm = ({ variant = "default", defaultDestination, onSuccess }: LeadCaptureFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -51,11 +57,18 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      destination: defaultDestination || "",
+    },
+  });
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
     try {
+      const travelDate = [data.travelDateStart, data.travelDateEnd].filter(Boolean).join(" a ");
+
       const { data: result, error } = await supabase.functions.invoke("send-lead-whatsapp", {
         body: {
           name: data.name,
@@ -63,19 +76,19 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
           whatsapp: data.whatsapp,
           destination: data.destination,
           travelers: data.travelers || "",
-          travelDate: data.travelDate || "",
+          travelDate: travelDate,
         },
       });
 
       if (error) throw error;
       if (!result?.success) throw new Error(result?.error || "Erro ao enviar");
 
-      // Open WhatsApp in new tab
       window.open(result.whatsappUrl, "_blank", "noopener,noreferrer");
 
       setSubmitted(true);
       reset();
       toast.success("Mensagem enviada! Você será redirecionado para o WhatsApp.");
+      onSuccess?.();
     } catch (err) {
       console.error(err);
       toast.error("Erro ao enviar. Tente novamente ou contate via WhatsApp.");
@@ -85,6 +98,106 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
   };
 
   const isBlog = variant === "blog";
+  const isDialog = variant === "dialog";
+
+  if (isDialog) {
+    return (
+      <div>
+        {submitted ? (
+          <div className="text-center py-6">
+            <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Send className="w-8 h-8 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-2">Mensagem enviada! 🎉</h3>
+            <p className="text-muted-foreground mb-6">
+              Nossa equipe recebeu seu contato e em breve estará em contato pelo WhatsApp!
+            </p>
+            <Button variant="outline" onClick={() => setSubmitted(false)}>
+              Enviar outro orçamento
+            </Button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <User className="w-4 h-4 text-primary" /> Nome completo *
+                </label>
+                <Input {...register("name")} placeholder="Seu nome" className={errors.name ? "border-destructive" : ""} />
+                {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-primary" /> WhatsApp *
+                </label>
+                <Input {...register("whatsapp")} placeholder="(31) 99999-9999" type="tel" className={errors.whatsapp ? "border-destructive" : ""} />
+                {errors.whatsapp && <p className="text-xs text-destructive">{errors.whatsapp.message}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary" /> E-mail <span className="text-muted-foreground font-normal">(opcional)</span>
+                </label>
+                <Input {...register("email")} placeholder="seu@email.com" type="email" className={errors.email ? "border-destructive" : ""} />
+                {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-primary" /> Destino de interesse *
+                </label>
+                <select
+                  {...register("destination")}
+                  className={`flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                    errors.destination ? "border-destructive" : "border-input"
+                  }`}
+                >
+                  <option value="">Selecione um destino...</option>
+                  {DESTINATIONS.map((d) => (
+                    <option key={d} value={d}>{d}</option>
+                  ))}
+                </select>
+                {errors.destination && <p className="text-xs text-destructive">{errors.destination.message}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Users className="w-4 h-4 text-primary" /> Quantidade de pessoas
+                </label>
+                <select
+                  {...register("travelers")}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="1 pessoa">1 pessoa</option>
+                  <option value="2 pessoas">2 pessoas</option>
+                  <option value="3-4 pessoas">3-4 pessoas</option>
+                  <option value="5-6 pessoas">5-6 pessoas</option>
+                  <option value="7+ pessoas">7+ pessoas</option>
+                  <option value="Grupo">Grupo / Empresa</option>
+                </select>
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-primary" /> Data de ida
+                </label>
+                <Input {...register("travelDateStart")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
+              </div>
+              <div className="space-y-1.5 sm:col-start-2">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-primary" /> Data de volta
+                </label>
+                <Input {...register("travelDateEnd")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <Button type="submit" disabled={isLoading} className="w-full sm:w-auto sm:flex-1 gap-2 h-12 text-base font-semibold">
+                {isLoading ? (<><Loader2 className="w-5 h-5 animate-spin" /> Enviando...</>) : (<><Send className="w-5 h-5" /> Solicitar Orçamento via WhatsApp</>)}
+              </Button>
+              <p className="text-xs text-muted-foreground text-center sm:text-left">🔒 Seus dados são usados apenas para atendimento</p>
+            </div>
+          </form>
+        )}
+      </div>
+    );
+  }
 
   return (
     <section
@@ -97,8 +210,7 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
     >
       <div className="container mx-auto px-4">
         <div className={isBlog ? "max-w-3xl mx-auto" : "max-w-4xl mx-auto"}>
-          {/* Header */}
-          <div className={`text-center mb-10 ${isBlog ? "" : ""}`}>
+          <div className={`text-center mb-10`}>
             {!isBlog && (
               <span className="text-primary font-semibold tracking-wide uppercase text-sm">
                 Orçamento Gratuito
@@ -120,12 +232,12 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
 
           {submitted ? (
             <div className="bg-card border border-border rounded-2xl p-10 text-center shadow-card">
-            <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Send className="w-8 h-8 text-accent" />
+              <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Send className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Mensagem enviada! 🎉</h3>
               <p className="text-muted-foreground mb-6">
-                Nossa equipe recebeu seu contato e em breve estará em touch pelo WhatsApp!
+                Nossa equipe recebeu seu contato e em breve estará em contato pelo WhatsApp!
               </p>
               <Button variant="outline" onClick={() => setSubmitted(false)}>
                 Enviar outro orçamento
@@ -137,55 +249,27 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
               className="bg-card border border-border rounded-2xl p-6 md:p-10 shadow-card"
             >
               <div className="grid md:grid-cols-2 gap-5">
-                {/* Nome */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
                     <User className="w-4 h-4 text-primary" /> Nome completo *
                   </label>
-                  <Input
-                    {...register("name")}
-                    placeholder="Seu nome"
-                    className={errors.name ? "border-destructive" : ""}
-                  />
-                  {errors.name && (
-                    <p className="text-xs text-destructive">{errors.name.message}</p>
-                  )}
+                  <Input {...register("name")} placeholder="Seu nome" className={errors.name ? "border-destructive" : ""} />
+                  {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
                 </div>
-
-                {/* WhatsApp */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Phone className="w-4 h-4 text-primary" /> WhatsApp *
                   </label>
-                  <Input
-                    {...register("whatsapp")}
-                    placeholder="(31) 99999-9999"
-                    type="tel"
-                    className={errors.whatsapp ? "border-destructive" : ""}
-                  />
-                  {errors.whatsapp && (
-                    <p className="text-xs text-destructive">{errors.whatsapp.message}</p>
-                  )}
+                  <Input {...register("whatsapp")} placeholder="(31) 99999-9999" type="tel" className={errors.whatsapp ? "border-destructive" : ""} />
+                  {errors.whatsapp && <p className="text-xs text-destructive">{errors.whatsapp.message}</p>}
                 </div>
-
-                {/* E-mail */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-primary" /> E-mail{" "}
-                    <span className="text-muted-foreground font-normal">(opcional)</span>
+                    <Mail className="w-4 h-4 text-primary" /> E-mail <span className="text-muted-foreground font-normal">(opcional)</span>
                   </label>
-                  <Input
-                    {...register("email")}
-                    placeholder="seu@email.com"
-                    type="email"
-                    className={errors.email ? "border-destructive" : ""}
-                  />
-                  {errors.email && (
-                    <p className="text-xs text-destructive">{errors.email.message}</p>
-                  )}
+                  <Input {...register("email")} placeholder="seu@email.com" type="email" className={errors.email ? "border-destructive" : ""} />
+                  {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
                 </div>
-
-                {/* Destino */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-primary" /> Destino de interesse *
@@ -198,17 +282,11 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
                   >
                     <option value="">Selecione um destino...</option>
                     {DESTINATIONS.map((d) => (
-                      <option key={d} value={d}>
-                        {d}
-                      </option>
+                      <option key={d} value={d}>{d}</option>
                     ))}
                   </select>
-                  {errors.destination && (
-                    <p className="text-xs text-destructive">{errors.destination.message}</p>
-                  )}
+                  {errors.destination && <p className="text-xs text-destructive">{errors.destination.message}</p>}
                 </div>
-
-                {/* Viajantes */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Users className="w-4 h-4 text-primary" /> Quantidade de pessoas
@@ -226,40 +304,25 @@ const LeadCaptureForm = ({ variant = "default" }: LeadCaptureFormProps) => {
                     <option value="Grupo">Grupo / Empresa</option>
                   </select>
                 </div>
-
-                {/* Data */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-primary" /> Data prevista da viagem
+                    <Calendar className="w-4 h-4 text-primary" /> Data de ida
                   </label>
-                  <Input
-                    {...register("travelDate")}
-                    type="date"
-                    min={new Date().toISOString().split("T")[0]}
-                    className="cursor-pointer"
-                  />
+                  <Input {...register("travelDateStart")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-primary" /> Data de volta
+                  </label>
+                  <Input {...register("travelDateEnd")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
                 </div>
               </div>
 
               <div className="mt-7 flex flex-col sm:flex-row items-center gap-4">
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full sm:w-auto sm:flex-1 gap-2 h-12 text-base font-semibold"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" /> Enviando...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" /> Solicitar Orçamento via WhatsApp
-                    </>
-                  )}
+                <Button type="submit" disabled={isLoading} className="w-full sm:w-auto sm:flex-1 gap-2 h-12 text-base font-semibold">
+                  {isLoading ? (<><Loader2 className="w-5 h-5 animate-spin" /> Enviando...</>) : (<><Send className="w-5 h-5" /> Solicitar Orçamento via WhatsApp</>)}
                 </Button>
-                <p className="text-xs text-muted-foreground text-center sm:text-left">
-                  🔒 Seus dados são usados apenas para atendimento
-                </p>
+                <p className="text-xs text-muted-foreground text-center sm:text-left">🔒 Seus dados são usados apenas para atendimento</p>
               </div>
             </form>
           )}
