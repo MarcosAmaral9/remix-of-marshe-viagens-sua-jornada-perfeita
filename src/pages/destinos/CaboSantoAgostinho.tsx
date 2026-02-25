@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
@@ -112,14 +113,14 @@ const CaboSantoAgostinho = () => {
                 </ul>
 
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho (16/05/26 a 23/05/26)"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho (16/05/26 a 23/05/26)" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
+                  <OrcamentoDialog defaultDestination="Cabo Santo Agostinho" />
+                </div>
               </div>
             </div>
           </div>
