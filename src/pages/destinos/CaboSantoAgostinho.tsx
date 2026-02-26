@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
 
 const CaboSantoAgostinho = () => {
-  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com.br/destinos/cabo-de-santo-agostinho" });
+  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

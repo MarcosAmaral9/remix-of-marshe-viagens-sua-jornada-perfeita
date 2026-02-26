@@ -13,7 +13,7 @@ const Salvador = () => {
     title: "Pacote Salvador | Marshe Viagens - Saindo de BH",
     description:
       "Pacote de viagem para Salvador, BA. Pelourinho, Farol da Barra, praias e cultura baiana. Aéreo, hospedagem e traslados inclusos.",
-    canonical: "https://marsheviagens.com.br/destinos/salvador",
+    canonical: "https://marsheviagens.com/destinos/salvador",
   });
   return (
     <div className="min-h-screen bg-background">

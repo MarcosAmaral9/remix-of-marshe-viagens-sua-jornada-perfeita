@@ -33,7 +33,7 @@ const Blog = () => {
   useSeo({
     title: "Blog - Guias, Dicas e Roteiros de Viagem | Marshe Viagens",
     description: "Conteúdo completo para planejar sua próxima viagem. Guias de destinos, dicas práticas e roteiros detalhados para o Nordeste, Sul e mais.",
-    canonical: "https://marsheviagens.com.br/blog",
+    canonical: "https://marsheviagens.com/blog",
   });
 
   const filteredPosts = blogPosts

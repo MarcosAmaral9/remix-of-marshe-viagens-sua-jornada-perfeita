@@ -13,7 +13,7 @@ const Natal = () => {
     title: "Pacote Natal | Marshe Viagens - Saindo de BH",
     description:
       "Pacote de viagem para Natal, RN. Dunas de Genipabu, Ponta Negra, Pipa e mais. Aéreo, hospedagem e traslados inclusos.",
-    canonical: "https://marsheviagens.com.br/destinos/natal",
+    canonical: "https://marsheviagens.com/destinos/natal",
   });
   return (
     <div className="min-h-screen bg-background">

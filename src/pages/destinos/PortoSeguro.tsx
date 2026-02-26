@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-seguro.jpg";
 
 const PortoSeguro = () => {
-  useSeo({ title: "Pacote Porto Seguro | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto Seguro, BA. Arraial d'Ajuda, Trancoso e Passarela do Álcool. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/porto-seguro" });
+  useSeo({ title: "Pacote Porto Seguro | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto Seguro, BA. Arraial d'Ajuda, Trancoso e Passarela do Álcool. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/porto-seguro" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

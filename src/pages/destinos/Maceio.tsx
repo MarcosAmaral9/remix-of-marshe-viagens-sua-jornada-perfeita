@@ -9,7 +9,7 @@ import OrcamentoDialog from "@/components/OrcamentoDialog";
 import heroImg from "@/assets/dest-maceio.jpg";
 
 const Maceio = () => {
-  useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/maceio" });
+  useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/maceio" });
   return (
     <div className="min-h-screen bg-background">
       <Header />
