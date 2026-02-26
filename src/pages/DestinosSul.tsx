@@ -17,7 +17,7 @@ const DestinosSul = () => {
   useSeo({
     title: "Pacotes Aéreos Sul | Marshe Viagens - Gramado e Foz do Iguaçu",
     description: "Pacotes de viagem para o Sul do Brasil saindo de BH. Gramado, Canela e Foz do Iguaçu com aéreo, hospedagem e traslados inclusos.",
-    canonical: "https://marsheviagens.com.br/destinos/sul",
+    canonical: "https://marsheviagens.com/destinos/sul",
   });
 
   return (

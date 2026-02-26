@@ -1,0 +1,1 @@
+CREATE POLICY "Allow anonymous session selects" ON public.site_sessions FOR SELECT TO anon USING (true);

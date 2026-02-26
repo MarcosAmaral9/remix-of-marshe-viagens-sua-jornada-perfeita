@@ -23,7 +23,7 @@ const CircuitoDetail = () => {
   useSeo({
     title: `${circuit.name} | Marshe Viagens`,
     description: `Circuito ${circuit.name}. ${circuit.nights} noites a partir de ${circuit.pricePerPerson} por pessoa. Roteiro completo com guia, hospedagem e Disneyland Paris.`,
-    canonical: `https://marsheviagens.com.br/circuitos/europa/${circuit.slug}`,
+    canonical: `https://marsheviagens.com/circuitos/europa/${circuit.slug}`,
   });
 
   // Group hotels by city

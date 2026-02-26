@@ -13,7 +13,7 @@ const JoaoPessoa = () => {
     title: "Pacote João Pessoa | Marshe Viagens - Saindo de BH",
     description:
       "Pacote de viagem para João Pessoa, PB. Praias, pôr do sol do Jacaré e litoral sul. Aéreo, hospedagem e traslados.",
-    canonical: "https://marsheviagens.com.br/destinos/joao-pessoa",
+    canonical: "https://marsheviagens.com/destinos/joao-pessoa",
   });
   return (
     <div className="min-h-screen bg-background">

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-gramado.jpg";
 
 const Gramado = () => {
-  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/gramado" });
+  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

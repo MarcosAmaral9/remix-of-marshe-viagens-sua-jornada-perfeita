@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-de-galinhas.jpg";
 
 const PortoDeGalinhas = () => {
-  useSeo({ title: "Pacote Porto de Galinhas | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto de Galinhas, PE. Piscinas naturais, Muro Alto e praias paradisíacas. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com.br/destinos/porto-de-galinhas" });
+  useSeo({ title: "Pacote Porto de Galinhas | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto de Galinhas, PE. Piscinas naturais, Muro Alto e praias paradisíacas. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/porto-de-galinhas" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

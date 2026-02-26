@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-fortaleza.jpg";
 
 const Fortaleza = () => {
-  useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com.br/destinos/fortaleza" });
+  useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com/destinos/fortaleza" });
   return (
     <div className="min-h-screen bg-background">
       <Header />

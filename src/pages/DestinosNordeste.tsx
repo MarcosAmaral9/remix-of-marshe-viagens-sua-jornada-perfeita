@@ -103,7 +103,7 @@ const DestinosNordeste = () => {
     title: "Pacotes Aéreos Nordeste | Marshe Viagens - Saindo de BH",
     description:
       "Pacotes de viagem para o Nordeste saindo de Belo Horizonte. Porto Seguro, Fortaleza, Salvador, Maceió, Natal e mais com aéreo, hospedagem e traslados.",
-    canonical: "https://marsheviagens.com.br/destinos/nordeste",
+    canonical: "https://marsheviagens.com/destinos/nordeste",
   });
 
   return (

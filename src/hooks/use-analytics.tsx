@@ -80,12 +80,18 @@ export const useAnalytics = () => {
           duration_seconds: duration,
         });
 
-        // sendBeacon with headers via Blob
-        const blob = new Blob([body], { type: "application/json" });
-        navigator.sendBeacon(
-          `${url}?apikey=${apiKey}`,
-          blob
-        );
+        // Use fetch with keepalive for proper auth headers
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": apiKey,
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Profile": "public",
+          },
+          body,
+          keepalive: true,
+        }).catch(() => {});
       }
     };
 

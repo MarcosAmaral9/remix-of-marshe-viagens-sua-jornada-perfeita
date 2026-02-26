@@ -10,7 +10,7 @@ const CircuitosEuropa = () => {
   useSeo({
     title: "Circuitos Europa com Disneyland Paris | Marshe Viagens",
     description: "Circuitos completos pela Europa com roteiros guiados. Madri, Paris, Lisboa, Roma, Florença e mais com Disneyland Paris incluída.",
-    canonical: "https://marsheviagens.com.br/circuitos/europa",
+    canonical: "https://marsheviagens.com/circuitos/europa",
   });
 
   return (
@@ -30,7 +30,7 @@ const CircuitosEuropa = () => {
               Circuitos <span className="text-primary">Europa</span>
             </h1>
             <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
-              Roteiros completos pela Europa com guia, hospedagem, traslados e Disneyland Paris incluída. Circuitos saindo de diversas cidades com tudo organizado.
+              Roteiros completos pela Europa com guia, hospedagem, traslados e Disneyland Paris incluída. Todos os circuitos saindo de Belo Horizonte / Confins.
             </p>
           </div>
         </section>
