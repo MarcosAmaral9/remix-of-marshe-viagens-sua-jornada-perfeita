@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import MissionVisionValues from "@/components/MissionVisionValues";
+
 import Services from "@/components/Services";
 import BookingSteps from "@/components/BookingSteps";
 import Destinations from "@/components/Destinations";
@@ -22,15 +22,14 @@ const Index = () => {
       <main>
         <Hero />
         <BlogPreview />
-        <MissionVisionValues />
         <Services />
         <BookingSteps />
         <Destinations />
         <CircuitosViagem />
         <LeadCaptureForm />
         <Testimonials />
-        <ContactSection />
         <WhatsAppClub />
+        <ContactSection />
         <FAQ />
       </main>
       <Footer />
