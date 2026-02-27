@@ -2,8 +2,6 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Play, Pause, Volume2, Loader2, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { trackAudioUsage } from "@/hooks/use-analytics";
 
 interface AudioNarratorProps {
   text: string;
@@ -12,6 +10,29 @@ interface AudioNarratorProps {
 }
 
 const SPEED_OPTIONS = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+
+// Map slugs to local audio files (public/audio/)
+// 2 files too large for local storage use remote URLs
+const AUDIO_MAP: Record<string, string> = {
+  "como-fazer-mala-viagem-praia": "/audio/como-fazer-mala-viagem-praia.mp3",
+  "dicas-viajar-com-criancas-sem-estresse": "/audio/dicas-viajar-com-criancas-sem-estresse.mp3",
+  "documentos-necessarios-viagem-nacional": "/audio/documentos-necessarios-viagem-nacional.mp3",
+  "economizar-viagem-nordeste-dicas": "/audio/economizar-viagem-nordeste-dicas.mp3",
+  "guia-completo-fortaleza-ce": "/audio/guia-completo-fortaleza-ce.mp3",
+  "guia-completo-porto-de-galinhas": "/audio/guia-completo-porto-de-galinhas.mp3",
+  "guia-maceio-praias-piscinas-naturais": "/audio/guia-maceio-praias-piscinas-naturais.mp3",
+  "guia-natal-praias-dunas-gastronomia": "/audio/guia-natal-praias-dunas-gastronomia.mp3",
+  "guia-salvador-pelourinho-praias": "/audio/guia-salvador-pelourinho-praias.mp3",
+  "melhor-epoca-viajar-maceio": "/audio/melhor-epoca-viajar-maceio.mp3",
+  "pacotes-baratos-nordeste-2026": "https://ejafmqzoiwqpeafysarw.supabase.co/storage/v1/object/public/audio-files/pacotes-baratos-nordeste.mp3",
+  "quanto-custa-viajar-nordeste-2026": "https://ejafmqzoiwqpeafysarw.supabase.co/storage/v1/object/public/audio-files/custo-viagem-nordeste.mp3",
+  "roteiro-3-dias-cabo-santo-agostinho": "/audio/roteiro-3-dias-cabo-santo-agostinho.mp3",
+  "roteiro-4-dias-joao-pessoa-litoral-sul": "/audio/roteiro-4-dias-joao-pessoa-litoral-sul.mp3",
+  "roteiro-5-dias-foz-do-iguacu": "/audio/roteiro-5-dias-foz-do-iguacu.mp3",
+  "roteiro-6-dias-porto-seguro-arraial-trancoso": "/audio/roteiro-6-dias-porto-seguro-arraial-trancoso.mp3",
+  "roteiro-7-dias-gramado-canela": "/audio/roteiro-7-dias-gramado-canela.mp3",
+  "seguro-viagem-vale-a-pena-contratar": "/audio/seguro-viagem-vale-a-pena-contratar.mp3",
+};
 
 const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +45,6 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const speedMenuRef = useRef<HTMLDivElement>(null);
-  const listenStartRef = useRef<number>(0);
   const playPromiseRef = useRef<Promise<void> | null>(null);
 
   // Close speed menu on outside click
@@ -63,19 +83,6 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
     });
   }, [title]);
 
-  const trackUsage = useCallback((completed: boolean) => {
-    if (!articleSlug || !audioRef.current) return;
-    const listened = Date.now() - listenStartRef.current;
-    if (listened < 1000) return; // ignore < 1s
-    trackAudioUsage({
-      articleSlug,
-      durationListened: listened / 1000,
-      totalDuration: audioRef.current.duration || 0,
-      playbackSpeed: speed,
-      completed,
-    });
-  }, [articleSlug, speed]);
-
   const setupAudio = useCallback((url: string) => {
     const audio = new Audio(url);
     audioRef.current = audio;
@@ -88,63 +95,39 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
     audio.addEventListener("ended", () => {
       setIsPlaying(false);
       setProgress(0);
-      trackUsage(true);
       if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "none";
     });
     audio.addEventListener("pause", () => {
       setIsPlaying(false);
-      trackUsage(false);
       if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "paused";
     });
     audio.addEventListener("play", () => {
       setIsPlaying(true);
-      listenStartRef.current = Date.now();
       if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "playing";
     });
 
     registerMediaSession(audio);
     return audio;
-  }, [speed, registerMediaSession, trackUsage]);
+  }, [speed, registerMediaSession]);
 
   const fetchAndPlay = useCallback(async () => {
     setIsLoading(true);
     try {
-      if (!articleSlug) {
-        toast.error("Áudio não disponível para este artigo.");
-        setIsLoading(false);
-        return;
-      }
-
-      const { data: audioFile } = await supabase
-        .from("audio_files")
-        .select("file_path")
-        .eq("article_slug", articleSlug)
-        .maybeSingle();
-
-      if (!audioFile?.file_path) {
+      if (!articleSlug || !AUDIO_MAP[articleSlug]) {
         toast.error("Áudio ainda não disponível para este artigo.");
         setIsLoading(false);
         return;
       }
 
-      const { data: urlData } = supabase.storage
-        .from("audio-files")
-        .getPublicUrl(audioFile.file_path);
-
-      if (!urlData?.publicUrl) {
-        toast.error("Erro ao carregar o áudio.");
-        setIsLoading(false);
-        return;
-      }
-
-      setAudioUrl(urlData.publicUrl);
-      const audio = setupAudio(urlData.publicUrl);
+      const url = AUDIO_MAP[articleSlug];
+      setAudioUrl(url);
+      const audio = setupAudio(url);
       playPromiseRef.current = audio.play();
       try { await playPromiseRef.current; } catch (e) { /* interrupted */ }
       setIsPlaying(!audio.paused);
     } catch (err) {
       console.error(err);
-      toast.error(err instanceof Error ? err.message : "Erro ao carregar narração.");
+      toast.error("Erro ao carregar narração.");
     } finally {
       setIsLoading(false);
     }
@@ -186,11 +169,8 @@ const AudioNarrator = ({ text, title, articleSlug }: AudioNarratorProps) => {
         audioRef.current.pause();
         audioRef.current = null;
       }
-      if (audioUrl && audioUrl.startsWith("blob:")) {
-        URL.revokeObjectURL(audioUrl);
-      }
     };
-  }, [audioUrl]);
+  }, []);
 
   const formatTime = (secs: number) => {
     if (!secs || isNaN(secs)) return "0:00";
