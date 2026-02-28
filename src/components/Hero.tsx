@@ -1,66 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { Plane } from "lucide-react";
-import heroImage from "@/assets/hero-traveler.png";
+import { MessageCircle, Send } from "lucide-react";
+import { useState } from "react";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
+
 const Hero = () => {
-  return <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-20">
+  return (
+    <section className="relative min-h-[90vh] bg-gradient-hero overflow-hidden pt-20">
       {/* Decorative elements */}
       <div className="absolute top-32 right-20 w-16 h-16 bg-coral-light rounded-full opacity-60 animate-float" />
-      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float" style={{
-      animationDelay: '1s'
-    }} />
-      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float" style={{
-      animationDelay: '0.5s'
-    }} />
-      
+      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
+
       <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <span className="inline-block text-primary font-semibold tracking-wider uppercase text-sm">
-              Melhores destinos do mundo
+              Agência de Viagens em Contagem - MG
             </span>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-black">
-              Viaje, aproveite
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
+              Planeje sua viagem
               <br />
               <span className="relative">
-                e viva uma
+                dos sonhos
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
                   <path d="M2 10C50 2 150 2 298 10" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </span>
+              {" "}com suporte
               <br />
-              vida nova e plena
+              especializado
             </h1>
-            
-            <p className="text-muted-foreground text-lg max-w-md leading-relaxed">A Marshe Viagens é uma empresa familiar criada com o propósito de cuidar da sua viagem com a mesma atenção e dedicação que cuidamos da nossa própria família. 
 
+            <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
+              Pacotes nacionais e internacionais, passagens aéreas, milhas e hospedagens com atendimento humano antes, durante e depois da sua viagem.
+            </p>
 
-Nossa história teve início em um momento desafiador, marcado pela busca por novas oportunidades após os impactos causados pela pandemia da Covid-19.  Desde então, construímos nossa trajetória com base no comprometimento, transparência e excelência no atendimento. 
+            <div className="flex flex-col sm:flex-row gap-4">
+              <OrcamentoDialog
+                trigger={
+                  <Button variant="hero" className="gap-2">
+                    <Send className="w-5 h-5" />
+                    Solicitar Cotação Personalizada
+                  </Button>
+                }
+              />
+              <Button
+                variant="hero-outline"
+                className="gap-2"
+                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank")}
+              >
+                <MessageCircle className="w-5 h-5" />
+                Falar com Especialista
+              </Button>
+            </div>
 
-
-Esse trabalho consistente resultou no reconhecimento de clientes e parceiros, permitindo a expansão contínua do nosso portfólio de serviços. Mais do que vender viagens, nossa missão é auxiliar na criação de memórias inesquecíveis, proporcionando experiências únicas em qualquer destino que o cliente desejar.</p>
-            
-            
+            {/* Trust signals */}
+            <div className="flex flex-wrap gap-6 pt-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">✅ Atendimento personalizado</span>
+              <span className="flex items-center gap-1.5">✅ Suporte completo</span>
+              <span className="flex items-center gap-1.5">⭐ Avaliação 5.0</span>
+            </div>
           </div>
-          
+
           {/* Image */}
           <div className="relative animate-slide-in-right hidden lg:block">
-            {/* Background decorative shape */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-coral-light rounded-full -z-10" />
-            
-            {/* Decorative plane */}
-            <div className="absolute top-10 right-0 text-primary animate-float">
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-              </svg>
-            </div>
-            
-            <img alt="Viajante feliz em destino tropical" className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl rounded-3xl" src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png" />
-            
-            {/* Destinations badge */}
+            <img
+              alt="Viajante feliz em destino tropical"
+              className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl rounded-3xl"
+              src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png"
+            />
             <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
-              <Plane className="w-8 h-8 text-primary" />
+              <div className="text-primary text-3xl">✈️</div>
               <div>
                 <p className="text-2xl font-bold text-primary">+ 60 Destinos</p>
                 <p className="text-sm text-muted-foreground">Nacionais e internacionais</p>
@@ -69,6 +82,8 @@ Esse trabalho consistente resultou no reconhecimento de clientes e parceiros, pe
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

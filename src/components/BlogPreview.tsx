@@ -4,105 +4,67 @@ import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// 1 post mais recente de cada categoria
-const categoryPosts = (["guias", "dicas", "roteiros"] as const).map((cat) =>
-  blogPosts
-    .filter((p) => p.category === cat)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
-).filter(Boolean);
+// Curated posts for the homepage content section
+const featuredSlugs = [
+  "economizar-viagem-nordeste-dicas",
+  "guia-completo-fortaleza-ce",
+  "documentos-necessarios-viagem-nacional",
+];
+
+const featuredPosts = featuredSlugs
+  .map((slug) => blogPosts.find((p) => p.slug === slug))
+  .filter(Boolean) as typeof blogPosts;
+
+// Fallback: latest 3 if slugs not found
+const displayPosts = featuredPosts.length >= 3
+  ? featuredPosts
+  : blogPosts.slice(0, 3);
 
 const BlogPreview = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % categoryPosts.length);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 7000);
-    return () => clearInterval(timer);
-  }, [nextSlide]);
-
-  const post = categoryPosts[activeIndex];
-
   return (
     <section className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
-            Blog Marshe Viagens
+            Conteúdo que Prende
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
-            Dicas e Guias para sua <span className="text-primary">Próxima Viagem</span>
+            Dicas e Guias para <span className="text-primary">Viajar Melhor</span>
           </h2>
-          <p className="text-muted-foreground mt-4">
-            Conteúdo completo para planejar sua viagem com segurança e economia.
-          </p>
         </div>
 
-        {/* Featured post card */}
-        <div className="max-w-5xl mx-auto">
-          <Link
-            to={`/blog/${post.slug}`}
-            className="group block bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-500"
-          >
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-72 md:h-[420px] overflow-hidden">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {displayPosts.map((post) => (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.slug}`}
+              className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-5 left-5">
-                  <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                <div className="absolute top-4 left-4">
+                  <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
                     {post.categoryLabel}
                   </span>
                 </div>
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 md:hidden" />
               </div>
-              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground group-hover:text-primary transition-colors line-clamp-3 mb-4">
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground line-clamp-4 mb-6 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-4 h-4" />
-                    {new Date(post.date).toLocaleDateString("pt-BR")}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="w-4 h-4" />
-                    {post.readTime} de leitura
-                  </span>
-                </div>
-                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
-                  Ler artigo completo <ArrowRight className="w-4 h-4" />
+                <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{post.excerpt}</p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                  Ler artigo <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
-            </div>
-          </Link>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {categoryPosts.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === activeIndex
-                    ? "bg-primary w-8"
-                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50 w-2.5"
-                }`}
-                aria-label={`Ver post ${i + 1}`}
-              />
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-10">
           <Button asChild variant="outline" className="gap-2">
             <Link to="/blog">
