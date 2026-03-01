@@ -1,22 +1,22 @@
 import { Star, CheckCircle } from "lucide-react";
 
 const testimonials = [
-  {
-    content: "Fechei minha viagem internacional com total segurança e suporte. Atendimento rápido e transparente.",
-    name: "Vinicius",
-    role: "Empresário",
-  },
-  {
-    content: "Economizei usando milhas e ainda tive todo acompanhamento durante a viagem. Recomendo demais!",
-    name: "Aguida",
-    role: "Médica",
-  },
-  {
-    content: "Melhor agência de viagens que já conheci! Preços justos, pacotes incríveis e suporte 24 horas.",
-    name: "Laura",
-    role: "Arquiteta",
-  },
-];
+{
+  content: "Fechei minha viagem internacional com total segurança e suporte. Atendimento rápido e transparente.",
+  name: "Vinicius",
+  role: "Empresário"
+},
+{
+  content: "Economizei usando milhas e ainda tive todo acompanhamento durante a viagem. Recomendo demais!",
+  name: "Aguida",
+  role: "Médica"
+},
+{
+  content: "Melhor agência de viagens que já conheci! Preços justos, pacotes incríveis e suporte 24 horas.",
+  name: "Laura",
+  role: "Arquiteta"
+}];
+
 
 const SocialProof = () => {
   return (
@@ -24,20 +24,20 @@ const SocialProof = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
-            Mais de <span className="text-primary">500 viajantes</span> já confiaram na Marshe Viagens
+            Mais de <span className="text-primary">1200 viajantes</span> já confiaram na Marshe Viagens
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="bg-card rounded-2xl p-6 lg:p-8 border border-border/50 shadow-card hover:shadow-xl transition-shadow duration-300"
-            >
+          {testimonials.map((t) =>
+          <div
+            key={t.name}
+            className="bg-card rounded-2xl p-6 lg:p-8 border border-border/50 shadow-card hover:shadow-xl transition-shadow duration-300">
+
               <div className="flex gap-1 mb-4">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow text-yellow" />
-                ))}
+                {Array.from({ length: 5 }).map((_, i) =>
+              <Star key={i} className="w-4 h-4 fill-yellow text-yellow" />
+              )}
               </div>
               <blockquote className="text-card-foreground leading-relaxed mb-6">
                 "{t.content}"
@@ -52,7 +52,7 @@ const SocialProof = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Trust strip */}
@@ -68,8 +68,8 @@ const SocialProof = () => {
           </span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default SocialProof;

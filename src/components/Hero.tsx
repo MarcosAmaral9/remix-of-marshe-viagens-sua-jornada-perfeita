@@ -32,24 +32,24 @@ const Hero = () => {
               especializado
             </h1>
 
-            <p className="text-foreground/70 dark:text-foreground/80 text-lg max-w-lg leading-relaxed">
-              Pacotes nacionais e internacionais, passagens aéreas, milhas e hospedagens com atendimento humano antes, durante e depois da sua viagem.
+            <p className="text-foreground/70 dark:text-foreground/80 text-lg max-w-lg leading-relaxed">Pacotes nacionais e internacionais, passagens aéreas, pacotes e hospedagens com atendimento humano antes, durante e depois da sua viagem.
+
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <OrcamentoDialog
                 trigger={
-                  <Button variant="hero" className="gap-2">
+                <Button variant="hero" className="gap-2">
                     <Send className="w-5 h-5" />
                     Solicitar Cotação Personalizada
                   </Button>
-                }
-              />
+                } />
+
               <Button
                 variant="hero-outline"
                 className="gap-2"
-                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank")}
-              >
+                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank")}>
+
                 <MessageCircle className="w-5 h-5" />
                 Falar com Especialista
               </Button>
@@ -69,8 +69,8 @@ const Hero = () => {
             <img
               alt="Viajante feliz em destino tropical"
               className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl rounded-3xl"
-              src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png"
-            />
+              src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png" />
+
             <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
               <div className="text-primary text-3xl">✈️</div>
               <div>
@@ -81,8 +81,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
