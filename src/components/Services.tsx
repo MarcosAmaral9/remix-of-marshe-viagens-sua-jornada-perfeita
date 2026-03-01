@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   { icon: Plane, title: "Passagens Aéreas", description: "Nacionais e internacionais com as melhores tarifas.", color: "bg-primary/10 text-primary" },
-  { icon: Hotel, title: "Hospedagem Selecionada", description: "Hotéis, pousadas e resorts com qualidade garantida.", color: "bg-accent/10 text-accent" },
+  { icon: Hotel, title: "Hospedagem", description: "Hotéis, pousadas e resorts com qualidade garantida.", color: "bg-accent/10 text-accent" },
   { icon: Globe, title: "Pacotes Personalizados", description: "Roteiros sob medida para o seu perfil e orçamento.", color: "bg-yellow/10 text-yellow" },
   { icon: Ship, title: "Cruzeiros", description: "Experiências completas em alto mar com todo conforto.", color: "bg-purple/10 text-purple" },
   { icon: Shield, title: "Seguro Viagem", description: "Proteção completa para você viajar tranquilo.", color: "bg-coral-light text-primary" },
-  { icon: Gem, title: "Consultoria em Milhas", description: "Maximize seus pontos e economize na sua viagem.", color: "bg-accent/10 text-accent" },
+  { icon: Gem, title: "Acompanhamento juridico", description: "Maximize seus pontos e economize na sua viagem.", color: "bg-accent/10 text-accent" },
 ];
 
 const ServicesSection = () => {
