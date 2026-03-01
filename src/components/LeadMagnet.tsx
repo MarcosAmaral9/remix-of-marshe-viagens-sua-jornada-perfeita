@@ -17,7 +17,6 @@ const LeadMagnet = () => {
     }
     setIsLoading(true);
 
-    // Open WhatsApp with the lead info
     const msg = encodeURIComponent(
       `Olá! Gostaria de receber o Guia Gratuito de Milhas.\n\nNome: ${form.name}\nEmail: ${form.email}\nWhatsApp: ${form.whatsapp}`
     );
@@ -38,13 +37,13 @@ const LeadMagnet = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
             Guia Gratuito: Como Economizar em Viagens Usando Milhas
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+          <p className="text-foreground/70 dark:text-foreground/80 mb-8 max-w-lg mx-auto">
             Aprenda estratégias práticas para pagar menos e viajar melhor. Receba nosso guia exclusivo gratuitamente.
           </p>
 
           {submitted ? (
             <div className="bg-card border border-border rounded-2xl p-8 shadow-card">
-              <p className="text-foreground text-lg font-semibold mb-2">Obrigado! 🎉</p>
+              <p className="text-card-foreground text-lg font-semibold mb-2">Obrigado! 🎉</p>
               <p className="text-muted-foreground">Nossa equipe enviará o guia pelo WhatsApp em instantes.</p>
             </div>
           ) : (
@@ -55,12 +54,14 @@ const LeadMagnet = () => {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
+                  className="text-card-foreground"
                 />
                 <Input
                   placeholder="E-mail (opcional)"
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="text-card-foreground"
                 />
                 <Input
                   placeholder="WhatsApp"
@@ -68,6 +69,7 @@ const LeadMagnet = () => {
                   value={form.whatsapp}
                   onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
                   required
+                  className="text-card-foreground"
                 />
               </div>
               <Button type="submit" disabled={isLoading} className="w-full sm:w-auto gap-2 h-12 text-base font-semibold">

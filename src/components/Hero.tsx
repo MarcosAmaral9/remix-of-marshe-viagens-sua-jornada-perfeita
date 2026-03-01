@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Send } from "lucide-react";
-import { useState } from "react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
 
 const Hero = () => {
@@ -33,7 +32,7 @@ const Hero = () => {
               especializado
             </h1>
 
-            <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
+            <p className="text-foreground/70 dark:text-foreground/80 text-lg max-w-lg leading-relaxed">
               Pacotes nacionais e internacionais, passagens aéreas, milhas e hospedagens com atendimento humano antes, durante e depois da sua viagem.
             </p>
 
@@ -57,7 +56,7 @@ const Hero = () => {
             </div>
 
             {/* Trust signals */}
-            <div className="flex flex-wrap gap-6 pt-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap gap-6 pt-4 text-sm text-foreground/60 dark:text-foreground/70">
               <span className="flex items-center gap-1.5">✅ Atendimento personalizado</span>
               <span className="flex items-center gap-1.5">✅ Suporte completo</span>
               <span className="flex items-center gap-1.5">⭐ Avaliação 5.0</span>
