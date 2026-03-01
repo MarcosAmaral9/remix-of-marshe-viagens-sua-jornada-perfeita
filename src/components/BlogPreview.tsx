@@ -25,7 +25,7 @@ const BlogPreview = () => {
           <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
             Conteúdo que Prende
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">Confira Dicas e Guias para Viajar Melhor em nosso b
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">Confira Dicas e Guias em nosso blog para Viajar Melhor
             <span className="text-primary">Viajar Melhor</span>
           </h2>
         </div>
