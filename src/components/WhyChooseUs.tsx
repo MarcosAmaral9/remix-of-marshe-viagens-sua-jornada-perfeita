@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
               <div className={`w-16 h-16 rounded-xl ${b.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <b.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">{b.title}</h3>
+              <h3 className="text-lg font-bold text-card-foreground mb-3">{b.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{b.description}</p>
             </div>
           ))}

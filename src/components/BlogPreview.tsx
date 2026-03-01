@@ -1,10 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Curated posts for the homepage content section
 const featuredSlugs = [
   "economizar-viagem-nordeste-dicas",
   "guia-completo-fortaleza-ce",
@@ -15,7 +13,6 @@ const featuredPosts = featuredSlugs
   .map((slug) => blogPosts.find((p) => p.slug === slug))
   .filter(Boolean) as typeof blogPosts;
 
-// Fallback: latest 3 if slugs not found
 const displayPosts = featuredPosts.length >= 3
   ? featuredPosts
   : blogPosts.slice(0, 3);
@@ -53,7 +50,7 @@ const BlogPreview = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
+                <h3 className="text-lg font-bold text-card-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
                   {post.title}
                 </h3>
                 <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{post.excerpt}</p>

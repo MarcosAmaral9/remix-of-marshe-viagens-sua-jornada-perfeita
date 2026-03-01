@@ -39,7 +39,7 @@ const SocialProof = () => {
                   <Star key={i} className="w-4 h-4 fill-yellow text-yellow" />
                 ))}
               </div>
-              <blockquote className="text-foreground leading-relaxed mb-6">
+              <blockquote className="text-card-foreground leading-relaxed mb-6">
                 "{t.content}"
               </blockquote>
               <div className="flex items-center gap-3">
@@ -47,7 +47,7 @@ const SocialProof = () => {
                   {t.name[0]}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                  <p className="font-semibold text-card-foreground text-sm">{t.name}</p>
                   <p className="text-muted-foreground text-xs">{t.role}</p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ const SocialProof = () => {
         </div>
 
         {/* Trust strip */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 text-sm text-muted-foreground">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 text-sm text-foreground/70 dark:text-foreground/80">
           <span className="flex items-center gap-2">
             <span className="text-yellow text-lg">⭐⭐⭐⭐⭐</span> Avaliação média 5.0
           </span>

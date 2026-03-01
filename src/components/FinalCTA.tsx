@@ -9,7 +9,7 @@ const FinalCTA = () => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
           Pronto para planejar sua <span className="text-primary">próxima viagem</span>?
         </h2>
-        <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-lg">
+        <p className="text-foreground/70 dark:text-foreground/80 max-w-lg mx-auto mb-10 text-lg">
           Atendimento rápido, transparente e personalizado. Fale com nossa equipe agora mesmo.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
