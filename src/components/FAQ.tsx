@@ -31,6 +31,26 @@ const FAQ = () => {
       question: "Vocês atendem grupos e excursões?",
       answer: "Sim! Temos condições especiais para grupos, excursões corporativas, viagens de formatura e eventos.",
     },
+    {
+      question: "Qual a antecedência ideal para reservar minha viagem?",
+      answer: "Recomendamos reservar com 3 a 6 meses de antecedência para garantir melhores tarifas e disponibilidade. Porém, também atendemos viagens de última hora!",
+    },
+    {
+      question: "O que está incluso nos pacotes de viagem?",
+      answer: "Nossos pacotes geralmente incluem passagens aéreas, hospedagem com café da manhã e traslados. Passeios e seguro viagem podem ser adicionados conforme sua preferência.",
+    },
+    {
+      question: "Vocês oferecem seguro viagem?",
+      answer: "Sim! Oferecemos seguros completos que cobrem assistência médica, extravio de bagagem, cancelamento de voo e muito mais.",
+    },
+    {
+      question: "Como funciona o acompanhamento jurídico?",
+      answer: "Contamos com suporte jurídico especializado para auxiliar em casos de cancelamentos, atrasos, overbooking e outros imprevistos, garantindo seus direitos como consumidor.",
+    },
+    {
+      question: "Vocês trabalham com destinos internacionais?",
+      answer: "Sim! Além dos destinos nacionais, oferecemos circuitos completos pela Europa com guia em português, hospedagem e traslados inclusos.",
+    },
   ];
 
   return (

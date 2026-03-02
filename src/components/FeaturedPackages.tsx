@@ -53,7 +53,7 @@ const FeaturedPackages = () => {
               key={pkg.title}
               className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="relative h-56 overflow-hidden">
+            <Link to={pkg.link} className="relative h-56 overflow-hidden block">
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -63,7 +63,7 @@ const FeaturedPackages = () => {
                 <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white font-serif drop-shadow-lg">
                   {pkg.title}
                 </h3>
-              </div>
+              </Link>
               <div className="p-6">
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {pkg.description}
@@ -73,7 +73,7 @@ const FeaturedPackages = () => {
                     defaultDestination={pkg.destination}
                     trigger={
                       <Button className="flex-1 gap-2 text-sm">
-                        {pkg.cta}
+                        Solicitar Cotação
                       </Button>
                     }
                   />

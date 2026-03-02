@@ -1,5 +1,6 @@
-import { Plane, Hotel, Globe, Ship, Shield, Gem, MessageCircle } from "lucide-react";
+import { Plane, Hotel, Globe, Ship, Shield, Scale, MessageCircle, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 
 const services = [
   { icon: Plane, title: "Passagens Aéreas", description: "Nacionais e internacionais com as melhores tarifas.", color: "bg-primary/10 text-primary" },
@@ -7,7 +8,7 @@ const services = [
   { icon: Globe, title: "Pacotes Personalizados", description: "Roteiros sob medida para o seu perfil e orçamento.", color: "bg-yellow/10 text-yellow" },
   { icon: Ship, title: "Cruzeiros", description: "Experiências completas em alto mar com todo conforto.", color: "bg-purple/10 text-purple" },
   { icon: Shield, title: "Seguro Viagem", description: "Proteção completa para você viajar tranquilo.", color: "bg-coral-light text-primary" },
-  { icon: Gem, title: "Acompanhamento juridico", description: "Maximize seus pontos e economize na sua viagem.", color: "bg-accent/10 text-accent" },
+  { icon: Scale, title: "Acompanhamento Jurídico", description: "Suporte jurídico especializado para garantir seus direitos em viagens.", color: "bg-accent/10 text-accent" },
 ];
 
 const ServicesSection = () => {
@@ -35,14 +36,22 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <OrcamentoDialog
+            trigger={
+              <Button variant="hero" className="gap-2">
+                <FileText className="w-5 h-5" />
+                Solicitar Cotação
+              </Button>
+            }
+          />
           <Button
-            variant="hero"
+            variant="hero-outline"
             className="gap-2"
-            onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20atendimento.", "_blank")}
+            onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista.", "_blank")}
           >
             <MessageCircle className="w-5 h-5" />
-            Solicitar Atendimento
+            Falar com Especialista
           </Button>
         </div>
       </div>
