@@ -4,18 +4,16 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const featuredSlugs = [
-"economizar-viagem-nordeste-dicas",
-"guia-completo-fortaleza-ce",
-"documentos-necessarios-viagem-nacional"];
+  "economizar-viagem-nordeste-dicas",
+  "guia-completo-fortaleza-ce",
+  "documentos-necessarios-viagem-nacional",
+];
 
+const featuredPosts = featuredSlugs
+  .map((slug) => blogPosts.find((p) => p.slug === slug))
+  .filter(Boolean) as typeof blogPosts;
 
-const featuredPosts = featuredSlugs.
-map((slug) => blogPosts.find((p) => p.slug === slug)).
-filter(Boolean) as typeof blogPosts;
-
-const displayPosts = featuredPosts.length >= 3 ?
-featuredPosts :
-blogPosts.slice(0, 3);
+const displayPosts = featuredPosts.length >= 3 ? featuredPosts : blogPosts.slice(0, 3);
 
 const BlogPreview = () => {
   return (
@@ -25,24 +23,25 @@ const BlogPreview = () => {
           <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
             Conteúdo que Prende
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">Confira Dicas e Guias em nosso blog para Viajar Melhor
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-4">
+            Confira Dicas e Guias em nosso blog para{" "}
             <span className="text-primary">Viajar Melhor</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {displayPosts.map((post) =>
-          <Link
-            key={post.slug}
-            to={`/blog/${post.slug}`}
-            className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-
+          {displayPosts.map((post) => (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.slug}`}
+              className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            >
               <div className="relative h-48 overflow-hidden">
                 <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
                     {post.categoryLabel}
@@ -59,7 +58,7 @@ const BlogPreview = () => {
                 </span>
               </div>
             </Link>
-          )}
+          ))}
         </div>
 
         <div className="text-center mt-10">
@@ -70,8 +69,8 @@ const BlogPreview = () => {
           </Button>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default BlogPreview;

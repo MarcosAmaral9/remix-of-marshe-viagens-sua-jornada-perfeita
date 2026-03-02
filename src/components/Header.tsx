@@ -17,7 +17,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "Serviços", href: "#servicos" },
-    { name: "Destinos", href: "#destinos" },
+    { name: "Destinos", href: "/destinos", isRoute: true },
     { name: "Blog", href: "/blog", isRoute: true },
     { name: "Orçamento", href: "#orcamento" },
     { name: "Grupo WhatsApp", href: "#grupo-whatsapp" },

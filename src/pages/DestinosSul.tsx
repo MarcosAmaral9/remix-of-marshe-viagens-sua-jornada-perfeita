@@ -49,8 +49,8 @@ const DestinosSul = () => {
                 >
                   <div className="relative h-56 overflow-hidden">
                     <img src={dest.image} alt={`Pacote de viagem para ${dest.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
-                    <div className="absolute bottom-4 left-4 text-primary-foreground">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
                       <h2 className="text-2xl font-bold">{dest.name}</h2>
                       <div className="flex items-center gap-1 text-sm opacity-90">
                         <MapPin className="w-4 h-4" /> {dest.location}
