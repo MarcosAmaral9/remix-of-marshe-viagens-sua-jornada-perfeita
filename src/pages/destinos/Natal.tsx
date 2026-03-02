@@ -21,7 +21,7 @@ const Natal = () => {
       <main className="pt-24">
         <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img src={heroImg} alt="Natal" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
           <div className="absolute bottom-8 left-0 right-0 container mx-auto px-4">
             <Link
               to="/destinos/nordeste"

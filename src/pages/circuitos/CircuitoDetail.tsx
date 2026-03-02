@@ -41,7 +41,7 @@ const CircuitoDetail = () => {
         {/* Hero */}
         <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img src={circuit.image} alt={circuit.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="container mx-auto">
               <Link to="/circuitos/europa" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">

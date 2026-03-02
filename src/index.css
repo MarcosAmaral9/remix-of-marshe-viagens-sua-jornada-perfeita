@@ -139,10 +139,7 @@
     font-family: 'Volkhov', serif;
   }
 
-  /* Remove white flash from images in dark mode */
-  .dark img {
-    @apply brightness-[0.95] contrast-[1.05];
-  }
+  /* Images render identically in both themes */
 
   /* Safe area support for notched devices (iPhone X+) */
   #root {

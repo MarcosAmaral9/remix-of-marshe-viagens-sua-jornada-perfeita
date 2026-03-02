@@ -46,7 +46,7 @@ const CircuitosEuropa = () => {
                 >
                   <div className="relative h-56 overflow-hidden">
                     <img src={circuit.image} alt={circuit.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
                       {circuit.nights} noites
                     </div>

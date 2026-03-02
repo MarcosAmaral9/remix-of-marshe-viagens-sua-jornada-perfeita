@@ -27,6 +27,7 @@ import FozDoIguacu from "./pages/destinos/FozDoIguacu";
 import Gramado from "./pages/destinos/Gramado";
 import CircuitosEuropa from "./pages/CircuitosEuropa";
 import CircuitoDetail from "./pages/circuitos/CircuitoDetail";
+import Destinos from "./pages/Destinos";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
               <Route path="/sobre" element={<AboutUs />} />
               <Route path="/privacidade" element={<PrivacyPolicy />} />
               <Route path="/termos" element={<TermsConditions />} />
+              <Route path="/destinos" element={<Destinos />} />
               <Route path="/destinos/nordeste" element={<DestinosNordeste />} />
               <Route path="/destinos/sul" element={<DestinosSul />} />
               <Route path="/destinos/cabo-de-santo-agostinho" element={<CaboSantoAgostinho />} />
