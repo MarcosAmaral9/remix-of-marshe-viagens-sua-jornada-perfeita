@@ -169,7 +169,7 @@ const BlogPost = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button asChild variant="hero">
-                    <Link to="/#destinos">Ver Destinos</Link>
+                    <Link to="/destinos">Ver Destinos</Link>
                   </Button>
                   <Button asChild variant="outline">
                     <a href="https://wa.me/5531972391400" target="_blank" rel="noopener noreferrer">
