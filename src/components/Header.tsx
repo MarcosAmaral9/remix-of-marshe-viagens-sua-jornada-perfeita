@@ -79,7 +79,6 @@ const Header = () => {
                     {link.name}
                   </a>
                 )
-                )
               )
             ) : (
               <>
