@@ -11,6 +11,15 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: ["es2020", "chrome80", "firefox78", "safari14", "edge88"],
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          ui: ["@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-dropdown-menu", "@radix-ui/react-tooltip"],
+        },
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
