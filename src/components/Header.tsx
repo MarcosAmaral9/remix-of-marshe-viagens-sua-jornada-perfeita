@@ -251,6 +251,11 @@ const Header = () => {
           </nav>
         )}
       </div>
+      <OrcamentoDialog
+        trigger={<span />}
+        open={orcamentoOpen}
+        onOpenChange={setOrcamentoOpen}
+      />
     </header>
   );
 };
