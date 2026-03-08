@@ -29,19 +29,11 @@ const WhatsAppClub = () => {
               <ul className="text-white/80 space-y-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
-                  <span><strong className="text-white">Promoções relâmpago</strong> — ofertas exclusivas com até 40% OFF só para membros do grupo</span>
+                  <span><strong className="text-white">Promoções relâmpago</strong> — ofertas exclusivas com até 30% OFF só para membros do grupo</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
                   <span><strong className="text-white">Acesso antecipado</strong> — saiba dos pacotes antes de todo mundo</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
-                  <span><strong className="text-white">Dicas de destinos secretos</strong> — lugares que nem todo turista conhece</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
-                  <span><strong className="text-white">Sorteios mensais</strong> — concorra a descontos e brindes exclusivos</span>
                 </li>
               </ul>
 
