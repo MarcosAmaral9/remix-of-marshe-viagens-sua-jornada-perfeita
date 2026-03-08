@@ -31,42 +31,43 @@ const BlogPreview = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {displayPosts.map((post) => (
-            <Link
+            <div
               key={post.slug}
-              to={`/blog/${post.slug}`}
               className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="192"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                    {post.categoryLabel}
+              <Link to={`/blog/${post.slug}`}>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="192"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+                      {post.categoryLabel}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-muted-foreground text-xs mb-3">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>{post.date}</span>
+                    <span className="mx-1">•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-card-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                    Ler artigo <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-muted-foreground text-xs mb-3">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>{post.date}</span>
-                  <span className="mx-1">•</span>
-                  <span>{post.readTime}</span>
-                </div>
-                <h3 className="text-lg font-bold text-card-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{post.excerpt}</p>
-                <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                  Ler artigo <ArrowRight className="w-4 h-4" />
-                </span>
-              </div>
+              </Link>
               <div className="px-6 pb-5">
                 <a
                   href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Vi%20o%20blog%20e%20quero%20saber%20mais%20sobre%20pacotes."
@@ -77,7 +78,7 @@ const BlogPreview = () => {
                   Quero um pacote assim →
                 </a>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
