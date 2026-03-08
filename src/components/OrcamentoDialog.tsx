@@ -13,10 +13,14 @@ import LeadCaptureForm from "@/components/LeadCaptureForm";
 interface OrcamentoDialogProps {
   defaultDestination?: string;
   trigger?: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-const OrcamentoDialog = ({ defaultDestination, trigger }: OrcamentoDialogProps) => {
-  const [open, setOpen] = useState(false);
+const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, onOpenChange }: OrcamentoDialogProps) => {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const setOpen = onOpenChange || setInternalOpen;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
