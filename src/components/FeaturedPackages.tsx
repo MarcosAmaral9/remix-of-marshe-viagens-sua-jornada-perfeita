@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,9 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    cta: "Cotar Agora",
+    badge: "Últimas vagas",
+    badgeColor: "bg-destructive text-destructive-foreground",
+    price: "A partir de R$ 1.290",
   },
   {
     title: "Gramado & Canela",
@@ -22,7 +25,9 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    cta: "Ver Detalhes",
+    badge: "Saída confirmada",
+    badgeColor: "bg-accent text-accent-foreground",
+    price: "A partir de R$ 1.490",
   },
   {
     title: "Madri e Paris + Disney",
@@ -30,7 +35,9 @@ const packages = [
     image: imgMadriParis,
     destination: "Circuito Madri e Paris",
     link: "/circuitos/europa/madri-paris-disneyland",
-    cta: "Solicitar Proposta",
+    badge: "Mais vendido",
+    badgeColor: "bg-primary text-primary-foreground",
+    price: "A partir de R$ 8.990",
   },
 ];
 
@@ -53,7 +60,7 @@ const FeaturedPackages = () => {
               key={pkg.title}
               className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-            <Link to={pkg.link} className="relative h-56 overflow-hidden block">
+              <Link to={pkg.link} className="relative h-56 overflow-hidden block">
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -64,9 +71,17 @@ const FeaturedPackages = () => {
                   height="224"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white font-serif drop-shadow-lg">
-                  {pkg.title}
-                </h3>
+                <div className="absolute top-4 left-4">
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${pkg.badgeColor}`}>
+                    {pkg.badge}
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-bold text-white font-serif drop-shadow-lg">
+                    {pkg.title}
+                  </h3>
+                  <p className="text-white/90 text-sm font-semibold mt-1">{pkg.price}</p>
+                </div>
               </Link>
               <div className="p-6">
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">

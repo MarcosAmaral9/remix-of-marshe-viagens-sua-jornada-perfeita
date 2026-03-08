@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Shield, Award } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = {
@@ -22,6 +23,17 @@ const Footer = () => {
               Transformando sonhos em viagens inesquecíveis. 
               Sua próxima aventura começa aqui!
             </p>
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-4 mt-4">
+              <div className="flex items-center gap-2 bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-lg px-3 py-2">
+                <Shield className="w-4 h-4 text-primary" />
+                <span className="text-xs text-secondary-foreground/70">Cadastur Ativo</span>
+              </div>
+              <div className="flex items-center gap-2 bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-lg px-3 py-2">
+                <Award className="w-4 h-4 text-primary" />
+                <span className="text-xs text-secondary-foreground/70">Agência Certificada</span>
+              </div>
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -50,46 +62,22 @@ const Footer = () => {
             <div className="bg-secondary-foreground/5 rounded-xl p-6 border border-secondary-foreground/10">
               <h3 className="text-lg font-semibold text-secondary-foreground mb-4">Links Úteis</h3>
               <div className="space-y-3">
-                <Link 
-                  to="/sobre" 
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <Link to="/sobre" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   Sobre Nós
                 </Link>
-                <Link 
-                  to="/privacidade" 
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <Link to="/privacidade" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   Política de Privacidade
                 </Link>
-                <Link 
-                  to="/termos" 
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <Link to="/termos" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   Termos e Condições
                 </Link>
-                <a 
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   Instagram
                 </a>
-                <a 
-                  href={socialLinks.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   TikTok
                 </a>
-                <a 
-                  href={socialLinks.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-secondary-foreground/70 hover:text-primary transition-colors"
-                >
+                <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-secondary-foreground/70 hover:text-primary transition-colors">
                   WhatsApp
                 </a>
               </div>
