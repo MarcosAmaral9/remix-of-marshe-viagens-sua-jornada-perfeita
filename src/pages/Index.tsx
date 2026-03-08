@@ -39,7 +39,6 @@ const Index = () => {
       <Footer />
       <ScrollToTop />
       <CookieConsent />
-      <FloatingWhatsApp />
     </div>
   );
 };

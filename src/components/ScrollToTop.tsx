@@ -32,7 +32,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       variant="default"
       size="icon"
-      className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-12 h-12"
+      className="fixed bottom-24 right-6 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-12 h-12"
       aria-label="Voltar ao topo"
     >
       <ArrowUp className="w-5 h-5" />

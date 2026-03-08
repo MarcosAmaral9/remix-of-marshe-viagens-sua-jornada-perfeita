@@ -83,6 +83,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </AnalyticsWrapper>
+          <FloatingWhatsApp />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

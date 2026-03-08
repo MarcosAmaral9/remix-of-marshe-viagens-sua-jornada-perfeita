@@ -22,7 +22,7 @@ const testimonials = [
 const counters = [
   { target: 1200, label: "Viajantes Atendidos", suffix: "+" },
   { target: 60, label: "Destinos Disponíveis", suffix: "+" },
-  { target: 5, label: "Anos de Experiência", suffix: "+" },
+  { target: 3, label: "Anos de Experiência", suffix: "+" },
 ];
 
 function useCountUp(target: number, inView: boolean) {
