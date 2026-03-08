@@ -15,8 +15,6 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    badge: "Últimas vagas",
-    badgeColor: "bg-destructive text-destructive-foreground",
     price: "A partir de R$ 1.290",
   },
   {
