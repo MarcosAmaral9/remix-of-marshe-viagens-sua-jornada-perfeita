@@ -15,8 +15,6 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    badge: "Últimas vagas",
-    badgeColor: "bg-destructive text-destructive-foreground",
     price: "A partir de R$ 1.290",
   },
   {
@@ -25,8 +23,6 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    badge: "Saída confirmada",
-    badgeColor: "bg-accent text-accent-foreground",
     price: "A partir de R$ 1.490",
   },
   {
@@ -35,8 +31,6 @@ const packages = [
     image: imgMadriParis,
     destination: "Circuito Madri e Paris",
     link: "/circuitos/europa/madri-paris-disneyland",
-    badge: "Mais vendido",
-    badgeColor: "bg-primary text-primary-foreground",
     price: "A partir de R$ 8.990",
   },
 ];
@@ -71,11 +65,6 @@ const FeaturedPackages = () => {
                   height="224"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${pkg.badgeColor}`}>
-                    {pkg.badge}
-                  </span>
-                </div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-xl font-bold text-white font-serif drop-shadow-lg">
                     {pkg.title}

@@ -8,6 +8,7 @@ import RouteScrollToTop from "@/components/RouteScrollToTop";
 import { useAnalytics } from "@/hooks/use-analytics";
 import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 // Lazy-loaded routes
 const Blog = lazy(() => import("./pages/Blog"));
@@ -82,6 +83,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </AnalyticsWrapper>
+          <FloatingWhatsApp />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

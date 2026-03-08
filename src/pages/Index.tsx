@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Testimonials from "@/components/Testimonials";
 import FeaturedPackages from "@/components/FeaturedPackages";
 import HowItWorks from "@/components/HowItWorks";
 import BlogPreview from "@/components/BlogPreview";
@@ -15,7 +14,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
 import WhatsAppClub from "@/components/WhatsAppClub";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -25,7 +23,6 @@ const Index = () => {
         <Hero />
         <SocialProof />
         <WhyChooseUs />
-        <Testimonials />
         <FeaturedPackages />
         <HowItWorks />
         <BlogPreview />
@@ -39,7 +36,6 @@ const Index = () => {
       <Footer />
       <ScrollToTop />
       <CookieConsent />
-      <FloatingWhatsApp />
     </div>
   );
 };
