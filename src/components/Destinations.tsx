@@ -55,6 +55,10 @@ const Destinations = () => {
                     src={region.image}
                     alt={`Destinos ${region.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
