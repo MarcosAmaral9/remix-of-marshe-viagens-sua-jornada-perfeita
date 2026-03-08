@@ -132,3 +132,6 @@ const FAQ = () => {
       />
     </section>
   );
+};
+
+export default FAQ;
