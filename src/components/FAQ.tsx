@@ -84,18 +84,30 @@ const FAQ = () => {
           </Accordion>
         </div>
 
-        <div className="text-center mt-10">
-          <p className="text-muted-foreground">
-            Ainda tem dúvidas?{" "}
+        <div className="text-center mt-12 bg-primary/5 border border-primary/20 rounded-2xl p-8 max-w-2xl mx-auto">
+          <h3 className="text-xl font-serif font-bold text-foreground mb-2">
+            Não encontrou o que procurava?
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            Nossa equipe está pronta para tirar todas as suas dúvidas e montar o roteiro perfeito para você.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida."
+              href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20pacotes."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary font-semibold hover:underline"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg rounded-lg px-6 py-3 font-semibold transition-all"
             >
-              Fale conosco no WhatsApp
+              Falar no WhatsApp
             </a>
-          </p>
+            <OrcamentoDialog
+              trigger={
+                <span className="inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary/5 rounded-lg px-6 py-3 font-semibold transition-all cursor-pointer">
+                  Solicitar Orçamento
+                </span>
+              }
+            />
+          </div>
         </div>
       </div>
     </section>
