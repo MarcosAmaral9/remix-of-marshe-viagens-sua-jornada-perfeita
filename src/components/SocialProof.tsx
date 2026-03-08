@@ -109,107 +109,111 @@ const SocialProof = () => {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground">
             Mais de <span className="text-primary">1200 viajantes</span> já confiaram na Marshe Viagens
           </h2>
         </div>
 
         {/* Animated Counters */}
-        <div ref={ref} className="grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
+        <div ref={ref} className="grid grid-cols-3 gap-4 lg:gap-6 max-w-3xl mx-auto mb-10 lg:mb-16">
           {counters.map((c) => (
             <CounterItem key={c.label} {...c} inView={inView} />
           ))}
         </div>
 
-        {/* Testimonial Carousel */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
-                Depoimentos
-              </span>
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mt-4">
-                O que nossos
-                <br />
-                clientes dizem
-              </h3>
-
-              <div className="flex gap-4 mt-8">
-                <button
-                  onClick={prev}
-                  className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={next}
-                  className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="flex gap-2 mt-6">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentIndex ? "bg-primary" : "bg-border"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="bg-card rounded-2xl p-8 lg:p-12 shadow-card">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-bold text-primary">
+        {/* Testimonial Carousel - mobile-first stacked layout */}
+        <div className="max-w-4xl mx-auto mb-8 lg:mb-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+            {/* On mobile: card first, controls below */}
+            <div className="order-1 lg:order-2 relative w-full">
+              <div className="bg-card rounded-2xl p-6 lg:p-12 shadow-card">
+                <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center text-xl lg:text-2xl font-bold text-primary shrink-0">
                     {testimonials[currentIndex].name[0]}
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground text-lg">
+                    <h4 className="font-bold text-foreground text-base lg:text-lg">
                       {testimonials[currentIndex].name}
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {testimonials[currentIndex].role}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-4 lg:mb-6">
                   {Array.from({ length: testimonials[currentIndex].rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow text-yellow" />
+                    <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 fill-yellow text-yellow" />
                   ))}
                 </div>
 
-                <blockquote className="text-foreground text-lg leading-relaxed">
+                <blockquote className="text-foreground text-base lg:text-lg leading-relaxed">
                   "{testimonials[currentIndex].content}"
                 </blockquote>
               </div>
 
-              <div className="absolute -top-4 -right-4 w-20 h-20 text-primary/10">
+              <div className="absolute -top-4 -right-4 w-14 h-14 lg:w-20 lg:h-20 text-primary/10 hidden lg:block">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="order-2 lg:order-1 w-full">
+              <span className="text-muted-foreground font-medium uppercase tracking-wider text-xs lg:text-sm hidden lg:block">
+                Depoimentos
+              </span>
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-foreground mt-2 lg:mt-4 hidden lg:block">
+                O que nossos
+                <br />
+                clientes dizem
+              </h3>
+
+              <div className="flex items-center justify-center lg:justify-start gap-4 mt-4 lg:mt-8">
+                <button
+                  onClick={prev}
+                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                  aria-label="Depoimento anterior"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <div className="flex gap-2">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentIndex(index)}
+                      className={`w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full transition-colors ${
+                        index === currentIndex ? "bg-primary" : "bg-border"
+                      }`}
+                      aria-label={`Depoimento ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={next}
+                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                  aria-label="Próximo depoimento"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         {/* Trust strip */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 text-sm text-foreground/70 dark:text-foreground/80">
-          <span className="flex items-center gap-2">
-            <span className="text-yellow text-lg">⭐⭐⭐⭐⭐</span> Avaliação média 5.0
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 lg:gap-10 text-sm text-foreground/70 dark:text-foreground/80">
+          <span className="flex items-center justify-center gap-2">
+            <span className="text-yellow text-base lg:text-lg">⭐⭐⭐⭐⭐</span> Avaliação média 5.0
           </span>
-          <span className="flex items-center gap-2">
+          <span className="flex items-center justify-center gap-2">
             <CheckCircle className="w-4 h-4 text-accent" /> Atendimento personalizado
           </span>
-          <span className="flex items-center gap-2">
+          <span className="flex items-center justify-center gap-2">
             <CheckCircle className="w-4 h-4 text-accent" /> Suporte completo
           </span>
         </div>
