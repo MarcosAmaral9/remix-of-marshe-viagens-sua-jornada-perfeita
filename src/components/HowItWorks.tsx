@@ -59,6 +59,23 @@ const HowItWorks = () => {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <OrcamentoDialog
+              trigger={
+                <Button variant="hero" size="lg" className="text-base px-8">
+                  Solicitar Cotação Grátis
+                </Button>
+              }
+            />
+            <Button asChild variant="outline" size="lg" className="text-base px-8">
+              <a href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Quero%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">
+                Falar no WhatsApp
+              </a>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
