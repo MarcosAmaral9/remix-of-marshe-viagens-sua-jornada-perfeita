@@ -47,7 +47,9 @@ const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, on
           onSuccess={() => setTimeout(() => setOpen(false), 3000)}
         />
       </DialogContent>
+      </DialogContent>
     </Dialog>
+    </>
   );
 };
 
