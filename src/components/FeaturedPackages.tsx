@@ -23,7 +23,7 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    price: "A partir de R$ 1.490",
+    price: "Consulte valores",
   },
   {
     title: "Madri e Paris + Disney",
