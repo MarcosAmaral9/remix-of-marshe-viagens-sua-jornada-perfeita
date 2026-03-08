@@ -37,9 +37,10 @@ const Index = () => {
         {/* 8. Serviços */}
         <Services />
         {/* 9. FAQ */}
-        <FAQ />
-        {/* 10. Clube do Viajante WhatsApp */}
+        {/* 9. Clube do Viajante WhatsApp */}
         <WhatsAppClub />
+        {/* 10. FAQ */}
+        <FAQ />
         {/* 11. CTA Final */}
         <FinalCTA />
         {/* Contato */}
