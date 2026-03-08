@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 
 const FAQ = () => {
   const faqs = [

@@ -5,7 +5,7 @@ const Footer = () => {
   const socialLinks = {
     tiktok: "https://www.tiktok.com/@marshe.viagens",
     instagram: "https://www.instagram.com/marsheviagens",
-    whatsapp: "https://wa.me/553172391400"
+    whatsapp: "https://wa.me/5531972391400"
   };
 
   return (
