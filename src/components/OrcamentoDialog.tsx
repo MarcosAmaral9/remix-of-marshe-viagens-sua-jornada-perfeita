@@ -19,7 +19,8 @@ interface OrcamentoDialogProps {
 
 const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, onOpenChange }: OrcamentoDialogProps) => {
   const [internalOpen, setInternalOpen] = useState(false);
-  const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
   const setOpen = onOpenChange || setInternalOpen;
 
   return (
@@ -28,27 +29,26 @@ const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, on
         <span onClick={() => setOpen(true)} className="cursor-pointer">
           {trigger}
         </span>
-      ) : controlledOpen === undefined ? (
+      ) : !isControlled ? (
         <Button variant="outline" className="w-full gap-2" onClick={() => setOpen(true)}>
           <FileText className="w-4 h-4" /> Solicitar Orçamento
         </Button>
       ) : null}
       <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-serif">Monte sua Viagem dos Sonhos</DialogTitle>
-          <DialogDescription>
-            Preencha o formulário e nossa equipe entrará em contato pelo WhatsApp com um orçamento personalizado.
-          </DialogDescription>
-        </DialogHeader>
-        <LeadCaptureForm
-          variant="dialog"
-          defaultDestination={defaultDestination}
-          onSuccess={() => setTimeout(() => setOpen(false), 3000)}
-        />
-      </DialogContent>
-      </DialogContent>
-    </Dialog>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-serif">Monte sua Viagem dos Sonhos</DialogTitle>
+            <DialogDescription>
+              Preencha o formulário e nossa equipe entrará em contato pelo WhatsApp com um orçamento personalizado.
+            </DialogDescription>
+          </DialogHeader>
+          <LeadCaptureForm
+            variant="dialog"
+            defaultDestination={defaultDestination}
+            onSuccess={() => setTimeout(() => setOpen(false), 3000)}
+          />
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
