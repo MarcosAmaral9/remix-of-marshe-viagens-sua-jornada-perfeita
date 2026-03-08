@@ -65,11 +65,6 @@ const FeaturedPackages = () => {
                   height="224"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${pkg.badgeColor}`}>
-                    {pkg.badge}
-                  </span>
-                </div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-xl font-bold text-white font-serif drop-shadow-lg">
                     {pkg.title}
