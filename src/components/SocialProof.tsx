@@ -102,6 +102,12 @@ const SocialProof = () => {
   const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
+  // Auto-play every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4">

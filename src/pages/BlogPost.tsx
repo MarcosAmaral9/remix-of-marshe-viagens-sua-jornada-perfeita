@@ -143,6 +143,23 @@ const BlogPost = () => {
                 dangerouslySetInnerHTML={{ __html: firstHalf }}
               />
 
+              {/* Contextual mid-article CTA */}
+              <div className="my-10 p-6 bg-primary/5 border border-primary/20 rounded-xl flex flex-col sm:flex-row items-center gap-4">
+                <div className="flex-1">
+                  <p className="font-serif font-bold text-foreground text-lg mb-1">
+                    💡 Quer conhecer esse destino?
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    A Marshe monta pacotes personalizados com aéreo, hospedagem e traslados saindo de BH.
+                  </p>
+                </div>
+                <Button asChild variant="hero" size="sm" className="shrink-0">
+                  <a href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Vi%20o%20artigo%20e%20quero%20um%20pacote." target="_blank" rel="noopener noreferrer">
+                    Solicitar Cotação
+                  </a>
+                </Button>
+              </div>
+
               {/* Mid-article ad */}
               <AdSense slot="2345678901" format="rectangle" />
 
