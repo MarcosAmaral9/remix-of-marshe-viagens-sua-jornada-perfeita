@@ -31,7 +31,7 @@ const packages = [
     image: imgMadriParis,
     destination: "Circuito Madri e Paris",
     link: "/circuitos/europa/madri-paris-disneyland",
-    price: "A partir de R$ 8.990",
+    price: "Consulte valores",
   },
 ];
 
