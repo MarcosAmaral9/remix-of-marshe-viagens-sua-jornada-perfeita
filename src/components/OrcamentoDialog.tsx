@@ -23,16 +23,17 @@ const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, on
   const setOpen = onOpenChange || setInternalOpen;
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <>
       {trigger ? (
         <span onClick={() => setOpen(true)} className="cursor-pointer">
           {trigger}
         </span>
-      ) : (
+      ) : controlledOpen === undefined ? (
         <Button variant="outline" className="w-full gap-2" onClick={() => setOpen(true)}>
           <FileText className="w-4 h-4" /> Solicitar Orçamento
         </Button>
-      )}
+      ) : null}
+      <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-serif">Monte sua Viagem dos Sonhos</DialogTitle>
