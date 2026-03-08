@@ -1,22 +1,22 @@
-import { FileText, Package, Plane } from "lucide-react";
+import { MessageSquareText, Sparkles, PlaneTakeoff } from "lucide-react";
 
 const steps = [
   {
-    icon: FileText,
+    icon: MessageSquareText,
     number: "01",
     title: "Solicite sua cotação",
     description: "Preencha o formulário ou fale conosco pelo WhatsApp. É rápido e sem compromisso.",
     color: "bg-primary/10 text-primary",
   },
   {
-    icon: Package,
+    icon: Sparkles,
     number: "02",
     title: "Receba uma proposta personalizada",
     description: "Montamos opções alinhadas ao seu orçamento, perfil e objetivos de viagem.",
     color: "bg-accent/10 text-accent",
   },
   {
-    icon: Plane,
+    icon: PlaneTakeoff,
     number: "03",
     title: "Confirme e viaje tranquilo",
     description: "Cuidamos de cada detalhe para você focar apenas na experiência.",

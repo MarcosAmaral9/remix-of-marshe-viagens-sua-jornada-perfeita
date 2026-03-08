@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const featuredSlugs = [
@@ -53,6 +53,12 @@ const BlogPreview = () => {
                 </div>
               </div>
               <div className="p-6">
+                <div className="flex items-center gap-2 text-muted-foreground text-xs mb-3">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>{post.date}</span>
+                  <span className="mx-1">•</span>
+                  <span>{post.readTime}</span>
+                </div>
                 <h3 className="text-lg font-bold text-card-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3 font-serif">
                   {post.title}
                 </h3>
