@@ -23,8 +23,6 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    badge: "Saída confirmada",
-    badgeColor: "bg-accent text-accent-foreground",
     price: "A partir de R$ 1.490",
   },
   {
