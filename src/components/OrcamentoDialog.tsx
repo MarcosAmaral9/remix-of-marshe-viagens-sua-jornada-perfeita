@@ -35,7 +35,7 @@ const OrcamentoDialog = ({ defaultDestination, trigger, open: controlledOpen, on
         </Button>
       ) : null}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto mx-2 sm:mx-auto p-4 sm:p-6 rounded-xl">
           <DialogHeader>
             <DialogTitle className="text-2xl font-serif">Monte sua Viagem dos Sonhos</DialogTitle>
             <DialogDescription>

@@ -15,7 +15,7 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    price: "A partir de R$ 1.290",
+    price: "Consulte valores",
   },
   {
     title: "Gramado & Canela",
@@ -23,7 +23,7 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    price: "A partir de R$ 1.490",
+    price: "Consulte valores",
   },
   {
     title: "Madri e Paris + Disney",
@@ -31,7 +31,7 @@ const packages = [
     image: imgMadriParis,
     destination: "Circuito Madri e Paris",
     link: "/circuitos/europa/madri-paris-disneyland",
-    price: "A partir de R$ 8.990",
+    price: "Consulte valores",
   },
 ];
 
