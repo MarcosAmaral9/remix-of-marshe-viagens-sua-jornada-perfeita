@@ -69,7 +69,11 @@ const Hero = () => {
             <img
               alt="Viajante feliz em destino tropical"
               className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl rounded-3xl"
-              src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png" />
+              src="/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png"
+              width="512"
+              height="512"
+              fetchPriority="high"
+              decoding="async" />
 
             <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
               <div className="text-primary text-3xl">✈️</div>
