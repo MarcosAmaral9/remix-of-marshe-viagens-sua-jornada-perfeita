@@ -252,7 +252,6 @@ const Header = () => {
         )}
       </div>
       <OrcamentoDialog
-        trigger={<span />}
         open={orcamentoOpen}
         onOpenChange={setOrcamentoOpen}
       />
