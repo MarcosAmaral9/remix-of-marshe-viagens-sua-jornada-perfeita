@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown, Info, Shield, FileText } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +13,7 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [orcamentoOpen, setOrcamentoOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -19,7 +21,7 @@ const Header = () => {
     { name: "Serviços", href: "#servicos" },
     { name: "Destinos", href: "/destinos", isRoute: true },
     { name: "Blog", href: "/blog", isRoute: true },
-    { name: "Orçamento", href: "#orcamento" },
+    { name: "Orçamento", href: "#orcamento", isDialog: true },
     { name: "Grupo WhatsApp", href: "#grupo-whatsapp" },
   ];
 
@@ -60,6 +62,14 @@ const Header = () => {
                   >
                     {link.name}
                   </Link>
+                ) : link.isDialog ? (
+                  <button
+                    key={link.name}
+                    onClick={() => setOrcamentoOpen(true)}
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  >
+                    {link.name}
+                  </button>
                 ) : (
                   <a
                     key={link.name}
@@ -185,6 +195,14 @@ const Header = () => {
                     >
                       {link.name}
                     </Link>
+                  ) : link.isDialog ? (
+                    <button
+                      key={link.name}
+                      onClick={() => { setIsMenuOpen(false); setOrcamentoOpen(true); }}
+                      className="text-muted-foreground hover:text-foreground transition-colors font-medium text-left"
+                    >
+                      {link.name}
+                    </button>
                   ) : (
                     <a
                       key={link.name}
@@ -233,6 +251,10 @@ const Header = () => {
           </nav>
         )}
       </div>
+      <OrcamentoDialog
+        open={orcamentoOpen}
+        onOpenChange={setOrcamentoOpen}
+      />
     </header>
   );
 };

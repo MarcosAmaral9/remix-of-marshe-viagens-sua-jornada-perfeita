@@ -13,6 +13,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import WhatsAppClub from "@/components/WhatsAppClub";
 
 const Index = () => {
   return (
@@ -37,7 +38,9 @@ const Index = () => {
         <Services />
         {/* 9. FAQ */}
         <FAQ />
-        {/* 10. CTA Final */}
+        {/* 10. Clube do Viajante WhatsApp */}
+        <WhatsAppClub />
+        {/* 11. CTA Final */}
         <FinalCTA />
         {/* Contato */}
         <ContactSection />
