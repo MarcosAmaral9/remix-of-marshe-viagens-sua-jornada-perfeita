@@ -62,6 +62,14 @@ const Header = () => {
                   >
                     {link.name}
                   </Link>
+                ) : link.isDialog ? (
+                  <button
+                    key={link.name}
+                    onClick={() => setOrcamentoOpen(true)}
+                    className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  >
+                    {link.name}
+                  </button>
                 ) : (
                   <a
                     key={link.name}
@@ -70,6 +78,7 @@ const Header = () => {
                   >
                     {link.name}
                   </a>
+                )
                 )
               )
             ) : (
