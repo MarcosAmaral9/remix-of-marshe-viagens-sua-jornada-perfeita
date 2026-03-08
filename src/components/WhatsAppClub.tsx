@@ -26,18 +26,22 @@ const WhatsAppClub = () => {
               <p className="text-white/90 text-lg mb-6">
                 Entre no nosso grupo exclusivo do WhatsApp e receba em primeira mão:
               </p>
-              <ul className="text-white/80 space-y-2 mb-8 text-left max-w-md mx-auto lg:mx-0">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Promoções exclusivas e oportunidades imperdíveis
+              <ul className="text-white/80 space-y-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
+                  <span><strong className="text-white">Promoções relâmpago</strong> — ofertas exclusivas com até 40% OFF só para membros do grupo</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Dicas de viagem e destinos secretos
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
+                  <span><strong className="text-white">Acesso antecipado</strong> — saiba dos pacotes antes de todo mundo</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Pacotes com preços especiais para membros
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
+                  <span><strong className="text-white">Dicas de destinos secretos</strong> — lugares que nem todo turista conhece</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full mt-1.5 shrink-0" />
+                  <span><strong className="text-white">Sorteios mensais</strong> — concorra a descontos e brindes exclusivos</span>
                 </li>
               </ul>
 

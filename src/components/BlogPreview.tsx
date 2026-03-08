@@ -67,6 +67,16 @@ const BlogPreview = () => {
                   Ler artigo <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
+              <div className="px-6 pb-5">
+                <a
+                  href="https://wa.me/5531972391400?text=Ol%C3%A1!%20Vi%20o%20blog%20e%20quero%20saber%20mais%20sobre%20pacotes."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground text-xs font-semibold py-2 rounded-lg transition-colors"
+                >
+                  Quero um pacote assim →
+                </a>
+              </div>
             </Link>
           ))}
         </div>

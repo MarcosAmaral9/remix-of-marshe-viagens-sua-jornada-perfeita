@@ -1,4 +1,6 @@
 import { MessageSquareText, Sparkles, PlaneTakeoff } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import OrcamentoDialog from "@/components/OrcamentoDialog";
 
 const steps = [
   {
