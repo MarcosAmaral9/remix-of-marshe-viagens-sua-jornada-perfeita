@@ -195,6 +195,14 @@ const Header = () => {
                     >
                       {link.name}
                     </Link>
+                  ) : link.isDialog ? (
+                    <button
+                      key={link.name}
+                      onClick={() => { setIsMenuOpen(false); setOrcamentoOpen(true); }}
+                      className="text-muted-foreground hover:text-foreground transition-colors font-medium text-left"
+                    >
+                      {link.name}
+                    </button>
                   ) : (
                     <a
                       key={link.name}
