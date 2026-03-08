@@ -15,7 +15,7 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    price: "A partir de R$ 1.290",
+    price: "Consulte valores",
   },
   {
     title: "Gramado & Canela",
