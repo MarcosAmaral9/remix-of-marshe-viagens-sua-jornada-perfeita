@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft, Palmtree, Mountain, Globe } from "lucide-react";
+import { ArrowRight, Palmtree, Mountain, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
@@ -44,9 +44,6 @@ const Destinos = () => {
       <Header />
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4">
-          <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8">
-            <ArrowLeft className="w-4 h-4" /> Voltar para Home
-          </Link>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
               Todos os Destinos
