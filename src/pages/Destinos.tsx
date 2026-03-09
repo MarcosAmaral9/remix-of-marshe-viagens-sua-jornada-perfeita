@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Link } from "react-router-dom";
-import { ArrowRight, Palmtree, Mountain, Globe } from "lucide-react";
+import { ArrowRight, ArrowLeft, Palmtree, Mountain, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
