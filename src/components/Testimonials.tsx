@@ -44,6 +44,84 @@ const testimonials = [
     content: "Profissionais extremamente competentes. O pacote para Salvador foi muito bem organizado e o preço surpreendentemente acessível.",
     rating: 5,
   },
+  {
+    name: "Roberto",
+    role: "Contador",
+    content: "Viajei para Maceió com minha esposa e ficamos encantados. A Marshe cuidou de tudo: voo, hotel, passeios. Nota 10!",
+    rating: 5,
+  },
+  {
+    name: "Camila",
+    role: "Designer",
+    content: "Fiz minha primeira viagem internacional com a Marshe e foi incrível. O circuito pela Europa superou qualquer expectativa que eu tinha.",
+    rating: 5,
+  },
+  {
+    name: "Fernando",
+    role: "Dentista",
+    content: "Levei toda a família para Gramado no inverno. A organização foi perfeita, cada detalhe pensado para o conforto das crianças.",
+    rating: 5,
+  },
+  {
+    name: "Patrícia",
+    role: "Farmacêutica",
+    content: "O atendimento pelo WhatsApp é super rápido. Em menos de 24h já tinha um roteiro completo para João Pessoa. Amei!",
+    rating: 5,
+  },
+  {
+    name: "Carlos",
+    role: "Administrador",
+    content: "Já viajei 3 vezes com a Marshe e cada experiência foi melhor que a anterior. Foz do Iguaçu foi a viagem mais marcante da minha vida.",
+    rating: 5,
+  },
+  {
+    name: "Juliana",
+    role: "Nutricionista",
+    content: "Porto de Galinhas foi um sonho realizado! As piscinas naturais são lindas e o hotel que a Marshe escolheu era perfeito.",
+    rating: 5,
+  },
+  {
+    name: "Marcos",
+    role: "Empresário",
+    content: "Contratei o pacote para Natal e fiquei impressionado com o custo-benefício. Passeio de buggy nas dunas foi sensacional!",
+    rating: 5,
+  },
+  {
+    name: "Ana Paula",
+    role: "Professora",
+    content: "Viagem de formatura dos meus alunos para Cabo Santo Agostinho. A Marshe organizou tudo com segurança e profissionalismo.",
+    rating: 5,
+  },
+  {
+    name: "Ricardo",
+    role: "Advogado",
+    content: "O seguro viagem que a Marshe indicou me salvou quando tive um imprevisto no exterior. Suporte completo e atencioso!",
+    rating: 5,
+  },
+  {
+    name: "Beatriz",
+    role: "Psicóloga",
+    content: "Minha viagem para Salvador foi cultural e relaxante ao mesmo tempo. O Pelourinho é incrível e a equipe da Marshe montou um roteiro perfeito.",
+    rating: 5,
+  },
+  {
+    name: "Eduardo",
+    role: "Engenheiro Civil",
+    content: "Organizei minha despedida de solteiro com a Marshe. O cruzeiro foi uma experiência única! Serviço impecável como sempre.",
+    rating: 5,
+  },
+  {
+    name: "Renata",
+    role: "Jornalista",
+    content: "Como viajo muito a trabalho, valorizo praticidade. A Marshe resolve tudo de forma rápida e eficiente. Minha agência favorita!",
+    rating: 5,
+  },
+  {
+    name: "André",
+    role: "Médico",
+    content: "Levei meus pais idosos para uma viagem especial em Gramado. A Marshe pensou em acessibilidade, conforto e tudo mais. Emocionante!",
+    rating: 5,
+  },
 ];
 
 const Testimonials = () => {
@@ -56,6 +134,12 @@ const Testimonials = () => {
   const prev = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Show dots in groups for better mobile UX
+  const totalDots = testimonials.length;
+  const dotsPerGroup = 5;
+  const currentGroup = Math.floor(currentIndex / dotsPerGroup);
+  const totalGroups = Math.ceil(totalDots / dotsPerGroup);
 
   return (
     <section id="depoimentos" className="py-20 lg:py-32 bg-muted/30">
@@ -71,6 +155,9 @@ const Testimonials = () => {
               <br />
               clientes dizem
             </h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              {currentIndex + 1} de {testimonials.length} depoimentos
+            </p>
 
             <div className="flex gap-4 mt-8">
               <button
@@ -87,13 +174,15 @@ const Testimonials = () => {
               </button>
             </div>
 
-            <div className="flex gap-2 mt-6">
+            <div className="flex flex-wrap gap-1.5 mt-6 max-w-xs">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? "bg-primary" : "bg-border"
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                    index === currentIndex 
+                      ? "bg-primary scale-125" 
+                      : "bg-border hover:bg-primary/40"
                   }`}
                 />
               ))}
