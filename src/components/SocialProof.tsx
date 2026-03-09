@@ -167,6 +167,7 @@ const SocialProof = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -177,14 +178,27 @@ const SocialProof = () => {
     return () => observer.disconnect();
   }, []);
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const goTo = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
 
-  // Auto-play every 5 seconds
+    setIsAnimating(true);
+    window.setTimeout(() => setCurrentIndex(index), 180);
+    window.setTimeout(() => setIsAnimating(false), 360);
+  };
+
+  const next = () => goTo((currentIndex + 1) % testimonials.length);
+  const prev = () => goTo((currentIndex - 1 + testimonials.length) % testimonials.length);
+
+  // Auto-play every 15 seconds
   useEffect(() => {
-    const interval = setInterval(next, 5000);
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        goTo((currentIndex + 1) % testimonials.length);
+      }
+    }, 15000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, isAnimating]);
 
   return (
     <section className="py-12 lg:py-24 bg-background">
@@ -205,9 +219,23 @@ const SocialProof = () => {
         {/* Testimonial Carousel - mobile-first stacked layout */}
         <div className="max-w-4xl mx-auto mb-8 lg:mb-12">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-            {/* On mobile: card first, controls below */}
+            <div className="order-2 lg:order-1 w-full">
+              <span className="text-muted-foreground font-medium uppercase tracking-wider text-xs lg:text-sm hidden lg:block">
+                Depoimentos
+              </span>
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-foreground mt-2 lg:mt-4 hidden lg:block">
+                O que nossos
+                <br />
+                clientes dizem
+              </h3>
+            </div>
+
             <div className="order-1 lg:order-2 relative w-full">
-              <div className="bg-card rounded-2xl p-6 lg:p-12 shadow-card">
+              <div
+                className={`bg-card rounded-2xl p-6 lg:p-12 shadow-card transition-all duration-300 ${
+                  isAnimating ? "opacity-0 translate-y-2 scale-[0.98]" : "opacity-100 translate-y-0 scale-100"
+                }`}
+              >
                 <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
                   <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center text-xl lg:text-2xl font-bold text-primary shrink-0">
                     {testimonials[currentIndex].name[0]}
@@ -238,46 +266,43 @@ const SocialProof = () => {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
-            </div>
 
-            {/* Controls */}
-            <div className="order-2 lg:order-1 w-full">
-              <span className="text-muted-foreground font-medium uppercase tracking-wider text-xs lg:text-sm hidden lg:block">
-                Depoimentos
-              </span>
-              <h3 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-foreground mt-2 lg:mt-4 hidden lg:block">
-                O que nossos
-                <br />
-                clientes dizem
-              </h3>
+              {/* Controls below testimonial */}
+              <div className="flex flex-col items-center gap-4 mt-5 lg:mt-6">
+                <p className="text-muted-foreground text-sm">
+                  {currentIndex + 1} de {testimonials.length} depoimentos
+                </p>
 
-              <div className="flex items-center justify-center lg:justify-start gap-4 mt-4 lg:mt-8">
-                <button
-                  onClick={prev}
-                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                  aria-label="Depoimento anterior"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <div className="flex gap-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentIndex(index)}
-                      className={`w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full transition-colors ${
-                        index === currentIndex ? "bg-primary" : "bg-border"
-                      }`}
-                      aria-label={`Depoimento ${index + 1}`}
-                    />
-                  ))}
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    onClick={prev}
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Depoimento anterior"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <div className="flex gap-2">
+                    {testimonials.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goTo(index)}
+                        className={`w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full transition-colors ${
+                          index === currentIndex ? "bg-primary" : "bg-border"
+                        }`}
+                        aria-label={`Depoimento ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={next}
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Próximo depoimento"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={next}
-                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                  aria-label="Próximo depoimento"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
               </div>
             </div>
           </div>
