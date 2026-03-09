@@ -117,53 +117,49 @@ const LeadCaptureForm = ({ variant = "default", defaultDestination, onSuccess }:
             </Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
+            {/* Nome e WhatsApp - sempre visíveis e prioritários */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                <User className="w-4 h-4 text-primary" /> Nome completo *
+              </label>
+              <Input {...register("name")} placeholder="Seu nome" className={`h-11 text-base ${errors.name ? "border-destructive" : ""}`} />
+              {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" /> WhatsApp *
+              </label>
+              <Input {...register("whatsapp")} placeholder="(31) 99999-9999" type="tel" className={`h-11 text-base ${errors.whatsapp ? "border-destructive" : ""}`} />
+              {errors.whatsapp && <p className="text-xs text-destructive">{errors.whatsapp.message}</p>}
+            </div>
+
+            {/* Destino e Pessoas lado a lado */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <User className="w-4 h-4 text-primary" /> Nome completo *
-                </label>
-                <Input {...register("name")} placeholder="Seu nome" className={errors.name ? "border-destructive" : ""} />
-                {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary" /> WhatsApp *
-                </label>
-                <Input {...register("whatsapp")} placeholder="(31) 99999-9999" type="tel" className={errors.whatsapp ? "border-destructive" : ""} />
-                {errors.whatsapp && <p className="text-xs text-destructive">{errors.whatsapp.message}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-primary" /> E-mail <span className="text-muted-foreground font-normal">(opcional)</span>
-                </label>
-                <Input {...register("email")} placeholder="seu@email.com" type="email" className={errors.email ? "border-destructive" : ""} />
-                {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" /> Destino de interesse *
+                  <MapPin className="w-4 h-4 text-primary" /> Destino *
                 </label>
                 <select
                   {...register("destination")}
-                  className={`flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                  className={`flex h-11 w-full rounded-md border bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                     errors.destination ? "border-destructive" : "border-input"
                   }`}
                 >
-                  <option value="">Selecione um destino...</option>
+                  <option value="">Selecione...</option>
                   {DESTINATIONS.map((d) => (
                     <option key={d} value={d}>{d}</option>
                   ))}
                 </select>
                 {errors.destination && <p className="text-xs text-destructive">{errors.destination.message}</p>}
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Users className="w-4 h-4 text-primary" /> Quantidade de pessoas
+                  <Users className="w-4 h-4 text-primary" /> Pessoas
                 </label>
                 <select
                   {...register("travelers")}
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <option value="">Selecione...</option>
                   <option value="1 pessoa">1 pessoa</option>
@@ -174,24 +170,38 @@ const LeadCaptureForm = ({ variant = "default", defaultDestination, onSuccess }:
                   <option value="Grupo">Grupo / Empresa</option>
                 </select>
               </div>
+            </div>
+
+            {/* Datas lado a lado */}
+            <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
                 <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-primary" /> Data de ida
+                  <Calendar className="w-4 h-4 text-primary" /> Ida
                 </label>
-                <Input {...register("travelDateStart")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
+                <Input {...register("travelDateStart")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer h-11 text-base" />
               </div>
-              <div className="space-y-1.5 sm:col-start-2">
+              <div className="space-y-1.5">
                 <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-primary" /> Data de volta
+                  <Calendar className="w-4 h-4 text-primary" /> Volta
                 </label>
-                <Input {...register("travelDateEnd")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer" />
+                <Input {...register("travelDateEnd")} type="date" min={new Date().toISOString().split("T")[0]} className="cursor-pointer h-11 text-base" />
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-              <Button type="submit" disabled={isLoading} className="w-full sm:w-auto sm:flex-1 gap-2 h-12 text-base font-semibold">
+
+            {/* E-mail opcional - colapsado visualmente */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary" /> E-mail <span className="text-muted-foreground font-normal text-xs">(opcional)</span>
+              </label>
+              <Input {...register("email")} placeholder="seu@email.com" type="email" className={`h-11 text-base ${errors.email ? "border-destructive" : ""}`} />
+              {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
+            </div>
+
+            <div className="flex flex-col items-center gap-3 pt-1">
+              <Button type="submit" disabled={isLoading} className="w-full gap-2 h-12 text-base font-semibold">
                 {isLoading ? (<><Loader2 className="w-5 h-5 animate-spin" /> Enviando...</>) : (<><Send className="w-5 h-5" /> Solicitar Orçamento via WhatsApp</>)}
               </Button>
-              <p className="text-xs text-muted-foreground text-center sm:text-left">🔒 Seus dados são usados apenas para atendimento</p>
+              <p className="text-xs text-muted-foreground text-center">🔒 Seus dados são usados apenas para atendimento</p>
             </div>
           </form>
         )}
