@@ -49,7 +49,7 @@ const ExitIntentPopup = () => {
               Espere! Tem um presente pra você 🎁
             </AlertDialogTitle>
             <AlertDialogDescription className="text-white/90 text-base mt-2">
-              Baixe grátis nosso <strong className="text-white">Guia Completo de Milhas</strong> e aprenda a viajar pagando muito menos.
+              Receba grátis nosso <strong className="text-white">Guia Completo de Milhas</strong> e aprenda a viajar pagando muito menos.
             </AlertDialogDescription>
           </AlertDialogHeader>
         </div>
