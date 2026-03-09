@@ -167,6 +167,7 @@ const SocialProof = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -177,14 +178,27 @@ const SocialProof = () => {
     return () => observer.disconnect();
   }, []);
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const goTo = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
 
-  // Auto-play every 5 seconds
+    setIsAnimating(true);
+    window.setTimeout(() => setCurrentIndex(index), 180);
+    window.setTimeout(() => setIsAnimating(false), 360);
+  };
+
+  const next = () => goTo((currentIndex + 1) % testimonials.length);
+  const prev = () => goTo((currentIndex - 1 + testimonials.length) % testimonials.length);
+
+  // Auto-play every 15 seconds
   useEffect(() => {
-    const interval = setInterval(next, 5000);
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        goTo((currentIndex + 1) % testimonials.length);
+      }
+    }, 15000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, isAnimating]);
 
   return (
     <section className="py-12 lg:py-24 bg-background">
