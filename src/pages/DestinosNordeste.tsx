@@ -89,9 +89,9 @@ const destinations = [
   {
     name: "Salvador",
     location: "Bahia",
-    price: "R$ 1.800",
-    duration: "8 dias",
-    dates: "19/04/26 a 26/04/26",
+    price: "R$ 3.000",
+    duration: "5 dias",
+    dates: "15/06/26 a 19/06/26",
     image: salvadorImg,
     slug: "salvador",
     highlights: ["Pelourinho", "Elevador Lacerda", "Praia do Farol da Barra"],
