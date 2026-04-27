@@ -87,7 +87,7 @@ const Fortaleza = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>6 dias • 19/04/26 a 25/04/26</span>
+                    <span>8 dias • 13/06/26 a 20/06/26</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -96,7 +96,7 @@ const Fortaleza = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 4.100</p>
+                  <p className="text-3xl font-bold text-primary">R$ 2.850</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
