@@ -29,9 +29,9 @@ const destinations = [
   {
     name: "Fortaleza",
     location: "Ceará",
-    price: "R$ 4.100",
-    duration: "6 dias",
-    dates: "19/04/26 a 25/04/26",
+    price: "R$ 2.850",
+    duration: "8 dias",
+    dates: "13/06/26 a 20/06/26",
     image: fortalezaImg,
     slug: "fortaleza",
     highlights: ["Beach Park", "Praia do Futuro", "Jericoacoara"],
