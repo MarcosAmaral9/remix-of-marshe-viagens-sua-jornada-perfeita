@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 import madriParisImg from "@/assets/circuit-madri-paris.jpg";
+import { useSeo } from "@/hooks/use-seo";
 
 const regions = [
   {
@@ -39,6 +40,13 @@ const regions = [
 ];
 
 const Destinos = () => {
+
+ useSeo({
+    title: "Destinos | Marshe Viagens - Nordeste, Sul e Europa",
+    description: "Explore todos os destinos da Marshe Viagens: praias do Nordeste, serras do Sul e circuitos pela Europa. Encontre o pacote ideal para você.",
+    canonical: "https://marsheviagens.com/destinos",
+  });
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
