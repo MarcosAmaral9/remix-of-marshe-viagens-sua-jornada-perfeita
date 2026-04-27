@@ -79,9 +79,9 @@ const destinations = [
   {
     name: "Porto Seguro",
     location: "Bahia",
-    price: "R$ 1.838",
-    duration: "4 dias",
-    dates: "04/05/26 a 08/05/26",
+    price: "R$ 3.000",
+    duration: "8 dias",
+    dates: "05/07/26 a 12/07/26",
     image: portoSeguroImg,
     slug: "porto-seguro",
     highlights: ["Passarela do Álcool", "Arraial d'Ajuda", "Trancoso"],
