@@ -4,33 +4,63 @@ interface SeoProps {
   title: string;
   description: string;
   canonical?: string;
+  image?: string;
 }
 
-export const useSeo = ({ title, description, canonical }: SeoProps) => {
+const DEFAULT_TITLE = "Marshe Viagens - Agência de Viagens em Minas Gerais | Pacotes, Passagens e Hospedagens";
+const DEFAULT_DESC = "Marshe Viagens - Agência de viagens em Contagem, MG. Pacotes para Porto Seguro, Fortaleza, Salvador, Gramado e mais.";
+const DEFAULT_IMAGE = "https://marsheviagens.com/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png";
+
+function setMeta(selector: string, attr: string, value: string) {
+  let el = document.querySelector(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    const [attrName, attrVal] = selector.replace("meta[", "").replace("]", "").split("=");
+    el.setAttribute(attrName.trim(), attrVal.replace(/"/g, "").trim());
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr, value);
+}
+
+export const useSeo = ({ title, description, canonical, image }: SeoProps) => {
   useEffect(() => {
+    const img = image || DEFAULT_IMAGE;
+    const url = canonical || "https://marsheviagens.com/";
+
+    // Título da aba
     document.title = title;
 
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.setAttribute("name", "description");
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute("content", description);
+    // Meta description
+    setMeta('meta[name="description"]', "content", description);
 
+    // Open Graph
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", description);
+    setMeta('meta[property="og:url"]', "content", url);
+    setMeta('meta[property="og:image"]', "content", img);
+
+    // Twitter
+    setMeta('meta[name="twitter:title"]', "content", title);
+    setMeta('meta[name="twitter:description"]', "content", description);
+    setMeta('meta[name="twitter:url"]', "content", url);
+    setMeta('meta[name="twitter:image"]', "content", img);
+
+    // Canonical
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) {
-      if (!link) {
-        link = document.createElement("link");
-        link.setAttribute("rel", "canonical");
-        document.head.appendChild(link);
-      }
-      link.setAttribute("href", canonical);
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
     }
+    link.setAttribute("href", url);
 
     return () => {
-      // Reset on unmount
-      document.title = "Marshe Viagens - Agência de Viagens em Minas Gerais";
+      document.title = DEFAULT_TITLE;
+      setMeta('meta[name="description"]', "content", DEFAULT_DESC);
+      setMeta('meta[property="og:title"]', "content", "Marshe Viagens - Agência de Viagens em Contagem, MG");
+      setMeta('meta[property="og:description"]', "content", DEFAULT_DESC);
+      setMeta('meta[property="og:url"]', "content", "https://marsheviagens.com/");
+      setMeta('meta[property="og:image"]', "content", DEFAULT_IMAGE);
     };
-  }, [title, description, canonical]);
+  }, [title, description, canonical, image]);
 };
