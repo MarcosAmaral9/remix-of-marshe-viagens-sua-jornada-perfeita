@@ -42,10 +42,9 @@ const Hero = () => {
                     strokeLinecap="round"
                   />
                 </svg>
-              </span>
-              com suporte
+              </span>{" "}
+              com suporte especializado
               <br />
-              especializado
             </h1>
 
             <p className="text-foreground/70 dark:text-foreground/80 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
