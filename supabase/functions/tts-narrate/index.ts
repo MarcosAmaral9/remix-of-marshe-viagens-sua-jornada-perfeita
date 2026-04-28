@@ -1,22 +1,49 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
-};
+const ALLOWED_ORIGINS = [
+  "https://marsheviagens.com",
+  "https://www.marsheviagens.com",
+];
 
-// Matilda — high-quality feminine voice that works well with Portuguese
+function buildCorsHeaders(origin: string | null) {
+  let isAllowed = false;
+  if (origin) {
+    try {
+      const host = new URL(origin).hostname;
+      isAllowed =
+        ALLOWED_ORIGINS.includes(origin) ||
+        /\.lovable\.(app|dev)$/.test(host) ||
+        /^http:\/\/localhost(:\d+)?$/.test(origin);
+    } catch {
+      isAllowed = false;
+    }
+  }
+  return {
+    "Access-Control-Allow-Origin": isAllowed ? origin! : "https://marsheviagens.com",
+    "Access-Control-Allow-Headers":
+      "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Vary": "Origin",
+  };
+}
+
+// Matilda — voz feminina de alta qualidade compatível com PT-BR
 const VOICE_ID = "XrExE9yKIg1WjnnlVkGX";
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
+  const corsHeaders = buildCorsHeaders(req.headers.get("origin"));
+
+  if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
     const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
     if (!ELEVENLABS_API_KEY) {
-      throw new Error("ELEVENLABS_API_KEY is not configured");
+      return new Response(
+        JSON.stringify({ error: "TTS service not configured" }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     const { text } = await req.json();
@@ -54,8 +81,11 @@ serve(async (req) => {
     );
 
     if (!response.ok) {
-      const errorBody = await response.text();
-      throw new Error(`ElevenLabs API error [${response.status}]: ${errorBody}`);
+      console.error(`ElevenLabs API error: ${response.status}`);
+      return new Response(
+        JSON.stringify({ error: "TTS provider error" }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     const audioBuffer = await response.arrayBuffer();
@@ -68,9 +98,9 @@ serve(async (req) => {
       },
     });
   } catch (error) {
-    console.error("TTS error:", error);
+    console.error("TTS error");
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : "Unknown error" }),
+      JSON.stringify({ error: "Unknown error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
