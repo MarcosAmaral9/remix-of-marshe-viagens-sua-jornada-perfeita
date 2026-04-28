@@ -6,24 +6,24 @@ const Hero = () => {
   return (
     <section className="relative min-h-[90vh] bg-gradient-hero overflow-hidden pt-20">
       {/* Decorative elements */}
-      <div className="absolute top-32 right-20 w-16 h-16 bg-coral-light rounded-full opacity-60 animate-float" />
-      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
+      <div className="absolute top-32 right-20 w-16 h-16 bg-coral-light rounded-full opacity-60 animate-float hidden sm:block" />
+      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float hidden sm:block" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float hidden sm:block" style={{ animationDelay: '0.5s' }} />
 
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
           {/* Content */}
-          <div className="space-y-8 animate-fade-in">
-            <span className="inline-block text-primary font-semibold tracking-wider uppercase text-sm">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in text-center lg:text-left">
+            <span className="inline-block text-primary font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Agência de Viagens em Contagem - MG
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
               Planeje sua viagem
               <br />
-              <span className="relative">
+              <span className="relative inline-block">
                 dos sonhos
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none">
                   <path d="M2 10C50 2 150 2 298 10" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </span>
@@ -32,14 +32,14 @@ const Hero = () => {
               especializado
             </h1>
 
-            <p className="text-foreground/70 dark:text-foreground/80 text-lg max-w-lg leading-relaxed">Pacotes nacionais e internacionais, passagens aéreas, pacotes e hospedagens com atendimento humano antes, durante e depois da sua viagem.
+            <p className="text-foreground/70 dark:text-foreground/80 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">Pacotes nacionais e internacionais, passagens aéreas, pacotes e hospedagens com atendimento humano antes, durante e depois da sua viagem.
 
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <OrcamentoDialog
                 trigger={
-                <Button variant="hero" className="gap-2">
+                <Button variant="hero" className="gap-2 w-full sm:w-auto">
                     <Send className="w-5 h-5" />
                     Solicitar Cotação Personalizada
                   </Button>
@@ -47,8 +47,8 @@ const Hero = () => {
 
               <Button
                 variant="hero-outline"
-                className="gap-2"
-                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank")}>
+                className="gap-2 w-full sm:w-auto"
+                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank", "noopener,noreferrer")}>
 
                 <MessageCircle className="w-5 h-5" />
                 Falar com Especialista
@@ -56,7 +56,7 @@ const Hero = () => {
             </div>
 
             {/* Trust signals */}
-            <div className="flex flex-wrap gap-6 pt-4 text-sm text-foreground/60 dark:text-foreground/70">
+            <div className="flex flex-wrap gap-4 sm:gap-6 pt-4 text-xs sm:text-sm text-foreground/60 dark:text-foreground/70 justify-center lg:justify-start">
               <span className="flex items-center gap-1.5">✅ Atendimento personalizado</span>
               <span className="flex items-center gap-1.5">✅ Suporte completo</span>
               <span className="flex items-center gap-1.5">⭐ Avaliação 5.0</span>
