@@ -25,8 +25,7 @@ const Hero = () => {
             </span>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
-              Planeje sua viagem
-              <br />
+              Planeje sua viagem{" "}
               <span className="relative inline-block">
                 dos sonhos
                 <svg
@@ -44,7 +43,6 @@ const Hero = () => {
                 </svg>
               </span>{" "}
               com suporte especializado
-              <br />
             </h1>
 
             <p className="text-foreground/70 dark:text-foreground/80 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
