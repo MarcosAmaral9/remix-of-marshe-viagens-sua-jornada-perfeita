@@ -7,8 +7,14 @@ const Hero = () => {
     <section className="relative min-h-[90vh] bg-gradient-hero overflow-hidden pt-20">
       {/* Decorative elements */}
       <div className="absolute top-32 right-20 w-16 h-16 bg-coral-light rounded-full opacity-60 animate-float hidden sm:block" />
-      <div className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float hidden sm:block" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float hidden sm:block" style={{ animationDelay: '0.5s' }} />
+      <div
+        className="absolute bottom-40 left-10 w-8 h-8 bg-teal/20 rounded-full animate-float hidden sm:block"
+        style={{ animationDelay: "1s" }}
+      />
+      <div
+        className="absolute top-1/2 right-1/4 w-4 h-4 bg-yellow/30 rounded-full animate-float hidden sm:block"
+        style={{ animationDelay: "0.5s" }}
+      />
 
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
@@ -23,33 +29,51 @@ const Hero = () => {
               <br />
               <span className="relative inline-block">
                 dos sonhos
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none">
-                  <path d="M2 10C50 2 150 2 298 10" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" />
+                <svg
+                  className="absolute -bottom-2 left-0 w-full"
+                  viewBox="0 0 300 12"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M2 10C50 2 150 2 298 10"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </span>
-              {" "}com suporte
+              com suporte
               <br />
               especializado
             </h1>
 
-            <p className="text-foreground/70 dark:text-foreground/80 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">Pacotes nacionais e internacionais, passagens aéreas, pacotes e hospedagens com atendimento humano antes, durante e depois da sua viagem.
-
+            <p className="text-foreground/70 dark:text-foreground/80 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Pacotes nacionais e internacionais, passagens aéreas, pacotes e hospedagens com atendimento humano antes,
+              durante e depois da sua viagem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <OrcamentoDialog
                 trigger={
-                <Button variant="hero" className="gap-2 w-full sm:w-auto">
+                  <Button variant="hero" className="gap-2 w-full sm:w-auto">
                     <Send className="w-5 h-5" />
                     Solicitar Cotação Personalizada
                   </Button>
-                } />
+                }
+              />
 
               <Button
                 variant="hero-outline"
                 className="gap-2 w-full sm:w-auto"
-                onClick={() => window.open("https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.", "_blank", "noopener,noreferrer")}>
-
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/5531972391400?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20viagens.",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+              >
                 <MessageCircle className="w-5 h-5" />
                 Falar com Especialista
               </Button>
@@ -73,7 +97,8 @@ const Hero = () => {
               width="512"
               height="512"
               fetchPriority="high"
-              decoding="async" />
+              decoding="async"
+            />
 
             <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
               <div className="text-primary text-3xl">✈️</div>
@@ -85,8 +110,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default Hero;
