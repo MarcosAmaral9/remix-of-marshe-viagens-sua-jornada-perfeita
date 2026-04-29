@@ -1,3 +1,4 @@
+import { getDestinationPrice } from "@/lib/destination-lookup";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -131,7 +132,7 @@ const JoaoPessoa = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 2.790</p>
+                  <p className="text-3xl font-bold text-primary">{getDestinationPrice("joao-pessoa")}</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
