@@ -15,7 +15,7 @@ import portoGalinhasImg from "@/assets/dest-porto-de-galinhas.jpg";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import salvadorImg from "@/assets/dest-salvador.jpg";
 
-const destinations = [
+export const destinations = [
   {
     name: "Cabo de Santo Agostinho",
     location: "Pernambuco",

@@ -8,6 +8,23 @@ import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 import madriParisImg from "@/assets/circuit-madri-paris.jpg";
 import { useSeo } from "@/hooks/use-seo";
+import { destinations as nordesteDestinations } from "./DestinosNordeste";
+import { destinations as sulDestinations } from "./DestinosSul";
+import { circuitosEuropa } from "@/data/circuitos";
+
+// Extrai número de uma string de preço como "R$ 2.319" ou "R$ 12.600,00"
+const parsePrice = (price: string): number => {
+  const cleaned = price.replace(/[^\d,]/g, "").replace(",", ".");
+  const num = parseFloat(cleaned);
+  return isNaN(num) ? Infinity : num;
+};
+
+const formatPrice = (value: number): string =>
+  `R$ ${value.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+
+const minNordeste = Math.min(...nordesteDestinations.map((d) => parsePrice(d.price)));
+const minSul = Math.min(...sulDestinations.map((d) => parsePrice(d.price)));
+const minEuropa = Math.min(...circuitosEuropa.map((c) => parsePrice(c.pricePerPerson)));
 
 const regions = [
   {
@@ -15,27 +32,27 @@ const regions = [
     slug: "/destinos/nordeste",
     icon: Palmtree,
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
-    destinationCount: 8,
+    destinationCount: nordesteDestinations.length,
     image: portoSeguroImg,
-    highlight: "A partir de R$ 1.838",
+    highlight: `A partir de ${formatPrice(minNordeste)}`,
   },
   {
     name: "Destinos Sul",
     slug: "/destinos/sul",
     icon: Mountain,
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
-    destinationCount: 2,
+    destinationCount: sulDestinations.length,
     image: gramadoImg,
-    highlight: "A partir de R$ 1.842",
+    highlight: `A partir de ${formatPrice(minSul)}`,
   },
   {
     name: "Circuitos Europa",
     slug: "/circuitos/europa",
     icon: Globe,
     description: "Roteiros completos pela Europa com guia, hospedagem e Disneyland Paris inclusos. Saídas de Belo Horizonte.",
-    destinationCount: 3,
+    destinationCount: circuitosEuropa.length,
     image: madriParisImg,
-    highlight: "A partir de R$ 12.600",
+    highlight: `A partir de ${formatPrice(minEuropa)}`,
   },
 ];
 
