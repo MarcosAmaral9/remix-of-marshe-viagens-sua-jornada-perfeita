@@ -1,3 +1,4 @@
+import { getDestinationPrice } from "@/lib/destination-lookup";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -101,7 +102,7 @@ const CaboSantoAgostinho = () => {
 
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 2.650</p>
+                  <p className="text-3xl font-bold text-primary">{getDestinationPrice("cabo-de-santo-agostinho")}</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
 
