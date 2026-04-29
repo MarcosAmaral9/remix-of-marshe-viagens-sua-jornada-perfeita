@@ -3,28 +3,25 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
-import { destinations as nordesteDestinations } from "@/pages/DestinosNordeste";
-import { destinations as sulDestinations } from "@/pages/DestinosSul";
-import { getMinPrice, formatPrice } from "@/lib/price-utils";
 
 const regions = [
   {
     name: "Nordeste",
     slug: "nordeste",
     icon: Palmtree,
-    description: `Praias paradisíacas, águas cristalinas e sol o ano inteiro. ${nordesteDestinations.length} destinos incríveis para você explorar.`,
-    destinationCount: nordesteDestinations.length,
+    description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
+    destinationCount: 8,
     image: portoSeguroImg,
-    minPrice: getMinPrice(nordesteDestinations, (d) => d.price),
+    highlight: "A partir de R$ 1.838",
   },
   {
     name: "Sul",
     slug: "sul",
     icon: Mountain,
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
-    destinationCount: sulDestinations.length,
+    destinationCount: 2,
     image: gramadoImg,
-    minPrice: getMinPrice(sulDestinations, (d) => d.price),
+    highlight: "A partir de R$ 1.842",
   },
 ];
 
@@ -76,7 +73,7 @@ const Destinations = () => {
                 <div className="p-5 flex items-center justify-between">
                   <div>
                     <span className="text-xs text-muted-foreground">{region.destinationCount} destinos</span>
-                    <p className="text-lg font-bold text-primary">A partir de {formatPrice(region.minPrice)}</p>
+                    <p className="text-lg font-bold text-primary">{region.highlight}</p>
                   </div>
                   <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
                     Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
