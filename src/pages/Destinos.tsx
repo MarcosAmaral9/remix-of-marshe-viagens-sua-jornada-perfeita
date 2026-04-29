@@ -11,20 +11,7 @@ import { useSeo } from "@/hooks/use-seo";
 import { destinations as nordesteDestinations } from "./DestinosNordeste";
 import { destinations as sulDestinations } from "./DestinosSul";
 import { circuitosEuropa } from "@/data/circuitos";
-
-// Extrai número de uma string de preço como "R$ 2.319" ou "R$ 12.600,00"
-const parsePrice = (price: string): number => {
-  const cleaned = price.replace(/[^\d,]/g, "").replace(",", ".");
-  const num = parseFloat(cleaned);
-  return isNaN(num) ? Infinity : num;
-};
-
-const formatPrice = (value: number): string =>
-  `R$ ${value.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
-
-const minNordeste = Math.min(...nordesteDestinations.map((d) => parsePrice(d.price)));
-const minSul = Math.min(...sulDestinations.map((d) => parsePrice(d.price)));
-const minEuropa = Math.min(...circuitosEuropa.map((c) => parsePrice(c.pricePerPerson)));
+import { getMinPrice, formatPrice, formatPriceRange } from "@/lib/price-utils";
 
 const regions = [
   {
@@ -34,7 +21,8 @@ const regions = [
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
     destinationCount: nordesteDestinations.length,
     image: portoSeguroImg,
-    highlight: `A partir de ${formatPrice(minNordeste)}`,
+    minPrice: getMinPrice(nordesteDestinations, (d) => d.price),
+    priceRange: formatPriceRange(nordesteDestinations, (d) => d.price),
   },
   {
     name: "Destinos Sul",
@@ -43,7 +31,8 @@ const regions = [
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
     destinationCount: sulDestinations.length,
     image: gramadoImg,
-    highlight: `A partir de ${formatPrice(minSul)}`,
+    minPrice: getMinPrice(sulDestinations, (d) => d.price),
+    priceRange: formatPriceRange(sulDestinations, (d) => d.price),
   },
   {
     name: "Circuitos Europa",
@@ -52,18 +41,18 @@ const regions = [
     description: "Roteiros completos pela Europa com guia, hospedagem e Disneyland Paris inclusos. Saídas de Belo Horizonte.",
     destinationCount: circuitosEuropa.length,
     image: madriParisImg,
-    highlight: `A partir de ${formatPrice(minEuropa)}`,
+    minPrice: getMinPrice(circuitosEuropa, (c) => c.pricePerPerson),
+    priceRange: formatPriceRange(circuitosEuropa, (c) => c.pricePerPerson),
   },
 ];
 
 const Destinos = () => {
-
- useSeo({
+  useSeo({
     title: "Destinos | Marshe Viagens - Nordeste, Sul e Europa",
     description: "Explore todos os destinos da Marshe Viagens: praias do Nordeste, serras do Sul e circuitos pela Europa. Encontre o pacote ideal para você.",
     canonical: "https://marsheviagens.com/destinos",
   });
-  
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -110,12 +99,17 @@ const Destinos = () => {
                     </div>
                   </div>
 
-                  <div className="p-5 flex items-center justify-between">
-                    <div>
+                  <div className="p-5 flex items-center justify-between gap-3">
+                    <div className="min-w-0">
                       <span className="text-xs text-muted-foreground">{region.destinationCount} destinos</span>
-                      <p className="text-lg font-bold text-primary">{region.highlight}</p>
+                      <p className="text-lg font-bold text-primary leading-tight">
+                        A partir de {formatPrice(region.minPrice)}
+                      </p>
+                      <span className="text-xs text-muted-foreground block truncate">
+                        Faixa: {region.priceRange}
+                      </span>
                     </div>
-                    <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
+                    <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors shrink-0">
                       Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
