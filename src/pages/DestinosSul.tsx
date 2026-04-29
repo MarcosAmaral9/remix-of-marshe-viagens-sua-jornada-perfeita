@@ -2,8 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, ArrowLeft, ArrowRight, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { sortByPriceAsc, parsePrice, getMinPrice, formatPriceRange, formatPrice } from "@/lib/price-utils";
 
 import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
