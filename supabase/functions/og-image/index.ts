@@ -126,19 +126,19 @@ function buildSvg(title: string, highlight: string, kind: string) {
   <g transform="translate(80,130)">
     <rect width="${Math.max(140, k.length * 14 + 40)}" height="44" rx="22" fill="#ffffff" fill-opacity="0.92"/>
     <text x="${Math.max(140, k.length * 14 + 40) / 2}" y="29" text-anchor="middle"
-      font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="18" fill="#1e6fa8" letter-spacing="2">${k}</text>
+      font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#1e6fa8" letter-spacing="2">${k}</text>
   </g>
 
   <!-- Title -->
-  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="68" fill="#0a2540">${titleTspans}</text>
+  <text font-family="Merriweather, serif" font-weight="700" font-size="68" fill="#0a2540">${titleTspans}</text>
 
   <!-- Highlight -->
-  <text x="80" y="500" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="32" fill="#0a2540" opacity="0.85">${h}</text>
+  <text x="80" y="500" font-family="Inter, sans-serif" font-weight="600" font-size="32" fill="#0a2540" opacity="0.85">${h}</text>
 
   <!-- Brand bar -->
   <rect x="0" y="586" width="1200" height="44" fill="#0a2540"/>
-  <text x="80" y="616" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="3">MARSHE VIAGENS</text>
-  <text x="1120" y="616" text-anchor="end" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="20" fill="#ffffff" opacity="0.85">marsheviagens.com</text>
+  <text x="80" y="616" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="3">MARSHE VIAGENS</text>
+  <text x="1120" y="616" text-anchor="end" font-family="Inter, sans-serif" font-weight="500" font-size="20" fill="#ffffff" opacity="0.85">marsheviagens.com</text>
 </svg>`;
 }
 
