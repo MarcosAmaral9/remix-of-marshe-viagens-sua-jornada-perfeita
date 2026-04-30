@@ -58,11 +58,11 @@ function buildSvg(title: string, highlight: string, kind: string) {
   const h = escapeXml(highlight.slice(0, 90));
   const k = escapeXml(kind.toUpperCase());
 
-  const titleLines = wrap(t, 26, 3);
-  const titleStartY = 250 - (titleLines.length - 1) * 35;
-
+  const titleLines = wrap(t, 22, 3);
+  const lineHeight = 84;
+  const titleStartY = 240;
   const titleTspans = titleLines
-    .map((l, i) => `<tspan x="80" dy="${i === 0 ? 0 : 84}">${l}</tspan>`)
+    .map((l, i) => `<tspan x="80" y="${titleStartY + i * lineHeight}">${l}</tspan>`)
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
