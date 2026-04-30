@@ -10,7 +10,12 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
 
 const CaboSantoAgostinho = () => {
-  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho" });
+  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho",
+    ogParams: {
+      title: "Pacote Cabo de Santo Agostinho",
+      highlight: "A partir de R$ 2.650 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -10,7 +10,12 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-gramado.jpg";
 
 const Gramado = () => {
-  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado" });
+  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado",
+    ogParams: {
+      title: "Pacote Gramado",
+      highlight: "A partir de R$ 3.500 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />

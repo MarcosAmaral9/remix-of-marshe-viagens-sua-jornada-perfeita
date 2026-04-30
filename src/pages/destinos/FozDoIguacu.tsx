@@ -10,7 +10,12 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-foz-do-iguacu.jpg";
 
 const FozDoIguacu = () => {
-  useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/foz-do-iguacu" });
+  useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/foz-do-iguacu",
+    ogParams: {
+      title: "Pacote Foz do Iguaçu",
+      highlight: "A partir de R$ 1.842 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />
