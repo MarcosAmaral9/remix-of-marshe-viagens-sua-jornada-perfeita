@@ -9,7 +9,7 @@ interface SeoProps {
 
 const DEFAULT_TITLE = "Marshe Viagens - Agência de Viagens em Minas Gerais | Pacotes, Passagens e Hospedagens";
 const DEFAULT_DESC = "Marshe Viagens - Agência de viagens em Contagem, MG. Pacotes para Porto Seguro, Fortaleza, Salvador, Gramado e mais.";
-const DEFAULT_IMAGE = "https://marsheviagens.com/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png";
+const DEFAULT_IMAGE = "https://marsheviagens.com/og-image.jpg?v=3";
 
 function setMeta(selector: string, attr: string, value: string) {
   let el = document.querySelector(selector);
