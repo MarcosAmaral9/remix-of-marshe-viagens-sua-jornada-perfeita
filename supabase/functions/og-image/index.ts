@@ -102,9 +102,7 @@ function buildSvg(title: string, highlight: string, kind: string) {
   </g>
 
   <!-- Title -->
-  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="72" fill="#0a2540">
-    <tspan x="80" y="${titleStartY}">${titleTspans.replace(/<tspan x="80" dy="0">/, "")}</tspan>
-  </text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="68" fill="#0a2540">${titleTspans}</text>
 
   <!-- Highlight -->
   <text x="80" y="500" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="32" fill="#0a2540" opacity="0.85">${h}</text>
