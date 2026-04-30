@@ -1,10 +1,11 @@
-const CACHE_NAME = 'marshe-viagens-v2';
+const CACHE_NAME = 'marshe-viagens-v3';
 const STATIC_ASSETS = [
   '/',
-  '/favicon.ico?v=2',
-  '/favicon-32.png?v=2',
-  '/favicon-192.png?v=2',
-  '/apple-touch-icon.png?v=2',
+  '/favicon.ico?v=3',
+  '/favicon-32.png?v=3',
+  '/favicon-192.png?v=3',
+  '/favicon-512.png?v=3',
+  '/apple-touch-icon.png?v=3',
   '/placeholder.svg',
 ];
 
@@ -22,7 +23,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// Activate: clean old caches (incluindo v1 com favicon antigo)
+// Activate: clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -37,12 +38,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Apenas GET e mesma origem
   if (request.method !== 'GET' || url.origin !== location.origin) return;
 
-  // Nunca cachear o favicon antigo
+  // Nunca cachear o favicon antigo sem versão
   if (url.pathname === '/favicon.ico' && !url.search) {
-    event.respondWith(fetch(request).catch(() => caches.match('/favicon.ico?v=2')));
+    event.respondWith(fetch(request).catch(() => caches.match('/favicon.ico?v=3')));
     return;
   }
 
