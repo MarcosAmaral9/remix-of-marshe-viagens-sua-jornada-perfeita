@@ -124,10 +124,16 @@ Deno.serve(async (req) => {
     const kind = (url.searchParams.get("kind") || "Marshe").trim();
 
     await ensureWasm();
+    const fontBuffers = await loadFonts();
     const svg = buildSvg(title, highlight, kind);
     const resvg = new Resvg(svg, {
       fitTo: { mode: "width", value: 1200 },
-      font: { loadSystemFonts: false },
+      font: {
+        loadSystemFonts: false,
+        fontBuffers,
+        defaultFontFamily: "Inter",
+        serifFamily: "Merriweather",
+      },
     });
     const png = resvg.render().asPng();
 
