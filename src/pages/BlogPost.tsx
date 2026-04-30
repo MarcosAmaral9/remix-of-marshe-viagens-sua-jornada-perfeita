@@ -11,6 +11,7 @@ const POSTS_PER_PAGE = 9;
 import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
