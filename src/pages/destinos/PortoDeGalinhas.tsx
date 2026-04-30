@@ -4,12 +4,18 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-de-galinhas.jpg";
 
 const PortoDeGalinhas = () => {
-  useSeo({ title: "Pacote Porto de Galinhas | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto de Galinhas, PE. Piscinas naturais, Muro Alto e praias paradisíacas. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/porto-de-galinhas" });
+  useSeo({ title: "Pacote Porto de Galinhas | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Porto de Galinhas, PE. Piscinas naturais, Muro Alto e praias paradisíacas. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/porto-de-galinhas",
+    ogParams: {
+      title: "Pacote Porto de Galinhas",
+      highlight: "A partir de R$ 2.319 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -110,6 +116,11 @@ const PortoDeGalinhas = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Porto de Galinhas — Marshe Viagens"
+                  highlight="A partir de R$ 2.319 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Porto de Galinhas" />

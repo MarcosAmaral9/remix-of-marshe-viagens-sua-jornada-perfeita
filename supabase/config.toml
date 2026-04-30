@@ -1,1 +1,4 @@
 project_id = "ejafmqzoiwqpeafysarw"
+
+[functions.og-image]
+verify_jwt = false

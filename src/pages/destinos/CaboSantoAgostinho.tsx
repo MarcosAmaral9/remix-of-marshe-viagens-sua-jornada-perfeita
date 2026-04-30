@@ -4,12 +4,18 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
 
 const CaboSantoAgostinho = () => {
-  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho" });
+  useSeo({ title: "Pacote Cabo de Santo Agostinho | Marshe Viagens", description: "Pacote de viagem para Cabo de Santo Agostinho, PE. Praia de Calhetas, piscinas naturais e mais, saindo de BH.", canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho",
+    ogParams: {
+      title: "Pacote Cabo de Santo Agostinho",
+      highlight: "A partir de R$ 2.650 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -117,6 +123,11 @@ const CaboSantoAgostinho = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Cabo de Santo Agostinho — Marshe Viagens"
+                  highlight="A partir de R$ 2.650 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Cabo Santo Agostinho" />

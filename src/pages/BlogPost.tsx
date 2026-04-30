@@ -11,6 +11,7 @@ const POSTS_PER_PAGE = 9;
 import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -20,6 +21,13 @@ const BlogPost = () => {
     title: post ? `${post.title} | Marshe Viagens Blog` : "Blog | Marshe Viagens",
     description: post?.metaDescription || "",
     canonical: post ? `https://marsheviagens.com/blog/${post.slug}` : undefined,
+    ogParams: post
+      ? {
+          title: post.title,
+          highlight: `${post.categoryLabel} • ${post.readTime} de leitura`,
+          kind: "Blog",
+        }
+      : undefined,
   });
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -107,29 +115,36 @@ const BlogPost = () => {
           {/* Content with mid-article ad */}
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 max-w-4xl">
-              {/* Audio Narrator + Share row */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
-                <div className="flex-1">
-                  <AudioNarrator text={narratorText} title={post.title} articleSlug={post.slug} />
+              {/* Audio Narrator + Share */}
+              <div className="mb-8 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div className="flex-1">
+                    <AudioNarrator text={narratorText} title={post.title} articleSlug={post.slug} />
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-2 shrink-0"
+                    onClick={async () => {
+                      const url = window.location.href;
+                      if (navigator.share) {
+                        try {
+                          await navigator.share({ title: post.title, text: post.excerpt, url });
+                        } catch (e) { /* cancelled */ }
+                      } else {
+                        await navigator.clipboard.writeText(url);
+                        toast.success("Link copiado!");
+                      }
+                    }}
+                  >
+                    <Share2 className="w-4 h-4" /> Compartilhar
+                  </Button>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="gap-2 shrink-0"
-                  onClick={async () => {
-                    const url = window.location.href;
-                    if (navigator.share) {
-                      try {
-                        await navigator.share({ title: post.title, text: post.excerpt, url });
-                      } catch (e) { /* cancelled */ }
-                    } else {
-                      await navigator.clipboard.writeText(url);
-                      toast.success("Link copiado!");
-                    }
-                  }}
-                >
-                  <Share2 className="w-4 h-4" /> Compartilhar
-                </Button>
+                <ShareWhatsAppButton
+                  title={post.title}
+                  highlight={`${post.categoryLabel} • ${post.readTime} de leitura no blog Marshe`}
+                  kind="artigo"
+                />
               </div>
 
               {/* First half of content */}

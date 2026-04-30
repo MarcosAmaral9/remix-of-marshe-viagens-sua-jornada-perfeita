@@ -4,12 +4,18 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-gramado.jpg";
 
 const Gramado = () => {
-  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado" });
+  useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado",
+    ogParams: {
+      title: "Pacote Gramado",
+      highlight: "A partir de R$ 3.500 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -111,6 +117,11 @@ const Gramado = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Gramado — Marshe Viagens"
+                  highlight="A partir de R$ 3.500 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Gramado" />

@@ -4,6 +4,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-joao-pessoa.jpg";
@@ -14,6 +15,11 @@ const JoaoPessoa = () => {
     description:
       "Pacote de viagem para João Pessoa, PB. Praias, pôr do sol do Jacaré e litoral sul. Aéreo, hospedagem e traslados.",
     canonical: "https://marsheviagens.com/destinos/joao-pessoa",
+    ogParams: {
+      title: "Pacote João Pessoa",
+      highlight: "A partir de R$ 2.790 • Saindo de BH",
+      kind: "Destino",
+    },
   });
   return (
     <div className="min-h-screen bg-background">
@@ -144,6 +150,11 @@ const JoaoPessoa = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote João Pessoa — Marshe Viagens"
+                  highlight="A partir de R$ 2.790 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="João Pessoa" />

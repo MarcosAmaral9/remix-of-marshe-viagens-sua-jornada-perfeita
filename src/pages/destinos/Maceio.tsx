@@ -6,10 +6,16 @@ import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import heroImg from "@/assets/dest-maceio.jpg";
 
 const Maceio = () => {
-  useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/maceio" });
+  useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/maceio",
+    ogParams: {
+      title: "Pacote Maceió",
+      highlight: "A partir de R$ 3.250 • Saindo de BH",
+      kind: "Destino",
+    }, });
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -110,6 +116,11 @@ const Maceio = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Maceió — Marshe Viagens"
+                  highlight="A partir de R$ 3.250 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Maceió" />
