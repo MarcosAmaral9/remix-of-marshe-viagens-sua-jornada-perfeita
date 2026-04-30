@@ -20,6 +20,13 @@ const BlogPost = () => {
     title: post ? `${post.title} | Marshe Viagens Blog` : "Blog | Marshe Viagens",
     description: post?.metaDescription || "",
     canonical: post ? `https://marsheviagens.com/blog/${post.slug}` : undefined,
+    ogParams: post
+      ? {
+          title: post.title,
+          highlight: `${post.categoryLabel} • ${post.readTime} de leitura`,
+          kind: "Blog",
+        }
+      : undefined,
   });
 
   if (!post) return <Navigate to="/blog" replace />;
