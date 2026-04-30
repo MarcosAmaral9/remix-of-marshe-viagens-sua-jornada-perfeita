@@ -15,6 +15,11 @@ const JoaoPessoa = () => {
     description:
       "Pacote de viagem para João Pessoa, PB. Praias, pôr do sol do Jacaré e litoral sul. Aéreo, hospedagem e traslados.",
     canonical: "https://marsheviagens.com/destinos/joao-pessoa",
+    ogParams: {
+      title: "Pacote João Pessoa",
+      highlight: "A partir de R$ 2.790 • Saindo de BH",
+      kind: "Destino",
+    },
   });
   return (
     <div className="min-h-screen bg-background">

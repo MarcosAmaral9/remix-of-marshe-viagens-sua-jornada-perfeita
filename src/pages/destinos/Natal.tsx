@@ -15,6 +15,11 @@ const Natal = () => {
     description:
       "Pacote de viagem para Natal, RN. Dunas de Genipabu, Ponta Negra, Pipa e mais. Aéreo, hospedagem e traslados inclusos.",
     canonical: "https://marsheviagens.com/destinos/natal",
+    ogParams: {
+      title: "Pacote Natal",
+      highlight: "A partir de R$ 3.600 • Saindo de BH",
+      kind: "Destino",
+    },
   });
   return (
     <div className="min-h-screen bg-background">

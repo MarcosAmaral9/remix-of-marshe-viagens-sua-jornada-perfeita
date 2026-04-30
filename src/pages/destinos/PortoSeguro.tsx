@@ -15,6 +15,11 @@ const PortoSeguro = () => {
     description:
       "Pacote de viagem para Porto Seguro, BA. Arraial d'Ajuda, Trancoso e Passarela do Álcool. Aéreo, hospedagem e traslados.",
     canonical: "https://marsheviagens.com/destinos/porto-seguro",
+    ogParams: {
+      title: "Pacote Porto Seguro",
+      highlight: "A partir de R$ 3.000 • Saindo de BH",
+      kind: "Destino",
+    },
   });
   return (
     <div className="min-h-screen bg-background">

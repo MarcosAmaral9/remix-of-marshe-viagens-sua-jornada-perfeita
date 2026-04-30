@@ -15,6 +15,11 @@ const Salvador = () => {
     description:
       "Pacote de viagem para Salvador, BA. Pelourinho, Farol da Barra, praias e cultura baiana. Aéreo, hospedagem e traslados inclusos.",
     canonical: "https://marsheviagens.com/destinos/salvador",
+    ogParams: {
+      title: "Pacote Salvador",
+      highlight: "A partir de R$ 3.000 • Saindo de BH",
+      kind: "Destino",
+    },
   });
   return (
     <div className="min-h-screen bg-background">
