@@ -111,6 +111,11 @@ const Maceio = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Maceió — Marshe Viagens"
+                  highlight="A partir de R$ 3.250 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Maceió" />

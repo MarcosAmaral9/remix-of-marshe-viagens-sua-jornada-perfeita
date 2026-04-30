@@ -149,6 +149,11 @@ const Natal = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Natal — Marshe Viagens"
+                  highlight="A partir de R$ 3.600 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">
                     Quer reservar uma data diferente? Entre em contato conosco

@@ -112,6 +112,11 @@ const Gramado = () => {
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
+                <ShareWhatsAppButton
+                  title="Pacote Gramado — Marshe Viagens"
+                  highlight="A partir de R$ 3.500 • Saindo de BH"
+                  kind="destino"
+                />
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-3">Quer reservar uma data diferente? Entre em contato conosco</p>
                   <OrcamentoDialog defaultDestination="Gramado" />
