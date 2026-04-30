@@ -4,6 +4,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
 import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft } from "lucide-react";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-fortaleza.jpg";

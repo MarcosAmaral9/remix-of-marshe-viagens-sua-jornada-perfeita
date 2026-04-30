@@ -6,6 +6,7 @@ import { MapPin, Calendar, Sun, Thermometer, UtensilsCrossed, Camera, ArrowLeft 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import heroImg from "@/assets/dest-maceio.jpg";
 
 const Maceio = () => {
