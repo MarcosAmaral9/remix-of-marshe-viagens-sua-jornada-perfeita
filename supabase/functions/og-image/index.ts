@@ -1,12 +1,17 @@
 // Generates a 1200x630 PNG OG image with title + highlight, on the Marshe brand background.
 // Public endpoint (no JWT) — used by social crawlers (WhatsApp, Facebook, X, LinkedIn).
-import { Resvg, initWasm } from "npm:@resvg/[email protected]";
-import resvgWasm from "npm:@resvg/[email protected]/index_bg.wasm" with { type: "bytes" };
+// @ts-ignore
+import { Resvg, initWasm } from "https://esm.sh/[email protected]";
 
 let wasmReady: Promise<void> | null = null;
 async function ensureWasm() {
   if (!wasmReady) {
-    wasmReady = initWasm(resvgWasm as unknown as ArrayBuffer);
+    wasmReady = (async () => {
+      const wasm = await fetch(
+        "https://unpkg.com/@resvg/resvg-wasm@2.6.2/index_bg.wasm",
+      ).then((r) => r.arrayBuffer());
+      await initWasm(wasm);
+    })();
   }
   return wasmReady;
 }
