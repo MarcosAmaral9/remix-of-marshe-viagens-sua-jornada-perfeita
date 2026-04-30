@@ -16,6 +16,34 @@ async function ensureWasm() {
   return wasmReady;
 }
 
+// Cache fonts in module scope (persists across invocations on warm instance)
+let fontPromise: Promise<Uint8Array[]> | null = null;
+async function loadFonts(): Promise<Uint8Array[]> {
+  if (!fontPromise) {
+    fontPromise = (async () => {
+      const urls = [
+        // Inter Bold (sans-serif)
+        "https://github.com/rsms/inter/raw/master/docs/font-files/Inter-Bold.otf",
+        // Merriweather Bold (serif)
+        "https://github.com/SorkinType/Merriweather/raw/master/fonts/ttf/Merriweather-Bold.ttf",
+      ];
+      const buffers = await Promise.all(
+        urls.map((u) =>
+          fetch(u)
+            .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(`font ${u} ${r.status}`))))
+            .then((b) => new Uint8Array(b))
+            .catch((e) => {
+              console.warn("font load failed", u, e);
+              return null;
+            }),
+        ),
+      );
+      return buffers.filter((b): b is Uint8Array => b !== null);
+    })();
+  }
+  return fontPromise;
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
