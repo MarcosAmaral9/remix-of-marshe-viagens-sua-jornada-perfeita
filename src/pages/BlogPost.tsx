@@ -8,9 +8,8 @@ import { blogPosts } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
 
 const POSTS_PER_PAGE = 9;
-import { ArrowLeft, Calendar, Clock, Tag, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Tag, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 
 const BlogPost = () => {
@@ -117,29 +116,7 @@ const BlogPost = () => {
             <div className="container mx-auto px-4 max-w-4xl">
               {/* Audio Narrator + Share */}
               <div className="mb-8 space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                  <div className="flex-1">
-                    <AudioNarrator text={narratorText} title={post.title} articleSlug={post.slug} />
-                  </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-2 shrink-0"
-                    onClick={async () => {
-                      const url = window.location.href;
-                      if (navigator.share) {
-                        try {
-                          await navigator.share({ title: post.title, text: post.excerpt, url });
-                        } catch (e) { /* cancelled */ }
-                      } else {
-                        await navigator.clipboard.writeText(url);
-                        toast.success("Link copiado!");
-                      }
-                    }}
-                  >
-                    <Share2 className="w-4 h-4" /> Compartilhar
-                  </Button>
-                </div>
+                <AudioNarrator text={narratorText} title={post.title} articleSlug={post.slug} />
                 <ShareWhatsAppButton
                   title={post.title}
                   highlight={`${post.categoryLabel} • ${post.readTime} de leitura no blog Marshe`}
