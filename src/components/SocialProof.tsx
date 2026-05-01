@@ -263,43 +263,43 @@ const SocialProof = () => {
             </div>
           </div>
 
-          {/* Controls below testimonial */}
-          <div className="flex flex-col items-center gap-4 mt-5 lg:mt-6">
-            <p className="text-muted-foreground text-sm">
-              {currentIndex + 1} de {testimonials.length} depoimentos
-            </p>
+          {/* Compact controls below testimonial */}
+          <div className="flex items-center justify-center gap-3 mt-5 lg:mt-6">
+            <button
+              onClick={prev}
+              className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors shrink-0"
+              aria-label="Depoimento anterior"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
 
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={prev}
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                aria-label="Depoimento anterior"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <div className="flex gap-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goTo(index)}
-                    className={`w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full transition-colors ${
-                      index === currentIndex ? "bg-primary" : "bg-border"
-                    }`}
-                    aria-label={`Depoimento ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={next}
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                aria-label="Próximo depoimento"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+            <div className="flex items-center gap-1.5 max-w-[60vw] overflow-x-auto scrollbar-hide px-1">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goTo(index)}
+                  className={`rounded-full transition-all shrink-0 ${
+                    index === currentIndex
+                      ? "bg-primary w-5 h-2"
+                      : "bg-border hover:bg-primary/50 w-2 h-2"
+                  }`}
+                  aria-label={`Depoimento ${index + 1}`}
+                />
+              ))}
             </div>
+
+            <button
+              onClick={next}
+              className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors shrink-0"
+              aria-label="Próximo depoimento"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
+
+          <p className="text-muted-foreground text-xs mt-3">
+            {currentIndex + 1} de {testimonials.length}
+          </p>
         </div>
 
         {/* Trust strip */}
