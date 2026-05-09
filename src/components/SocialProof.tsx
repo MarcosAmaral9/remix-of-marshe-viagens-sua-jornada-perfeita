@@ -155,10 +155,10 @@ const CounterItem = ({ target, label, suffix, inView }: { target: number; label:
   const count = useCountUp(target, inView);
   return (
     <div className="text-center">
-      <p className="text-4xl md:text-5xl font-bold text-primary font-serif">
+      <p className="text-4xl md:text-5xl font-extrabold font-montserrat text-gold">
         {count.toLocaleString("pt-BR")}{suffix}
       </p>
-      <p className="text-muted-foreground text-sm mt-1">{label}</p>
+      <p className="eyebrow text-muted-foreground mt-2">{label}</p>
     </div>
   );
 };
