@@ -15,7 +15,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Volkhov', 'serif'],
+        serif: ['"Bebas Neue"', 'sans-serif'],
+        display: ['"Bebas Neue"', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        script: ['Allison', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
