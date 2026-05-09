@@ -4,51 +4,61 @@
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
-    --foreground: 220 26% 14%;
+    --background: 0 0% 100%;
+    --foreground: 215 60% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 26% 14%;
+    --card-foreground: 215 60% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
+    --popover-foreground: 215 60% 12%;
 
+    /* Primary stays orange (CTAs / brand action) */
     --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 26% 14%;
+    /* Secondary now navy (institutional) */
+    --secondary: 215 65% 18%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 20% 94%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 215 20% 96%;
+    --muted-foreground: 215 16% 40%;
 
-    --accent: 174 62% 47%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent now gold (premium highlights) */
+    --accent: 42 75% 52%;
+    --accent-foreground: 215 65% 14%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 20% 90%;
-    --input: 40 20% 90%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
     --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
-    /* Custom colors for travel theme */
+    /* Marshe brand tokens */
     --coral: 24 95% 53%;
     --coral-light: 24 100% 95%;
-    --navy: 220 26% 14%;
+    --navy: 215 65% 18%;
+    --navy-deep: 215 70% 10%;
+    --gold: 42 75% 52%;
+    --gold-light: 42 80% 92%;
     --teal: 174 62% 47%;
     --yellow: 45 93% 58%;
     --purple: 258 64% 67%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(35 95% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(40 33% 98%) 0%, hsl(24 100% 97%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(24 100% 97%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(215 65% 18%) 0%, hsl(215 70% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 52%) 0%, hsl(38 85% 60%) 100%);
 
     /* Shadows */
-    --shadow-card: 0 10px 40px -10px hsl(220 26% 14% / 0.1);
+    --shadow-card: 0 10px 40px -10px hsl(215 65% 14% / 0.12);
     --shadow-glow: 0 0 40px hsl(24 95% 53% / 0.3);
+    --shadow-gold: 0 10px 40px -10px hsl(42 75% 52% / 0.4);
+    --shadow-premium: 0 20px 50px -20px hsl(215 65% 14% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
