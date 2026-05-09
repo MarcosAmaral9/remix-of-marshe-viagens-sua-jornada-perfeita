@@ -97,10 +97,10 @@ const Hero = () => {
               decoding="async"
             />
 
-            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
-              <div className="text-primary text-3xl">✈️</div>
+            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-3xl px-6 py-4 shadow-premium border border-gold/40 animate-bounce-soft z-20 flex items-center gap-4">
+              <div className="text-gold text-3xl">✈️</div>
               <div>
-                <p className="text-2xl font-bold text-primary">+ 60 Destinos</p>
+                <p className="font-montserrat text-2xl font-extrabold text-gold">+ 60 Destinos</p>
                 <p className="text-sm text-muted-foreground">Nacionais e internacionais</p>
               </div>
             </div>
