@@ -15,7 +15,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Volkhov', 'serif'],
+        serif: ['"Bebas Neue"', 'sans-serif'],
+        display: ['"Bebas Neue"', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        script: ['Allison', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -55,7 +58,14 @@ export default {
           DEFAULT: "hsl(var(--coral))",
           light: "hsl(var(--coral-light))",
         },
-        navy: "hsl(var(--navy))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          deep: "hsl(var(--navy-deep))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+        },
         teal: "hsl(var(--teal))",
         yellow: "hsl(var(--yellow))",
         purple: "hsl(var(--purple))",

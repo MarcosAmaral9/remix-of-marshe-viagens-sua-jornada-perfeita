@@ -20,23 +20,23 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
           {/* Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in text-center lg:text-left">
-            <span className="inline-block text-primary font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="inline-block eyebrow text-primary">
               Agência de Viagens em Contagem - MG
             </span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground [hyphens:none]">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] text-foreground [hyphens:none] tracking-wide">
               Planeje sua viagem{" "}
-              <span className="relative inline-block">
+              <span className="relative inline-block font-script font-normal text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none align-middle pr-2">
                 dos sonhos
                 <svg
-                  className="absolute -bottom-2 left-0 w-full"
+                  className="absolute -bottom-1 left-0 w-full"
                   viewBox="0 0 300 12"
                   fill="none"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M2 10C50 2 150 2 298 10"
-                    stroke="hsl(var(--primary))"
+                    stroke="hsl(var(--gold))"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -97,10 +97,10 @@ const Hero = () => {
               decoding="async"
             />
 
-            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl border border-border/50 animate-bounce-soft z-20 flex items-center gap-4">
-              <div className="text-primary text-3xl">✈️</div>
+            <div className="absolute bottom-8 -left-12 bg-background/95 backdrop-blur-sm rounded-3xl px-6 py-4 shadow-premium border border-gold/40 animate-bounce-soft z-20 flex items-center gap-4">
+              <div className="text-gold text-3xl">✈️</div>
               <div>
-                <p className="text-2xl font-bold text-primary">+ 60 Destinos</p>
+                <p className="font-montserrat text-2xl font-extrabold text-gold">+ 60 Destinos</p>
                 <p className="text-sm text-muted-foreground">Nacionais e internacionais</p>
               </div>
             </div>
