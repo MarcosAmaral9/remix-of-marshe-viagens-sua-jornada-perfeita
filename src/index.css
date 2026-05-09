@@ -4,61 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 60% 12%;
+    --background: 40 33% 98%;
+    --foreground: 220 26% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 60% 12%;
+    --card-foreground: 220 26% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 60% 12%;
+    --popover-foreground: 220 26% 14%;
 
-    /* Primary stays orange (CTAs / brand action) */
     --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary now navy (institutional) */
-    --secondary: 215 65% 18%;
+    --secondary: 220 26% 14%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 96%;
-    --muted-foreground: 215 16% 40%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 46%;
 
-    /* Accent now gold (premium highlights) */
-    --accent: 42 75% 52%;
-    --accent-foreground: 215 65% 14%;
+    --accent: 174 62% 47%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 20% 90%;
-    --input: 215 20% 90%;
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
     --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
-    /* Marshe brand tokens */
+    /* Custom colors for travel theme */
     --coral: 24 95% 53%;
     --coral-light: 24 100% 95%;
-    --navy: 215 65% 18%;
-    --navy-deep: 215 70% 10%;
-    --gold: 42 75% 52%;
-    --gold-light: 42 80% 92%;
+    --navy: 220 26% 14%;
     --teal: 174 62% 47%;
     --yellow: 45 93% 58%;
     --purple: 258 64% 67%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(35 95% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(24 100% 97%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(215 65% 18%) 0%, hsl(215 70% 10%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42 75% 52%) 0%, hsl(38 85% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 33% 98%) 0%, hsl(24 100% 97%) 100%);
 
     /* Shadows */
-    --shadow-card: 0 10px 40px -10px hsl(215 65% 14% / 0.12);
+    --shadow-card: 0 10px 40px -10px hsl(220 26% 14% / 0.1);
     --shadow-glow: 0 0 40px hsl(24 95% 53% / 0.3);
-    --shadow-gold: 0 10px 40px -10px hsl(42 75% 52% / 0.4);
-    --shadow-premium: 0 20px 50px -20px hsl(215 65% 14% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -71,58 +61,50 @@
   }
 
   .dark {
-    --background: 215 70% 7%;
+    --background: 220 20% 7%;
     --foreground: 40 20% 96%;
 
-    --card: 215 50% 11%;
+    --card: 220 18% 11%;
     --card-foreground: 40 20% 96%;
 
-    --popover: 215 50% 11%;
+    --popover: 220 18% 11%;
     --popover-foreground: 40 20% 96%;
 
     --primary: 24 95% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 98%;
-    --secondary-foreground: 215 70% 10%;
+    --secondary: 40 20% 90%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 215 30% 16%;
-    --muted-foreground: 40 12% 78%;
+    --muted: 220 14% 16%;
+    --muted-foreground: 40 12% 75%;
 
-    --accent: 42 80% 60%;
-    --accent-foreground: 215 70% 10%;
+    --accent: 174 62% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 30% 22%;
-    --input: 215 30% 22%;
+    --border: 220 14% 22%;
+    --input: 220 14% 22%;
     --ring: 24 95% 58%;
 
-    /* Marshe brand tokens (dark) */
+    /* Dark mode specific colors */
     --coral-light: 24 60% 18%;
-    --navy: 215 50% 14%;
-    --navy-deep: 215 70% 7%;
-    --gold: 42 80% 62%;
-    --gold-light: 42 60% 22%;
     --yellow: 45 93% 68%;
     --teal: 174 62% 58%;
     --purple: 258 64% 75%;
 
     /* Gradient adjustments */
-    --gradient-hero: linear-gradient(135deg, hsl(215 70% 7%) 0%, hsl(24 40% 10%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(215 50% 14%) 0%, hsl(215 70% 7%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42 80% 62%) 0%, hsl(38 90% 68%) 100%);
-
-    --shadow-gold: 0 10px 40px -10px hsl(42 80% 62% / 0.45);
-
-    --sidebar-background: 215 50% 9%;
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 7%) 0%, hsl(24 40% 10%) 100%);
+    
+    --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 40 20% 95%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 30% 15%;
+    --sidebar-accent: 220 15% 15%;
     --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 215 30% 18%;
+    --sidebar-border: 220 15% 18%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -154,12 +136,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', 'Montserrat', sans-serif;
-    letter-spacing: 0.01em;
+    font-family: 'Volkhov', serif;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-    line-height: 1.05;
+    line-height: 1.2;
   }
 
   /* Safe area support for notched devices (iPhone X+) */
@@ -215,45 +196,6 @@
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
-  }
-
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
-  }
-
-  .shadow-premium {
-    box-shadow: var(--shadow-premium);
-  }
-
-  .bg-gradient-premium {
-    background-image: var(--gradient-premium);
-  }
-
-  .bg-gradient-gold {
-    background-image: var(--gradient-gold);
-  }
-
-  .text-gold-gradient {
-    @apply bg-clip-text text-transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: var(--gradient-gold);
-  }
-
-  /* Brand typography helpers */
-  .font-script {
-    font-family: 'Allison', cursive;
-  }
-  .font-display {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.015em;
-  }
-  .eyebrow {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 600;
-    font-size: 0.75rem;
   }
 }
 
