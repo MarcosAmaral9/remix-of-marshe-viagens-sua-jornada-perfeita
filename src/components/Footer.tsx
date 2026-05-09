@@ -9,19 +9,21 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground pt-20 pb-8">
+    <footer className="bg-gradient-premium text-white pt-20 pb-8 border-t-4 border-gold">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 pb-12 border-b border-secondary-foreground/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-serif font-bold text-secondary-foreground">
-                Marshe <span className="text-primary">Viagens</span>
+              <span className="font-display text-3xl tracking-wide text-white">
+                Marshe <span className="text-gold">Viagens</span>
               </span>
             </Link>
-            <p className="text-secondary-foreground/70 max-w-sm mb-6">
-              Transformando sonhos em viagens inesquecíveis. 
-              Sua próxima aventura começa aqui!
+            <p className="font-script text-2xl text-gold mb-2 leading-tight">
+              Sua próxima aventura começa aqui
+            </p>
+            <p className="text-white/70 max-w-sm mb-6">
+              Transformando sonhos em viagens inesquecíveis.
             </p>
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mt-4">
