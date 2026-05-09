@@ -216,6 +216,45 @@
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .bg-gradient-premium {
+    background-image: var(--gradient-premium);
+  }
+
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  /* Brand typography helpers */
+  .font-script {
+    font-family: 'Allison', cursive;
+  }
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.015em;
+  }
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
 }
 
 @layer utilities {
