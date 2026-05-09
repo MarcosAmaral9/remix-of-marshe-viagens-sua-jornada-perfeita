@@ -20,23 +20,23 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
           {/* Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in text-center lg:text-left">
-            <span className="inline-block text-primary font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="inline-block eyebrow text-primary">
               Agência de Viagens em Contagem - MG
             </span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground [hyphens:none]">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] text-foreground [hyphens:none] tracking-wide">
               Planeje sua viagem{" "}
-              <span className="relative inline-block">
+              <span className="relative inline-block font-script font-normal text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none align-middle pr-2">
                 dos sonhos
                 <svg
-                  className="absolute -bottom-2 left-0 w-full"
+                  className="absolute -bottom-1 left-0 w-full"
                   viewBox="0 0 300 12"
                   fill="none"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M2 10C50 2 150 2 298 10"
-                    stroke="hsl(var(--primary))"
+                    stroke="hsl(var(--gold))"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
