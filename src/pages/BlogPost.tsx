@@ -106,11 +106,6 @@ const BlogPost = () => {
             </div>
           </section>
 
-          {/* Ad after header */}
-          <div className="container mx-auto px-4 max-w-4xl">
-            <AdSense slot="1234567890" format="horizontal" />
-          </div>
-
           {/* Content with mid-article ad */}
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 max-w-4xl">
@@ -152,9 +147,6 @@ const BlogPost = () => {
                 </Button>
               </div>
 
-              {/* Mid-article ad */}
-              <AdSense slot="2345678901" format="rectangle" />
-
               {/* Second half of content */}
               {sections.length > 1 && (
                 <div
@@ -189,11 +181,6 @@ const BlogPost = () => {
               </div>
             </div>
           </section>
-
-          {/* Ad before related posts */}
-          <div className="container mx-auto px-4 max-w-4xl">
-            <AdSense slot="3456789012" format="horizontal" />
-          </div>
 
           {/* Related */}
           {relatedPosts.length > 0 && (

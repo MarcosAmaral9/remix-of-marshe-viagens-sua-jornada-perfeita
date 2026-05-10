@@ -123,11 +123,6 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Ad after filters */}
-        <div className="container mx-auto px-4">
-          <AdSense slot="4567890123" format="horizontal" />
-        </div>
-
         {/* Posts Grid */}
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4">
@@ -146,42 +141,34 @@ const Blog = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {paginatedPosts.map((post, index) => (
-                    <>
-                      <Link
-                        key={post.slug}
-                        to={`/blog/${post.slug}`}
-                        className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-                      >
-                        <div className="relative h-48 overflow-hidden bg-primary/10">
-                          <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                          <div className="absolute top-4 left-4">
-                            <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">{post.categoryLabel}</span>
-                          </div>
+                  {paginatedPosts.map((post) => (
+                    <Link
+                      key={post.slug}
+                      to={`/blog/${post.slug}`}
+                      className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                      <div className="relative h-48 overflow-hidden bg-primary/10">
+                        <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">{post.categoryLabel}</span>
                         </div>
-                        <div className="p-5">
-                          <h2 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">{post.title}</h2>
-                          <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{post.excerpt}</p>
-                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                            <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{new Date(post.date).toLocaleDateString("pt-BR")}</span>
-                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
-                          </div>
-                          <div className="flex flex-wrap gap-1 mt-3">
-                            {post.tags.slice(0, 3).map((tag) => (
-                              <span key={tag} className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <Tag className="w-2.5 h-2.5" />{tag}
-                              </span>
-                            ))}
-                          </div>
+                      </div>
+                      <div className="p-5">
+                        <h2 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">{post.title}</h2>
+                        <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{post.excerpt}</p>
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                          <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{new Date(post.date).toLocaleDateString("pt-BR")}</span>
+                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
                         </div>
-                      </Link>
-                      {/* Ad after every 6th post */}
-                      {(index + 1) % 6 === 0 && index < paginatedPosts.length - 1 && (
-                        <div key={`ad-${index}`} className="md:col-span-2 lg:col-span-3">
-                          <AdSense slot="5678901234" format="horizontal" />
+                        <div className="flex flex-wrap gap-1 mt-3">
+                          {post.tags.slice(0, 3).map((tag) => (
+                            <span key={tag} className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Tag className="w-2.5 h-2.5" />{tag}
+                            </span>
+                          ))}
                         </div>
-                      )}
-                    </>
+                      </div>
+                    </Link>
                   ))}
                 </div>
 
