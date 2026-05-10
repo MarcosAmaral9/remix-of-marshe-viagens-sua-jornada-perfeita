@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import AdSense from "@/components/AdSense";
+
 import AudioNarrator from "@/components/AudioNarrator";
 import { blogPosts } from "@/data/blogPosts";
 import { useSeo } from "@/hooks/use-seo";
