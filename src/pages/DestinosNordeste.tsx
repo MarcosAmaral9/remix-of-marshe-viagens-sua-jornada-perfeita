@@ -19,9 +19,9 @@ export const destinations = [
   {
     name: "Cabo de Santo Agostinho",
     location: "Pernambuco",
-    price: "R$ 2.650",
+    price: "R$ 2.700",
     duration: "8 dias",
-    dates: "16/05/26 a 23/05/26",
+    dates: "09/08/26 a 16/08/26",
     image: caboSantoAgostinhoImg,
     slug: "cabo-de-santo-agostinho",
     highlights: ["Praia de Calhetas", "Piscinas naturais", "Forte Castelo do Mar"],
