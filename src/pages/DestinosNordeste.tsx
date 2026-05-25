@@ -69,9 +69,9 @@ export const destinations = [
   {
     name: "Porto de Galinhas",
     location: "Pernambuco",
-    price: "R$ 2.319",
+    price: "R$ 2.250",
     duration: "8 dias",
-    dates: "16/05/26 a 23/05/26",
+    dates: "09/08/26 a 16/08/26",
     image: portoGalinhasImg,
     slug: "porto-de-galinhas",
     highlights: ["Piscinas naturais", "Praia de Muro Alto", "Passeio de jangada"],
