@@ -13,7 +13,7 @@ const Fortaleza = () => {
   useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com/destinos/fortaleza",
     ogParams: {
       title: "Pacote Fortaleza",
-      highlight: "A partir de R$ 2.850 • Saindo de BH",
+      highlight: "A partir de R$ 2.815 • Saindo de BH",
       kind: "Destino",
     }, });
   return (
@@ -93,7 +93,7 @@ const Fortaleza = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>8 dias • 13/06/26 a 20/06/26</span>
+                    <span>7 dias • 17/07/26 a 23/07/26</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -102,23 +102,23 @@ const Fortaleza = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 2.850</p>
+                  <p className="text-3xl font-bold text-primary">R$ 2.815</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>✈️ Passagem aérea ida e volta</li>
+                  <li>✈️ Passagem aérea ida e volta com escala</li>
+                  <li>🚐 Transfers ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
-                  <li>🚐 Traslado aeroporto/hotel</li>
-                  
+                  <li>🌴 City tour com praia de Cumbuco</li>
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Fortaleza (19/04/26 a 25/04/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Fortaleza (17/07/26 a 23/07/26)" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Fortaleza — Marshe Viagens"
-                  highlight="A partir de R$ 2.850 • Saindo de BH"
+                  highlight="A partir de R$ 2.815 • Saindo de BH"
                   kind="destino"
                 />
                 <div className="text-center">
