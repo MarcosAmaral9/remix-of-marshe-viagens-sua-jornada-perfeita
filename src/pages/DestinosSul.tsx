@@ -9,8 +9,8 @@ import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 
 export const destinations = [
-  { name: "Foz do Iguaçu", location: "Paraná", price: "R$ 1.842", duration: "6 dias", dates: "Dia dos Namorados 09/06/26 a 14/06/26", image: fozDoIguacuImg, slug: "foz-do-iguacu", highlights: ["Cataratas do Iguaçu", "Itaipu Binacional", "Marco das Três Fronteiras"] },
-  { name: "Gramado", location: "Rio Grande do Sul", price: "R$ 3.500", duration: "7 dias", dates: "Dia dos Namorados 11/06/26 a 17/06/26", image: gramadoImg, slug: "gramado", highlights: ["Mini Mundo", "Lago Negro", "Rua Coberta"] },
+  { name: "Foz do Iguaçu", location: "Paraná", price: "R$ 1.881", duration: "5 dias", dates: "16/09/26 a 20/09/26", image: fozDoIguacuImg, slug: "foz-do-iguacu", highlights: ["Cataratas do Iguaçu", "Itaipu Binacional", "Marco das Três Fronteiras"] },
+  { name: "Gramado", location: "Rio Grande do Sul", price: "R$2.640", duration: "5 dias", dates: "28/07/26 a 01/08/26", image: gramadoImg, slug: "gramado", highlights: ["Mini Mundo", "Lago Negro", "Rua Coberta"] },
 ];
 
 const DestinosSul = () => {
