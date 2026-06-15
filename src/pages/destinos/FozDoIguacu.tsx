@@ -13,7 +13,7 @@ const FozDoIguacu = () => {
   useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/foz-do-iguacu",
     ogParams: {
       title: "Pacote Foz do Iguaçu",
-      highlight: "A partir de R$ 1.881 • Saindo de BH",
+      highlight: "A partir de R$ 1.842 • Saindo de BH",
       kind: "Destino",
     }, });
   return (
@@ -94,7 +94,7 @@ const FozDoIguacu = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>5 dias • 16/09/26 a 20/09/26</span>
+                    <span>6 dias • 09/06/26 a 14/06/26</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -103,7 +103,7 @@ const FozDoIguacu = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 1.881</p>
+                  <p className="text-3xl font-bold text-primary">R$ 1.842</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
