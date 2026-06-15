@@ -13,7 +13,7 @@ const Gramado = () => {
   useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado",
     ogParams: {
       title: "Pacote Gramado",
-      highlight: "A partir de R$ 3.500 • Saindo de BH",
+      highlight: "A partir de R$ 2.640 • Saindo de BH",
       kind: "Destino",
     }, });
   return (
@@ -89,12 +89,12 @@ const Gramado = () => {
                 <div>
                   <span className="text-xs text-muted-foreground uppercase tracking-wider">Pacote Aéreo Completo</span>
                   <h3 className="text-2xl font-bold text-foreground mt-1">Gramado</h3>
-                  <span className="text-sm text-primary font-medium">🎉 Especial Dia dos Namorados</span>
+                  <span className="text-sm text-primary font-medium"> Bustour e tour de compras inclusos</span>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>7 dias • 11/06/26 a 17/06/26</span>
+                    <span>5 dias • 28/07/26 a 01/08/26</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -103,7 +103,7 @@ const Gramado = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 3.500</p>
+                  <p className="text-3xl font-bold text-primary">R$ 2.640</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -113,13 +113,13 @@ const Gramado = () => {
                   
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Gramado - Dia dos Namorados (11/06/26 a 17/06/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Gramado (28/07/26 a 01/08/26)" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Gramado — Marshe Viagens"
-                  highlight="A partir de R$ 3.500 • Saindo de BH"
+                  highlight="A partir de R$ 2.640 • Saindo de BH"
                   kind="destino"
                 />
                 <div className="text-center">
