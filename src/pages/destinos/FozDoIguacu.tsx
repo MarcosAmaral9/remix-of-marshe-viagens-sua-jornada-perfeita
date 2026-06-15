@@ -113,13 +113,13 @@ const FozDoIguacu = () => {
                   
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu - Dia dos Namorados (09/06/26 a 14/06/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu (16/09/26 a 20/09/26)" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Foz do Iguaçu — Marshe Viagens"
-                  highlight="A partir de R$ 1.842 • Saindo de BH"
+                  highlight="A partir de R$ 1.881 • Saindo de BH"
                   kind="destino"
                 />
                 <div className="text-center">
