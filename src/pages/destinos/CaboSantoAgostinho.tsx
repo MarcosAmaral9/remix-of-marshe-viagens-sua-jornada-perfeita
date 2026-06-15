@@ -17,7 +17,7 @@ const CaboSantoAgostinho = () => {
     canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho",
     ogParams: {
       title: "Pacote Cabo de Santo Agostinho",
-      highlight: "A partir de R$ 2.650 • Saindo de BH",
+      highlight: "A partir de R$ 2.700 • Saindo de BH",
       kind: "Destino",
     },
   });
