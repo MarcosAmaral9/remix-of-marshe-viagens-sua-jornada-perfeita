@@ -89,7 +89,7 @@ const FozDoIguacu = () => {
                 <div>
                   <span className="text-xs text-muted-foreground uppercase tracking-wider">Pacote Aéreo Completo</span>
                   <h3 className="text-2xl font-bold text-foreground mt-1">Foz do Iguaçu</h3>
-                  <span className="text-sm text-primary font-medium">🎉 Especial Dia dos Namorados</span>
+                  <span className="text-sm text-primary font-medium">Bustour e tour de compras incluso</span> 
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
