@@ -7,6 +7,7 @@ import OrcamentoDialog from "@/components/OrcamentoDialog";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import heroImg from "@/assets/dest-joao-pessoa.jpg";
 
 const JoaoPessoa = () => {
@@ -135,24 +136,24 @@ const JoaoPessoa = () => {
                     <span>Temperatura média: 28°C</span>
                   </div>
                 </div>
-                <div className="border-t border-border pt-4">
+                {SHOW_TRIP_INFO && (<div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
                   <p className="text-3xl font-bold text-primary">R$ 3.460</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
-                </div>
+                </div>)}
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
                   <li>🚐 Traslado aeroporto/hotel</li>
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para João Pessoa (17/07/26 a 22/07/26)" target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/5531972391400?text=${encodeURIComponent(SHOW_TRIP_INFO ? "Olá! Tenho interesse no pacote para João Pessoa (17/07/26 a 22/07/26)" : "Olá! Tenho interesse no pacote para João Pessoa")}`} target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote João Pessoa — Marshe Viagens"
-                  highlight="A partir de R$ R$ 3.460 • Saindo de BH"
+                  highlight={SHOW_TRIP_INFO ? "A partir de R$ R$ 3.460 • Saindo de BH" : undefined}
                   kind="destino"
                 />
                 <div className="text-center">

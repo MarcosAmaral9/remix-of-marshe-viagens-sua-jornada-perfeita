@@ -7,6 +7,7 @@ import OrcamentoDialog from "@/components/OrcamentoDialog";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import heroImg from "@/assets/dest-natal.jpg";
 
 const Natal = () => {
@@ -135,11 +136,11 @@ const Natal = () => {
                     <span>Temperatura média: 29°C</span>
                   </div>
                 </div>
-                <div className="border-t border-border pt-4">
+                {SHOW_TRIP_INFO && (<div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
                   <p className="text-3xl font-bold text-primary">R$ 3.700</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
-                </div>
+                </div>)}
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
@@ -147,7 +148,7 @@ const Natal = () => {
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Natal (13/08/26 a 18/08/26)"
+                    href={`https://wa.me/5531972391400?text=${encodeURIComponent(SHOW_TRIP_INFO ? "Olá! Tenho interesse no pacote para Natal (13/08/26 a 18/08/26)" : "Olá! Tenho interesse no pacote para Natal")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -156,7 +157,7 @@ const Natal = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Natal — Marshe Viagens"
-                  highlight="A partir de R$ 3.700 • Saindo de BH"
+                  highlight={SHOW_TRIP_INFO ? "A partir de R$ 3.700 • Saindo de BH" : undefined}
                   kind="destino"
                 />
                 <div className="text-center">
