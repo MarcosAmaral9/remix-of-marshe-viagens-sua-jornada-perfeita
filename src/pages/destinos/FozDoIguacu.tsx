@@ -7,6 +7,7 @@ import OrcamentoDialog from "@/components/OrcamentoDialog";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import heroImg from "@/assets/dest-foz-do-iguacu.jpg";
 
 const FozDoIguacu = () => {
@@ -92,20 +93,20 @@ const FozDoIguacu = () => {
                   <span className="text-sm text-primary font-medium">Bustour e tour de compras incluso</span> 
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  {SHOW_TRIP_INFO && (<div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>5 dias • 16/09/26 a 20/09/26</span>
-                  </div>
+                  </div>)}
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
                     <span>Temperatura média: 18°C</span>
                   </div>
                 </div>
-                <div className="border-t border-border pt-4">
+                {SHOW_TRIP_INFO && (<div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
                   <p className="text-3xl font-bold text-primary">R$ 1.881</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
-                </div>
+                </div>)}
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
@@ -113,13 +114,13 @@ const FozDoIguacu = () => {
                   
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu (16/09/26 a 20/09/26)" target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/5531972391400?text=${encodeURIComponent(SHOW_TRIP_INFO ? "Olá! Tenho interesse no pacote para Foz do Iguaçu (16/09/26 a 20/09/26)" : "Olá! Tenho interesse no pacote para Foz do Iguaçu")}`} target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Foz do Iguaçu — Marshe Viagens"
-                  highlight="A partir de R$ 1.881 • Saindo de BH"
+                  highlight={SHOW_TRIP_INFO ? "A partir de R$ 1.881 • Saindo de BH" : undefined}
                   kind="destino"
                 />
                 <div className="text-center">

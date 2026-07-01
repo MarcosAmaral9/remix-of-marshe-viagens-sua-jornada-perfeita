@@ -7,6 +7,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
 import { circuitosEuropa, paymentInfo } from "@/data/circuitos";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import {
   Accordion,
   AccordionContent,
@@ -51,9 +52,13 @@ const CircuitoDetail = () => {
                 {circuit.name}
               </h1>
               <div className="flex flex-wrap gap-4 mt-4 text-primary-foreground/90 text-sm">
-                <span className="flex items-center gap-1.5"><Moon className="w-4 h-4" /> {circuit.nights} noites</span>
-                <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {circuit.departure} a {circuit.returnDate}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4" /> {circuit.passengers}</span>
+                {SHOW_TRIP_INFO && (
+                  <>
+                    <span className="flex items-center gap-1.5"><Moon className="w-4 h-4" /> {circuit.nights} noites</span>
+                    <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {circuit.departure} a {circuit.returnDate}</span>
+                    <span className="flex items-center gap-1.5"><Users className="w-4 h-4" /> {circuit.passengers}</span>
+                  </>
+                )}
                 <span className="flex items-center gap-1.5"><Globe className="w-4 h-4" /> Guia em {circuit.language}</span>
               </div>
             </div>
@@ -63,11 +68,15 @@ const CircuitoDetail = () => {
         {/* Price bar */}
         <section className="bg-primary text-primary-foreground py-4">
           <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <span className="text-sm opacity-80">A partir de</span>
-              <span className="text-2xl font-bold ml-2">{circuit.pricePerPerson}</span>
-              <span className="text-sm opacity-80 ml-1">por pessoa, sujeito a reajuste</span>
-            </div>
+            {SHOW_TRIP_INFO ? (
+              <div>
+                <span className="text-sm opacity-80">A partir de</span>
+                <span className="text-2xl font-bold ml-2">{circuit.pricePerPerson}</span>
+                <span className="text-sm opacity-80 ml-1">por pessoa, sujeito a reajuste</span>
+              </div>
+            ) : (
+              <div className="text-sm opacity-80">Consulte disponibilidade e valores</div>
+            )}
             <div className="flex flex-wrap gap-3">
               <Button
                 variant="hero-outline"
@@ -75,7 +84,11 @@ const CircuitoDetail = () => {
                 asChild
               >
                 <a
-                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  href={`https://wa.me/5531972391400?text=${encodeURIComponent(
+                    SHOW_TRIP_INFO
+                      ? `Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`
+                      : `Olá! Tenho interesse no circuito ${circuit.name}`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -210,7 +223,11 @@ const CircuitoDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" asChild>
                 <a
-                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  href={`https://wa.me/5531972391400?text=${encodeURIComponent(
+                    SHOW_TRIP_INFO
+                      ? `Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`
+                      : `Olá! Tenho interesse no circuito ${circuit.name}`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -1,6 +1,7 @@
 import { ArrowRight, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import { circuitosEuropa } from "@/data/circuitos";
 
 const CircuitosViagem = () => {
@@ -48,7 +49,7 @@ const CircuitosViagem = () => {
             <div className="p-5 flex items-center justify-between">
               <div>
                 <span className="text-xs text-muted-foreground">{circuitosEuropa.length} circuitos disponíveis</span>
-                <p className="text-lg font-bold text-primary">A partir de {minPrice}</p>
+                {SHOW_TRIP_INFO && <p className="text-lg font-bold text-primary">A partir de {minPrice}</p>}
               </div>
               <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
                 Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

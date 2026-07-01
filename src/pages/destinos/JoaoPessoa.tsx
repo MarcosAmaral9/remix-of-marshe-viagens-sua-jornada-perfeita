@@ -7,6 +7,7 @@ import OrcamentoDialog from "@/components/OrcamentoDialog";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import heroImg from "@/assets/dest-joao-pessoa.jpg";
 
 const JoaoPessoa = () => {
@@ -126,33 +127,33 @@ const JoaoPessoa = () => {
                   <h3 className="text-2xl font-bold text-foreground mt-1">João Pessoa</h3>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  {SHOW_TRIP_INFO && (<div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>6 dias • 17/07/26 a 22/07/26</span>
-                  </div>
+                  </div>)}
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
                     <span>Temperatura média: 28°C</span>
                   </div>
                 </div>
-                <div className="border-t border-border pt-4">
+                {SHOW_TRIP_INFO && (<div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
                   <p className="text-3xl font-bold text-primary">R$ 3.460</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
-                </div>
+                </div>)}
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>
                   <li>🏨 Hospedagem com café da manhã</li>
                   <li>🚐 Traslado aeroporto/hotel</li>
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para João Pessoa (17/07/26 a 22/07/26)" target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/5531972391400?text=${encodeURIComponent(SHOW_TRIP_INFO ? "Olá! Tenho interesse no pacote para João Pessoa (17/07/26 a 22/07/26)" : "Olá! Tenho interesse no pacote para João Pessoa")}`} target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote João Pessoa — Marshe Viagens"
-                  highlight="A partir de R$ R$ 3.460 • Saindo de BH"
+                  highlight={SHOW_TRIP_INFO ? "A partir de R$ R$ 3.460 • Saindo de BH" : undefined}
                   kind="destino"
                 />
                 <div className="text-center">
