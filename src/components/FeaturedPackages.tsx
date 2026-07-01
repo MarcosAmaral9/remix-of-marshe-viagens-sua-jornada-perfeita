@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import { Link } from "react-router-dom";
 
 import imgPortoGalinhas from "@/assets/dest-porto-de-galinhas.jpg";
@@ -69,7 +70,7 @@ const FeaturedPackages = () => {
                   <h3 className="text-xl font-bold text-white font-serif drop-shadow-lg">
                     {pkg.title}
                   </h3>
-                  <p className="text-white/90 text-sm font-semibold mt-1">{pkg.price}</p>
+                  {SHOW_TRIP_INFO && <p className="text-white/90 text-sm font-semibold mt-1">{pkg.price}</p>}
                 </div>
               </Link>
               <div className="p-6">

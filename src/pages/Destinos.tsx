@@ -8,6 +8,7 @@ import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 import madriParisImg from "@/assets/circuit-madri-paris.jpg";
 import { useSeo } from "@/hooks/use-seo";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import { destinations as nordesteDestinations } from "./DestinosNordeste";
 import { destinations as sulDestinations } from "./DestinosSul";
 import { circuitosEuropa } from "@/data/circuitos";
@@ -113,7 +114,7 @@ const Destinos = () => {
                   <div className="p-5 flex items-center justify-between">
                     <div>
                       <span className="text-xs text-muted-foreground">{region.destinationCount} destinos</span>
-                      <p className="text-lg font-bold text-primary">{region.highlight}</p>
+                      {SHOW_TRIP_INFO && <p className="text-lg font-bold text-primary">{region.highlight}</p>}
                     </div>
                     <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
                       Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -1,6 +1,7 @@
 import { ArrowRight, Palmtree, Mountain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SHOW_TRIP_INFO } from "@/config/features";
 import portoSeguroImg from "@/assets/dest-porto-seguro.jpg";
 import gramadoImg from "@/assets/dest-gramado.jpg";
 
@@ -73,7 +74,7 @@ const Destinations = () => {
                 <div className="p-5 flex items-center justify-between">
                   <div>
                     <span className="text-xs text-muted-foreground">{region.destinationCount} destinos</span>
-                    <p className="text-lg font-bold text-primary">{region.highlight}</p>
+                    {SHOW_TRIP_INFO && <p className="text-lg font-bold text-primary">{region.highlight}</p>}
                   </div>
                   <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
                     Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
