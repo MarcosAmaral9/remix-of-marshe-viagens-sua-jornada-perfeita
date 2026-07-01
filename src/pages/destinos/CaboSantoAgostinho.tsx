@@ -136,10 +136,10 @@ const CaboSantoAgostinho = () => {
 
                 <div className="space-y-3">
                   {SHOW_TRIP_INFO && (
-                    {SHOW_TRIP_INFO && (<div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="flex items-center gap-3 text-muted-foreground">
                       <Calendar className="w-4 h-4 text-primary" />
                       <span>8 dias • 09/08/26 a 16/08/26</span>
-                    </div>)}
+                    </div>
                   )}
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
