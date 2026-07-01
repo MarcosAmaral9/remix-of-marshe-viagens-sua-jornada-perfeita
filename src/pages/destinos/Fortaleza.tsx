@@ -92,10 +92,10 @@ const Fortaleza = () => {
                   <h3 className="text-2xl font-bold text-foreground mt-1">Fortaleza</h3>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  {SHOW_TRIP_INFO && (<div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>7 dias • 17/07/26 a 23/07/26</span>
-                  </div>
+                  </div>)}
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
                     <span>Temperatura média: 29°C</span>

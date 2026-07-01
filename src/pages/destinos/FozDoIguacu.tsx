@@ -93,10 +93,10 @@ const FozDoIguacu = () => {
                   <span className="text-sm text-primary font-medium">Bustour e tour de compras incluso</span> 
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  {SHOW_TRIP_INFO && (<div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>5 dias • 16/09/26 a 20/09/26</span>
-                  </div>
+                  </div>)}
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
                     <span>Temperatura média: 18°C</span>
