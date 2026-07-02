@@ -13,7 +13,7 @@ const Fortaleza = () => {
   useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com/destinos/fortaleza",
     ogParams: {
       title: "Pacote Fortaleza",
-      highlight: "A partir de R$ 2.815 • Saindo de BH",
+      highlight: "A partir de R$ 2.800 • Saindo de BH",
       kind: "Destino",
     }, });
   return (
@@ -102,7 +102,7 @@ const Fortaleza = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 2.815</p>
+                  <p className="text-3xl font-bold text-primary">R$ 2.800</p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -118,7 +118,7 @@ const Fortaleza = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Fortaleza — Marshe Viagens"
-                  highlight="A partir de R$ 2.815 • Saindo de BH"
+                  highlight="A partir de R$ 2.800 • Saindo de BH"
                   kind="destino"
                 />
                 <div className="text-center">
