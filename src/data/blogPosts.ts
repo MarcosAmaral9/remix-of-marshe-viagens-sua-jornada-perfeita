@@ -151,7 +151,7 @@ Após desembarcar em Porto Alegre e fazer o trajeto até Gramado (cerca de 2h), 
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
+A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horizonte/Confins com valores **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
  `,
  category: "roteiros",
  categoryLabel: "Roteiros",
@@ -285,7 +285,7 @@ Salvador tem **sol o ano inteiro**, mas os meses de **setembro a março** são o
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem e traslados inclusos.
+A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins com valores **sob consulta**, com aéreo, hospedagem e traslados inclusos.
  `,
  category: "guias",
  categoryLabel: "Guias de Destinos",
@@ -422,7 +422,7 @@ A maior usina hidrelétrica em geração de energia do mundo:
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **6 dias para Foz do Iguaçu** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
+A Marshe Viagens oferece pacotes de **6 dias para Foz do Iguaçu** saindo de Belo Horizonte/Confins com valores **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
 
 ## Dica importante
 
@@ -488,7 +488,7 @@ Natal tem sol o ano inteiro, mas os meses de **setembro a fevereiro** são os ma
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins com valores **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
  `,
  category: "guias",
  categoryLabel: "Guias de Destinos",
@@ -626,7 +626,7 @@ O Litoral Sul de João Pessoa é um espetáculo:
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **8 dias para João Pessoa** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
+A Marshe Viagens oferece pacotes de **8 dias para João Pessoa** saindo de Belo Horizonte/Confins com valores **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
 
 ## Melhor época
 
@@ -693,7 +693,7 @@ Os meses de **setembro a março** são os mais secos e com melhor visibilidade n
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins com valores **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
  `,
  category: "guias",
  categoryLabel: "Guias de Destinos",
@@ -859,7 +859,7 @@ Siga para **Trancoso** (45 min de carro):
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **4 dias para Porto Seguro** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem e traslados. Para roteiros estendidos com Arraial e Trancoso, consulte condições especiais.
+A Marshe Viagens oferece pacotes de **4 dias para Porto Seguro** saindo de Belo Horizonte/Confins com valores **sob consulta**, incluindo aéreo, hospedagem e traslados. Para roteiros estendidos com Arraial e Trancoso, consulte condições especiais.
 
 ## Melhor época
 
@@ -1035,7 +1035,7 @@ Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
 
 ## Pacotes prontos Marshe Viagens 2026
 
-| Destino | Duração | A partir de |
+| Destino | Duração | Valor |
 |---------|---------|------------|
 | Maceió | 8 dias | sob consulta/pessoa |
 | Natal | 8 dias | sob consulta/pessoa |
@@ -1208,7 +1208,7 @@ Fortaleza tem sol praticamente o ano inteiro. Os meses de **agosto a dezembro** 
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins com valores **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
  `,
  category: "guias",
  categoryLabel: "Guias de Destinos",
@@ -1374,7 +1374,7 @@ O último dia para história e paisagem:
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de Santo Agostinho) saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem e traslados.
+A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de Santo Agostinho) saindo de Belo Horizonte/Confins com valores **sob consulta**, incluindo aéreo, hospedagem e traslados.
  `,
  category: "roteiros",
  categoryLabel: "Roteiros",
