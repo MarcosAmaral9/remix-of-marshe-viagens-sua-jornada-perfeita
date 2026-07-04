@@ -18,34 +18,34 @@ import seguroViagemImg from "@/assets/blog-seguro-viagem.jpg";
 import roteirosCaboImg from "@/assets/blog-roteiro-cabo-agostinho.jpg";
 
 export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  category: "guias" | "dicas" | "roteiros";
-  categoryLabel: string;
-  author: string;
-  date: string;
-  readTime: string;
-  image: string;
-  tags: string[];
-  metaDescription: string;
+ slug: string;
+ title: string;
+ excerpt: string;
+ content: string;
+ category: "guias" | "dicas" | "roteiros";
+ categoryLabel: string;
+ author: string;
+ date: string;
+ readTime: string;
+ image: string;
+ tags: string[];
+ metaDescription: string;
 }
 
 export const categories = [
-  { value: "todos", label: "Todos" },
-  { value: "guias", label: "Guias de Destinos" },
-  { value: "dicas", label: "Dicas de Viagem" },
-  { value: "roteiros", label: "Roteiros" },
+ { value: "todos", label: "Todos" },
+ { value: "guias", label: "Guias de Destinos" },
+ { value: "dicas", label: "Dicas de Viagem" },
+ { value: "roteiros", label: "Roteiros" },
 ];
 
 export const blogPosts: BlogPost[] = [
-  {
-    slug: "guia-completo-porto-de-galinhas",
-    title: "Guia Completo de Porto de Galinhas: O Que Fazer, Onde Comer e Melhor Época",
-    excerpt:
-      "Descubra tudo sobre Porto de Galinhas: das piscinas naturais aos melhores restaurantes. Um guia completo para planejar sua viagem perfeita ao paraíso pernambucano.",
-    content: `
+ {
+ slug: "guia-completo-porto-de-galinhas",
+ title: "Guia Completo de Porto de Galinhas: O Que Fazer, Onde Comer e Melhor Época",
+ excerpt:
+ "Descubra tudo sobre Porto de Galinhas: das piscinas naturais aos melhores restaurantes. Um guia completo para planejar sua viagem perfeita ao paraíso pernambucano.",
+ content: `
 ## Por que visitar Porto de Galinhas?
 
 Porto de Galinhas é um dos destinos mais procurados do Nordeste brasileiro, e não é por acaso. Com suas **piscinas naturais de águas cristalinas**, praias de areia branca e uma infraestrutura turística completa, o destino encanta viajantes de todo o Brasil.
@@ -55,7 +55,7 @@ Localizada no município de Ipojuca, a cerca de 60 km de Recife, Porto de Galinh
 ## O que fazer em Porto de Galinhas
 
 ### 1. Piscinas Naturais
-O principal atrativo de Porto de Galinhas são as **piscinas naturais** formadas pelos recifes de coral. O passeio de jangada até as piscinas é obrigatório e custa em média R$ 40 por pessoa. A melhor época para visitá-las é durante a maré baixa.
+O principal atrativo de Porto de Galinhas são as **piscinas naturais** formadas pelos recifes de coral. O passeio de jangada até as piscinas é obrigatório e custa em média sob consulta. A melhor época para visitá-las é durante a maré baixa.
 
 ### 2. Praia de Muro Alto
 Considerada uma das praias mais bonitas da região, **Muro Alto** possui uma extensa barreira de recifes que forma uma enorme piscina natural de águas calmas — perfeita para famílias com crianças.
@@ -79,28 +79,28 @@ A melhor época para visitar Porto de Galinhas é entre **setembro e março**, q
 
 ## Como chegar saindo de Belo Horizonte
 
-Saindo de **Belo Horizonte/Confins**, há voos diretos e com conexão para o Aeroporto do Recife (REC). De lá, o trajeto até Porto de Galinhas leva cerca de 1h de carro. A Marshe Viagens oferece **pacotes completos com aéreo, hospedagem e traslado** a partir de R$ 2.319 por pessoa.
+Saindo de **Belo Horizonte/Confins**, há voos diretos e com conexão para o Aeroporto do Recife (REC). De lá, o trajeto até Porto de Galinhas leva cerca de 1h de carro. A Marshe Viagens oferece **pacotes completos com aéreo, hospedagem e traslado** sob consulta.
 
 ## Dica da Marshe Viagens
 
 Reserve seu pacote com antecedência para garantir os melhores preços e disponibilidade nos hotéis mais concorridos. Nossos pacotes incluem **aéreo, hospedagem com café da manhã e traslados**, para você só se preocupar em aproveitar!
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-19",
-    readTime: "8 min",
-    image: portoDeGalinhasImg,
-    tags: ["Porto de Galinhas", "Nordeste", "Pernambuco", "Praias", "Piscinas Naturais"],
-    metaDescription:
-      "Guia completo de Porto de Galinhas: piscinas naturais, melhores praias, restaurantes, melhor época para visitar e como chegar saindo de BH. Planeje sua viagem!",
-  },
-  {
-    slug: "roteiro-7-dias-gramado-canela",
-    title: "Roteiro de 7 Dias em Gramado e Canela: Dia a Dia Completo",
-    excerpt:
-      "Planeje sua viagem à Serra Gaúcha com este roteiro detalhado de 7 dias por Gramado e Canela, incluindo passeios, restaurantes e dicas práticas.",
-    content: `
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-19",
+ readTime: "8 min",
+ image: portoDeGalinhasImg,
+ tags: ["Porto de Galinhas", "Nordeste", "Pernambuco", "Praias", "Piscinas Naturais"],
+ metaDescription:
+ "Guia completo de Porto de Galinhas: piscinas naturais, melhores praias, restaurantes, melhor época para visitar e como chegar saindo de BH. Planeje sua viagem!",
+ },
+ {
+ slug: "roteiro-7-dias-gramado-canela",
+ title: "Roteiro de 7 Dias em Gramado e Canela: Dia a Dia Completo",
+ excerpt:
+ "Planeje sua viagem à Serra Gaúcha com este roteiro detalhado de 7 dias por Gramado e Canela, incluindo passeios, restaurantes e dicas práticas.",
+ content: `
 ## Gramado e Canela em 7 Dias
 
 A Serra Gaúcha é um dos destinos mais charmosos do Brasil. Com arquitetura europeia, gastronomia refinada e paisagens de tirar o fôlego, **Gramado e Canela** oferecem experiências únicas em qualquer época do ano.
@@ -151,24 +151,24 @@ Após desembarcar em Porto Alegre e fazer o trajeto até Gramado (cerca de 2h), 
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horizonte/Confins a partir de **R$ 3.500 por pessoa**, incluindo aéreo, hospedagem com café da manhã e traslados.
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-18",
-    readTime: "10 min",
-    image: gramadoImg,
-    tags: ["Gramado", "Canela", "Serra Gaúcha", "Roteiro", "Sul"],
-    metaDescription:
-      "Roteiro completo de 7 dias em Gramado e Canela: passeios dia a dia, restaurantes, vinícolas e dicas práticas. Planeje sua viagem à Serra Gaúcha!",
-  },
-  {
-    slug: "como-fazer-mala-viagem-praia",
-    title: "Como Fazer a Mala Perfeita para Viagem de Praia: Lista Completa",
-    excerpt:
-      "Nunca mais esqueça nada! Confira nossa lista completa e organizada do que levar na mala para sua viagem de praia, com dicas práticas para economizar espaço.",
-    content: `
+A Marshe Viagens oferece pacotes de **7 dias para Gramado** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-18",
+ readTime: "10 min",
+ image: gramadoImg,
+ tags: ["Gramado", "Canela", "Serra Gaúcha", "Roteiro", "Sul"],
+ metaDescription:
+ "Roteiro completo de 7 dias em Gramado e Canela: passeios dia a dia, restaurantes, vinícolas e dicas práticas. Planeje sua viagem à Serra Gaúcha!",
+ },
+ {
+ slug: "como-fazer-mala-viagem-praia",
+ title: "Como Fazer a Mala Perfeita para Viagem de Praia: Lista Completa",
+ excerpt:
+ "Nunca mais esqueça nada! Confira nossa lista completa e organizada do que levar na mala para sua viagem de praia, com dicas práticas para economizar espaço.",
+ content: `
 ## A mala perfeita para a praia
 
 Arrumar a mala para uma viagem de praia parece simples, mas quem nunca esqueceu algo essencial? Com esta **lista completa e organizada**, você vai viajar tranquilo sem esquecer nada.
@@ -222,23 +222,23 @@ Para viagens de até 8 dias, siga a **regra do 3**: 3 looks de praia, 3 looks ca
 ## Viaje sem preocupação
 
 Com os pacotes da **Marshe Viagens**, você cuida apenas da mala — nós cuidamos do aéreo, hospedagem e traslados! Confira nossos destinos de praia no Nordeste com saída de Belo Horizonte.
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-17",
-    readTime: "6 min",
-    image: malaPraiaImg,
-    tags: ["Dicas", "Mala de Viagem", "Praia", "Organização"],
-    metaDescription:
-      "Lista completa do que levar na mala para viagem de praia: roupas, proteção solar, documentos e acessórios. Dicas práticas para não esquecer nada!",
-  },
-  {
-    slug: "guia-salvador-pelourinho-praias",
-    title: "Guia de Salvador: Pelourinho, Praias e a Cultura Baiana que Encanta",
-    excerpt:
-      "Conheça Salvador, a capital da alegria: do Pelourinho histórico às praias paradisíacas, passando pelo acarajé e pelo axé. Um guia completo para sua viagem.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-17",
+ readTime: "6 min",
+ image: malaPraiaImg,
+ tags: ["Dicas", "Mala de Viagem", "Praia", "Organização"],
+ metaDescription:
+ "Lista completa do que levar na mala para viagem de praia: roupas, proteção solar, documentos e acessórios. Dicas práticas para não esquecer nada!",
+ },
+ {
+ slug: "guia-salvador-pelourinho-praias",
+ title: "Guia de Salvador: Pelourinho, Praias e a Cultura Baiana que Encanta",
+ excerpt:
+ "Conheça Salvador, a capital da alegria: do Pelourinho histórico às praias paradisíacas, passando pelo acarajé e pelo axé. Um guia completo para sua viagem.",
+ content: `
 ## Salvador: onde história e alegria se encontram
 
 Salvador é a **primeira capital do Brasil** e um dos destinos mais vibrantes do país. Com uma mistura única de história, cultura afro-brasileira, gastronomia e praias deslumbrantes, a capital baiana conquista todos os visitantes.
@@ -285,24 +285,24 @@ Salvador tem **sol o ano inteiro**, mas os meses de **setembro a março** são o
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins a partir de **R$ 2.750 por pessoa**, com aéreo, hospedagem e traslados inclusos.
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-16",
-    readTime: "9 min",
-    image: salvadorImg,
-    tags: ["Salvador", "Bahia", "Nordeste", "Pelourinho", "Cultura"],
-    metaDescription:
-      "Guia completo de Salvador: Pelourinho, praias, gastronomia baiana, pontos turísticos e dicas. Planeje sua viagem à capital da alegria!",
-  },
-  {
-    slug: "economizar-viagem-nordeste-dicas",
-    title: "10 Dicas Para Economizar na Sua Viagem ao Nordeste Sem Perder a Qualidade",
-    excerpt:
-      "Viajar para o Nordeste não precisa ser caro! Confira 10 dicas práticas para economizar em passagens, hospedagem e passeios sem abrir mão do conforto.",
-    content: `
+A Marshe Viagens oferece pacotes de **8 dias para Salvador** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem e traslados inclusos.
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-16",
+ readTime: "9 min",
+ image: salvadorImg,
+ tags: ["Salvador", "Bahia", "Nordeste", "Pelourinho", "Cultura"],
+ metaDescription:
+ "Guia completo de Salvador: Pelourinho, praias, gastronomia baiana, pontos turísticos e dicas. Planeje sua viagem à capital da alegria!",
+ },
+ {
+ slug: "economizar-viagem-nordeste-dicas",
+ title: "10 Dicas Para Economizar na Sua Viagem ao Nordeste Sem Perder a Qualidade",
+ excerpt:
+ "Viajar para o Nordeste não precisa ser caro! Confira 10 dicas práticas para economizar em passagens, hospedagem e passeios sem abrir mão do conforto.",
+ content: `
 ## Viaje mais gastando menos
 
 O Nordeste brasileiro é um dos destinos mais desejados, mas muita gente acredita que é preciso gastar muito para conhecer essas praias paradisíacas. A verdade é que, com **planejamento inteligente**, é possível fazer uma viagem incrível sem estourar o orçamento.
@@ -317,7 +317,7 @@ Comprar passagens com **3 a 6 meses de antecedência** pode gerar economias sign
 
 ## 3. Considere pacotes completos
 
-**Pacotes que incluem aéreo, hospedagem e traslado** costumam sair mais baratos do que comprar tudo separado. A Marshe Viagens oferece opções a partir de R$ 1.838 por pessoa.
+**Pacotes que incluem aéreo, hospedagem e traslado** costumam sair mais baratos do que comprar tudo separado. A Marshe Viagens oferece opções sob consulta.
 
 ## 4. Escolha hospedagem com café da manhã
 
@@ -349,28 +349,28 @@ Souvenirs e artesanato podem ser tentadores. Defina um **orçamento fixo para co
 
 ## Resumo: quanto levar?
 
-Para uma viagem de 8 dias ao Nordeste com pacote da Marshe (aéreo + hotel + traslado inclusos), calcule cerca de **R$ 100-150 por dia** para alimentação, passeios e extras. Total estimado: R$ 800 a R$ 1.200 além do pacote.
+Para uma viagem de 8 dias ao Nordeste com pacote da Marshe (aéreo + hotel + traslado inclusos), calcule cerca de **sob consulta por dia** para alimentação, passeios e extras. Total estimado: sob consulta a sob consulta além do pacote.
 
 ## Viaje com a Marshe Viagens
 
 Nossos pacotes já incluem aéreo, hospedagem com café da manhã e traslados, ajudando você a **economizar tempo e dinheiro**. Confira nossos destinos no Nordeste!
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-15",
-    readTime: "7 min",
-    image: economizarImg,
-    tags: ["Economia", "Nordeste", "Dicas", "Planejamento", "Orçamento"],
-    metaDescription:
-      "10 dicas práticas para economizar na viagem ao Nordeste: passagens, hospedagem, alimentação e passeios. Viaje mais gastando menos!",
-  },
-  {
-    slug: "roteiro-5-dias-foz-do-iguacu",
-    title: "Roteiro de 5 Dias em Foz do Iguaçu: Cataratas, Itaipu e Mais",
-    excerpt:
-      "Aproveite ao máximo Foz do Iguaçu com este roteiro de 5 dias: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e muito mais.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-15",
+ readTime: "7 min",
+ image: economizarImg,
+ tags: ["Economia", "Nordeste", "Dicas", "Planejamento", "Orçamento"],
+ metaDescription:
+ "10 dicas práticas para economizar na viagem ao Nordeste: passagens, hospedagem, alimentação e passeios. Viaje mais gastando menos!",
+ },
+ {
+ slug: "roteiro-5-dias-foz-do-iguacu",
+ title: "Roteiro de 5 Dias em Foz do Iguaçu: Cataratas, Itaipu e Mais",
+ excerpt:
+ "Aproveite ao máximo Foz do Iguaçu com este roteiro de 5 dias: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e muito mais.",
+ content: `
 ## Foz do Iguaçu: grandiosidade em cada esquina
 
 Foz do Iguaçu é um destino que impressiona pela **grandiosidade**. Com as Cataratas do Iguaçu (uma das Sete Maravilhas da Natureza), a Usina de Itaipu e a tríplice fronteira, a cidade oferece experiências únicas.
@@ -422,29 +422,29 @@ A maior usina hidrelétrica em geração de energia do mundo:
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **6 dias para Foz do Iguaçu** saindo de Belo Horizonte/Confins a partir de **R$ 1.842 por pessoa**, incluindo aéreo, hospedagem com café da manhã e traslados.
+A Marshe Viagens oferece pacotes de **6 dias para Foz do Iguaçu** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
 
 ## Dica importante
 
 Foz do Iguaçu recebe turistas o ano inteiro, mas os meses de **março a maio e agosto a outubro** são ideais: menos chuva, temperaturas agradáveis e cachoeiras com bom volume de água.
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-14",
-    readTime: "9 min",
-    image: fozImg,
-    tags: ["Foz do Iguaçu", "Cataratas", "Itaipu", "Roteiro", "Sul"],
-    metaDescription:
-      "Roteiro de 5 dias em Foz do Iguaçu: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e Parque das Aves. Planeje sua viagem!",
-  },
-  // ===== 3 NOVOS POSTS =====
-  {
-    slug: "guia-natal-praias-dunas-gastronomia",
-    title: "Guia de Natal: Praias, Dunas e a Gastronomia Potiguar que Surpreende",
-    excerpt:
-      "Descubra Natal, a Cidade do Sol: das dunas de Genipabu às praias de Ponta Negra, passando pela culinária local e passeios imperdíveis.",
-    content: `
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-14",
+ readTime: "9 min",
+ image: fozImg,
+ tags: ["Foz do Iguaçu", "Cataratas", "Itaipu", "Roteiro", "Sul"],
+ metaDescription:
+ "Roteiro de 5 dias em Foz do Iguaçu: Cataratas brasileiras e argentinas, Itaipu, Marco das Três Fronteiras e Parque das Aves. Planeje sua viagem!",
+ },
+ // ===== 3 NOVOS POSTS =====
+ {
+ slug: "guia-natal-praias-dunas-gastronomia",
+ title: "Guia de Natal: Praias, Dunas e a Gastronomia Potiguar que Surpreende",
+ excerpt:
+ "Descubra Natal, a Cidade do Sol: das dunas de Genipabu às praias de Ponta Negra, passando pela culinária local e passeios imperdíveis.",
+ content: `
 ## Natal: a Cidade do Sol
 
 Natal é conhecida como a **Cidade do Sol** por ter um dos climas mais agradáveis do Brasil, com sol praticamente o ano inteiro. A capital do Rio Grande do Norte combina praias deslumbrantes, dunas impressionantes e uma gastronomia que surpreende os visitantes.
@@ -488,24 +488,24 @@ Natal tem sol o ano inteiro, mas os meses de **setembro a fevereiro** são os ma
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins a partir de **R$ 2.387 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-13",
-    readTime: "8 min",
-    image: natalImg,
-    tags: ["Natal", "Rio Grande do Norte", "Nordeste", "Praias", "Dunas"],
-    metaDescription:
-      "Guia completo de Natal: praias, dunas de Genipabu, Ponta Negra, gastronomia potiguar e dicas práticas. Planeje sua viagem à Cidade do Sol!",
-  },
-  {
-    slug: "documentos-necessarios-viagem-nacional",
-    title: "Documentos Necessários para Viagem Nacional: Checklist Completo 2026",
-    excerpt:
-      "Não corra riscos! Confira todos os documentos que você precisa levar em viagens nacionais: adultos, crianças, idosos e situações especiais.",
-    content: `
+A Marshe Viagens oferece pacotes de **8 dias para Natal** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-13",
+ readTime: "8 min",
+ image: natalImg,
+ tags: ["Natal", "Rio Grande do Norte", "Nordeste", "Praias", "Dunas"],
+ metaDescription:
+ "Guia completo de Natal: praias, dunas de Genipabu, Ponta Negra, gastronomia potiguar e dicas práticas. Planeje sua viagem à Cidade do Sol!",
+ },
+ {
+ slug: "documentos-necessarios-viagem-nacional",
+ title: "Documentos Necessários para Viagem Nacional: Checklist Completo 2026",
+ excerpt:
+ "Não corra riscos! Confira todos os documentos que você precisa levar em viagens nacionais: adultos, crianças, idosos e situações especiais.",
+ content: `
 ## Viaje preparado: documentos em dia
 
 Nada pior do que chegar ao aeroporto e descobrir que esqueceu um documento importante. Este **checklist completo** cobre todas as situações para você viajar tranquilo em 2026.
@@ -566,23 +566,23 @@ Nada pior do que chegar ao aeroporto e descobrir que esqueceu um documento impor
 ## Viaje sem preocupação
 
 Com os pacotes da **Marshe Viagens**, além de cuidar do aéreo, hospedagem e traslados, enviamos um guia completo pré-viagem com tudo que você precisa saber. Consulte nossos destinos!
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-12",
-    readTime: "6 min",
-    image: documentosImg,
-    tags: ["Documentos", "Dicas", "Planejamento", "Aeroporto", "Viagem Nacional"],
-    metaDescription:
-      "Checklist completo de documentos para viagem nacional em 2026: adultos, crianças, idosos e situações especiais. Não esqueça nada!",
-  },
-  {
-    slug: "roteiro-4-dias-joao-pessoa-litoral-sul",
-    title: "Roteiro de 4 Dias em João Pessoa: Praias, Pôr do Sol e Litoral Sul",
-    excerpt:
-      "Aproveite o melhor de João Pessoa em 4 dias: praias urbanas, o pôr do sol do Jacaré, praias do litoral sul e a gastronomia paraibana.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-12",
+ readTime: "6 min",
+ image: documentosImg,
+ tags: ["Documentos", "Dicas", "Planejamento", "Aeroporto", "Viagem Nacional"],
+ metaDescription:
+ "Checklist completo de documentos para viagem nacional em 2026: adultos, crianças, idosos e situações especiais. Não esqueça nada!",
+ },
+ {
+ slug: "roteiro-4-dias-joao-pessoa-litoral-sul",
+ title: "Roteiro de 4 Dias em João Pessoa: Praias, Pôr do Sol e Litoral Sul",
+ excerpt:
+ "Aproveite o melhor de João Pessoa em 4 dias: praias urbanas, o pôr do sol do Jacaré, praias do litoral sul e a gastronomia paraibana.",
+ content: `
 ## João Pessoa: onde o sol nasce primeiro
 
 João Pessoa é a **capital mais verde do Brasil** e o ponto mais oriental das Américas — onde o sol nasce primeiro. Com praias lindas, clima agradável e um custo-benefício excelente, é um destino que encanta.
@@ -626,29 +626,29 @@ O Litoral Sul de João Pessoa é um espetáculo:
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **8 dias para João Pessoa** saindo de Belo Horizonte/Confins a partir de **R$ 2.182 por pessoa**, incluindo aéreo, hospedagem com café da manhã e traslados.
+A Marshe Viagens oferece pacotes de **8 dias para João Pessoa** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem com café da manhã e traslados.
 
 ## Melhor época
 
 João Pessoa tem clima tropical o ano inteiro. Os meses mais secos são de **setembro a fevereiro**. Evite junho e julho por conta das chuvas.
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-11",
-    readTime: "7 min",
-    image: joaoPessoaImg,
-    tags: ["João Pessoa", "Paraíba", "Nordeste", "Roteiro", "Litoral Sul"],
-    metaDescription:
-      "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
-  },
-  // ===== 3 NOVOS POSTS (Fev 2026) =====
-  {
-    slug: "guia-maceio-praias-piscinas-naturais",
-    title: "Guia de Maceió: Praias Caribenhas, Piscinas Naturais e Gastronomia Alagoana",
-    excerpt:
-      "Descubra Maceió, o Caribe brasileiro: das piscinas naturais de Pajuçara às praias de São Miguel dos Milagres, passando pela culinária alagoana.",
-    content: `
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-11",
+ readTime: "7 min",
+ image: joaoPessoaImg,
+ tags: ["João Pessoa", "Paraíba", "Nordeste", "Roteiro", "Litoral Sul"],
+ metaDescription:
+ "Roteiro de 4 dias em João Pessoa: praias urbanas, pôr do sol do Jacaré, litoral sul, gastronomia paraibana e dicas práticas. Planeje sua viagem!",
+ },
+ // ===== 3 NOVOS POSTS (Fev 2026) =====
+ {
+ slug: "guia-maceio-praias-piscinas-naturais",
+ title: "Guia de Maceió: Praias Caribenhas, Piscinas Naturais e Gastronomia Alagoana",
+ excerpt:
+ "Descubra Maceió, o Caribe brasileiro: das piscinas naturais de Pajuçara às praias de São Miguel dos Milagres, passando pela culinária alagoana.",
+ content: `
 ## Maceió: o Caribe brasileiro
 
 Maceió é a capital de Alagoas e um dos destinos mais surpreendentes do Nordeste. Com águas em tons de verde e azul que lembram o Caribe, **praias de tirar o fôlego** e uma gastronomia rica, a cidade conquista todos os visitantes.
@@ -656,7 +656,7 @@ Maceió é a capital de Alagoas e um dos destinos mais surpreendentes do Nordest
 ## Principais pontos turísticos
 
 ### Piscinas Naturais de Pajuçara
-Na maré baixa, formam-se **piscinas naturais** a cerca de 1 km da costa. O passeio de jangada é imperdível e custa em média R$ 30 por pessoa.
+Na maré baixa, formam-se **piscinas naturais** a cerca de 1 km da costa. O passeio de jangada é imperdível e custa em média sob consulta.
 
 ### Praia do Francês
 A cerca de 20 km do centro, a **Praia do Francês** é uma das mais bonitas do estado, com barreira de corais que forma uma área de águas calmas e outra com ondas para surfe.
@@ -693,24 +693,24 @@ Os meses de **setembro a março** são os mais secos e com melhor visibilidade n
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins a partir de **R$ 3.250 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-10",
-    readTime: "8 min",
-    image: maceioImg,
-    tags: ["Maceió", "Alagoas", "Nordeste", "Praias", "Piscinas Naturais"],
-    metaDescription:
-      "Guia completo de Maceió: praias caribenhas, piscinas naturais de Pajuçara, São Miguel dos Milagres, gastronomia alagoana e dicas. Planeje sua viagem!",
-  },
-  {
-    slug: "dicas-viajar-com-criancas-sem-estresse",
-    title: "Como Viajar com Crianças Sem Estresse: 12 Dicas Práticas Para Famílias",
-    excerpt:
-      "Viajar com filhos pequenos pode ser divertido! Confira 12 dicas práticas para planejar viagens em família com tranquilidade, desde a escolha do destino até o entretenimento no avião.",
-    content: `
+A Marshe Viagens oferece pacotes de **8 dias para Maceió** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-10",
+ readTime: "8 min",
+ image: maceioImg,
+ tags: ["Maceió", "Alagoas", "Nordeste", "Praias", "Piscinas Naturais"],
+ metaDescription:
+ "Guia completo de Maceió: praias caribenhas, piscinas naturais de Pajuçara, São Miguel dos Milagres, gastronomia alagoana e dicas. Planeje sua viagem!",
+ },
+ {
+ slug: "dicas-viajar-com-criancas-sem-estresse",
+ title: "Como Viajar com Crianças Sem Estresse: 12 Dicas Práticas Para Famílias",
+ excerpt:
+ "Viajar com filhos pequenos pode ser divertido! Confira 12 dicas práticas para planejar viagens em família com tranquilidade, desde a escolha do destino até o entretenimento no avião.",
+ content: `
 ## Viagem em família sem estresse
 
 Viajar com crianças pode parecer desafiador, mas com o **planejamento certo** a experiência se torna incrível para toda a família. Confira nossas dicas testadas e aprovadas.
@@ -784,23 +784,23 @@ A Marshe Viagens recomenda:
 - **Foz do Iguaçu** — Parque das Aves e Cataratas
 
 Consulte nossos pacotes com saída de Belo Horizonte!
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-09",
-    readTime: "7 min",
-    image: viagemCriancasImg,
-    tags: ["Crianças", "Família", "Dicas", "Planejamento", "Viagem em Família"],
-    metaDescription:
-      "12 dicas práticas para viajar com crianças sem estresse: destinos, documentos, lanches no avião, proteção solar e planejamento. Guia completo para famílias!",
-  },
-  {
-    slug: "roteiro-6-dias-porto-seguro-arraial-trancoso",
-    title: "Roteiro de 6 Dias em Porto Seguro, Arraial d'Ajuda e Trancoso",
-    excerpt:
-      "Aproveite o melhor do sul da Bahia em 6 dias: as praias de Porto Seguro, o charme de Arraial d'Ajuda e a sofisticação de Trancoso em um roteiro completo.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-09",
+ readTime: "7 min",
+ image: viagemCriancasImg,
+ tags: ["Crianças", "Família", "Dicas", "Planejamento", "Viagem em Família"],
+ metaDescription:
+ "12 dicas práticas para viajar com crianças sem estresse: destinos, documentos, lanches no avião, proteção solar e planejamento. Guia completo para famílias!",
+ },
+ {
+ slug: "roteiro-6-dias-porto-seguro-arraial-trancoso",
+ title: "Roteiro de 6 Dias em Porto Seguro, Arraial d'Ajuda e Trancoso",
+ excerpt:
+ "Aproveite o melhor do sul da Bahia em 6 dias: as praias de Porto Seguro, o charme de Arraial d'Ajuda e a sofisticação de Trancoso em um roteiro completo.",
+ content: `
 ## Sul da Bahia: Porto Seguro e região
 
 O sul da Bahia concentra alguns dos destinos mais encantadores do Brasil. **Porto Seguro, Arraial d'Ajuda e Trancoso** formam um trio perfeito que combina praias paradisíacas, história e badalação.
@@ -859,29 +859,29 @@ Siga para **Trancoso** (45 min de carro):
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **4 dias para Porto Seguro** saindo de Belo Horizonte/Confins a partir de **R$ 1.838 por pessoa**, incluindo aéreo, hospedagem e traslados. Para roteiros estendidos com Arraial e Trancoso, consulte condições especiais.
+A Marshe Viagens oferece pacotes de **4 dias para Porto Seguro** saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem e traslados. Para roteiros estendidos com Arraial e Trancoso, consulte condições especiais.
 
 ## Melhor época
 
 O sul da Bahia tem clima agradável o ano inteiro. Os meses de **setembro a março** são mais secos, com temperaturas entre 25°C e 32°C. Evite junho-julho por conta das chuvas.
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-08",
-    readTime: "9 min",
-    image: portoSeguroImg,
-    tags: ["Porto Seguro", "Arraial d'Ajuda", "Trancoso", "Bahia", "Roteiro"],
-    metaDescription:
-      "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
-  },
-  // ===== 6 NOVOS POSTS — Keywords de alta busca =====
-  {
-    slug: "melhor-epoca-viajar-maceio",
-    title: "Melhor Época para Viajar para Maceió: Guia Mês a Mês Completo",
-    excerpt:
-      "Quando é o melhor momento para visitar Maceió? Descubra as condições climáticas, preços e dicas mês a mês para planejar sua viagem ao Caribe brasileiro.",
-    content: `
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-08",
+ readTime: "9 min",
+ image: portoSeguroImg,
+ tags: ["Porto Seguro", "Arraial d'Ajuda", "Trancoso", "Bahia", "Roteiro"],
+ metaDescription:
+ "Roteiro de 6 dias em Porto Seguro, Arraial d'Ajuda e Trancoso: praias, centro histórico, Quadrado e Recife de Fora. Planeje sua viagem ao sul da Bahia!",
+ },
+ // ===== 6 NOVOS POSTS — Keywords de alta busca =====
+ {
+ slug: "melhor-epoca-viajar-maceio",
+ title: "Melhor Época para Viajar para Maceió: Guia Mês a Mês Completo",
+ excerpt:
+ "Quando é o melhor momento para visitar Maceió? Descubra as condições climáticas, preços e dicas mês a mês para planejar sua viagem ao Caribe brasileiro.",
+ content: `
 ## Quando visitar Maceió?
 
 Maceió, a capital de Alagoas, tem um clima tropical úmido com temperaturas agradáveis durante todo o ano — a média fica entre 24°C e 30°C. Mas a época certa de visitar faz toda a diferença para aproveitar as **piscinas naturais de Pajuçara**, as praias cristalinas e os passeios pela região.
@@ -945,23 +945,23 @@ A **melhor época para viajar para Maceió é entre setembro e novembro**. Nesse
 ## Dica Marshe Viagens
 
 Nossos pacotes para Maceió saindo de Belo Horizonte têm melhores preços justamente nos meses de **setembro a novembro**. Reserve com pelo menos 90 dias de antecedência para garantir as melhores tarifas!
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-07",
-    readTime: "8 min",
-    image: melhorEpocaMaceioImg,
-    tags: ["Maceió", "Alagoas", "Melhor Época", "Nordeste", "Clima"],
-    metaDescription:
-      "Melhor época para viajar para Maceió: guia mês a mês com clima, preços e dicas. Saiba quando visitar para aproveitar as piscinas naturais e praias!",
-  },
-  {
-    slug: "quanto-custa-viajar-nordeste-2026",
-    title: "Quanto Custa Viajar para o Nordeste em 2026: Guia Completo de Preços",
-    excerpt:
-      "Planeje seu orçamento com precisão! Descubra quanto custa viajar para os principais destinos do Nordeste em 2026: passagens, hospedagem, passeios e alimentação.",
-    content: `
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-07",
+ readTime: "8 min",
+ image: melhorEpocaMaceioImg,
+ tags: ["Maceió", "Alagoas", "Melhor Época", "Nordeste", "Clima"],
+ metaDescription:
+ "Melhor época para viajar para Maceió: guia mês a mês com clima, preços e dicas. Saiba quando visitar para aproveitar as piscinas naturais e praias!",
+ },
+ {
+ slug: "quanto-custa-viajar-nordeste-2026",
+ title: "Quanto Custa Viajar para o Nordeste em 2026: Guia Completo de Preços",
+ excerpt:
+ "Planeje seu orçamento com precisão! Descubra quanto custa viajar para os principais destinos do Nordeste em 2026: passagens, hospedagem, passeios e alimentação.",
+ content: `
 ## Planeje seu orçamento para o Nordeste em 2026
 
 Viajar para o Nordeste é um sonho de muitos brasileiros — mas quanto custa de verdade? Preparamos um guia completo com os valores atualizados para 2026, para você planejar sua viagem sem surpresas.
@@ -972,76 +972,76 @@ Os preços abaixo são estimativas para voos saindo de **Confins (BH)** em 2026:
 
 | Destino | Baixa Temporada | Alta Temporada |
 |---------|----------------|----------------|
-| Maceió | R$ 650 - R$ 900 | R$ 1.200 - R$ 1.800 |
-| Natal | R$ 700 - R$ 950 | R$ 1.300 - R$ 2.000 |
-| Fortaleza | R$ 600 - R$ 850 | R$ 1.100 - R$ 1.700 |
-| Salvador | R$ 500 - R$ 750 | R$ 950 - R$ 1.500 |
-| Porto de Galinhas | R$ 650 - R$ 900 | R$ 1.200 - R$ 1.800 |
-| João Pessoa | R$ 700 - R$ 1.000 | R$ 1.300 - R$ 2.000 |
+| Maceió | sob consulta | sob consulta |
+| Natal | sob consulta | sob consulta |
+| Fortaleza | sob consulta | sob consulta |
+| Salvador | sob consulta | sob consulta |
+| Porto de Galinhas | sob consulta | sob consulta |
+| João Pessoa | sob consulta | sob consulta |
 
 **Dica:** Pacotes com aéreo incluído costumam sair até 25% mais baratos do que comprar separado.
 
 ## Hospedagem por noite
 
 ### Maceió
-- **Pousada simples** (sem ar-condicionado): R$ 80-150/noite
-- **Hotel 3 estrelas** (com café da manhã): R$ 200-350/noite
-- **Hotel 4 estrelas** (beira-mar): R$ 400-700/noite
+- **Pousada simples** (sem ar-condicionado): sob consulta/noite
+- **Hotel 3 estrelas** (com café da manhã): sob consulta/noite
+- **Hotel 4 estrelas** (beira-mar): sob consulta/noite
 
 ### Natal
-- **Pousada simples**: R$ 90-160/noite
-- **Hotel 3 estrelas**: R$ 220-380/noite
-- **Hotel 4 estrelas**: R$ 450-750/noite
+- **Pousada simples**: sob consulta/noite
+- **Hotel 3 estrelas**: sob consulta/noite
+- **Hotel 4 estrelas**: sob consulta/noite
 
 ### Porto de Galinhas
-- **Pousada simples**: R$ 120-200/noite
-- **Bangalô em resort**: R$ 400-800/noite
-- **Resort all-inclusive**: R$ 800-1.500/noite
+- **Pousada simples**: sob consulta/noite
+- **Bangalô em resort**: sob consulta/noite
+- **Resort all-inclusive**: sob consulta/noite
 
 ## Alimentação por dia
 
-- **Refeição em restaurante popular**: R$ 25-40
-- **Refeição em restaurante turístico**: R$ 60-100
-- **Frutos do mar em restaurante médio**: R$ 80-150
-- **Lanche em barraca de praia**: R$ 20-40
+- **Refeição em restaurante popular**: sob consulta
+- **Refeição em restaurante turístico**: sob consulta
+- **Frutos do mar em restaurante médio**: sob consulta
+- **Lanche em barraca de praia**: sob consulta
 
-**Média diária para 2 refeições + lanches**: R$ 100-180 por pessoa
+**Média diária para 2 refeições + lanches**: sob consulta
 
 ## Passeios e atrações
 
 ### Maceió
-- Passeio de jangada (Pajuçara): R$ 30-50
-- Passeio para São Miguel dos Milagres: R$ 150-250
-- Praia do Gunga: R$ 80-120 (inclui traslado)
+- Passeio de jangada (Pajuçara): sob consulta
+- Passeio para São Miguel dos Milagres: sob consulta
+- Praia do Gunga: sob consulta (inclui traslado)
 
 ### Natal
-- Buggy nas dunas de Genipabu: R$ 80-150 por buggy
-- Parrachos de Maracajaú: R$ 120-180
+- Buggy nas dunas de Genipabu: sob consulta
+- Parrachos de Maracajaú: sob consulta
 
 ### Porto de Galinhas
-- Jangada + piscinas naturais: R$ 40-60
-- Passeio de barco para Praia dos Carneiros: R$ 120-200
+- Jangada + piscinas naturais: sob consulta
+- Passeio de barco para Praia dos Carneiros: sob consulta
 
 ## Quanto levar por pessoa para 8 dias?
 
 Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
 
-- 💰 **Alimentação**: R$ 100-150/dia × 8 dias = **R$ 800-1.200**
-- 🚤 **Passeios**: R$ 300-600 (total da viagem)
-- 🛍️ **Compras e souvenirs**: R$ 200-400
-- 🧴 **Extras (protetor solar, farmácia)**: R$ 100-200
+- 💰 **Alimentação**: sob consulta/dia × 8 dias = **sob consulta**
+- 🚤 **Passeios**: sob consulta (total da viagem)
+- 🛍️ **Compras e souvenirs**: sob consulta
+- 🧴 **Extras (protetor solar, farmácia)**: sob consulta
 
-**Total extras estimado**: R$ 1.400-2.400 por pessoa, além do pacote.
+**Total extras estimado**: sob consulta, além do pacote.
 
 ## Pacotes prontos Marshe Viagens 2026
 
 | Destino | Duração | A partir de |
 |---------|---------|------------|
-| Maceió | 8 dias | R$ 3.250/pessoa |
-| Natal | 8 dias | R$ 2.387/pessoa |
-| Salvador | 8 dias | R$ 2.750/pessoa |
-| Porto de Galinhas | 8 dias | R$ 2.319/pessoa |
-| João Pessoa | 8 dias | R$ 2.182/pessoa |
+| Maceió | 8 dias | sob consulta/pessoa |
+| Natal | 8 dias | sob consulta/pessoa |
+| Salvador | 8 dias | sob consulta/pessoa |
+| Porto de Galinhas | 8 dias | sob consulta/pessoa |
+| João Pessoa | 8 dias | sob consulta/pessoa |
 
 *Pacotes incluem aéreo, hospedagem com café da manhã e traslados.*
 
@@ -1052,23 +1052,23 @@ Com **pacote da Marshe Viagens** (aéreo + hotel + traslados inclusos), calcule:
 3. **Prefira pacotes completos** a comprar tudo separado
 4. **Coma onde os locais comem** — 2-3 quadras da praia principal
 5. **Compartilhe passeios** de barco e buggy com outros turistas
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-06",
-    readTime: "9 min",
-    image: custoNordesteImg,
-    tags: ["Custo", "Nordeste", "Orçamento", "Preços 2026", "Planejamento"],
-    metaDescription:
-      "Quanto custa viajar para o Nordeste em 2026? Guia completo de preços: passagens de BH, hospedagem, alimentação e passeios nos principais destinos. Planeje seu orçamento!",
-  },
-  {
-    slug: "pacotes-baratos-nordeste-2026",
-    title: "Pacotes Baratos para o Nordeste em 2026: Os Melhores Destinos e Preços",
-    excerpt:
-      "Encontre os melhores pacotes de viagem para o Nordeste em 2026. Compare destinos, preços e dicas para fechar o pacote ideal saindo de Belo Horizonte.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-06",
+ readTime: "9 min",
+ image: custoNordesteImg,
+ tags: ["Custo", "Nordeste", "Orçamento", "Preços 2026", "Planejamento"],
+ metaDescription:
+ "Quanto custa viajar para o Nordeste em 2026? Guia completo de preços: passagens de BH, hospedagem, alimentação e passeios nos principais destinos. Planeje seu orçamento!",
+ },
+ {
+ slug: "pacotes-baratos-nordeste-2026",
+ title: "Pacotes Baratos para o Nordeste em 2026: Os Melhores Destinos e Preços",
+ excerpt:
+ "Encontre os melhores pacotes de viagem para o Nordeste em 2026. Compare destinos, preços e dicas para fechar o pacote ideal saindo de Belo Horizonte.",
+ content: `
 ## Os melhores pacotes para o Nordeste em 2026
 
 Viajar para o Nordeste com qualidade e sem gastar uma fortuna é possível — especialmente quando você escolhe o destino certo, na época certa e com a agência certa. A **Marshe Viagens** preparou um comparativo completo dos melhores pacotes para 2026.
@@ -1082,32 +1082,32 @@ Viajar para o Nordeste com qualidade e sem gastar uma fortuna é possível — e
 
 ## Destinos mais baratos do Nordeste em 2026
 
-### 1. João Pessoa — A partir de R$ 2.182/pessoa
+### 1. João Pessoa — sob consulta/pessoa
 A capital paraibana é **um dos destinos mais baratos** do Nordeste, com praias lindas como Coqueirinho e o famoso pôr do sol do Jacaré. Ideal para quem quer Nordeste sem pagar caro.
 
 **O que inclui:** Aéreo BH → João Pessoa, 7 noites com café da manhã, traslados.
 
-### 2. Fortaleza — A partir de R$ 2.250/pessoa
+### 2. Fortaleza — sob consulta/pessoa
 Fortaleza combina **praia, cultura e diversão** com preços acessíveis. A Praia do Futuro, o Mercado Central e as dunas de Jericoacoara (excursão) são os destaques.
 
 **O que inclui:** Aéreo BH → Fortaleza, 7 noites com café da manhã, traslados.
 
-### 3. Salvador — A partir de R$ 2.750/pessoa
+### 3. Salvador — sob consulta/pessoa
 A capital baiana oferece **cultura, história e praias** em um único destino. Pelourinho, Farol da Barra e acarajé são imperdíveis.
 
 **O que inclui:** Aéreo BH → Salvador, 7 noites com café da manhã, traslados.
 
-### 4. Natal — A partir de R$ 2.387/pessoa
+### 4. Natal — sob consulta/pessoa
 Natal tem sol o ano inteiro e os buggys pelas dunas são uma experiência única. A Praia de Ponta Negra e os Parrachos de Maracajaú são os grandes atrativos.
 
 **O que inclui:** Aéreo BH → Natal, 7 noites com café da manhã, traslados.
 
-### 5. Porto de Galinhas — A partir de R$ 2.319/pessoa
+### 5. Porto de Galinhas — sob consulta/pessoa
 As **piscinas naturais** de Porto de Galinhas são únicas no mundo. É um destino um pouco mais caro, mas o custo-benefício compensa.
 
 **O que inclui:** Aéreo BH → Recife + traslado, 7 noites com café da manhã, traslados.
 
-### 6. Maceió — A partir de R$ 3.250/pessoa
+### 6. Maceió — sob consulta/pessoa
 O "Caribe brasileiro" justifica o investimento: águas em tons de turquesa, praias desertas e a experiência de nadar com tartarugas em São Miguel dos Milagres.
 
 **O que inclui:** Aéreo BH → Maceió, 7 noites com café da manhã, traslados.
@@ -1137,24 +1137,24 @@ A Marshe Viagens oferece parcelamento em até **10x no cartão de crédito sem j
 - 🛫 Parcerias com as principais companhias aéreas
 - 🏨 Hotéis selecionados e avaliados pela nossa equipe
 - 💳 Parcelamento em até 10x sem juros
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-05",
-    readTime: "8 min",
-    image: pacotesBaratosImg,
-    tags: ["Pacotes", "Nordeste", "Preços Baratos", "2026", "Viagem Econômica"],
-    metaDescription:
-      "Pacotes baratos para o Nordeste em 2026: compare os melhores destinos e preços saindo de BH. João Pessoa, Fortaleza, Maceió, Natal e mais com aéreo incluso!",
-  },
-  // ===== 3 POSTS EXTRAS (1 por categoria) =====
-  {
-    slug: "guia-completo-fortaleza-ce",
-    title: "Guia Completo de Fortaleza: Praias, Cultura, Gastronomia e Passeios",
-    excerpt:
-      "Descubra Fortaleza além do óbvio: da Praia do Futuro ao Mercado Central, do lagostim ao caju, passando pelos melhores bairros e dicas para aproveitar ao máximo.",
-    content: `
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-05",
+ readTime: "8 min",
+ image: pacotesBaratosImg,
+ tags: ["Pacotes", "Nordeste", "Preços Baratos", "2026", "Viagem Econômica"],
+ metaDescription:
+ "Pacotes baratos para o Nordeste em 2026: compare os melhores destinos e preços saindo de BH. João Pessoa, Fortaleza, Maceió, Natal e mais com aéreo incluso!",
+ },
+ // ===== 3 POSTS EXTRAS (1 por categoria) =====
+ {
+ slug: "guia-completo-fortaleza-ce",
+ title: "Guia Completo de Fortaleza: Praias, Cultura, Gastronomia e Passeios",
+ excerpt:
+ "Descubra Fortaleza além do óbvio: da Praia do Futuro ao Mercado Central, do lagostim ao caju, passando pelos melhores bairros e dicas para aproveitar ao máximo.",
+ content: `
 ## Fortaleza: a Capital do Ceará
 
 Fortaleza é a **quinta maior cidade do Brasil** e um dos destinos turísticos mais visitados do país. Com 34 km de litoral urbano, culinária diversificada, vida noturna intensa e o interior cheio de atrações como Jericoacoara e Canoa Quebrada, a cidade agrada a todos os perfis de viajante.
@@ -1208,24 +1208,24 @@ Fortaleza tem sol praticamente o ano inteiro. Os meses de **agosto a dezembro** 
 
 ## Pacotes saindo de BH
 
-A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins a partir de **R$ 2.250 por pessoa**, com aéreo, hospedagem com café da manhã e traslados inclusos.
-    `,
-    category: "guias",
-    categoryLabel: "Guias de Destinos",
-    author: "Marshe Viagens",
-    date: "2026-02-04",
-    readTime: "9 min",
-    image: guiaFortalezaImg,
-    tags: ["Fortaleza", "Ceará", "Nordeste", "Praias", "Jericoacoara"],
-    metaDescription:
-      "Guia completo de Fortaleza: praias, Mercado Central, Dragão do Mar, gastronomia cearense, Jericoacoara e Canoa Quebrada. Planeje sua viagem à capital cearense!",
-  },
-  {
-    slug: "seguro-viagem-vale-a-pena-contratar",
-    title: "Seguro Viagem: Vale a Pena Contratar? Guia Completo Para Decidir",
-    excerpt:
-      "Entenda de uma vez por todas se o seguro viagem compensa, o que cobre, quanto custa e como escolher o melhor plano para sua viagem nacional ou internacional.",
-    content: `
+A Marshe Viagens oferece pacotes de **8 dias para Fortaleza** saindo de Confins a partir de **sob consulta**, com aéreo, hospedagem com café da manhã e traslados inclusos.
+ `,
+ category: "guias",
+ categoryLabel: "Guias de Destinos",
+ author: "Marshe Viagens",
+ date: "2026-02-04",
+ readTime: "9 min",
+ image: guiaFortalezaImg,
+ tags: ["Fortaleza", "Ceará", "Nordeste", "Praias", "Jericoacoara"],
+ metaDescription:
+ "Guia completo de Fortaleza: praias, Mercado Central, Dragão do Mar, gastronomia cearense, Jericoacoara e Canoa Quebrada. Planeje sua viagem à capital cearense!",
+ },
+ {
+ slug: "seguro-viagem-vale-a-pena-contratar",
+ title: "Seguro Viagem: Vale a Pena Contratar? Guia Completo Para Decidir",
+ excerpt:
+ "Entenda de uma vez por todas se o seguro viagem compensa, o que cobre, quanto custa e como escolher o melhor plano para sua viagem nacional ou internacional.",
+ content: `
 ## Seguro viagem: uma proteção que pode salvar sua viagem
 
 Você já se perguntou se o **seguro viagem vale a pena**? A resposta curta é: sim, especialmente para viagens internacionais. Mas para viagens nacionais também há situações em que ele faz toda a diferença.
@@ -1252,14 +1252,14 @@ O seguro viagem é um produto que cobre **imprevistos durante a viagem**: proble
 ## Quanto custa?
 
 Para viagens **nacionais** (8-10 dias):
-- Plano básico: R$ 30-60
-- Plano intermediário: R$ 60-120
-- Plano completo: R$ 100-200
+- Plano básico: sob consulta
+- Plano intermediário: sob consulta
+- Plano completo: sob consulta
 
 Para viagens **internacionais** (10 dias):
-- América do Sul: R$ 80-200
-- Europa/EUA: R$ 200-500
-- Planos premium: R$ 400-800
+- América do Sul: sob consulta
+- Europa/EUA: sob consulta
+- Planos premium: sob consulta
 
 ## Quando o seguro viagem é obrigatório?
 
@@ -1297,23 +1297,23 @@ Franquia é o valor que você paga antes do seguro entrar. Franquias menores sig
 ## Seguro viagem nos pacotes Marshe
 
 Os pacotes da Marshe Viagens podem ser complementados com **seguro viagem sob medida**. Consulte nossos especialistas pelo WhatsApp para adicionar essa proteção ao seu pacote por um valor acessível.
-    `,
-    category: "dicas",
-    categoryLabel: "Dicas de Viagem",
-    author: "Marshe Viagens",
-    date: "2026-02-03",
-    readTime: "8 min",
-    image: seguroViagemImg,
-    tags: ["Seguro Viagem", "Dicas", "Planejamento", "Proteção", "Viagem Segura"],
-    metaDescription:
-      "Seguro viagem vale a pena? Guia completo: o que cobre, quanto custa, quando contratar e como escolher o melhor plano para viagem nacional e internacional.",
-  },
-  {
-    slug: "roteiro-3-dias-cabo-santo-agostinho",
-    title: "Roteiro de 3 Dias em Cabo de Santo Agostinho: Praias Secretas de Pernambuco",
-    excerpt:
-      "Descubra as praias secretas perto de Recife em 3 dias: Cabo de Santo Agostinho concentra Cupe, Muro Alto, Porto de Galinhas e algumas das praias mais bonitas do Nordeste.",
-    content: `
+ `,
+ category: "dicas",
+ categoryLabel: "Dicas de Viagem",
+ author: "Marshe Viagens",
+ date: "2026-02-03",
+ readTime: "8 min",
+ image: seguroViagemImg,
+ tags: ["Seguro Viagem", "Dicas", "Planejamento", "Proteção", "Viagem Segura"],
+ metaDescription:
+ "Seguro viagem vale a pena? Guia completo: o que cobre, quanto custa, quando contratar e como escolher o melhor plano para viagem nacional e internacional.",
+ },
+ {
+ slug: "roteiro-3-dias-cabo-santo-agostinho",
+ title: "Roteiro de 3 Dias em Cabo de Santo Agostinho: Praias Secretas de Pernambuco",
+ excerpt:
+ "Descubra as praias secretas perto de Recife em 3 dias: Cabo de Santo Agostinho concentra Cupe, Muro Alto, Porto de Galinhas e algumas das praias mais bonitas do Nordeste.",
+ content: `
 ## Cabo de Santo Agostinho: o destino que surpreende
 
 A menos de 60 km de Recife, o município de **Cabo de Santo Agostinho** reúne algumas das praias mais deslumbrantes de Pernambuco. De Porto de Galinhas a Muro Alto, passando por praias praticamente desertas, é um destino que surpreende até os viajantes mais experientes.
@@ -1368,22 +1368,22 @@ O último dia para história e paisagem:
 
 ## Onde ficar?
 
-- **Porto de Galinhas**: pousadas charmosas a partir de R$ 250/noite
-- **Muro Alto**: resorts com área de piscinas naturais (R$ 600-1.500/noite)
+- **Porto de Galinhas**: pousadas charmosas sob consulta/noite
+- **Muro Alto**: resorts com área de piscinas naturais (sob consulta/noite)
 - **Recife**: hotéis com preços menores e aluguel de carro para explorar a região
 
 ## Quanto custa?
 
-A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de Santo Agostinho) saindo de Belo Horizonte/Confins a partir de **R$ 2.319 por pessoa**, incluindo aéreo, hospedagem e traslados.
-    `,
-    category: "roteiros",
-    categoryLabel: "Roteiros",
-    author: "Marshe Viagens",
-    date: "2026-02-02",
-    readTime: "7 min",
-    image: roteirosCaboImg,
-    tags: ["Cabo de Santo Agostinho", "Pernambuco", "Porto de Galinhas", "Muro Alto", "Nordeste"],
-    metaDescription:
-      "Roteiro de 3 dias em Cabo de Santo Agostinho: Porto de Galinhas, Muro Alto, Cupe e praias desertas de Pernambuco. Guia completo para planejar sua viagem!",
-  },
+A Marshe Viagens oferece pacotes de **8 dias para Porto de Galinhas** (Cabo de Santo Agostinho) saindo de Belo Horizonte/Confins a partir de **sob consulta**, incluindo aéreo, hospedagem e traslados.
+ `,
+ category: "roteiros",
+ categoryLabel: "Roteiros",
+ author: "Marshe Viagens",
+ date: "2026-02-02",
+ readTime: "7 min",
+ image: roteirosCaboImg,
+ tags: ["Cabo de Santo Agostinho", "Pernambuco", "Porto de Galinhas", "Muro Alto", "Nordeste"],
+ metaDescription:
+ "Roteiro de 3 dias em Cabo de Santo Agostinho: Porto de Galinhas, Muro Alto, Cupe e praias desertas de Pernambuco. Guia completo para planejar sua viagem!",
+ },
 ];
