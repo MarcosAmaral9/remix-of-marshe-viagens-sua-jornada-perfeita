@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { ArrowLeft, Calendar, Moon, Users, Globe, Check, Hotel, MapPin, CreditCard, AlertTriangle, Info } from "lucide-react";
+import { ArrowLeft, Users, Globe, Check, Hotel, MapPin, CreditCard, AlertTriangle, Info } from "lucide-react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
