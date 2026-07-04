@@ -12,20 +12,6 @@ import { destinations as nordesteDestinations } from "./DestinosNordeste";
 import { destinations as sulDestinations } from "./DestinosSul";
 import { circuitosEuropa } from "@/data/circuitos";
 
-// Extrai número de uma string de preço como "R$ 2.319" ou "R$ 12.600,00"
-const parsePrice = (price: string): number => {
-  const cleaned = price.replace(/[^\d,]/g, "").replace(",", ".");
-  const num = parseFloat(cleaned);
-  return isNaN(num) ? Infinity : num;
-};
-
-const formatPrice = (value: number): string =>
-  `R$ ${value.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
-
-const minNordeste = Math.min(...nordesteDestinations.map((d) => parsePrice(d.price)));
-const minSul = Math.min(...sulDestinations.map((d) => parsePrice(d.price)));
-const minEuropa = Math.min(...circuitosEuropa.map((c) => parsePrice(c.pricePerPerson)));
-
 const regions = [
   {
     name: "Destinos Nordeste",
@@ -34,7 +20,7 @@ const regions = [
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
     destinationCount: nordesteDestinations.length,
     image: portoSeguroImg,
-    highlight: `${formatPrice(minNordeste)}`,
+    highlight: "Faça uma cotação",
   },
   {
     name: "Destinos Sul",
@@ -43,7 +29,7 @@ const regions = [
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
     destinationCount: sulDestinations.length,
     image: gramadoImg,
-    highlight: `${formatPrice(minSul)}`,
+    highlight: "Faça uma cotação",
   },
   {
     name: "Circuitos Europa",
@@ -52,7 +38,7 @@ const regions = [
     description: "Roteiros completos pela Europa com guia, hospedagem e Disneyland Paris inclusos. Saídas de Belo Horizonte.",
     destinationCount: circuitosEuropa.length,
     image: madriParisImg,
-    highlight: `${formatPrice(minEuropa)}`,
+    highlight: "Faça uma cotação",
   },
 ];
 
