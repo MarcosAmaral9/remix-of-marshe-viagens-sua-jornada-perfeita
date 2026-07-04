@@ -15,7 +15,7 @@ const packages = [
     image: imgPortoGalinhas,
     destination: "Porto de Galinhas",
     link: "/destinos/porto-de-galinhas",
-    price: "Consulte valores",
+    price: "Faça uma cotação",
   },
   {
     title: "Gramado & Canela",
@@ -23,7 +23,7 @@ const packages = [
     image: imgGramado,
     destination: "Gramado",
     link: "/destinos/gramado",
-    price: "Consulte valores",
+    price: "Faça uma cotação",
   },
   {
     title: "Madri e Paris + Disney",
@@ -31,7 +31,7 @@ const packages = [
     image: imgMadriParis,
     destination: "Circuito Madri e Paris",
     link: "/circuitos/europa/madri-paris-disneyland",
-    price: "Consulte valores",
+    price: "Faça uma cotação",
   },
 ];
 
