@@ -5,7 +5,8 @@ import { circuitosEuropa } from "@/data/circuitos";
 
 const CircuitosViagem = () => {
   const europaImage = circuitosEuropa[0]?.image;
-  const minPrice = "";
+
+
 
   return (
     <section id="circuitos" className="py-20 lg:py-32 bg-background">
