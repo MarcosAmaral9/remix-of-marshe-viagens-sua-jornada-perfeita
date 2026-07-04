@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { Calendar, ArrowLeft, ArrowRight, Moon, Globe } from "lucide-react";
+import { ArrowLeft, ArrowRight, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { circuitosEuropa } from "@/data/circuitos";
 
