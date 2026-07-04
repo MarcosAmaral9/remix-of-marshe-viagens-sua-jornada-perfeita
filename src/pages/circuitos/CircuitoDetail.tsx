@@ -51,8 +51,6 @@ const CircuitoDetail = () => {
                 {circuit.name}
               </h1>
               <div className="flex flex-wrap gap-4 mt-4 text-primary-foreground/90 text-sm">
-                <span className="flex items-center gap-1.5"><Moon className="w-4 h-4" /> {circuit.nights} noites</span>
-                <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {circuit.departure} a {circuit.returnDate}</span>
                 <span className="flex items-center gap-1.5"><Users className="w-4 h-4" /> {circuit.passengers}</span>
                 <span className="flex items-center gap-1.5"><Globe className="w-4 h-4" /> Guia em {circuit.language}</span>
               </div>
@@ -60,12 +58,11 @@ const CircuitoDetail = () => {
           </div>
         </section>
 
-        {/* Price bar */}
+        {/* CTA bar */}
         <section className="bg-primary text-primary-foreground py-4">
           <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span className="text-2xl font-bold ml-2">{circuit.pricePerPerson}</span>
-              <span className="text-sm opacity-80 ml-1">sujeito a reajuste</span>
+              <span className="text-lg font-semibold">Faça uma cotação personalizada</span>
             </div>
             <div className="flex flex-wrap gap-3">
               <Button
