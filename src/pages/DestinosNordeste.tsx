@@ -165,9 +165,7 @@ const DestinosNordeste = () => {
                     </div>
                     <div className="flex items-center justify-between border-t border-border pt-4">
                       <div>
-                        <span className="text-xs text-muted-foreground">a partir de</span>
                         <p className="text-xl font-bold text-primary">{dest.price}</p>
-                        <span className="text-xs text-muted-foreground">por pessoa</span>
                       </div>
                       <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
                         Ver detalhes <ArrowRight className="w-4 h-4" />

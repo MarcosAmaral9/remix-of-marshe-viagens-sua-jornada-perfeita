@@ -34,7 +34,7 @@ const regions = [
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
     destinationCount: nordesteDestinations.length,
     image: portoSeguroImg,
-    highlight: `A partir de ${formatPrice(minNordeste)}`,
+    highlight: `${formatPrice(minNordeste)}`,
   },
   {
     name: "Destinos Sul",
@@ -43,7 +43,7 @@ const regions = [
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
     destinationCount: sulDestinations.length,
     image: gramadoImg,
-    highlight: `A partir de ${formatPrice(minSul)}`,
+    highlight: `${formatPrice(minSul)}`,
   },
   {
     name: "Circuitos Europa",
@@ -52,7 +52,7 @@ const regions = [
     description: "Roteiros completos pela Europa com guia, hospedagem e Disneyland Paris inclusos. Saídas de Belo Horizonte.",
     destinationCount: circuitosEuropa.length,
     image: madriParisImg,
-    highlight: `A partir de ${formatPrice(minEuropa)}`,
+    highlight: `${formatPrice(minEuropa)}`,
   },
 ];
 

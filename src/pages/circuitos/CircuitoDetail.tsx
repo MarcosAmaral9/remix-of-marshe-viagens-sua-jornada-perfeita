@@ -22,7 +22,7 @@ const CircuitoDetail = () => {
 
   useSeo({
     title: `${circuit.name} | Marshe Viagens`,
-    description: `Circuito ${circuit.name}. ${circuit.nights} noites a partir de ${circuit.pricePerPerson} por pessoa. Roteiro completo com guia, hospedagem e Disneyland Paris.`,
+    description: `Circuito ${circuit.name}. Roteiro completo com guia, hospedagem e Disneyland Paris.`,
     canonical: `https://marsheviagens.com/circuitos/europa/${circuit.slug}`,
   });
 
@@ -64,9 +64,8 @@ const CircuitoDetail = () => {
         <section className="bg-primary text-primary-foreground py-4">
           <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span className="text-sm opacity-80">A partir de</span>
               <span className="text-2xl font-bold ml-2">{circuit.pricePerPerson}</span>
-              <span className="text-sm opacity-80 ml-1">por pessoa, sujeito a reajuste</span>
+              <span className="text-sm opacity-80 ml-1">sujeito a reajuste</span>
             </div>
             <div className="flex flex-wrap gap-3">
               <Button
