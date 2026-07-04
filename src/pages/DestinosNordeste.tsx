@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
+import { MapPin, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -153,9 +153,6 @@ const DestinosNordeste = () => {
                   </div>
 
                   <div className="p-5">
-                    <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                      <Calendar className="w-4 h-4" /> {dest.duration} • {dest.dates}
-                    </div>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {dest.highlights.map((h) => (
                         <span key={h} className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full">
@@ -165,7 +162,7 @@ const DestinosNordeste = () => {
                     </div>
                     <div className="flex items-center justify-between border-t border-border pt-4">
                       <div>
-                        <p className="text-xl font-bold text-primary">{dest.price}</p>
+                        <p className="text-sm font-semibold text-primary">Faça uma cotação</p>
                       </div>
                       <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
                         Ver detalhes <ArrowRight className="w-4 h-4" />

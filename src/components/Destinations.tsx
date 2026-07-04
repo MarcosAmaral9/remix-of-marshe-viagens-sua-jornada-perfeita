@@ -12,7 +12,7 @@ const regions = [
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
     destinationCount: 8,
     image: portoSeguroImg,
-    highlight: "",
+    highlight: "Faça uma cotação",
   },
   {
     name: "Sul",
@@ -21,7 +21,7 @@ const regions = [
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
     destinationCount: 2,
     image: gramadoImg,
-    highlight: "",
+    highlight: "Faça uma cotação",
   },
 ];
 

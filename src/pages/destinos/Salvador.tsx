@@ -127,16 +127,12 @@ const Salvador = () => {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <Calendar className="w-4 h-4 text-primary" />
-                    <span></span>
-                  </div>
-                  <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
                     <span>Temperatura média: 27°C</span>
                   </div>
                 </div>
                 <div className="border-t border-border pt-4">
-                  <p className="text-3xl font-bold text-primary"></p>
+                  <p className="text-lg font-semibold text-primary">Faça uma cotação</p>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>

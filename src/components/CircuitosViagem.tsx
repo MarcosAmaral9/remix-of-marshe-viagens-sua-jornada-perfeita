@@ -5,7 +5,8 @@ import { circuitosEuropa } from "@/data/circuitos";
 
 const CircuitosViagem = () => {
   const europaImage = circuitosEuropa[0]?.image;
-  const minPrice = "";
+
+
 
   return (
     <section id="circuitos" className="py-20 lg:py-32 bg-background">
@@ -48,7 +49,7 @@ const CircuitosViagem = () => {
             <div className="p-5 flex items-center justify-between">
               <div>
                 <span className="text-xs text-muted-foreground">{circuitosEuropa.length} circuitos disponíveis</span>
-                <p className="text-lg font-bold text-primary">{minPrice}</p>
+                <p className="text-base font-semibold text-primary mt-1">Faça uma cotação</p>
               </div>
               <Button variant="ghost" className="gap-2 group-hover:text-primary transition-colors">
                 Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

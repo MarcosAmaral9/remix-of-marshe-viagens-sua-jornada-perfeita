@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { Calendar, ArrowLeft, ArrowRight, Moon, Globe } from "lucide-react";
+import { ArrowLeft, ArrowRight, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { circuitosEuropa } from "@/data/circuitos";
 
@@ -47,21 +47,12 @@ const CircuitosEuropa = () => {
                   <div className="relative h-56 overflow-hidden">
                     <img src={circuit.image} alt={circuit.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                      {circuit.nights} noites
-                    </div>
                     <div className="absolute bottom-4 left-4 right-4 text-primary-foreground">
                       <h2 className="text-xl font-bold leading-tight">{circuit.shortName}</h2>
-                      <div className="flex items-center gap-1 text-sm opacity-90 mt-1">
-                        <Calendar className="w-3.5 h-3.5" /> {circuit.departure} a {circuit.returnDate}
-                      </div>
                     </div>
                   </div>
 
                   <div className="p-5">
-                    <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                      <Moon className="w-4 h-4" /> {circuit.nights} noites • {circuit.passengers}
-                    </div>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {circuit.includes.slice(0, 3).map((inc, i) => (
                         <span key={i} className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full line-clamp-1">
@@ -71,7 +62,7 @@ const CircuitosEuropa = () => {
                     </div>
                     <div className="flex items-center justify-between border-t border-border pt-4">
                       <div>
-                        <p className="text-xl font-bold text-primary">{circuit.pricePerPerson}</p>
+                        <p className="text-base font-semibold text-primary">Faça uma cotação</p>
                       </div>
                       <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
                         Ver detalhes <ArrowRight className="w-4 h-4" />
