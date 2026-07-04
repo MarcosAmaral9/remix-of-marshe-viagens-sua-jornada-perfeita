@@ -17,7 +17,7 @@ const CaboSantoAgostinho = () => {
     canonical: "https://marsheviagens.com/destinos/cabo-de-santo-agostinho",
     ogParams: {
       title: "Pacote Cabo de Santo Agostinho",
-      highlight: "A partir de R$ 2.700 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     },
   });
@@ -136,7 +136,7 @@ const CaboSantoAgostinho = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>8 dias • 09/08/26 a 16/08/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -146,7 +146,7 @@ const CaboSantoAgostinho = () => {
 
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 2.700</p>
+                  <p className="text-3xl font-bold text-primary"></p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
 
@@ -158,7 +158,7 @@ const CaboSantoAgostinho = () => {
 
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho (09/08/26 a 16/08/26)"
+                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Cabo de Santo Agostinho"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -167,7 +167,7 @@ const CaboSantoAgostinho = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Cabo de Santo Agostinho — Marshe Viagens"
-                  highlight="A partir de R$ 2.700 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">

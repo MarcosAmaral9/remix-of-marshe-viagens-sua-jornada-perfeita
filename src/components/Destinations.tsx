@@ -12,7 +12,7 @@ const regions = [
     description: "Praias paradisíacas, águas cristalinas e sol o ano inteiro. 8 destinos incríveis para você explorar.",
     destinationCount: 8,
     image: portoSeguroImg,
-    highlight: "A partir de R$ 1.838",
+    highlight: "",
   },
   {
     name: "Sul",
@@ -21,7 +21,7 @@ const regions = [
     description: "Natureza exuberante, charme europeu e experiências únicas. Pacotes especiais para o Dia dos Namorados.",
     destinationCount: 2,
     image: gramadoImg,
-    highlight: "A partir de R$ 1.842",
+    highlight: "",
   },
 ];
 

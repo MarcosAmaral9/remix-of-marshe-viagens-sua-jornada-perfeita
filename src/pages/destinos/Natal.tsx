@@ -17,7 +17,7 @@ const Natal = () => {
     canonical: "https://marsheviagens.com/destinos/natal",
     ogParams: {
       title: "Pacote Natal",
-      highlight: "A partir de R$ 3.700 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     },
   });
@@ -128,7 +128,7 @@ const Natal = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>6 dias • 13/08/26 a 18/08/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -137,7 +137,7 @@ const Natal = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 3.700</p>
+                  <p className="text-3xl font-bold text-primary"></p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -147,7 +147,7 @@ const Natal = () => {
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Natal (13/08/26 a 18/08/26)"
+                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Natal"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -156,7 +156,7 @@ const Natal = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Natal — Marshe Viagens"
-                  highlight="A partir de R$ 3.700 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">

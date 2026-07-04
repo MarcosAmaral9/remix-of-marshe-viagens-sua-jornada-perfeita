@@ -13,7 +13,7 @@ const Maceio = () => {
   useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/maceio",
     ogParams: {
       title: "Pacote Maceió",
-      highlight: "A partir de R$ 3.000 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     }, });
   return (
@@ -93,7 +93,7 @@ const Maceio = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>6 dias • 23/07/26 a 28/07/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -102,7 +102,7 @@ const Maceio = () => {
                 </div>
                 <div className="border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">a partir de</span>
-                  <p className="text-3xl font-bold text-primary">R$ 3.000</p>
+                  <p className="text-3xl font-bold text-primary"></p>
                   <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -112,13 +112,13 @@ const Maceio = () => {
                   
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Maceió (23/07/26 a 28/07/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Maceió" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Maceió — Marshe Viagens"
-                  highlight="A partir de R$ 3.000 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">
