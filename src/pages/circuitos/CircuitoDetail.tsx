@@ -71,7 +71,7 @@ const CircuitoDetail = () => {
                 asChild
               >
                 <a
-                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -206,7 +206,7 @@ const CircuitoDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" asChild>
                 <a
-                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name} (${circuit.departure} a ${circuit.returnDate})`}
+                  href={`https://wa.me/5531972391400?text=Olá! Tenho interesse no circuito ${circuit.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

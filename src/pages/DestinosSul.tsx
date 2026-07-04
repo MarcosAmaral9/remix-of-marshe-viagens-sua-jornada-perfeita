@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSeo } from "@/hooks/use-seo";
-import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
+import { MapPin, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import fozDoIguacuImg from "@/assets/dest-foz-do-iguacu.jpg";
