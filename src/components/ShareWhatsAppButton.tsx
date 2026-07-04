@@ -4,7 +4,7 @@ import { toast } from "sonner";
 
 interface ShareWhatsAppButtonProps {
   title: string;
-  /** Extra detail line, e.g. "A partir de R$ 3.000 saindo de BH" or "Leia no blog Marshe". */
+  /** Extra detail line, e.g. "detalhe do pacote" or "Leia no blog Marshe". */
   highlight?: string;
   /** Override URL — defaults to current page. */
   url?: string;

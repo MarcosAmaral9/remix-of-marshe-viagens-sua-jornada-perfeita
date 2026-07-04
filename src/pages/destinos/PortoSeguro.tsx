@@ -136,9 +136,7 @@ const PortoSeguro = () => {
                   </div>
                 </div>
                 <div className="border-t border-border pt-4">
-                  <span className="text-xs text-muted-foreground">a partir de</span>
                   <p className="text-3xl font-bold text-primary"></p>
-                  <span className="text-xs text-muted-foreground">por pessoa</span>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>✈️ Passagem aérea ida e volta</li>
