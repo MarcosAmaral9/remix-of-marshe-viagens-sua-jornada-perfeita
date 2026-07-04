@@ -17,7 +17,7 @@ const Salvador = () => {
     canonical: "https://marsheviagens.com/destinos/salvador",
     ogParams: {
       title: "Pacote Salvador",
-      highlight: "A partir de R$ 1.635 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     },
   });
@@ -128,7 +128,7 @@ const Salvador = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>6 dias • 25/06/26 a 30/06/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -147,7 +147,7 @@ const Salvador = () => {
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Salvador (25/06/26 a 30/06/26)"
+                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Salvador"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -156,7 +156,7 @@ const Salvador = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Salvador — Marshe Viagens"
-                  highlight="A partir de R$ 1.635 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">

@@ -17,7 +17,7 @@ const JoaoPessoa = () => {
     canonical: "https://marsheviagens.com/destinos/joao-pessoa",
     ogParams: {
       title: "Pacote João Pessoa",
-      highlight: "A partir de R$ 3.460 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     },
   });
@@ -128,7 +128,7 @@ const JoaoPessoa = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>6 dias • 17/07/26 a 22/07/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -146,13 +146,13 @@ const JoaoPessoa = () => {
                   <li>🚐 Traslado aeroporto/hotel</li>
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para João Pessoa (17/07/26 a 22/07/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para João Pessoa" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote João Pessoa — Marshe Viagens"
-                  highlight="A partir de R$ R$ 3.460 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">

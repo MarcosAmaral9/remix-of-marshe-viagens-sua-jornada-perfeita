@@ -13,7 +13,7 @@ const FozDoIguacu = () => {
   useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/foz-do-iguacu",
     ogParams: {
       title: "Pacote Foz do Iguaçu",
-      highlight: "A partir de R$ 1.881 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     }, });
   return (
@@ -94,7 +94,7 @@ const FozDoIguacu = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>5 dias • 16/09/26 a 20/09/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -113,13 +113,13 @@ const FozDoIguacu = () => {
                   
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu (16/09/26 a 20/09/26)" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Foz do Iguaçu" target="_blank" rel="noopener noreferrer">
                     Reservar pelo WhatsApp
                   </a>
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Foz do Iguaçu — Marshe Viagens"
-                  highlight="A partir de R$ 1.881 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">

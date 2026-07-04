@@ -17,7 +17,7 @@ const PortoSeguro = () => {
     canonical: "https://marsheviagens.com/destinos/porto-seguro",
     ogParams: {
       title: "Pacote Porto Seguro",
-      highlight: "A partir de R$ 3.000 • Saindo de BH",
+      highlight: "",
       kind: "Destino",
     },
   });
@@ -128,7 +128,7 @@ const PortoSeguro = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span>8 dias • 05/07/26 a 12/07/26</span>
+                    <span></span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Thermometer className="w-4 h-4 text-primary" />
@@ -147,7 +147,7 @@ const PortoSeguro = () => {
                 </ul>
                 <Button variant="hero" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Porto Seguro (04/05/26 a 08/05/26)"
+                    href="https://wa.me/5531972391400?text=Olá! Tenho interesse no pacote para Porto Seguro"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -156,7 +156,7 @@ const PortoSeguro = () => {
                 </Button>
                 <ShareWhatsAppButton
                   title="Pacote Porto Seguro — Marshe Viagens"
-                  highlight="A partir de R$ 3.000 • Saindo de BH"
+                  highlight=""
                   kind="destino"
                 />
                 <div className="text-center">
