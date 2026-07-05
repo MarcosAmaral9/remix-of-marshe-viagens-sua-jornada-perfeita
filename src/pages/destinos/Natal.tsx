@@ -8,6 +8,11 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-natal.jpg";
+import img_dunas_de_genipabu from "@/assets/pontos/natal/dunas-de-genipabu.jpg.asset.json";
+import img_praia_de_pipa from "@/assets/pontos/natal/praia-de-pipa.jpg.asset.json";
+import img_forte_dos_reis_magos from "@/assets/pontos/natal/forte-dos-reis-magos.jpg.asset.json";
+import img_parrachos_de_maracajau from "@/assets/pontos/natal/parrachos-de-maracajau.jpg.asset.json";
+import img_praia_de_ponta_negra from "@/assets/pontos/natal/praia-de-ponta-negra.jpg.asset.json";
 
 const Natal = () => {
   useSeo({
@@ -59,36 +64,29 @@ const Natal = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Dunas de Genipabu",
-                      desc: "Passeio de buggy emocionante pelas dunas com paradas em lagoas de água doce. 'Com emoção ou sem emoção?'",
-                    },
-                    {
-                      name: "Praia de Pipa",
-                      desc: "Vila charmosa com praias paradisíacas, falésias, golfinhos e uma vida noturna animada.",
-                    },
-                    {
-                      name: "Forte dos Reis Magos",
-                      desc: "Fortaleza em forma de estrela construída em 1598, marco fundador da cidade com vista para o rio e o mar.",
-                    },
-                    {
-                      name: "Parrachos de Maracajaú",
-                      desc: "Recifes de coral a 7 km da costa com piscinas naturais perfeitas para mergulho e snorkeling.",
-                    },
-                    {
-                      name: "Lagoa de Pitangui",
-                      desc: "Lagoa de água doce cercada por dunas e vegetação, com tirolesa e estrutura de lazer.",
-                    },
-                    {
-                      name: "Praia de Ponta Negra",
-                      desc: "A praia mais famosa de Natal com o icônico Morro do Careca, bares e restaurantes na orla.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Dunas de Genipabu", desc: "Passeio clássico de buggy pelas dunas móveis, com paradas para esquibunda e travessia por lagoas cristalinas. A famosa frase 'com ou sem emoção?' virou marca registrada. Programa de meio-dia inesquecível.", image: img_dunas_de_genipabu.url },
+                    { name: "Praia da Pipa", desc: "Vila charmosa a 85 km ao sul de Natal, com falésias, golfinhos que aparecem quase todos os dias e vida noturna animada. Praia do Amor, Baía dos Golfinhos e Chapadão são paradas obrigatórias. Ideal para 2-3 diárias.", image: img_praia_de_pipa.url },
+                    { name: "Forte dos Reis Magos", desc: "Fortaleza histórica em formato de estrela, construída em 1598, marca da fundação da cidade. Acesso a pé pela areia na maré baixa. Vista da foz do rio Potengi e do mar aberto.", image: img_forte_dos_reis_magos.url },
+                    { name: "Parrachos de Maracajaú", desc: "Piscinas naturais em alto-mar (7 km da praia), com formação de corais e vida marinha rica em peixes coloridos. Passeio de catamarã com mergulho livre e cilindro opcional. Água quente o ano todo.", image: img_parrachos_de_maracajau.url },
+                    { name: "Lagoa de Pitangui", desc: "Lagoa de águas cristalinas cercada por dunas em Extremoz, ideal para banho e passeios de caiaque. Menos turística que Genipabu. Ótimo bate-volta pela costa norte.", image: heroImg },
+                    { name: "Praia de Ponta Negra", desc: "A praia urbana mais movimentada de Natal, com o icônico Morro do Careca — duna de 120 metros que desce até o mar. Excelente estrutura de hotéis, bares e restaurantes. Ideal para hospedagem.", image: img_praia_de_ponta_negra.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

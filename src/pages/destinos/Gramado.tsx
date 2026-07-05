@@ -8,6 +8,10 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-gramado.jpg";
+import img_mini_mundo from "@/assets/pontos/gramado/mini-mundo.jpg.asset.json";
+import img_lago_negro from "@/assets/pontos/gramado/lago-negro.jpg.asset.json";
+import img_rua_coberta from "@/assets/pontos/gramado/rua-coberta.jpg.asset.json";
+import img_snowland from "@/assets/pontos/gramado/snowland.jpg.asset.json";
 
 const Gramado = () => {
   useSeo({ title: "Pacote Gramado | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Gramado e Canela, RS. Mini Mundo, Lago Negro, vinícolas e fondue. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/gramado",
@@ -48,18 +52,29 @@ const Gramado = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { name: "Mini Mundo", desc: "Parque temático com réplicas em miniatura de construções famosas do mundo, encantador para todas as idades." },
-                    { name: "Lago Negro", desc: "Lago cercado por hortênsias e árvores importadas da Floresta Negra alemã, perfeito para passeios de pedalinho." },
-                    { name: "Rua Coberta", desc: "Rua coberta com restaurantes, cafés e lojas, palco de shows e eventos culturais durante todo o ano." },
-                    { name: "Snowland", desc: "Primeiro parque de neve indoor das Américas com pista de esqui, snowboard e montanha de neve." },
-                    { name: "Chocolaterias", desc: "Mais de 20 fábricas artesanais de chocolate com degustações gratuitas — Prawer, Caracol e Lugano são imperdíveis." },
-                    { name: "Vale do Quilombo", desc: "Mirante com vista panorâmica espetacular do vale, especialmente bonito ao nascer e pôr do sol." },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Mini Mundo", desc: "Parque temático com réplicas em miniatura de construções famosas do mundo, feitas em escala 1:24. Encanta crianças e adultos, especialmente à noite quando fica iluminado. Circuito completo leva cerca de 1h30.", image: img_mini_mundo.url },
+                    { name: "Lago Negro", desc: "Lago artificial cercado por hortênsias e pinheiros trazidos da Floresta Negra alemã. Perfeito para passeios de pedalinho em formato de cisne e caminhadas contemplativas. Um dos cenários mais fotografados de Gramado.", image: img_lago_negro.url },
+                    { name: "Rua Coberta", desc: "Rua tradicional coberta com telhado de vidro, repleta de restaurantes, cafés e lojas típicas. Palco de shows, festivais e do famoso Natal Luz. Ponto obrigatório para café da tarde com fondue.", image: img_rua_coberta.url },
+                    { name: "Snowland", desc: "Primeiro parque de neve indoor das Américas, com pista de esqui, snowboard, montanha de neve e trenó. Experiência única para quem nunca viu neve de verdade. Programe pelo menos 3h no local.", image: img_snowland.url },
+                    { name: "Chocolaterias Artesanais", desc: "Gramado tem mais de 20 fábricas artesanais de chocolate, com degustações gratuitas nas mais tradicionais como Prawer, Caracol e Lugano. Muitas oferecem tour pela produção. Cuidado com a mala na volta — é irresistível.", image: heroImg },
+                    { name: "Vale do Quilombo", desc: "Mirante privilegiado com vista panorâmica espetacular do vale coberto por Mata Atlântica preservada. Especialmente bonito ao nascer e pôr do sol, quando a neblina se dissipa. Vá ao amanhecer para evitar o movimento.", image: heroImg },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

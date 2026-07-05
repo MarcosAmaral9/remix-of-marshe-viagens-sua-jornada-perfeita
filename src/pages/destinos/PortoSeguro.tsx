@@ -8,6 +8,9 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-seguro.jpg";
+import img_passarela_do_alcool from "@/assets/pontos/porto-seguro/passarela-do-alcool.jpg.asset.json";
+import img_arraial_dajuda from "@/assets/pontos/porto-seguro/arraial-dajuda.jpg.asset.json";
+import img_trancoso from "@/assets/pontos/porto-seguro/trancoso.jpg.asset.json";
 
 const PortoSeguro = () => {
   useSeo({
@@ -59,36 +62,29 @@ const PortoSeguro = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Passarela do Álcool",
-                      desc: "Rua mais famosa de Porto Seguro com barracas, artesanato, drinks coloridos e muita animação noturna.",
-                    },
-                    {
-                      name: "Arraial d'Ajuda",
-                      desc: "Vila boêmia com praias paradisíacas, falésias coloridas e a charmosa Rua do Mucugê com lojas e restaurantes.",
-                    },
-                    {
-                      name: "Trancoso",
-                      desc: "O Quadrado de Trancoso é Patrimônio Histórico, com casinhas coloridas, restaurantes sofisticados e praias desertas.",
-                    },
-                    {
-                      name: "Recife de Fora",
-                      desc: "Parque marinho com piscinas naturais cristalinas, ideal para snorkeling e mergulho com peixes tropicais.",
-                    },
-                    {
-                      name: "Centro Histórico",
-                      desc: "Marco do Descobrimento, Igreja de Nossa Senhora da Pena e vista panorâmica do alto da cidade.",
-                    },
-                    {
-                      name: "Praia de Taperapuã",
-                      desc: "A praia mais badalada com mega barracas, shows ao vivo e estrutura completa de lazer.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Passarela do Álcool", desc: "Calçadão à beira-mar com barracas de artesanato, quiosques e as famosas 'passarelas' onde se prova caipirinhas de todos os sabores. Anima-se após o pôr do sol. Ambiente turístico, ideal para primeira noite.", image: img_passarela_do_alcool.url },
+                    { name: "Arraial d'Ajuda", desc: "Vila charmosa do outro lado do rio Buranhém (acesso por balsa), com ruas de chão batido, Broadway movimentada e praias belíssimas como Mucugê e Pitinga. Vida noturna descontraída. Bate-volta de meio-dia.", image: img_arraial_dajuda.url },
+                    { name: "Trancoso", desc: "O famoso 'Quadrado' de Trancoso é um dos cenários mais desejados do Brasil: gramado central, casas coloridas e a Igreja de São João Batista. Praias de tirar o fôlego. Destino chique com ótimos restaurantes.", image: img_trancoso.url },
+                    { name: "Recife de Fora", desc: "Parque marinho a 9 km da costa com piscinas naturais e recifes de coral vivos. Mergulho monitorado, com número limitado de visitantes por dia. Um dos passeios mais completos da região.", image: heroImg },
+                    { name: "Centro Histórico (Cidade Alta)", desc: "Marco Zero do descobrimento do Brasil, com igrejas do século XVI, marco de posse e vista panorâmica da costa. Museu do Descobrimento vale a visita. Acesso por escadaria ou carro.", image: heroImg },
+                    { name: "Praia de Taperapuã", desc: "Praia com barracas famosas (Axé Moi, Barramares), luaus, aulas de dança e ambiente animado durante o dia todo. Cardápio farto de frutos do mar. Ideal para curtir com grupo.", image: heroImg },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
