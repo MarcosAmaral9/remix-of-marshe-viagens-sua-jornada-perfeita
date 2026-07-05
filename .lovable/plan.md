@@ -1,73 +1,55 @@
 ## Objetivo
 
-Reforçar a segurança (HTTPS forçado em todas as páginas), revisar vulnerabilidades, melhorar a responsividade em diferentes tamanhos de tela e garantir que o favicon exibido pelo Google seja o atual (logo Marshe), não o antigo preto com triângulo branco.
+Enriquecer as páginas de cada destino adicionando uma foto real e um texto descritivo mais completo para cada "Ponto Turístico Imperdível" já listado.
 
----
+## Escopo
 
-## 1. HTTPS em todas as páginas
+10 páginas em `src/pages/destinos/`:
+Cabo de Santo Agostinho, Fortaleza, João Pessoa, Maceió, Natal, Porto de Galinhas, Porto Seguro, Salvador (Nordeste) + Foz do Iguaçu e Gramado (Sul).
 
-- O `public/.htaccess` já força HTTPS via `RewriteRule` (válido na Hostinger). Vou complementar com:
-  - **Header HSTS** (`Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`) no `.htaccess`, garantindo que o navegador só acesse via HTTPS após a primeira visita.
-  - **Content-Security-Policy** básica (com `upgrade-insecure-requests`) para forçar upgrade automático de qualquer recurso http:// remanescente.
-  - Headers extras de segurança: `Permissions-Policy`, `X-XSS-Protection`.
-- Auditar URLs no código (`index.html`, componentes, edge functions) para garantir que toda referência externa use `https://` — substituir qualquer `http://` que apareça.
+Cada página tem 6 pontos turísticos → total de **~60 fotos** a adicionar.
 
-## 2. Vulnerabilidades e segurança
+## Fonte das imagens
 
-- Rodar o linter do banco (Supabase) e o scan de segurança automatizado para confirmar que não há políticas RLS ausentes ou tabelas expostas (escaneamento atual está vazio, mas desatualizado — vou re-executar).
-- Revisar as duas Edge Functions (`send-lead-whatsapp`, `tts-narrate`) quanto a:
-  - Validação de input (evitar injeção em payloads enviados ao WhatsApp/TTS).
-  - Headers CORS restritos ao domínio oficial `marsheviagens.com` em vez de `*` quando aplicável.
-  - Não vazar segredos em logs.
-- Garantir que `noopener noreferrer` esteja em todos os `target="_blank"` (links WhatsApp, redes sociais).
-- Confirmar que o consentimento de cookies já existente continua bloqueando scripts não essenciais até o aceite (revisão do `CookieConsent.tsx` + carregamento de GTM/AdSense em `index.html`).
+Buscar fotos reais de cada atração via **Firecrawl** (scrape/search em Wikipedia, sites oficiais de turismo e bancos livres). Para pontos onde não houver imagem livre de bom uso disponível, usar `imagegen` (modelo standard, estilo fotográfico realista) como fallback.
 
-## 3. Responsividade em diferentes tamanhos de tela
+As imagens serão salvas em `src/assets/pontos/{destino}/{slug-do-ponto}.jpg` e enviadas para o CDN via `lovable-assets` (cria `.asset.json` e remove o binário do repo, seguindo o padrão do projeto).
 
-Auditoria visual e ajustes nos breakpoints do Tailwind (`sm`, `md`, `lg`, `xl`, `2xl`) nas seções principais:
+## Mudança de UI em cada página
 
-- **Hero** — ajustar tamanhos de heading (`text-3xl sm:text-4xl md:text-5xl lg:text-6xl`) e padding em telas pequenas (≤375px) e tablets (768–1024px).
-- **SocialProof / Testimonials** — garantir que o card centralizado e a fonte aumentada não quebrem em mobile (≤390px) nem em ultrawide.
-- **Header** — verificar menu hambúrguer em 360–414px e dropdown em tablet.
-- **FeaturedPackages, Destinations, CircuitosViagem, BlogPreview** — grids responsivos (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`) e imagens com `aspect-ratio` consistente.
-- **ExitIntentPopup, OrcamentoDialog, LeadCaptureForm** — garantir scroll interno em telas baixas (`max-h-[90vh] overflow-y-auto`).
-- **Footer e ContactSection** — empilhamento correto em mobile.
-- Adicionar utilitários globais no `index.css` para evitar overflow horizontal em telas estreitas e melhorar `line-height` de títulos longos.
+Substituir o grid atual de cards texto-only:
 
-Testes nos viewports: 320, 375, 390, 414, 768, 820, 1024, 1280, 1366, 1920.
+```text
+Antes: card compacto (nome + 1 linha)
+Depois: card com foto no topo (aspect-video), nome (h3), 3–5 linhas descrevendo:
+        - o que é o lugar
+        - o que fazer / experiência
+        - dica prática (melhor horário, acesso, etc.)
+```
 
-## 4. Favicon correto da Marshe
+Layout continua `grid sm:grid-cols-2 gap-4`, com `rounded-3xl` (regra do projeto), `overflow-hidden`, imagem `loading="lazy"` + `alt` descritivo para SEO.
 
-- O `public/favicon.ico` atual tem 180KB (provavelmente PNG renomeado, motivo do Google ainda indexar a versão antiga preta com triângulo).
-- Vou:
-  1. Substituir o favicon usando a logo oficial da Marshe (`public/lovable-uploads/0d4a3a04-daa2-44e3-b803-68c32f0300e9.png`) como base.
-  2. Gerar versões otimizadas: `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (180×180) e `favicon.ico` (multi-resolução real 16/32/48).
-  3. Atualizar `index.html` com tags completas:
-     ```html
-     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
-     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2" />
-     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
-     <link rel="shortcut icon" href="/favicon.ico?v=2" />
-     ```
-  4. Adicionar o parâmetro `?v=2` (cache-busting) para forçar navegadores e crawlers a recarregar.
-  5. Atualizar `public/sw.js` para cachear os novos arquivos e bumpar `CACHE_NAME` para `marshe-viagens-v2` invalidando o cache antigo.
-- Observação ao usuário: o Google pode levar de alguns dias até semanas para atualizar o favicon nos resultados de busca; é necessário publicar o site e, se desejar, solicitar reindexação no Google Search Console.
+## Passos de execução
 
----
+1. Para cada destino, expandir o array de `spots` no arquivo `.tsx` incluindo campos `image` (import do `.asset.json`) e `desc` reescrito (2–4 frases).
+2. Gerar/coletar as ~60 imagens em paralelo por destino, subir ao CDN.
+3. Atualizar o JSX do bloco "Pontos Turísticos Imperdíveis" em cada página para renderizar a foto + descrição.
+4. Rodar `bun run build` para validar imports.
 
 ## Detalhes técnicos
 
-- Arquivos editados:
-  - `public/.htaccess` — HSTS, CSP, headers extras.
-  - `index.html` — tags de favicon completas, ajustes de meta se necessário.
-  - `public/favicon.ico` + novos `public/favicon-32.png`, `public/favicon-192.png`, `public/apple-touch-icon.png` (gerados via ImageMagick a partir da logo).
-  - `public/sw.js` — bump de cache + novos assets.
-  - `src/index.css` — utilitários responsivos (overflow, clamp em headings).
-  - Componentes ajustados para responsividade: `Hero.tsx`, `Header.tsx`, `SocialProof.tsx`, `FeaturedPackages.tsx`, `Destinations.tsx`, `Footer.tsx`, `ContactSection.tsx`, `ExitIntentPopup.tsx` (ajustes pontuais de classes Tailwind).
-  - `supabase/functions/send-lead-whatsapp/index.ts` e `tts-narrate/index.ts` — CORS restrito e validação de input.
-- Re-executar `security--run_security_scan` e `supabase--linter` ao final para confirmar zero findings.
+- Novo shape do item: `{ name: string; desc: string; image: string; alt: string }`
+- Import padrão: `import praiaCalhetas from "@/assets/pontos/cabo-de-santo-agostinho/praia-de-calhetas.jpg.asset.json";` → usar `praiaCalhetas.url` no `<img src>`.
+- Imagens ~1200×800, JPG, otimizadas para web (aspect-video no card).
+- Preferência de fonte: Firecrawl → Wikimedia Commons (licença livre). Fallback: `imagegen` com prompt fotográfico realista descrevendo o local.
+- Nenhuma alteração em preços, datas, layout do sidebar de cotação ou outros componentes.
 
-## Fora do escopo
+## Fora de escopo
 
-- Republicação no Google Search Console (ação manual do usuário, posso indicar como).
-- Mudanças no provedor de DNS/hospedagem.
+- Circuitos Europa (não foi pedido).
+- Alterar seções "Sobre o Destino", "Melhor Época", "Gastronomia".
+- Adicionar galeria/lightbox (só a foto no card).
+
+## Confirmação necessária
+
+Antes de executar: prefere que eu use **fotos reais coletadas via Firecrawl/Wikimedia** (autênticas, mas dependem de disponibilidade e podem exigir crédito de autor), ou **imagens geradas por IA** (100% consistentes visualmente, sem preocupação de licença)? A recomendação é priorizar Firecrawl e usar IA só como fallback. Use apenas imagens sem direitos autorais, se não houver, faça uma lista das imagens que terão que ser feitas por ia. Depois irei utilizar a ajuda de outras ferramentas como o Flow para criar as imagens de IA.
