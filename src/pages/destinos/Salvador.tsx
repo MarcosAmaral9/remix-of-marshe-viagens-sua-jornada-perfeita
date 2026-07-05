@@ -8,6 +8,12 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-salvador.jpg";
+import img_pelourinho from "@/assets/pontos/salvador/pelourinho.jpg.asset.json";
+import img_elevador_lacerda from "@/assets/pontos/salvador/elevador-lacerda.jpg.asset.json";
+import img_praia_farol_da_barra from "@/assets/pontos/salvador/praia-farol-da-barra.jpg.asset.json";
+import img_igreja_do_bonfim from "@/assets/pontos/salvador/igreja-do-bonfim.jpg.asset.json";
+import img_mercado_modelo from "@/assets/pontos/salvador/mercado-modelo.jpg.asset.json";
+import img_forte_santo_antonio_barra from "@/assets/pontos/salvador/forte-santo-antonio-barra.jpg.asset.json";
 
 const Salvador = () => {
   useSeo({
@@ -59,36 +65,29 @@ const Salvador = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Pelourinho",
-                      desc: "Centro histórico Patrimônio da Humanidade com igrejas barrocas, música ao vivo e arquitetura colonial colorida.",
-                    },
-                    {
-                      name: "Elevador Lacerda",
-                      desc: "Elevador Art Déco de 1873 que conecta a Cidade Alta à Cidade Baixa com vista panorâmica da Baía de Todos os Santos.",
-                    },
-                    {
-                      name: "Praia do Farol da Barra",
-                      desc: "A praia mais famosa de Salvador com o icônico Farol da Barra e pôr do sol espetacular.",
-                    },
-                    {
-                      name: "Igreja do Bonfim",
-                      desc: "Igreja histórica famosa pelas fitinhas coloridas do Senhor do Bonfim, tradição da fé baiana.",
-                    },
-                    {
-                      name: "Mercado Modelo",
-                      desc: "Maior mercado de artesanato da Bahia com mais de 250 lojas de souvenirs, arte e produtos típicos.",
-                    },
-                    {
-                      name: "Forte de Santo Antônio da Barra",
-                      desc: "Forte histórico que abriga o Museu Náutico com exposições sobre a história marítima do Brasil.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Pelourinho", desc: "O coração histórico de Salvador, Patrimônio da Humanidade pela UNESCO, com casarões coloniais coloridos, igrejas barrocas e rodas de capoeira ao vivo. Programe visita ao Museu Afro-Brasileiro e à Igreja de São Francisco. À noite tem shows de percussão.", image: img_pelourinho.url },
+                    { name: "Elevador Lacerda", desc: "Cartão-postal que liga a Cidade Alta à Cidade Baixa desde 1873, com vista privilegiada da Baía de Todos os Santos. A travessia dura menos de 30 segundos e custa apenas centavos. Pôr do sol imperdível.", image: img_elevador_lacerda.url },
+                    { name: "Praia do Farol da Barra", desc: "A praia mais famosa da cidade, com o Farol da Barra ao fundo e o Forte de Santo Antônio como cenário. Águas calmas e cheias de peixinhos. Excelente para pôr do sol com música ao vivo nos quiosques.", image: img_praia_farol_da_barra.url },
+                    { name: "Igreja do Bonfim", desc: "Uma das igrejas mais amadas do Brasil, famosa pelas fitinhas coloridas amarradas nas grades (três nós, três desejos). Sala dos Milagres emocionante. Símbolo do sincretismo religioso baiano.", image: img_igreja_do_bonfim.url },
+                    { name: "Mercado Modelo", desc: "Prédio histórico à beira-mar com mais de 260 lojinhas de artesanato, redes, temperos e souvenirs. Restaurantes no segundo andar servem moqueca com vista para a baía. Barganha faz parte.", image: img_mercado_modelo.url },
+                    { name: "Forte de Santo Antônio da Barra", desc: "Fortaleza do século XVI que abriga o Farol da Barra — o mais antigo das Américas — e o Museu Náutico da Bahia. Vista panorâmica da baía. Ideal para conhecer no fim de tarde antes de curtir a praia.", image: img_forte_santo_antonio_barra.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

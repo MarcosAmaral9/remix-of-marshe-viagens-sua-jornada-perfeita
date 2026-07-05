@@ -8,6 +8,9 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-porto-de-galinhas.jpg";
+import img_piscinas_naturais_porto from "@/assets/pontos/porto-de-galinhas/piscinas-naturais-porto.jpg.asset.json";
+import img_praia_de_muro_alto from "@/assets/pontos/porto-de-galinhas/praia-de-muro-alto.jpg.asset.json";
+import img_praia_de_maracaipe from "@/assets/pontos/porto-de-galinhas/praia-de-maracaipe.jpg.asset.json";
 
 const PortoDeGalinhas = () => {
   useSeo({
@@ -59,36 +62,29 @@ const PortoDeGalinhas = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Piscinas Naturais",
-                      desc: "O principal atrativo! Recifes de coral formam piscinas de água cristalina repletas de peixes coloridos.",
-                    },
-                    {
-                      name: "Praia de Muro Alto",
-                      desc: "Piscina natural gigante protegida por uma barreira de recifes, com águas calmas e rasas — perfeita para crianças.",
-                    },
-                    {
-                      name: "Passeio de Jangada",
-                      desc: "Passeio tradicional até as piscinas naturais, com paradas para mergulho e fotos.",
-                    },
-                    {
-                      name: "Praia de Maracaípe",
-                      desc: "Famosa pelo estuário com cavalos-marinhos e ondas fortes, ideal para surf.",
-                    },
-                    {
-                      name: "Vila de Porto de Galinhas",
-                      desc: "Centro charmoso com lojas, restaurantes, bares e as famosas galinhas coloridas de artesanato.",
-                    },
-                    {
-                      name: "Pontal de Maracaípe",
-                      desc: "Encontro do rio com o mar, com manguezais e passeio de jangada para ver cavalos-marinhos.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Piscinas Naturais", desc: "O passeio-símbolo de Porto: jangadas coloridas levam os visitantes até piscinas naturais formadas por recifes na maré baixa, com peixes tropicais bem próximos. Água morna e transparente. Verifique a tábua das marés antes.", image: img_piscinas_naturais_porto.url },
+                    { name: "Praia de Muro Alto", desc: "Praia com extensa piscina natural formada por uma barreira de arrecifes, com mar sem ondas por 3 km de extensão. Ideal para famílias com crianças. Cercada por resorts de alto padrão.", image: img_praia_de_muro_alto.url },
+                    { name: "Passeio de Jangada", desc: "Passeio tradicional pelas piscinas naturais no meio do mar, com parada para banho e mergulho. As jangadas coloridas são símbolo do destino. Reserve com antecedência na alta temporada.", image: heroImg },
+                    { name: "Praia de Maracaípe", desc: "Praia mais preservada e rústica, com coqueiros, mar aberto e ondas boas para surfistas. Menos movimentada que a praia central. Restaurantes pé na areia servem lagosta grelhada e caipirinhas.", image: img_praia_de_maracaipe.url },
+                    { name: "Vila de Porto de Galinhas", desc: "Vila central com ruas fechadas para pedestres, lojinhas de artesanato, restaurantes e vida noturna descontraída. Ambiente charmoso ao entardecer. Base ideal de hospedagem.", image: heroImg },
+                    { name: "Pontal de Maracaípe", desc: "Encontro do rio Maracaípe com o mar, com passeios de jangada para ver cavalos-marinhos em seu habitat natural. Programa ecológico e educativo. Preservação leva a sério — siga as regras.", image: heroImg },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

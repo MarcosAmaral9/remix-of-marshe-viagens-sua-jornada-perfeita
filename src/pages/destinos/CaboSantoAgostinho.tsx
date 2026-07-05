@@ -8,6 +8,12 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-cabo-santo-agostinho.jpg";
+import img_praia_de_calhetas from "@/assets/pontos/cabo-de-santo-agostinho/praia-de-calhetas.jpg.asset.json";
+import img_piscinas_naturais_de_gaibu from "@/assets/pontos/cabo-de-santo-agostinho/piscinas-naturais-de-gaibu.jpg.asset.json";
+import img_forte_castelo_do_mar from "@/assets/pontos/cabo-de-santo-agostinho/forte-castelo-do-mar.jpg.asset.json";
+import img_praia_de_suape from "@/assets/pontos/cabo-de-santo-agostinho/praia-de-suape.jpg.asset.json";
+import img_igreja_de_nazare from "@/assets/pontos/cabo-de-santo-agostinho/igreja-de-nazare.jpg.asset.json";
+import img_praia_de_itapuama from "@/assets/pontos/cabo-de-santo-agostinho/praia-de-itapuama.jpg.asset.json";
 
 const CaboSantoAgostinho = () => {
   useSeo({
@@ -64,36 +70,29 @@ const CaboSantoAgostinho = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Praia de Calhetas",
-                      desc: "Considerada uma das praias mais bonitas do Brasil, com águas calmas e cenário deslumbrante cercado por falésias.",
-                    },
-                    {
-                      name: "Piscinas Naturais de Gaibu",
-                      desc: "Formadas por recifes de coral na maré baixa, perfeitas para mergulho e contemplação da vida marinha.",
-                    },
-                    {
-                      name: "Forte Castelo do Mar",
-                      desc: "Ruínas históricas do período colonial holandês, acessíveis na maré baixa, com vista panorâmica.",
-                    },
-                    {
-                      name: "Praia de Suape",
-                      desc: "Praia tranquila com rio de águas doces que desemboca no mar, ideal para famílias.",
-                    },
-                    {
-                      name: "Igreja de Nazaré",
-                      desc: "Construção histórica do século XVI com arquitetura colonial portuguesa preservada.",
-                    },
-                    {
-                      name: "Praia de Itapuama",
-                      desc: "Extensa faixa de areia com coqueiros, ótima para caminhadas e esportes aquáticos.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Praia de Calhetas", desc: "Considerada uma das praias mais bonitas do Brasil, com águas calmas cercadas por falésias e coqueiros. Acesso feito por escadaria ou trilha curta, e o cenário compensa cada degrau. Ideal para banho tranquilo e fotos ao pôr do sol.", image: img_praia_de_calhetas.url },
+                    { name: "Piscinas Naturais de Gaibu", desc: "Formadas por recifes de coral que ficam expostos na maré baixa, criando piscinas transparentes perfeitas para mergulho com snorkel. A vida marinha é abundante, com peixes coloridos bem próximos da areia. Consulte a tábua de marés para aproveitar o melhor horário.", image: img_piscinas_naturais_de_gaibu.url },
+                    { name: "Forte Castelo do Mar", desc: "Ruínas históricas do período colonial holandês (século XVII), acessíveis a pé apenas durante a maré baixa. O passeio revela pedras centenárias, canhões e uma vista panorâmica da baía de Suape. Um dos passeios mais fotografados da região.", image: img_forte_castelo_do_mar.url },
+                    { name: "Praia de Suape", desc: "Praia extensa e de mar aberto, cortada pelo encontro do rio Ipojuca com o Atlântico. As águas calmas do rio são ótimas para crianças, enquanto o mar oferece ondas para quem gosta de banho mais agitado. Coqueirais formam a moldura perfeita.", image: img_praia_de_suape.url },
+                    { name: "Igreja de Nossa Senhora de Nazaré", desc: "Construção do século XVI com arquitetura colonial portuguesa preservada, no alto do Cabo, com vista para o litoral. É um dos marcos religiosos e históricos mais antigos de Pernambuco. Interior simples com azulejaria original.", image: img_igreja_de_nazare.url },
+                    { name: "Praia de Itapuama", desc: "Extensa faixa de areia branca com coqueiros, ondas moderadas e barracas rústicas de frutos do mar. Muito procurada por surfistas iniciantes e para caminhadas longas à beira-mar. Ambiente familiar e menos movimentado que as praias vizinhas.", image: img_praia_de_itapuama.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

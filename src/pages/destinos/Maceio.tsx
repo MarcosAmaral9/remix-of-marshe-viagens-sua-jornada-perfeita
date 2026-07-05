@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button";
 import OrcamentoDialog from "@/components/OrcamentoDialog";
 import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import heroImg from "@/assets/dest-maceio.jpg";
+import img_praia_do_frances from "@/assets/pontos/maceio/praia-do-frances.jpg.asset.json";
+import img_sao_miguel_dos_milagres from "@/assets/pontos/maceio/sao-miguel-dos-milagres.jpg.asset.json";
+import img_maragogi from "@/assets/pontos/maceio/maragogi.jpg.asset.json";
 
 const Maceio = () => {
   useSeo({ title: "Pacote Maceió | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Maceió, AL. Praia do Francês, São Miguel dos Milagres e piscinas naturais. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/maceio",
@@ -48,18 +51,29 @@ const Maceio = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { name: "Praia do Francês", desc: "Praia com recifes naturais que formam piscinas de água calma, perfeita para banho e snorkeling." },
-                    { name: "Piscinas de Pajuçara", desc: "Acessíveis de jangada na maré baixa, as piscinas naturais abrigam peixes coloridos e corais." },
-                    { name: "São Miguel dos Milagres", desc: "Paraíso preservado com praias desertas, águas cristalinas e piscinas naturais de tirar o fôlego." },
-                    { name: "Maragogi", desc: "As 'Galés de Maragogi' são piscinas naturais com visibilidade de até 50 metros de profundidade." },
-                    { name: "Praia de Ipioca", desc: "Praia tranquila com coqueiros, ideal para relaxar longe das multidões." },
-                    { name: "Mirante de São Gonçalo", desc: "Vista panorâmica da lagoa Mundaú e da cidade, especialmente bonito ao entardecer." },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Praia do Francês", desc: "Praia com recifes naturais que formam piscinas de água calma no lado direito, e ondas fortes no lado esquerdo — perfeita para famílias e surfistas ao mesmo tempo. Estrutura completa de bares e restaurantes. A 25 km de Maceió.", image: img_praia_do_frances.url },
+                    { name: "Piscinas Naturais de Pajuçara", desc: "", image: heroImg },
+                    { name: "São Miguel dos Milagres", desc: "Paraíso preservado a 100 km de Maceió, com praias desertas, águas transparentes e piscinas naturais de tirar o fôlego. Faz parte da Rota Ecológica dos Milagres. Pousadas charmosas e gastronomia refinada.", image: img_sao_miguel_dos_milagres.url },
+                    { name: "Maragogi", desc: "As famosas 'Galés de Maragogi' são piscinas naturais em mar aberto, com visibilidade que pode chegar a 50 metros. Acesso apenas de catamarã, com paradas para snorkeling. Um dos melhores mergulhos livres do Brasil.", image: img_maragogi.url },
+                    { name: "Praia de Ipioca", desc: "Praia tranquila com coqueiros, ideal para relaxar longe das multidões. Barracas rústicas com peixe fresco. A 20 min do centro de Maceió.", image: heroImg },
+                    { name: "Mirante de São Gonçalo", desc: "Vista panorâmica da lagoa Mundaú e da cidade, especialmente bonito ao entardecer. Ponto certo para fotografar o pôr do sol maceioense. Acesso gratuito.", image: heroImg },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -8,6 +8,9 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-foz-do-iguacu.jpg";
+import img_marco_das_tres_fronteiras from "@/assets/pontos/foz-do-iguacu/marco-das-tres-fronteiras.jpg.asset.json";
+import img_parque_das_aves from "@/assets/pontos/foz-do-iguacu/parque-das-aves.jpg.asset.json";
+import img_ciudad_del_este from "@/assets/pontos/foz-do-iguacu/ciudad-del-este.jpg.asset.json";
 
 const FozDoIguacu = () => {
   useSeo({ title: "Pacote Foz do Iguaçu | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Foz do Iguaçu, PR. Cataratas, Itaipu e Marco das Três Fronteiras. Aéreo, hospedagem e traslados.", canonical: "https://marsheviagens.com/destinos/foz-do-iguacu",
@@ -48,18 +51,29 @@ const FozDoIguacu = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { name: "Cataratas do Iguaçu", desc: "Uma das 7 Novas Maravilhas da Natureza com 275 quedas. A passarela da Garganta do Diabo é inesquecível." },
-                    { name: "Itaipu Binacional", desc: "A maior hidrelétrica do mundo em geração de energia, com visitas guiadas e iluminação noturna espetacular." },
-                    { name: "Marco das Três Fronteiras", desc: "Ponto onde Brasil, Argentina e Paraguai se encontram, com show cultural e vista do encontro dos rios." },
-                    { name: "Parque das Aves", desc: "Viveiros imensos com mais de 1.400 aves de 150 espécies, incluindo tucanos, araras e flamingos." },
-                    { name: "Macuco Safari", desc: "Passeio de barco radical que leva até a base das cataratas — prepare-se para se molhar!" },
-                    { name: "Compras no Paraguai", desc: "Ciudad del Este oferece compras com preços atrativos em eletrônicos, perfumes e produtos importados." },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Cataratas do Iguaçu", desc: "Uma das 7 Novas Maravilhas da Natureza, com 275 quedas d'água distribuídas entre Brasil e Argentina. A passarela da Garganta do Diabo, no lado brasileiro, é o ponto mais impressionante. Reserve o dia inteiro e leve capa de chuva — você vai se molhar.", image: heroImg },
+                    { name: "Itaipu Binacional", desc: "A maior hidrelétrica do mundo em geração de energia, resultado da parceria entre Brasil e Paraguai. Oferece visita panorâmica, tour especial pelo interior da usina e iluminação noturna gratuita nos fins de semana. Passeio educativo para todas as idades.", image: heroImg },
+                    { name: "Marco das Três Fronteiras", desc: "Ponto onde Brasil, Argentina e Paraguai se encontram, com o marco brasileiro à beira do rio Iguaçu. Show cultural ao entardecer com dança e música das três nações. Vista imperdível do encontro dos rios Iguaçu e Paraná.", image: img_marco_das_tres_fronteiras.url },
+                    { name: "Parque das Aves", desc: "Viveiros gigantes de imersão com mais de 1.400 aves de 150 espécies, incluindo tucanos, araras, flamingos e aves de rapina resgatadas. Fica em frente à entrada das Cataratas — combine os dois no mesmo dia. Trabalho sério de conservação.", image: img_parque_das_aves.url },
+                    { name: "Macuco Safari", desc: "Passeio de barco radical que leva os visitantes até a base das cataratas, passando por dentro das quedas menores. Adrenalina, natureza e um banho garantido. Preços à parte da entrada do parque; reserve com antecedência na alta temporada.", image: heroImg },
+                    { name: "Compras em Ciudad del Este", desc: "Cidade paraguaia acessível pela Ponte da Amizade, famosa pelas compras com preços atrativos em eletrônicos, perfumes, brinquedos e importados. Respeite a cota de US$ 500 por pessoa e evite comprar itens irregulares. Vá cedo para fugir das filas.", image: img_ciudad_del_este.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

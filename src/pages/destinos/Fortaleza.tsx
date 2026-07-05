@@ -8,6 +8,9 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-fortaleza.jpg";
+import img_canoa_quebrada from "@/assets/pontos/fortaleza/canoa-quebrada.jpg.asset.json";
+import img_centro_dragao_do_mar from "@/assets/pontos/fortaleza/centro-dragao-do-mar.jpg.asset.json";
+import img_mercado_central from "@/assets/pontos/fortaleza/mercado-central.jpg.asset.json";
 
 const Fortaleza = () => {
   useSeo({ title: "Pacote Fortaleza | Marshe Viagens - Saindo de BH", description: "Pacote de viagem para Fortaleza saindo de Belo Horizonte com aéreo, hospedagem e traslados. Beach Park, Praia do Futuro e mais.", canonical: "https://marsheviagens.com/destinos/fortaleza",
@@ -48,18 +51,29 @@ const Fortaleza = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { name: "Beach Park", desc: "Maior parque aquático da América Latina, com tobogãs radicais e piscinas temáticas para toda família." },
-                    { name: "Praia do Futuro", desc: "A praia mais badalada de Fortaleza, com barracas famosas, shows ao vivo e frutos do mar frescos." },
-                    { name: "Jericoacoara", desc: "Vila paradisíaca com dunas, lagoas cristalinas e pôr do sol na Duna do Pôr do Sol, a 300 km de Fortaleza." },
-                    { name: "Canoa Quebrada", desc: "Praia com falésias coloridas, passeios de buggy e vida noturna animada na Broadway." },
-                    { name: "Centro Dragão do Mar", desc: "Complexo cultural com museus, teatro, cinema e espaços para shows e exposições artísticas." },
-                    { name: "Mercado Central", desc: "Mais de 500 lojas com artesanato, redes, cachaças, castanhas e souvenirs típicos do Ceará." },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Beach Park", desc: "Maior parque aquático da América Latina, em Aquiraz (a 30 min da capital), com tobogãs radicais como o Insano, piscinas de ondas e áreas kids. Programe um dia inteiro e leve protetor solar reforçado. Ingressos com melhor preço na baixa temporada.", image: heroImg },
+                    { name: "Praia do Futuro", desc: "A praia mais badalada de Fortaleza, marcada pelas barracas gigantescas com estrutura completa, shows ao vivo e frutos do mar frescos. Quintas-feiras têm caranguejada tradicional. Mar de tombo — banho com atenção às correntes.", image: heroImg },
+                    { name: "Jericoacoara", desc: "Vila paradisíaca a 300 km de Fortaleza, com ruas de areia, dunas gigantes, lagoas cristalinas e o famoso pôr do sol na Duna. Chegada exige transfer 4x4, o que preserva o charme rústico. Reserve pelo menos 3 diárias para explorar bem.", image: heroImg },
+                    { name: "Canoa Quebrada", desc: "Praia com falésias avermelhadas, passeios de buggy nas dunas e vida noturna animada na Broadway (rua principal). O paredão de falésias esculpidas pelo vento é o cartão-postal. Ótimo bate-volta de 2h saindo de Fortaleza.", image: img_canoa_quebrada.url },
+                    { name: "Centro Dragão do Mar de Arte e Cultura", desc: "Complexo cultural com museus, planetário, teatro, cinema e espaços para shows e exposições artísticas. À noite, os bares do entorno agitam a região. Programa cultural obrigatório em dia de chuva.", image: img_centro_dragao_do_mar.url },
+                    { name: "Mercado Central de Fortaleza", desc: "Mais de 500 lojas distribuídas em quatro andares, com artesanato, redes, cachaças, castanhas e souvenirs típicos do Ceará. Ótimo lugar para comprar presentes e experimentar tapioca fresca. Prefira ir pela manhã, quando é menos cheio.", image: img_mercado_central.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

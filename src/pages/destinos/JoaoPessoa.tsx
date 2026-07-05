@@ -8,6 +8,12 @@ import ShareWhatsAppButton from "@/components/ShareWhatsAppButton";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/dest-joao-pessoa.jpg";
+import img_ponta_do_seixas from "@/assets/pontos/joao-pessoa/ponta-do-seixas.jpg.asset.json";
+import img_praia_de_tambaba from "@/assets/pontos/joao-pessoa/praia-de-tambaba.jpg.asset.json";
+import img_centro_historico_joao_pessoa from "@/assets/pontos/joao-pessoa/centro-historico-joao-pessoa.jpg.asset.json";
+import img_picaozinho from "@/assets/pontos/joao-pessoa/picaozinho.jpg.asset.json";
+import img_praia_de_coqueirinho from "@/assets/pontos/joao-pessoa/praia-de-coqueirinho.jpg.asset.json";
+import img_por_do_sol_jacare from "@/assets/pontos/joao-pessoa/por-do-sol-jacare.jpg.asset.json";
 
 const JoaoPessoa = () => {
   useSeo({
@@ -59,36 +65,29 @@ const JoaoPessoa = () => {
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-primary" /> Pontos Turísticos Imperdíveis
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      name: "Ponta do Seixas",
-                      desc: "O ponto mais oriental das Américas, onde o sol nasce primeiro. Vista deslumbrante do farol e do oceano.",
-                    },
-                    {
-                      name: "Praia de Tambaba",
-                      desc: "Praia com falésias e piscinas naturais, conhecida por ser a primeira praia oficial de naturismo do Nordeste.",
-                    },
-                    {
-                      name: "Centro Histórico",
-                      desc: "Igrejas barrocas, casarões coloniais e o Convento de São Francisco, patrimônio cultural da humanidade.",
-                    },
-                    {
-                      name: "Picãozinho",
-                      desc: "Piscinas naturais formadas por corais a 1,5 km da costa, acessíveis de catamarã na maré baixa.",
-                    },
-                    {
-                      name: "Praia de Coqueirinho",
-                      desc: "Uma das praias mais bonitas do litoral sul, com falésias avermelhadas e águas transparentes.",
-                    },
-                    {
-                      name: "Pôr do Sol na Praia do Jacaré",
-                      desc: "Tradição local com o som do Bolero de Ravel tocado ao saxofone durante o pôr do sol no rio.",
-                    },
-                  ].map((spot) => (
-                    <div key={spot.name} className="bg-muted/50 rounded-xl p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{spot.name}</h3>
-                      <p className="text-sm text-muted-foreground">{spot.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {([
+                    { name: "Ponta do Seixas", desc: "Ponto mais oriental das Américas, onde o sol nasce primeiro no continente. Farol histórico, mirante e trilha curta até a praia. Vá ao amanhecer para viver a experiência completa.", image: img_ponta_do_seixas.url },
+                    { name: "Praia de Tambaba", desc: "A primeira praia oficial de naturismo do Brasil, com área mista e área exclusiva para naturistas, cercada por falésias e mata atlântica preservada. Águas mornas e cristalinas. Fica a 40 km ao sul de João Pessoa.", image: img_praia_de_tambaba.url },
+                    { name: "Centro Histórico", desc: "Um dos conjuntos coloniais mais antigos do Brasil, com igrejas barrocas como São Francisco e a Igreja da Misericórdia. A cidade foi fundada em 1585 e preserva a atmosfera colonial em ruas de pedra. Ideal para caminhada guiada pela manhã.", image: img_centro_historico_joao_pessoa.url },
+                    { name: "Picãozinho", desc: "Piscinas naturais a 1,5 km da costa de Tambaú, acessadas por catamarã na maré baixa. Peixes coloridos, água transparente e a sensação de estar em pleno oceano. Um dos passeios mais requisitados da cidade.", image: img_picaozinho.url },
+                    { name: "Praia de Coqueirinho", desc: "Praia paradisíaca do litoral sul, com falésias coloridas, coqueirais e mar de águas mornas. Cenário quase intocado, ideal para dia inteiro de praia. Restaurantes rústicos servem frutos do mar frescos.", image: img_praia_de_coqueirinho.url },
+                    { name: "Pôr do Sol na Praia do Jacaré", desc: "Tradição diária em Cabedelo: ao entardecer, o saxofonista toca o Bolero de Ravel em um barco à deriva enquanto o sol se põe sobre o rio Paraíba. Chegue com antecedência para pegar boa mesa nos bares flutuantes. Experiência inesquecível.", image: img_por_do_sol_jacare.url },
+                  ]).map((spot) => (
+                    <div key={spot.name} className="bg-muted/50 rounded-3xl overflow-hidden">
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={spot.image}
+                          alt={spot.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2">{spot.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{spot.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
